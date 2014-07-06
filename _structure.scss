@@ -1,0 +1,255 @@
+.page-wrapper {
+	@extend %bdr;
+	.page-wrapper__wide {
+		&.header-background {
+			background-color: $white;
+			@include transition-duration(0.5s);
+			@include transition-timing-function(ease-out);
+			padding: 0;
+			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
+		.page-wrapper__wide__inner {
+			@extend %bdr;
+			@include clearfix;
+			@extend %max-width;
+			margin: 0 auto;
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+			&.logo-holder {
+				//@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+				//vertical-align: middle;
+				//vertical-align: bottom;
+				position: relative;
+				@extend %bdr;
+				//min-height: 40px;
+			}
+			.page-wrapper__wide__inner--logo { //Logo
+				@include column(2);
+				//Meduim
+				@media screen and (max-width: 60em) {
+					@include column(3);
+				}
+				//Small
+				@media screen and (max-width: 37.5em) {
+					@include column(6);
+					//padding:8px 0 0 0; 
+				}
+			}
+			#simple-menu { //Hamburger icon
+				height: 100%;
+				position: absolute;
+				right: 1.5em;
+				@extend %bdr;
+				overflow: hidden;
+				text-align: right;
+				text-decoration: none;
+				display: none;
+				&:before {
+					/* this is the important part */
+					content: '';
+					display: inline-block;
+					height: 100%;
+					vertical-align: middle;
+					/* this just takes care of whitespace added by having display:inline-block (there are other methods) */
+					//margin-left: -0.25em;
+				}
+				.fa-bars {
+					position: relative;
+					@include adjust-font-size-to(36px);
+					margin: 0 auto;
+					right: 0;
+				}
+				//Meduim
+				@media screen and (max-width: 60em) {
+					display: block;
+				}
+				//Small
+				@media screen and (max-width: 37.5em) {
+					//@include rhythm(1, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+				}
+					.fa {
+						color: grey;
+						&:hover {
+						color: $black;
+					}
+				} 
+				//End Hamburger icon
+			}
+			.main-navigation { //Main Navigation
+				@include column(10);
+				position: relative;
+				@extend %bdr;
+				float: right;
+				@include clearfix;
+				//Meduim
+				@media screen and (max-width: 60em) {
+					@include column(1);
+				}
+				> ul {
+					float: right;
+					//Meduim
+					@media screen and (max-width: 60em) {
+						display: none;
+					}
+				>	li {
+						@extend %bdr;
+						float: left;
+						position: relative;
+						@include clearfix;
+						text-align: right;
+						margin-left: 4em;
+						//Meduim
+						@media screen and (max-width: 84em) {
+							margin-left: 2em;
+						}
+						a {
+							text-decoration: none;
+							color: $grey;
+							display:block;
+							@include adjust-font-size-to(14px, 2);
+							text-transform: uppercase;
+						}
+						&:hover .sub-menu {
+							position: relative;
+							left: 0;
+							//display: block;
+						}
+						.sub-menu {
+							background: pink;
+							//left:-9999px;
+							//display: none;
+							margin: 0;
+							padding: 0;
+							li {
+								display: block;
+								margin: 0;
+								@extend %bdr;
+								a {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+			.cols {
+				@include column(1);
+				@extend %bdr;
+				@include clearfix;
+			}
+		}
+	}
+}
+//Detached menu
+.detached {
+	position: fixed;
+	width: 100%;
+	top: -120px;
+	@include transition-duration(0.5s);
+	@include transition-timing-function(ease-out);
+	//background: $red !important;
+	padding: 0 !important;
+	.page-wrapper__wide__inner--logo { //Logo
+		@include column(1);
+		img {
+			width: 60%;
+			@include rhythm(0.5, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
+		path.fill {
+			//fill: $white;
+		}
+		//Meduim
+		@media screen and (max-width: 60em) {
+			@include column(2);
+		}
+		//Small
+		@media screen and (max-width: 37.5em) {
+			@include column(3);
+		}
+	}
+	&.header-ani {
+		top: 0px;
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-out);
+		@include rhythm(0, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		@include box-shadow($black 1px 1px 2px);
+		z-index: 100;
+		.page-wrapper__wide__inner {
+			.main-navigation {
+				ul {
+					li {
+						margin-left: 1em;
+						a {
+							@include adjust-font-size-to(10px, 2);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.padding-tb {
+	@include rhythm(0, 3, 3, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+}
+
+.padding-tb-small {
+	@include rhythm(0, 2, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+}
+
+
+.curve {
+
+}
+
+.background {
+	background: url(../img/1.jpg) no-repeat center right;
+	position: relative;
+	.curve-wrapper {
+		position: relative;
+		background: url(../img/bg-curve-mustard.png) no-repeat 75% center;
+		//background: $mustard url(../img/1.jpg) no-repeat 930px center;
+		.article-section {
+			@extend %bdr;
+			@include column(7);
+			position: relative;
+			z-index: 1;
+			}
+		//Meduim
+		@media screen and (max-width: 60em) {
+			//background-position: left center;
+			.article-section {
+				@include column(8);
+			}
+		}
+		//Small
+		@media screen and (max-width: 37.5em) {
+			.article-section {
+				@include column(7);
+			}
+		}
+	}
+}
+
+
+.curve-holder {
+	//background: url(../img/bg-curve-mustard.png) no-repeat -1030px center;
+	background: red;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+	@extend %bdr;
+}
+
+
+
+//-webkit-mask-image: url(http://s21.postimg.org/gfep7h1h3/trans_Test.png);
+//-o-mask-image: url(http://s21.postimg.org/gfep7h1h3/trans_Test.png);
+//-moz-mask-image: url(http://s21.postimg.org/gfep7h1h3/trans_Test.png);
+//mask-image: url(http://s21.postimg.org/gfep7h1h3/trans_Test.png);
+

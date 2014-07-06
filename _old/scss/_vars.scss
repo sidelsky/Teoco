@@ -1,0 +1,61 @@
+//Helpers
+%bdr {
+	outline:solid red 1px;
+}
+ 
+%open_sansextrabold {
+	font-family: 'open_sansextrabold';
+}
+
+%open_sansbold {
+	font-family: 'open_sansbold';
+}
+
+%open_sansregular {
+	font-family: 'open_sansregular';
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+//Grid layout structure
+$column-width: 106px;
+$gutter-width: 0px;
+$columns: 12;
+
+//$column-width: 60;
+//$gutter-width: 20;
+//$columns: 12;
+
+$total-width: 100%; // Switch from pixels to percentages
+
+%max-width {
+ max-width: 64em;
+}
+
+//Colours
+$black: #000;
+$white: #fff;
+$red: #b2121a;
+$purple: #6b478f;
+$blue: #187fb9;
+$green: #5b882b;
+$mustard: #cc7c0d;
+$grey: #646569;
+$light-grey: #e0e0e2;
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+////Medium
+//@media screen and (max-width: 60em) { 
+//	@include adjust-font-size-to(36px, 1);
+//}
+////Small
+//@media screen and (max-width: 37.5em) {
+//	@include adjust-font-size-to(24px, 1.6);
+//}

@@ -1,0 +1,42 @@
+//Container structure
+.page-wrapper { //Outer most wrapper
+	@extend %bdr;
+	.page-wrapper__wide { //Inside wide wrapper
+		@extend %bdr;
+		overflow: hidden;
+		&.rel-pos {
+			position: relative;
+		}
+		&.header-background {
+			background-color: $white;
+			@include transition-duration(0.5s);
+			@include transition-timing-function(ease-out);
+			padding: 0;
+			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
+		.page-wrapper__wide__inner { //Inner most wrapper with max width
+			@extend %bdr;
+			@include clearfix;
+			@extend %max-width;
+			margin: 0 auto;
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+			position: relative;
+		}
+	}
+}
+
+
+.article-section {
+	@extend %bdr;
+	@include column(7);
+	position: relative;
+	z-index: 1;
+	@include clearfix;
+	@media screen and (max-width: 60em) {
+		@include column(8);
+	}
+	@media screen and (max-width: 37.5em) {
+		@include column(12);
+	}
+}

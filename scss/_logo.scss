@@ -1,0 +1,31 @@
+//Bigger menu
+.logo-holder {
+	position: relative;
+	@extend %bdr;
+	.page-wrapper__wide__inner--logo { //Logo
+		@include column(2);
+	//Meduim
+	@media screen and (max-width: 60em) {
+		@include column(3);
+	}
+	//Small
+	@media screen and (max-width: 37.5em) {
+		@include column(6); 
+		}
+	}
+}
+
+//Smaller menu
+.detached {
+	.page-wrapper__wide__inner--logo { //Logo
+		@include column(1);
+		//Meduim
+		@media screen and (max-width: 60em) {
+			@include column(2);
+		}
+		//Small
+		@media screen and (max-width: 37.5em) {
+			@include column(3);
+		}
+	}
+}

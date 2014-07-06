@@ -1,0 +1,60 @@
+@import "normalize.scss";
+@import "compass/utilities";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/css3/transform";
+@import "typefaces.scss";
+@import "fontawesome/font-awesome.scss";
+@import "grid.scss";
+@import "vars.scss";
+@import "structure.scss";
+@import "footer.scss";
+@import "jquery.sidr.light.scss";
+
+//html {
+//  @include adjust-leading-to(1);
+//}
+
+body,html {
+	position: relative;
+	height: 100%;
+}
+body {
+	color: $black;
+	@extend %open_sansregular;
+	//background: lighten($black, 70%);
+	background: #fff url('http://www.baselineme.com/6') center top repeat;
+}
+
+//Fonts
+//$base-font-size: 18px;
+//$base-line-height: 24px;
+//@include establish-baseline;
+
+//Baseline
+$base-font-size: 18px;
+$base-line-height: 8px;
+ 
+@include establish-baseline;
+
+html {
+  @include adjust-leading-to(4); 
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	@extend %open_sansextrabold;
+	font-weight: 100;
+	color: $black;
+}
+
+h1, h2 {
+	@include adjust-font-size-to(48px, 6);
+	//@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+}
+
+p {
+ 
+}
+

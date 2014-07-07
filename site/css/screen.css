@@ -2846,7 +2846,7 @@ body {
   .article-section {
     display: inline;
     float: left;
-    width: 66.66667%;
+    width: 54.16667%;
     margin: 0 0%;
   }
 }
@@ -3428,13 +3428,19 @@ html[xmlns] .slides {
 }
 /* line 19, ../scss/_slider.scss */
 .slider.bottom .curve-holder {
-  background: url(../img/bg-curve-mustard.png) no-repeat 90% center;
+  background: url(../img/bg-curve-mustard.png) no-repeat 50% center;
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
+}
+@media screen and (min-width: 60em) {
+  /* line 19, ../scss/_slider.scss */
+  .slider.bottom .curve-holder {
+    background: url(../img/bg-curve-mustard.png) no-repeat center center;
+  }
 }
 @media screen and (max-width: 37.5em) {
   /* line 19, ../scss/_slider.scss */

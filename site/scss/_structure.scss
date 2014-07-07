@@ -34,7 +34,7 @@
 	z-index: 1;
 	@include clearfix;
 	@media screen and (max-width: 60em) {
-		@include column(8);
+		@include column(6.5);
 	}
 	@media screen and (max-width: 37.5em) {
 		@include column(12);

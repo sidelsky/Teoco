@@ -1,0 +1,15 @@
+{
+	"wpVer": "3.9.1",
+	"url": "http://teoco.com",
+	"tablePrefix": "wp_",
+	"dbHost": "localhost",
+	"dbName": "teoco",
+	"dbUser": "root",
+	"dbPass": "root",
+	"git": false,
+	"customDirs": false,
+	"installTheme": false,
+	"wpDir": ".",
+	"contentDir": "wp-content",
+	"saltKeys": "define('AUTH_KEY',         '$}C|_O;F;EqsPka5)F[L_Pt+Lzm&$6>+*XwTHDb,`y e`vHhrvL#-bU #c5C(3Wp');\ndefine('SECURE_AUTH_KEY',  'mQ|2!ND-7G0u ]BnwutL/! C]_7xdqRxyRv.0vZf]I:!2woWuphy7i(#O[c-0w$T');\ndefine('LOGGED_IN_KEY',    '+w,# ?qaQwbw$%$glf|sM*-}r_||I]m]}|h);pA[-Ar]rXyHrYYIqo^i:cI#*v;Y');\ndefine('NONCE_KEY',        'x]in*XhA9pb8$9q;C,}q;Q~mu5RUe;UO|`NTf!~FhN0|~:f]MW;V,du+1wUc2]y|');\ndefine('AUTH_SALT',        'Zt&/ka9xL_A+>IEu3.)jhm+]e&c)uuHK *|npgk$!--cW,G:F6>C-Jc~*l_t)Wni');\ndefine('SECURE_AUTH_SALT', 'emhebDv{2m|UQUBvXTHsKEnfvG[|Ow-;B?FnR&jehHh*;#Fdza~7;8F8dQ3-pJDx');\ndefine('LOGGED_IN_SALT',   'v2:{m )2RWZL);+dxba&*{b{{^ZJEl$L4*-^/722u|w)$&o}b>X+Lf9W2k0mRaD:');\ndefine('NONCE_SALT',       'J2!{8un]a-^g_c2y?,-N|guU<@&f_ }&J+hOCWmwqGmX~;1y#:qMvGX>q95K1Sfu');\n"
+}

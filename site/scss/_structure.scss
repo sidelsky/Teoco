@@ -40,3 +40,25 @@
 		@include column(12);
 	}
 }
+
+
+// .flexslider2{
+// 	display: block;
+// 	position: relative; //fixed or absolute may be needed
+// 	height: 100%!important;
+// 	overflow: hidden!important;
+// 	width: 100%!important;
+// }
+
+// .flexslider2 .slides,
+// .flexslider2 .slides li{
+// 	width: 100%!important;
+// 	height: 100%!important;
+// }
+
+.flexslider2 .slides img{
+	min-height: 100%;
+	//min-width: 100%;
+	//max-width: 10000%!important; //over ride any existing responsive image styling
+	//margin: 0 auto!important;
+}

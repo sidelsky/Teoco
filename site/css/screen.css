@@ -2712,7 +2712,7 @@ body:after {
 }
 
 /* line 2, ../scss/_vars.scss */
-.cols, .page-wrapper, .page-wrapper .page-wrapper__wide, .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner, .article-section, #simple-menu, .logo-holder, .main-navigation, .main-navigation > ul > li, .main-navigation > ul > li .sub-menu li {
+.cols, .page-wrapper, .page-wrapper .page-wrapper__wide, .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner, .article-section, .simple-menu, .logo-holder, .main-navigation, .main-navigation > ul > li, .main-navigation > ul > li .sub-menu li {
   outline: solid red 1px;
 }
 
@@ -2858,6 +2858,11 @@ body {
     width: 100%;
     margin: 0 0%;
   }
+}
+
+/* line 59, ../scss/_structure.scss */
+.flexslider2 .slides img {
+  min-height: 100%;
 }
 
 /* line 1, ../scss/_footer.scss */
@@ -3308,7 +3313,7 @@ html[xmlns] .slides {
 }
 
 /* line 1, ../scss/_Hamburger-icon.scss */
-#simple-menu {
+.simple-menu {
   position: absolute;
   right: 1.5em;
   overflow: hidden;
@@ -3317,14 +3322,14 @@ html[xmlns] .slides {
   display: none;
 }
 /* line 10, ../scss/_Hamburger-icon.scss */
-#simple-menu:before {
+.simple-menu:before {
   /* this is the important part */
   content: '';
   display: inline-block;
   /* this just takes care of whitespace added by having display:inline-block (there are other methods) */
 }
 /* line 19, ../scss/_Hamburger-icon.scss */
-#simple-menu .fa-bars {
+.simple-menu .fa-bars {
   position: relative;
   font-size: 2.25em;
   line-height: 1.33333em;
@@ -3333,16 +3338,16 @@ html[xmlns] .slides {
 }
 @media screen and (max-width: 60em) {
   /* line 1, ../scss/_Hamburger-icon.scss */
-  #simple-menu {
+  .simple-menu {
     display: block;
   }
 }
 /* line 33, ../scss/_Hamburger-icon.scss */
-#simple-menu .fa {
+.simple-menu .fa {
   color: grey;
 }
 /* line 35, ../scss/_Hamburger-icon.scss */
-#simple-menu .fa:hover {
+.simple-menu .fa:hover {
   color: black;
 }
 
@@ -3792,15 +3797,14 @@ body, html {
 /* line 29, ../scss/screen.scss */
 body {
   color: black;
-  background: white url("http://www.baselineme.com/6") center top repeat;
 }
 
-/* line 61, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 112.5%;
 }
 
-/* line 64, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 18px;
   line-height: 0.44444em;

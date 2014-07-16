@@ -1,0 +1,90 @@
+//Icons
+.jump {
+	position: fixed;
+	right: 1em;
+	bottom: 0.5em;
+	z-index: 200;
+	//Small
+	@media screen and (max-width: 37.5em) {
+		display: none;
+		visibility: hidden;
+	}
+	li {
+		@include rhythm(0, 0, 0, 0.5); //Margin top, Padding top, Padding bottom, Margin bottom
+		a {
+			border: solid 2px $white;
+			@include border-radius(50px);
+			width: 52px;
+			height: 52px;
+			display: block;
+			text-align: center;
+			position: relative;
+			background: $black;
+			color: $white;
+			//@include adjust-font-size-to(30px, 1.7);
+			font-size: 30px;
+			line-height: 42px;
+			&.go-up {
+				//opacity: 0;
+			}
+			&.show-me {
+				//opacity: 1;
+			}
+			&.inactive {
+				opacity: 0;
+				display: none;
+			}
+			&:hover {
+				background: $white;
+				color: $grey;
+				@include transition-duration(0.1s);
+				@include transition-timing-function(ease-out);
+				//@include scale(1.2);
+				font-size: 40px;
+				line-height: 42px;
+			}
+		}
+	}
+}
+
+
+.social {
+	ul {
+		float: right;
+			//Meduim
+			@media screen and (max-width: 60em) {
+				float: none;
+				display: table;
+				margin: 0 auto;
+				@include rhythm(0, 2, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+			}
+		li {
+			margin-left: 1em;
+			//Meduim
+			@media screen and (max-width: 60em) {
+				margin: 0 0.5em;
+				text-align: center;
+			}
+			a {
+				border: solid 1px $light-grey;
+				@include border-radius(50px);
+				display: block;
+				width: 35px;
+				height: 35px;
+				text-align: center;
+				position: relative;
+				top: 50%;
+				@include adjust-font-size-to(17px, 1.2);
+				@include transition-duration(0.5s);
+				@include transition-timing-function(ease-out);
+				&:hover {
+					background: $white;
+					color: $grey;
+					@include transition-duration(0.2s);
+					@include transition-timing-function(ease-out);
+					@include scale(1.2);
+				}
+			}
+		}
+	}
+}

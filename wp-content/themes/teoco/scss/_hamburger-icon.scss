@@ -1,0 +1,40 @@
+.simple-menu { //Hamburger icon
+	//height: 100%;
+	position: absolute;
+	right: 1.5em;
+	@extend %bdr;
+	overflow: hidden;
+	text-align: right;
+	text-decoration: none;
+	display: none;
+	&:before {
+		/* this is the important part */
+		content: '';
+		display: inline-block;
+		//height: 100%;
+		//vertical-align: middle;
+		/* this just takes care of whitespace added by having display:inline-block (there are other methods) */
+		//margin-left: -0.25em;
+	}
+	.fa-bars {
+		position: relative;
+		@include adjust-font-size-to(36px);
+		margin: 0 auto;
+		right: 0;
+	}
+	//Meduim
+	@media screen and (max-width: 60em) {
+		display: block;
+	}
+	//Small
+	@media screen and (max-width: 37.5em) {
+		//@include rhythm(1, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
+		.fa {
+			color: grey;
+			&:hover {
+			color: $black;
+		}
+	} 
+	//End Hamburger icon
+}

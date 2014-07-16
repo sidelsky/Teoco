@@ -7,9 +7,10 @@
 @import "fontawesome/font-awesome.scss";
 @import "grid.scss";
 @import "vars.scss";
-@import "structure.scss";
-@import "footer.scss";
 @import "flexslider.scss";
+@import "structure.scss";
+@import "icons.scss";
+@import "footer.scss";
 
 @import "Hamburger-icon.scss";
 @import "logo.scss";
@@ -51,7 +52,7 @@ html {
 h1, h2, h3, h4 {
 	margin: 0;
 	padding: 0;
-	@extend %open_sansextrabold;
+	@extend %open_sansbold;
 	font-weight: 100;
 	color: $black;
 }

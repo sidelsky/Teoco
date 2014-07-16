@@ -1,9 +1,9 @@
 /*
 Syntax error: Undefined variable: "$white".
-        on line 210 of /Users/sidelsky/Dropbox/www/teoco/scss/flexslider.scss
+        on line 210 of /Users/sidelsky/Dropbox/www/teoco/site/scss/flexslider.scss
 
 Backtrace:
-/Users/sidelsky/Dropbox/www/teoco/scss/flexslider.scss:210
+/Users/sidelsky/Dropbox/www/teoco/site/scss/flexslider.scss:210
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/script/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/script/node.rb:40:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/script/list.rb:71:in `block in _perform'
@@ -78,4 +78,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$white\".\A         on line 210 of /Users/sidelsky/Dropbox/www/teoco/scss/flexslider.scss"; }
+  content: "Syntax error: Undefined variable: \"$white\".\A         on line 210 of /Users/sidelsky/Dropbox/www/teoco/site/scss/flexslider.scss"; }

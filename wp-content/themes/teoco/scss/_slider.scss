@@ -1,0 +1,63 @@
+.slider {
+	&.top {
+		//z-index: 2;
+		//position: relative;
+		width: 100%;
+	}
+	&.bottom {
+		z-index: 0;
+		top: 0;
+		position: absolute;
+		width: 100%;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		.curve-holder {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			&.mustard {
+				background: url(../img/bg-curve-mustard.png) no-repeat 50% center;
+			}
+			&.red {
+				background: url(../img/bg-red.png) no-repeat 50% center;
+			}
+			&.green {
+				background: url(../img/bg-green.png) no-repeat 50% center;
+			}
+			@media screen and (min-width: 60em) {
+			//background-image: none;
+			//background: url(../img/bg-curve-mustard.png) no-repeat 85% center;
+			//background: url(../img/bg-curve-mustard.png) no-repeat center center;
+			&.mustard {
+					background: url(../img/bg-curve-mustard.png) no-repeat center center;
+				}
+			&.red {
+					background: url(../img/bg-red.png) no-repeat center center;
+				}
+			}
+			@media screen and (min-width: 60em) {
+			//background-image: none;
+			//background: url(../img/bg-curve-mustard.png) no-repeat 100% center;
+			//background: url(../img/bg-curve-mustard.png) no-repeat center center;
+			}
+			@media screen and (max-width: 37.5em) {
+				//background: url(../img/bg-curve-mustard.png) no-repeat left center;
+				&.mustard {
+					background: url(../img/bg-curve-mustard.png) no-repeat left center;
+				}
+				&.red {
+					background: url(../img/bg-red.png) no-repeat left center;
+				}
+			}
+			// @media screen and (min-width: 60em) {
+			// //background-image: none;
+			// background: url(../img/bg-curve-mustard.png) no-repeat center center;
+			// }
+		}
+	}
+}

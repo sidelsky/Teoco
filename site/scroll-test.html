@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	.section {background-color:gray; height:440px; margin-bottom:20px;}
+	.navigation {position:fixed; right:50px; top:10px;}	
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function($) {
+		$('div.section').first();
+
+$('a.display').on('click', function(e) {
+    e.preventDefault();
+
+    //alert('wow');
+
+      var t = $(this).text(),
+      that = $(this);
+
+    if (t === 'next' && $('.current').next('div.section').length > 0) {
+        var $next = $('.current').next('.section');
+        var top = $next.offset().top;
+        
+        $('.current').removeClass('current');
+      
+        $('body').animate({
+          scrollTop: top     
+        }, function () {
+               $next.addClass('current');
+        });
+  } else if (t === 'prev' && $('.current').prev('div.section').length > 0) {
+        var $prev = $('.current').prev('.section');
+        var top = $prev.offset().top;
+        
+        $('.current').removeClass('current');
+      
+        $('body').animate({
+          scrollTop: top     
+        }, function () {
+               $prev.addClass('current');
+        });
+  } 
+});	
+	});
+	</script>
+</head>
+
+<body>
+
+<div class="main">
+<div class="navigation">
+    <a href="#" id="display" class="display">next</a><br>
+    <a href="#" id="display1" class="display">prev</a>
+</div>
+<div id="one" class="section current">
+One
+</div>
+<div id="two" class="section">
+Two
+</div>
+<div id="three" class="section">
+Three
+</div>
+<div id="four" class="section">
+Four
+</div>
+</div>
+
+
+	
+</body>
+</html>

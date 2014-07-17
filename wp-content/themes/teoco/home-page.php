@@ -56,21 +56,19 @@
 			<?php if( have_rows('carousel_background_image') ): ?>
 				<ul class="slides">
 					<?php while( have_rows('carousel_background_image') ): the_row(); 
-							// vars
+						// vars
 					$image = get_sub_field('image');
 					?>
 					<li>
 						<img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" />
 					</li>
-				<?php endwhile; ?>
+				<?php endwhile; wp_reset_query();?>
 			</ul>
 		<?php endif; ?>
 	</div>
 </div>
 </section>
 
-
-<?php $our = "Our" ?>
 <section class="page-wrapper__wide ">
 	<article class="page-wrapper__wide__inner padding-tb what-we-do-bg">
 		<h1>What we do</h1>
@@ -79,7 +77,7 @@
 			<li>
 				<a href="<?php echo get_permalink(22); ?>" class="purple">
 					<span>
-						<?php echo $our ?><br />
+ 
 						<?php echo get_the_title(22); //Calls Solutions heading ?>
 						<i class="fa fa-angle-right"></i>
 					</span>
@@ -88,7 +86,7 @@
 			<li>
 				<a href="<?php echo get_permalink(23); ?>" class="blue">
 					<span>
-						<?php echo $our ?><br />
+ 
 						<?php echo get_the_title(23); //Calls Products heading ?>
 						<i class="fa fa-angle-right"></i>
 					</span>
@@ -98,35 +96,52 @@
 	</article>
 </section>
 
-
-
 <section class="page-wrapper__wide rel-pos">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
 					<ul class="slides">
-						<li>
-							<h1>Latest news</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
+						<?php
+						$args = array(
+							'posts_per_page'   => 5,
+							'offset'           => 0,
+							'category'         => '',
+							'orderby'          => 'post_date',
+							'order'            => 'ASC',
+							'include'          => '',
+							'exclude'          => '',
+							'meta_key'         => '',
+							'meta_value'       => '',
+							'post_type'        => 'post',
+							'post_mime_type'   => '',
+							'post_parent'      => '',
+							'post_status'      => 'publish',
+							'suppress_filters' => false );
+						query_posts($args); if ( have_posts() ) while ( have_posts() ) : the_post();
+						?>
+						<li>							
+							<h1>
+								<?php the_title(); ?>
+							</h1>
+							<?php the_content(); ?>
 						</li>
-					</ul>
-				</div>
+					<?php endwhile; wp_reset_query();?>
+				</ul>
 			</div>
 		</div>
-	</article>
-	<div class="slider bottom">
-		<div class="curve-holder green"></div>
-		<div class="flexslider2">
-			<ul class="slides">
-				<li>
-					<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" />
-				</li>
-			</ul>
-		</div>
-	</div>					
+	</div>
+</article>
+<div class="slider bottom">
+	<div class="curve-holder green"></div>
+	<div class="flexslider2">
+		<ul class="slides">
+			<li>
+				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" />
+			</li>
+		</ul>
+	</div>
+</div>					
 </section>
 
 

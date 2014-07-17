@@ -3338,44 +3338,40 @@ html[xmlns] .slides {
   .blob-buttons li a {
     width: 225px;
     height: 225px;
-    font-size: 0.7em;
-    line-height: 0.8em;
   }
 }
 @media screen and (max-width: 37.5em) {
   /* line 6, ../scss/_buttons.scss */
   .blob-buttons li a {
-    width: 145px;
-    height: 145px;
-    font-size: 0.4em;
-    line-height: 1em;
+    width: 120px;
+    height: 120px;
   }
 }
-/* line 28, ../scss/_buttons.scss */
+/* line 25, ../scss/_buttons.scss */
 .blob-buttons li a.purple {
   background-color: #6b478f;
 }
-/* line 30, ../scss/_buttons.scss */
+/* line 27, ../scss/_buttons.scss */
 .blob-buttons li a.purple:hover {
   background-color: #51366d;
 }
-/* line 32, ../scss/_buttons.scss */
+/* line 29, ../scss/_buttons.scss */
 .blob-buttons li a.purple:hover span {
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 37, ../scss/_buttons.scss */
+/* line 34, ../scss/_buttons.scss */
 .blob-buttons li a.blue {
   background-color: #187fb9;
 }
-/* line 39, ../scss/_buttons.scss */
+/* line 36, ../scss/_buttons.scss */
 .blob-buttons li a.blue:hover {
   background-color: #12608c;
 }
-/* line 41, ../scss/_buttons.scss */
+/* line 38, ../scss/_buttons.scss */
 .blob-buttons li a.blue:hover span {
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 46, ../scss/_buttons.scss */
+/* line 43, ../scss/_buttons.scss */
 .blob-buttons li a span {
   position: absolute;
   width: 100%;
@@ -3384,23 +3380,53 @@ html[xmlns] .slides {
   margin-top: -55px;
   display: block;
   color: white;
-  font-size: 1.875em;
-  line-height: 1.04em;
+  font-size: 1.9375em;
+  line-height: 1.08387em;
 }
-/* line 56, ../scss/_buttons.scss */
+@media screen and (max-width: 60em) {
+  /* line 43, ../scss/_buttons.scss */
+  .blob-buttons li a span {
+    font-size: 1.9375em;
+    line-height: 1.08387em;
+    margin-top: -60px;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  /* line 43, ../scss/_buttons.scss */
+  .blob-buttons li a span {
+    font-size: 1.1875em;
+    line-height: 1.2em;
+    margin-top: -45px;
+  }
+}
+/* line 63, ../scss/_buttons.scss */
 .blob-buttons li a span i {
-  margin: 10px auto;
+  margin: 8px auto;
   display: block;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+  font-size: 1.5em;
+  line-height: 0.85em;
   background-color: rgba(255, 255, 255, 0.4);
   width: 45px;
   height: 45px;
-  font-size: 1.5em;
-  line-height: 0.9em;
+}
+@media screen and (max-width: 60em) {
+  /* line 63, ../scss/_buttons.scss */
+  .blob-buttons li a span i {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  /* line 63, ../scss/_buttons.scss */
+  .blob-buttons li a span i {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* line 1, ../scss/_footer.scss */
@@ -3606,23 +3632,31 @@ footer .navigation ul li {
   background: url(../img/bg-green.png) no-repeat 50% center;
 }
 @media screen and (min-width: 60em) {
-  /* line 36, ../scss/_slider.scss */
+  /* line 33, ../scss/_slider.scss */
   .slider.bottom .curve-holder.mustard {
     background: url(../img/bg-curve-mustard.png) no-repeat center center;
   }
-  /* line 39, ../scss/_slider.scss */
+  /* line 36, ../scss/_slider.scss */
   .slider.bottom .curve-holder.red {
     background: url(../img/bg-red.png) no-repeat center center;
   }
+  /* line 39, ../scss/_slider.scss */
+  .slider.bottom .curve-holder.green {
+    background: url(../img/bg-green.png) no-repeat center center;
+  }
 }
 @media screen and (max-width: 37.5em) {
-  /* line 50, ../scss/_slider.scss */
+  /* line 46, ../scss/_slider.scss */
   .slider.bottom .curve-holder.mustard {
     background: url(../img/bg-curve-mustard.png) no-repeat left center;
   }
-  /* line 53, ../scss/_slider.scss */
+  /* line 49, ../scss/_slider.scss */
   .slider.bottom .curve-holder.red {
     background: url(../img/bg-red.png) no-repeat left center;
+  }
+  /* line 52, ../scss/_slider.scss */
+  .slider.bottom .curve-holder.green {
+    background: url(../img/bg-green.png) no-repeat left center;
   }
 }
 

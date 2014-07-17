@@ -70,17 +70,29 @@
 </section>
 
 
-
-<section class="page-wrapper__wide">
-	<article class="page-wrapper__wide__inner padding-tb">
+<?php $our = "Our" ?>
+<section class="page-wrapper__wide ">
+	<article class="page-wrapper__wide__inner padding-tb what-we-do-bg">
 		<h1>What we do</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
-		<ul>
+		<ul class="blob-buttons padding-tb-small">
 			<li>
-				a<?php echo get_the_title(22); ?>
+				<a href="<?php echo get_permalink(22); ?>" class="purple">
+					<span>
+						<?php echo $our ?><br />
+						<?php echo get_the_title(22); //Calls Solutions heading ?>
+						<i class="fa fa-angle-right"></i>
+					</span>
+				</a>
 			</li>
 			<li>
-				a<?php echo get_the_title(23); ?>
+				<a href="<?php echo get_permalink(23); ?>" class="blue">
+					<span>
+						<?php echo $our ?><br />
+						<?php echo get_the_title(23); //Calls Products heading ?>
+						<i class="fa fa-angle-right"></i>
+					</span>
+				</a>
 			</li>
 		</ul>
 	</article>
@@ -95,7 +107,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li>
-							<h1>Slide 1</h1>
+							<h1>Latest news</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>

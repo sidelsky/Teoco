@@ -23,6 +23,9 @@
 			padding-left: 1.5em;
 			padding-right: 1.5em;
 			position: relative;
+			&.what-we-do-bg {
+				background: url(../img/background-images/what-we-do.png) no-repeat bottom right;
+			}
 		}
 	}
 }

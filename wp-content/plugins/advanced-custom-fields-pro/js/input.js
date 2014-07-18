@@ -666,11 +666,18 @@ get_field_data : function( $el, name ){
 			
 		},
 		
-		serialize_form : function( $el ){
+		serialize_form : function( $el, prefix ){
+			
+			// defaults
+			prefix = prefix || '';
+			
 			
 			// vars
 			var data = {},
-				names = {};
+				names = {},
+				prelen = prefix.length,
+				_prefix = '_' + prefix,
+				_prelen = _prefix.length;
 			
 			
 			// selector
@@ -689,7 +696,7 @@ get_field_data : function( $el, name ){
 			$.each( $selector.serializeArray(), function( i, pair ) {
 				
 				// bail early if name does not start with acf or _acf
-				if( pair.name.substring(0, 3) != 'acf' && pair.name.substring(0, 4) != '_acf' ) {
+				if( prefix && pair.name.substring(0, prelen) != prefix && pair.name.substring(0, _prelen) != _prefix ) {
 					
 					return;
 					
@@ -950,6 +957,22 @@ get_field_data : function( $el, name ){
 				$popup.remove();
 			}
 			
+			
+		},
+		
+		update_user_setting : function( name, value ) {
+			
+			// ajax
+			$.ajax({
+		    	url			: acf.get('ajaxurl'),
+				dataType	: 'html',
+				type		: 'post',
+				data		: acf.prepare_for_ajax({
+					'action'	: 'acf/update_user_setting',
+					'name'		: name,
+					'value'		: value
+				})
+			});
 			
 		},
 		
@@ -5203,7 +5226,7 @@ acf.add_action('ready append', function( $el ){
 			
 			
 			// vars
-			var data = acf.serialize_form( $form );
+			var data = acf.serialize_form( $form, 'acf' );
 				
 			
 			// append AJAX action		

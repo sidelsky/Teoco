@@ -130,17 +130,18 @@
 	</li>
 </ul>	
 
-
-<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.imagesloaded.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/cbpBGSlideshow.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.flexslider.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.touchwipe.1.1.1.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.sidr.min.js"></script>
+
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.smoove.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/waypoints.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/froogaloop.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
+
+<script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
 <!--
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 -->

@@ -18,6 +18,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php // if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
+	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
 
 	
@@ -51,7 +52,7 @@
 		
 
 		<?php wp_nav_menu( array(
-		'menu'            => 'Primary Menu', 
+		'menu'            => 'Primary navigation', 
 		'container'       => 'nav', 
 		'container_id'    => 'subMenuContainer',
 		'menu_id'         => 'subMenu',

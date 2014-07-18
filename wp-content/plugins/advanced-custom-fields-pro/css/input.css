@@ -108,6 +108,9 @@ input.acf-is-prepended.acf-is-appended {
     background: #F9F9F9;
 }
 
+.acf-field .select2-input {
+	max-width: 200px;
+}
 
 /*---------------------------------------------------------------------------------------------
 *

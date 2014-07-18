@@ -1,18 +1,19 @@
 .blob-buttons {
 	li {
 		@include column(6);
-		@extend %bdr;
+		//@extend %bdr;
 		text-align: center;
 		a {
 			text-decoration: none;
 			display: block;
-			width: 225px;
- 			height: 225px;
+			width: 324px;
+ 			height: 324px;
  			margin: 0 auto;
  			@include border-radius(50%);
  			background: $grey;
 			text-align: center;
 			position: relative;
+			display: table;
 			//Meduim
 			@media screen and (max-width: 60em) {
 				width: 225px;
@@ -24,6 +25,7 @@
 			}
 			&.purple {
 				background-color: $purple;
+				//margin-right: 30px;
 				&:hover {
 					background-color: darken($purple, 10%);
 					span {
@@ -33,47 +35,40 @@
 			}
 			&.blue {
 				background-color: $blue;
+				//margin-left: 30px;
 				&:hover {
 					background-color: darken($blue, 10%);
 					span {
 						color: rgba(255,255,255,0.4);
 					}
 				}
-			}
-			span {
-				position: absolute;
-				width: 100%;
-				text-align: center;
-				top: 50%;
-				margin-top:-55px;
-				display: block;
+			}//Text is within this span
+			span { 
+				display: table-cell;
+				vertical-align: middle;
 				color: $white;
-				@include adjust-font-size-to(31px, 1.4);
+				@include adjust-font-size-to(54px, 2);
 				@extend %open_sansbold;
 				//Meduim
 				@media screen and (max-width: 60em) {
 					@include adjust-font-size-to(31px, 1.4);
-					margin-top: -60px;
-				}
-				//Small
+				}//Small
 				@media screen and (max-width: 37.5em) {
 					@include adjust-font-size-to(19px, 0.95);
-					margin-top: -45px;
-				} 
+				}//Link arrow in circle
 				i {
 					margin: 8px auto;
 					display: block;
 					@include border-radius(50%);
 					@include adjust-font-size-to(24px, 0.85);
 					background-color: rgba(255,255,255,0.4);
-					width: 45px;
-					height: 45px;
+					width: 80px;
+					height: 80px;
 					//Meduim
 					@media screen and (max-width: 60em) {
 						width: 45px;
 						height: 45px;
-					}
-					//Small
+					}//Small
 					@media screen and (max-width: 37.5em) {
 						width: 30px;
 						height: 30px;
@@ -86,7 +81,37 @@
 
 
 
-
+.losange,
+input[type=submit] {
+	color: $green;
+	@include border-radius(50%);
+	border: none;
+	background: $white;
+	text-align: center;
+	display: table;
+	position: relative;
+	width:96px;
+	height:96px;
+	text-decoration: none;
+	@include transition-duration(0.8s);
+	@include transition-timing-function(ease-out);
+	&:hover {
+		background: rgba(255,255,255,0.7);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-out);
+	}
+	span {
+		@include adjust-font-size-to(14px);
+		line-height: 96px;
+		text-decoration: none;
+		text-align: center;
+		width: 100%;
+		display:block;
+		&.orange {
+			color: $mustard;
+		}
+	}
+}
 
 
 // //@include column(12);

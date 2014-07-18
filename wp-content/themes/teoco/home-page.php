@@ -24,7 +24,7 @@
 		</article>
 	</section>
 
-
+	<!-- Primary slider -->
 	<section class="page-wrapper__wide rel-pos">
 		<article class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
@@ -69,15 +69,15 @@
 </div>
 </section>
 
-<section class="page-wrapper__wide ">
-	<article class="page-wrapper__wide__inner padding-tb what-we-do-bg">
+<!-- What we do -->
+<section class="page-wrapper__wide what-we-do-bg">
+	<article class="page-wrapper__wide__inner padding-tb">
 		<h1>What we do</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
 		<ul class="blob-buttons padding-tb-small">
 			<li>
 				<a href="<?php echo get_permalink(22); ?>" class="purple">
 					<span>
- 
 						<?php echo get_the_title(22); //Calls Solutions heading ?>
 						<i class="fa fa-angle-right"></i>
 					</span>
@@ -86,7 +86,6 @@
 			<li>
 				<a href="<?php echo get_permalink(23); ?>" class="blue">
 					<span>
- 
 						<?php echo get_the_title(23); //Calls Products heading ?>
 						<i class="fa fa-angle-right"></i>
 					</span>
@@ -96,6 +95,7 @@
 	</article>
 </section>
 
+<!-- Latest news -->
 <section class="page-wrapper__wide rel-pos">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
@@ -144,6 +144,56 @@
 </div>					
 </section>
 
+<!-- Our success -->
+<section class="page-wrapper__wide">
+		<article class="page-wrapper__wide__inner padding-tb">
+			<h1>What we do</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
+		</article>
+	</section>
+
+<!-- Latest -->
+<section class="page-wrapper__wide rel-pos" id="latest">
+	<article class="page-wrapper__wide__inner padding-tb-small">
+		<div class="article-section">
+			<div class="slider top">
+				<div class="zflexslider">
+					<ul class="slides">
+						<li>							
+							<h1>
+								<?php the_field('title'); ?>
+							</h1>
+							<?php the_field('latest'); ?>
+							
+							<div class="dropdown">
+							<p>Please complete</p>
+							<i class="fa fa-times-circle"></i>
+								<?php echo do_shortcode("[gravityform id=1 title=false description=false ajax=true]"); ?>
+								<!-- Download losange -->
+							</div>
+
+							<a class="losange" id="download" data-scroll data-options="easing: easeOutQuad" href="#latest">
+								<span class="orange">Download</span>
+							</a>
+
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</article>
+<div class="slider bottom">
+	<div class="curve-holder mustard"></div>
+	<div class="flexslider2">
+		<ul class="slides">
+			<li>
+				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" />
+			</li>
+		</ul>
+	</div>
+</div>					
+</section>
+ 
 
 <?php
 get_footer( 'footer.php' );

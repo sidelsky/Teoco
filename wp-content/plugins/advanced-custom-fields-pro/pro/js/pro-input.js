@@ -1815,21 +1815,22 @@
 			
 			
 			// get width
-			for( var i = 0; i < 10; i++ )
-			{
+			for( var i = 0; i < 10; i++ ) {
+			
 				var w = width/i;
 				
-				if( min < w && w < max )
-				{
+				if( min < w && w < max ) {
+				
 					columns = i;
 					break;
+					
 				}
+				
 			}
 						
 			
 			// update data
 			this.$el.attr('data-columns', columns);
-			
 		}
 		
 	};
@@ -1933,6 +1934,12 @@
 		acf.fields.gallery.set( $field ).close_sidebar();
 		
 	});	
+	
+	$(document).on('change', '.acf-gallery-side input, .acf-gallery-side textarea, .acf-gallery-side select', function( e ){
+		
+		$(this).closest('.acf-gallery-side').find('[data-name="save-attachment-button"]').trigger('click');
+		
+	});
 	
 	$(document).on('click', '.acf-gallery [data-name="save-attachment-button"]', function( e ){
 		

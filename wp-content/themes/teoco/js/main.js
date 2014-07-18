@@ -161,7 +161,7 @@ $('.flexslider').flexslider({
   easing: "swing",
   animationLoop: true,
   reverse: false,
-  smoothHeight: true,
+  smoothHeight: false,
   sync: ".flexslider2"
 });
 
@@ -172,7 +172,7 @@ $('.flexslider2').flexslider({
   easing: "swing",
   animationLoop: true,
   reverse: false,
-  smoothHeight: true,
+  smoothHeight: false,
   controlNav: false,
   directionNav: false
 });
@@ -288,5 +288,46 @@ $('.small-menu >ul >li.hasSub').hover(function () {
       //$('.block').smoove({offset:'40%'});
 
 
-      //End
+var download = $("#download"),
+    dropdown = $(".dropdown"),
+    close = $(".fa-times-circle"),
+    latest = $('#latest');
+
+  dropdown.hide();
+  download.click(function(e) {
+    dropdown.slideDown(500, 'easeInBack');
+    e.preventDefault();
+    $(this).hide();
+  });
+
+  close.click(function() {
+    dropdown.slideUp(250, 'easeInBack', function(){
+      download.show();
     });
+  });
+
+
+smoothScroll.init({
+  speed: 1000,
+  easing: 'easeInOutCubic',
+  offset: 0,
+  updateURL: false,
+  callbackBefore: function ( toggle, anchor ) {},
+  callbackAfter: function ( toggle, anchor ) {}
+});  
+
+
+
+// //Forms - label to placeholder
+// $("form :input").each(function(index, elem) {
+//     var eId = $(elem).attr("id");
+//     var label = null;
+//     if (eId && (label = $(elem).parents("form").find("label[for="+eId+"]")).length == 1) {
+//         $(elem).attr("placeholder", $(label).html());
+//         $(label).remove();
+//     }
+//  });
+
+
+//End
+});

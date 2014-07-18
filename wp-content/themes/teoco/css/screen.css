@@ -2712,7 +2712,7 @@ body:after {
 }
 
 /* line 2, ../scss/_vars.scss */
-.cols, .page-wrapper, .page-wrapper .page-wrapper__wide, .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner, .article-section, .blob-buttons li, .simple-menu, .logo-holder, .main-navigation, .main-navigation > ul > li, .main-navigation > ul > li .sub-menu li {
+.cols, .dropdown, .simple-menu, .logo-holder, .main-navigation, .main-navigation > ul > li, .main-navigation > ul > li .sub-menu li {
   outline: solid red 1px;
 }
 
@@ -2722,7 +2722,12 @@ body:after {
 }
 
 /* line 14, ../scss/_vars.scss */
-body {
+.gform_wrapper form .gfield input[type=text],
+.gform_wrapper form .gfield input[type=url],
+.gform_wrapper form .gfield input[type=email],
+.gform_wrapper form .gfield input[type=tel],
+.gform_wrapper form .gfield input[type=number],
+.gform_wrapper form .gfield input[type=password], body {
   font-family: 'open_sansregular';
 }
 
@@ -2736,7 +2741,7 @@ body {
 
 /* line 34, ../scss/_vars.scss */
 .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner {
-  max-width: 64em;
+  max-width: 60em;
 }
 
 /* line 49, ../scss/_vars.scss */
@@ -3089,10 +3094,14 @@ html[xmlns] .slides {
   overflow: hidden;
 }
 /* line 7, ../scss/_structure.scss */
+.page-wrapper .page-wrapper__wide.what-we-do-bg {
+  background: url(../img/background-images/what-we-do.png) no-repeat bottom right;
+}
+/* line 10, ../scss/_structure.scss */
 .page-wrapper .page-wrapper__wide.rel-pos {
   position: relative;
 }
-/* line 10, ../scss/_structure.scss */
+/* line 13, ../scss/_structure.scss */
 .page-wrapper .page-wrapper__wide.header-background {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
@@ -3108,7 +3117,7 @@ html[xmlns] .slides {
   padding-bottom: 1.5em;
   margin-bottom: 0em;
 }
-/* line 18, ../scss/_structure.scss */
+/* line 21, ../scss/_structure.scss */
 .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner {
   *zoom: 1;
   margin: 0 auto;
@@ -3124,10 +3133,6 @@ html[xmlns] .slides {
 /* line 31, ../scss/_grid.scss */
 .page-wrapper .page-wrapper__wide .page-wrapper__wide__inner:after {
   clear: both;
-}
-/* line 26, ../scss/_structure.scss */
-.page-wrapper .page-wrapper__wide .page-wrapper__wide__inner.what-we-do-bg {
-  background: url(../img/background-images/what-we-do.png) no-repeat bottom right;
 }
 
 /* line 34, ../scss/_structure.scss */
@@ -3169,11 +3174,11 @@ html[xmlns] .slides {
 }
 
 /* line 64, ../scss/_structure.scss */
-.flexslider2 .slides {
+.slides {
   position: relative;
 }
 /* line 66, ../scss/_structure.scss */
-.flexslider2 .slides img {
+.slides img {
   min-height: 100%;
   min-width: 100%;
 }
@@ -3309,6 +3314,111 @@ html[xmlns] .slides {
   transform: scale(1.2, 1.2);
 }
 
+/* line 92, ../scss/_icons.scss */
+.dropdown {
+  display: block;
+  position: relative;
+}
+
+/* line 100, ../scss/_icons.scss */
+.fa-times-circle {
+  margin-bottom: 2em;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 106, ../scss/_icons.scss */
+.fa-times-circle:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 3, ../scss/_forms.scss */
+.gform_wrapper form .gfield {
+  margin-bottom: 15px;
+}
+/* line 10, ../scss/_forms.scss */
+.gform_wrapper form .gfield input[type=text],
+.gform_wrapper form .gfield input[type=url],
+.gform_wrapper form .gfield input[type=email],
+.gform_wrapper form .gfield input[type=tel],
+.gform_wrapper form .gfield input[type=number],
+.gform_wrapper form .gfield input[type=password] {
+  color: white;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  padding: 0.5em;
+}
+/* line 2, ../scss/_placeholderText.scss */
+.gform_wrapper form .gfield input[type=text].placeholder,
+.gform_wrapper form .gfield input[type=url].placeholder,
+.gform_wrapper form .gfield input[type=email].placeholder,
+.gform_wrapper form .gfield input[type=tel].placeholder,
+.gform_wrapper form .gfield input[type=number].placeholder,
+.gform_wrapper form .gfield input[type=password].placeholder {
+  color: white;
+}
+/* line 3, ../scss/_placeholderText.scss */
+.gform_wrapper form .gfield input[type=text]:-moz-placeholder,
+.gform_wrapper form .gfield input[type=url]:-moz-placeholder,
+.gform_wrapper form .gfield input[type=email]:-moz-placeholder,
+.gform_wrapper form .gfield input[type=tel]:-moz-placeholder,
+.gform_wrapper form .gfield input[type=number]:-moz-placeholder,
+.gform_wrapper form .gfield input[type=password]:-moz-placeholder {
+  color: white;
+}
+/* line 4, ../scss/_placeholderText.scss */
+.gform_wrapper form .gfield input[type=text]::-moz-placeholder,
+.gform_wrapper form .gfield input[type=url]::-moz-placeholder,
+.gform_wrapper form .gfield input[type=email]::-moz-placeholder,
+.gform_wrapper form .gfield input[type=tel]::-moz-placeholder,
+.gform_wrapper form .gfield input[type=number]::-moz-placeholder,
+.gform_wrapper form .gfield input[type=password]::-moz-placeholder {
+  color: white;
+}
+/* line 5, ../scss/_placeholderText.scss */
+.gform_wrapper form .gfield input[type=text]:-ms-input-placeholder,
+.gform_wrapper form .gfield input[type=url]:-ms-input-placeholder,
+.gform_wrapper form .gfield input[type=email]:-ms-input-placeholder,
+.gform_wrapper form .gfield input[type=tel]:-ms-input-placeholder,
+.gform_wrapper form .gfield input[type=number]:-ms-input-placeholder,
+.gform_wrapper form .gfield input[type=password]:-ms-input-placeholder {
+  color: white;
+}
+/* line 6, ../scss/_placeholderText.scss */
+.gform_wrapper form .gfield input[type=text]::-webkit-input-placeholder,
+.gform_wrapper form .gfield input[type=url]::-webkit-input-placeholder,
+.gform_wrapper form .gfield input[type=email]::-webkit-input-placeholder,
+.gform_wrapper form .gfield input[type=tel]::-webkit-input-placeholder,
+.gform_wrapper form .gfield input[type=number]::-webkit-input-placeholder,
+.gform_wrapper form .gfield input[type=password]::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 31, ../scss/_forms.scss */
+.validation_error {
+  margin-bottom: 20px;
+}
+
+/* line 35, ../scss/_forms.scss */
+.validation_message {
+  color: red !important;
+  font-size: 14px;
+}
+
+/* line 40, ../scss/_forms.scss */
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: text-indent 0.5s 0.2s;
+  -webkit-transition-delay: ease;
+  -moz-transition: text-indent 0.5s 0.2s ease;
+  -o-transition: text-indent 0.5s 0.2s ease;
+  transition: text-indent 0.5s 0.2s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
 /* line 2, ../scss/_buttons.scss */
 .blob-buttons li {
   display: inline;
@@ -3321,8 +3431,8 @@ html[xmlns] .slides {
 .blob-buttons li a {
   text-decoration: none;
   display: block;
-  width: 225px;
-  height: 225px;
+  width: 324px;
+  height: 324px;
   margin: 0 auto;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -3332,6 +3442,7 @@ html[xmlns] .slides {
   background: #646569;
   text-align: center;
   position: relative;
+  display: table;
 }
 @media screen and (max-width: 60em) {
   /* line 6, ../scss/_buttons.scss */
@@ -3347,59 +3458,53 @@ html[xmlns] .slides {
     height: 120px;
   }
 }
-/* line 25, ../scss/_buttons.scss */
+/* line 26, ../scss/_buttons.scss */
 .blob-buttons li a.purple {
   background-color: #6b478f;
 }
-/* line 27, ../scss/_buttons.scss */
+/* line 29, ../scss/_buttons.scss */
 .blob-buttons li a.purple:hover {
   background-color: #51366d;
 }
-/* line 29, ../scss/_buttons.scss */
+/* line 31, ../scss/_buttons.scss */
 .blob-buttons li a.purple:hover span {
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 34, ../scss/_buttons.scss */
+/* line 36, ../scss/_buttons.scss */
 .blob-buttons li a.blue {
   background-color: #187fb9;
 }
-/* line 36, ../scss/_buttons.scss */
+/* line 39, ../scss/_buttons.scss */
 .blob-buttons li a.blue:hover {
   background-color: #12608c;
 }
-/* line 38, ../scss/_buttons.scss */
+/* line 41, ../scss/_buttons.scss */
 .blob-buttons li a.blue:hover span {
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 43, ../scss/_buttons.scss */
+/* line 46, ../scss/_buttons.scss */
 .blob-buttons li a span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 50%;
-  margin-top: -55px;
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
   color: white;
-  font-size: 1.9375em;
-  line-height: 1.08387em;
+  font-size: 3.375em;
+  line-height: 0.88889em;
 }
 @media screen and (max-width: 60em) {
-  /* line 43, ../scss/_buttons.scss */
+  /* line 46, ../scss/_buttons.scss */
   .blob-buttons li a span {
     font-size: 1.9375em;
     line-height: 1.08387em;
-    margin-top: -60px;
   }
 }
 @media screen and (max-width: 37.5em) {
-  /* line 43, ../scss/_buttons.scss */
+  /* line 46, ../scss/_buttons.scss */
   .blob-buttons li a span {
     font-size: 1.1875em;
     line-height: 1.2em;
-    margin-top: -45px;
   }
 }
-/* line 63, ../scss/_buttons.scss */
+/* line 59, ../scss/_buttons.scss */
 .blob-buttons li a span i {
   margin: 8px auto;
   display: block;
@@ -3411,22 +3516,78 @@ html[xmlns] .slides {
   font-size: 1.5em;
   line-height: 0.85em;
   background-color: rgba(255, 255, 255, 0.4);
-  width: 45px;
-  height: 45px;
+  width: 80px;
+  height: 80px;
 }
 @media screen and (max-width: 60em) {
-  /* line 63, ../scss/_buttons.scss */
+  /* line 59, ../scss/_buttons.scss */
   .blob-buttons li a span i {
     width: 45px;
     height: 45px;
   }
 }
 @media screen and (max-width: 37.5em) {
-  /* line 63, ../scss/_buttons.scss */
+  /* line 59, ../scss/_buttons.scss */
   .blob-buttons li a span i {
     width: 30px;
     height: 30px;
   }
+}
+
+/* line 85, ../scss/_buttons.scss */
+.losange,
+input[type=submit] {
+  color: #5b882b;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  text-align: center;
+  display: table;
+  position: relative;
+  width: 96px;
+  height: 96px;
+  text-decoration: none;
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 98, ../scss/_buttons.scss */
+.losange:hover,
+input[type=submit]:hover {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 103, ../scss/_buttons.scss */
+.losange span,
+input[type=submit] span {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  line-height: 96px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+/* line 110, ../scss/_buttons.scss */
+.losange span.orange,
+input[type=submit] span.orange {
+  color: #cc7c0d;
 }
 
 /* line 1, ../scss/_footer.scss */
@@ -3704,7 +3865,7 @@ footer .navigation ul li {
   position: relative;
   *zoom: 1;
   text-align: right;
-  margin-left: 3em;
+  margin-left: 2em;
   position: relative;
 }
 /* line 27, ../scss/_grid.scss */
@@ -4006,7 +4167,7 @@ footer .navigation ul li {
   background: rgba(51, 51, 51, 0.9);
 }
 
-/* line 26, ../scss/screen.scss */
+/* line 28, ../scss/screen.scss */
 body, html {
   position: relative;
   height: 100%;
@@ -4023,12 +4184,12 @@ html {
   line-height: 0.44444em;
 }
 
-/* line 49, ../scss/screen.scss */
+/* line 51, ../scss/screen.scss */
 html {
   line-height: 1.77778em;
 }
 
-/* line 53, ../scss/screen.scss */
+/* line 55, ../scss/screen.scss */
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
@@ -4036,19 +4197,21 @@ h1, h2, h3, h4 {
   color: black;
 }
 
-/* line 61, ../scss/screen.scss */
+/* line 63, ../scss/screen.scss */
 h1, h2 {
   font-size: 2.66667em;
   line-height: 1em;
   color: #b2121a;
 }
 
-/* line 67, ../scss/screen.scss */
+/* line 69, ../scss/screen.scss */
 p {
   color: #646569;
+  font-size: 1.33333em;
+  line-height: 1.66667em;
 }
 
-/* line 73, ../scss/screen.scss */
+/* line 76, ../scss/screen.scss */
 .slider * {
   color: white;
 }

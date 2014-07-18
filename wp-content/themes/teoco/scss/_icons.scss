@@ -88,3 +88,23 @@
 		}
 	}
 }
+
+.dropdown {
+	display: block;
+	position: relative;
+	@extend %bdr;
+}
+
+
+//Close
+.fa-times-circle {
+	margin-bottom: 2em;
+	color: $white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	&:hover {
+		cursor: pointer;
+		color: rgba(255,255,255,0.7);
+	}
+}

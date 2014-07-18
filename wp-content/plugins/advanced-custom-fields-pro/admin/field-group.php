@@ -260,19 +260,24 @@ class acf_admin_field_group {
 	
 	function screen_settings( $current ) {
 		
+		// vars
+		$show_field_keys = acf_get_user_setting('show_field_keys', 0);
+		
+		
 		// heading
 	    $current .= '<h5>' . __("Fields",'acf') . '</h5>';
 	    
 	    
 	    // radio buttons
 	    $current .= '<div class="show-field-keys">' . __('Show Field Keys','acf') . ':';
-		$current .= '<label><input type="radio" value="1" name="show_field_keys" />' . __('Yes','acf') . '</label>';
-		$current .= '<label><input checked="checked" type="radio" value="0" name="show_field_keys" />' . __('No','acf') . '</label>';
+		$current .= '<label><input type="radio" ' . ( $show_field_keys ? 'checked="checked"' : '' ) . ' name="show_field_keys" value="1" />' . __('Yes','acf') . '</label>';
+		$current .= '<label><input type="radio" ' . ( $show_field_keys ? '' : 'checked="checked"' ) . ' name="show_field_keys" value="0" />' . __('No','acf') . '</label>';
 		$current .= '</div>';
 	    
 	    
 	    // return
 	    return $current;
+	    
 	}
 	
 	
@@ -624,13 +629,13 @@ class acf_admin_field_group {
 			case "post_status" :
 				
 				$choices = array(
-					'publish'	=> __( 'Publish' ),
-					'pending'	=> __( 'Pending Review' ),
-					'draft'		=> __( 'Draft' ),
-					'future'	=> __( 'Future' ),
-					'private'	=> __( 'Private' ),
-					'inherit'	=> __( 'Revision' ),
-					'trash'		=> __( 'Trash' )
+					'publish'	=> __('Publish', 'acf'),
+					'pending'	=> __('Pending Review', 'acf'),
+					'draft'		=> __('Draft', 'acf'),
+					'future'	=> __('Future', 'acf'),
+					'private'	=> __('Private', 'acf'),
+					'inherit'	=> __('Revision', 'acf'),
+					'trash'		=> __('Trash', 'acf')
 				);
 								
 				break;

@@ -169,6 +169,15 @@ class acf_compatibility {
 		}
 		
 		
+		// save_format is now return_format
+		if( !empty($field['result_elements']) ) {
+			
+			$field['elements'] = acf_extract_var( $field, 'result_elements' );
+			
+		}
+		
+		
+		
 		// return
 		return $field;
 	}
@@ -327,20 +336,16 @@ class acf_compatibility {
 	
 	function get_valid_field_group( $field_group ) {
 		
-		// bail ealry if field group contains key ( is ACF5 )
-		if( ! empty($field_group['key']) ) {
-			
-			return $field_group;
-			
-		}
-		
-		
 		// global
 		global $wpdb;
 		
 		
 		// add missing key
-		$field_group['key'] = empty($field_group['id']) ? uniqid('group_') : 'group_' . $field_group['id'];
+		if( empty($field_group['key']) ) {
+			
+			$field_group['key'] = uniqid('group_');
+			
+		}
 		
 		
 		// extract options
@@ -356,7 +361,7 @@ class acf_compatibility {
 		// some location rules have changed
 		if( !empty($field_group['location']) ) {
 			
-			// location rules changed to groups in v...
+			// location rules changed to groups
 			if( isset($field_group['location']['rules']) ) {
 				
 				// extract location
@@ -408,43 +413,64 @@ class acf_compatibility {
 		 	);
 		 	
 		 	
-			
-			foreach( $field_group['location'] as $group_i => $group ) {
+			// loop over location groups
+			foreach( array_keys($field_group['location']) as $i ) {
 				
-				if( !empty($group) ) {
+				// extract group
+				$group = acf_extract_var( $field_group['location'], $i );
+				
+				
+				// bail early if group is empty
+				if( empty($group) ) {
 					
-					foreach( $group as $rule_i => $rule ) {
+					continue;
+					
+				}
+				
+				
+				// loop over group rules
+				foreach( array_keys($group) as $j ) {
+					
+					// extract rule
+					$rule = acf_extract_var( $group, $j );
+					
+					
+					// migrate param
+					if( isset($param_replace[ $rule['param'] ]) ) {
 						
-					 	if( array_key_exists($rule['param'], $param_replace) ) {
-						 	
-						 	$field_group['location'][ $group_i ][ $rule_i ]['param'] = $param_replace[ $rule['param'] ];
-						 	
-					 	}
+						$rule['param'] = $param_replace[ $rule['param'] ];
+						
+					}
+					
 					 	
+				 	// category / taxonomy terms are saved differently
+				 	if( $rule['param'] == 'post_category' || $rule['param'] == 'post_taxonomy' ) {
 					 	
-					 	// category / taxonomy terms are saved differently
-					 	if( $rule['param'] == 'post_category' || $rule['param'] == 'post_taxonomy' ) {
+					 	if( is_numeric($rule['value']) ) {
 						 	
-						 	if( is_numeric($rule['value']) ) {
-							 	
-							 	$term_id = $rule['value'];
-							 	$taxonomy = $wpdb->get_var( $wpdb->prepare( "SELECT taxonomy FROM $wpdb->term_taxonomy WHERE term_id = %d LIMIT 1", $term_id) );
-							 	$term = get_term( $term_id, $taxonomy );
-							 	
-							 	// update rule value
-							 	$field_group['location'][ $group_i ][ $rule_i ]['value'] = "{$term->taxonomy}:{$term->slug}";
-							 	
-						 	}
-						 	// if
+						 	$term_id = $rule['value'];
+						 	$taxonomy = $wpdb->get_var( $wpdb->prepare( "SELECT taxonomy FROM $wpdb->term_taxonomy WHERE term_id = %d LIMIT 1", $term_id) );
+						 	$term = get_term( $term_id, $taxonomy );
+						 	
+						 	// update rule value
+						 	$rule['value'] = "{$term->taxonomy}:{$term->slug}";
 						 	
 					 	}
 					 	// if
-						
-					}
-					// foreach
-					
+					 	
+				 	}
+				 	// if
+				 	
+				 	
+				 	// append rule
+				 	$group[ $j ] = $rule;
+				 	
 				}
-				// if
+				// foreach
+				
+				
+				// append group
+				$field_group['location'][ $i ] = $group;
 				
 			}
 			// foreach

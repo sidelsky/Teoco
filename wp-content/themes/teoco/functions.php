@@ -93,7 +93,11 @@ function excerptMyLength($num) {
 
 /* excerptMyLength('22'); */
 
-
-
 endif; /* Custom code goes above this line. */
+
+
+
+
+
+
 ?>

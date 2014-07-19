@@ -60,7 +60,7 @@
 					$image = get_sub_field('image');
 					?>
 					<li>
-						<img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" />
+						<img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" class="bg-full-image" />
 					</li>
 				<?php endwhile; wp_reset_query();?>
 			</ul>
@@ -137,7 +137,7 @@
 	<div class="flexslider2">
 		<ul class="slides">
 			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
 			</li>
 		</ul>
 	</div>
@@ -147,7 +147,7 @@
 <!-- Our success -->
 <section class="page-wrapper__wide">
 		<article class="page-wrapper__wide__inner padding-tb">
-			<h1>What we do</h1>
+			<h1>Our success</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
 		</article>
 	</section>

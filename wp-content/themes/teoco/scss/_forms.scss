@@ -22,6 +22,21 @@
 	}
 }
 
+
+.dropdown {
+	display: block;
+	position: relative;
+	max-height: 0;
+	overflow: hidden;
+	@include transition-duration(0.8s);
+	@include transition-timing-function(ease-out);
+	&.open {
+		max-height: 550px;
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-out);
+	}
+}
+
 // input[type=submit] {
 // 	color: $white;
 // 	border: none;

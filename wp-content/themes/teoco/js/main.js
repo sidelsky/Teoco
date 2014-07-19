@@ -154,7 +154,6 @@ $(document).ready(function () {
 
 $('.flexslider').flexslider({
   animation: 'slide',
-  //asNavFor: '.flexslider2',
   slideshow: false,
   directionNav: false,
   startAt: 0,
@@ -293,30 +292,24 @@ var download = $("#download"),
     close = $(".fa-times-circle"),
     latest = $('#latest');
 
-  dropdown.hide();
-  download.click(function(e) {
-    dropdown.slideDown(500, 'easeInBack');
+    download.click(function(e) {
+    dropdown.addClass('open');
     e.preventDefault();
-    $(this).hide();
-  });
-
-  close.click(function() {
-    dropdown.slideUp(250, 'easeInBack', function(){
-      download.show();
-    });
+    $(this).addClass('hidden');
   });
 
 
-smoothScroll.init({
-  speed: 1000,
-  easing: 'easeInOutCubic',
-  offset: 0,
-  updateURL: false,
-  callbackBefore: function ( toggle, anchor ) {},
-  callbackAfter: function ( toggle, anchor ) {}
-});  
+
+close.click(function(){
+  dropdown.removeClass("open");
+  setTimeout(function(){
+      download.removeClass('hidden');
+      },1000);
+});
 
 
+
+//download.removeClass('hidden');
 
 // //Forms - label to placeholder
 // $("form :input").each(function(index, elem) {

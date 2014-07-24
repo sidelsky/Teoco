@@ -1,5 +1,5 @@
 //Icons
-$icon-size: 35px;
+$icon-size: 48px;
 
 .jump {
 	position: fixed;
@@ -17,7 +17,7 @@ $icon-size: 35px;
 		height: $icon-size;
 		@include rhythm(0.4, 0, 0, 0.4); //Margin top, Padding top, Padding bottom, Margin bottom
 		a {
-			border: solid 1px $light-grey;
+			border: solid 2px $light-grey;
 			@include border-radius(50px);
 			display: table-cell;
 			text-align: center;
@@ -26,6 +26,9 @@ $icon-size: 35px;
 			vertical-align: middle;
 			text-decoration: none;
 			font-size: 24px;
+			span {
+				display: none;
+			}
 			i {
 				display: block;
 			}
@@ -40,10 +43,11 @@ $icon-size: 35px;
 				display: none;
 			}
 			&:hover {
+				border: solid 2px $light-grey;
 				@include transition(all 0.2s ease-in-out);
 				background: $dark-grey;
 				color: $white;
-				border: solid 2px $grey;
+				//border: solid 2px $grey;
 			}
 		}
 	}
@@ -62,6 +66,7 @@ $icon-size: 35px;
 			}
 		li {
 			margin-left: 1em;
+			display: table-cell;
 			//Meduim
 			@media screen and (max-width: 60em) {
 				margin: 0 0.5em;
@@ -70,12 +75,11 @@ $icon-size: 35px;
 			a {
 				border: solid 1px $light-grey;
 				@include border-radius(50px);
-				display: block;
+				display: table-cell;
 				width: $icon-size;
 				height: $icon-size;
 				text-align: center;
-				position: relative;
-				top: 50%;
+				vertical-align: middle;
 				@include adjust-font-size-to(17px, 1.2);
 				@include transition-duration(0.5s);
 				@include transition-timing-function(ease-out);

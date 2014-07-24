@@ -3251,8 +3251,8 @@ html[xmlns] .slides {
 /* line 14, ../scss/_icons.scss */
 .jump li {
   display: table;
-  width: 35px;
-  height: 35px;
+  width: 48px;
+  height: 48px;
   margin-top: 0.6em;
   padding-top: 0em;
   padding-bottom: 0em;
@@ -3260,7 +3260,7 @@ html[xmlns] .slides {
 }
 /* line 19, ../scss/_icons.scss */
 .jump li a {
-  border: solid 1px #e0e0e2;
+  border: solid 2px #e0e0e2;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
@@ -3275,31 +3275,35 @@ html[xmlns] .slides {
   font-size: 24px;
 }
 /* line 29, ../scss/_icons.scss */
+.jump li a span {
+  display: none;
+}
+/* line 32, ../scss/_icons.scss */
 .jump li a i {
   display: block;
 }
-/* line 38, ../scss/_icons.scss */
+/* line 41, ../scss/_icons.scss */
 .jump li a.inactive {
   opacity: 0;
   display: none;
 }
-/* line 42, ../scss/_icons.scss */
+/* line 45, ../scss/_icons.scss */
 .jump li a:hover {
+  border: solid 2px #e0e0e2;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: #58585c;
   color: white;
-  border: solid 2px #646569;
 }
 
-/* line 54, ../scss/_icons.scss */
+/* line 58, ../scss/_icons.scss */
 .social ul {
   float: right;
 }
 @media screen and (max-width: 60em) {
-  /* line 54, ../scss/_icons.scss */
+  /* line 58, ../scss/_icons.scss */
   .social ul {
     float: none;
     display: table;
@@ -3310,18 +3314,19 @@ html[xmlns] .slides {
     margin-bottom: 0em;
   }
 }
-/* line 63, ../scss/_icons.scss */
+/* line 67, ../scss/_icons.scss */
 .social ul li {
   margin-left: 1em;
+  display: table-cell;
 }
 @media screen and (max-width: 60em) {
-  /* line 63, ../scss/_icons.scss */
+  /* line 67, ../scss/_icons.scss */
   .social ul li {
     margin: 0 0.5em;
     text-align: center;
   }
 }
-/* line 70, ../scss/_icons.scss */
+/* line 75, ../scss/_icons.scss */
 .social ul li a {
   border: solid 1px #e0e0e2;
   -webkit-border-radius: 50px;
@@ -3329,12 +3334,11 @@ html[xmlns] .slides {
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   border-radius: 50px;
-  display: block;
-  width: 35px;
-  height: 35px;
+  display: table-cell;
+  width: 48px;
+  height: 48px;
   text-align: center;
-  position: relative;
-  top: 50%;
+  vertical-align: middle;
   font-size: 1.0625em;
   line-height: 1.69412em;
   -webkit-transition-duration: 0.5s;
@@ -3346,7 +3350,7 @@ html[xmlns] .slides {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 82, ../scss/_icons.scss */
+/* line 86, ../scss/_icons.scss */
 .social ul li a:hover {
   background: white;
   color: #646569;
@@ -3365,7 +3369,7 @@ html[xmlns] .slides {
   transform: scale(1.2, 1.2);
 }
 
-/* line 96, ../scss/_icons.scss */
+/* line 100, ../scss/_icons.scss */
 .fa-times-circle {
   margin-bottom: 2em;
   color: white;
@@ -3373,7 +3377,7 @@ html[xmlns] .slides {
   top: 0;
   right: 0;
 }
-/* line 102, ../scss/_icons.scss */
+/* line 106, ../scss/_icons.scss */
 .fa-times-circle:hover {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
@@ -4732,4 +4736,12 @@ blockquote p {
 /* line 91, ../scss/screen.scss */
 .slider * {
   color: white;
+}
+
+/* line 98, ../scss/screen.scss */
+.section-navigation {
+  position: fixed;
+  z-index: 400;
+  right: 50px;
+  top: 210px;
 }

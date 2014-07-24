@@ -6,7 +6,7 @@
 	?>
 
 <!-- Company overview -->
-<section class="page-wrapper__wide rel-pos">
+<section class="page-wrapper__wide rel-pos section">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
@@ -44,7 +44,7 @@
 
  
 <!-- Vision & values -->
-<section class="page-wrapper__wide" id="vision-values">
+<section class="page-wrapper__wide section" id="vision-values">
 		<article class="page-wrapper__wide__inner padding-tb">
 			
 			<?php

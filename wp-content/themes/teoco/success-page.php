@@ -9,7 +9,7 @@
 	<!-- Our success -->
 	<?php if (get_field('success_title')) : ?>
 	<section class="page-wrapper__wide">
-		<article class="page-wrapper__wide__inner padding-tb success">
+		<article class="page-wrapper__wide__inner padding-tb success section">
 			
 			<div class="left-col">
 				<h1><?php the_field('success_title'); ?></h1>
@@ -87,7 +87,7 @@
 <!-- Success stories -->
 <?php if (get_field('success_stories_title')) : ?>
 
-<section class="page-wrapper__wide">
+<section class="page-wrapper__wide section">
 	<article class="page-wrapper__wide__inner padding-tb success">
 		
 		<div class="left-col">
@@ -142,7 +142,7 @@
 
 <!-- Awards -->
 <?php if (get_field('award_title')) : ?>	 
-	<section class="page-wrapper__wide">
+	<section class="page-wrapper__wide section">
 		<article class="page-wrapper__wide__inner padding-tb success">
 			
 			<div class="left-col">

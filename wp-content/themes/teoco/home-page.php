@@ -6,7 +6,7 @@
 	?>
 
 	<!-- Primary slider -->
-	<section class="page-wrapper__wide rel-pos">
+	<section class="page-wrapper__wide rel-pos section current">
 		<article class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
@@ -51,7 +51,7 @@
 </section>
 
 <!-- What we do -->
-<section class="page-wrapper__wide what-we-do-bg">
+<section class="page-wrapper__wide what-we-do-bg section">
 	<article class="page-wrapper__wide__inner padding-tb">
 		<h1>What we do</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
@@ -77,7 +77,7 @@
 </section>
 
 <!-- Latest news -->
-<section class="page-wrapper__wide rel-pos">
+<section class="page-wrapper__wide rel-pos section">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
@@ -127,7 +127,7 @@
 </section>
 
 <!-- Our success -->
-<section class="page-wrapper__wide grey">
+<section class="page-wrapper__wide grey section">
 		<article class="page-wrapper__wide__inner padding-tb">
 			<div class="left-col">
 				<?php
@@ -198,7 +198,7 @@
 	</section>
 
 <!-- Latest -->
-<section class="page-wrapper__wide rel-pos">
+<section class="page-wrapper__wide rel-pos section">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">

@@ -117,18 +117,19 @@
 	</div>
 -->
 
+ 
+
 <ul class="jump">
-	<li>
-		<a href="#" id="goto-up" class="go-up" id="goto-up">
-			<i class="fa fa-angle-up"></i>
-		</a>
+
+	<li class='prev'>
+		<a href="#" class="display"><span>prev</span><i class="fa fa-angle-up"></i></a>
 	</li>
-	<li>
-		<a href="#" class="go-down" id="goto-down">
-			<i class="fa fa-angle-down"></i>
-		</a>
+
+	<li class="next">
+		<a href="#" class="display"><span>next</span><i class="fa fa-angle-down"></i></a>
 	</li>
 </ul>	
+
 
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.imagesloaded.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/cbpBGSlideshow.js"></script>

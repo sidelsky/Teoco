@@ -243,7 +243,7 @@ $('.flexslider2').flexslider({
 
 /*Dropdown arrow large and small */
 $("ul.sub-menu").hide();
-$('.main-navigation >ul >li:has(.sub-menu)').addClass('hasSub');
+$('.main-navigation >ul >li:has(.menu-wrapper)').addClass('hasSub');
 $("ul.sub-menu").parent().append("<i class='fa fa-angle-down'></i>");
 
 $('.big-menu >ul >li.hasSub').hover(function () {
@@ -309,6 +309,119 @@ close.click(function(){
 
 
 
+
+//Controls the show/hide functionality
+$('.content').hide();
+//$('.products .inner').hide();
+
+  $('.product').click(function() {
+    $('.product').removeClass('selected');
+    $(this).addClass('selected');
+            
+    var index = $(this).index();
+    $('.content').slideUp(300);
+    $(this).parent().next().children().eq(index).slideDown(200);  
+});
+
+
+
+//Success stories
+$('.image-wrapper').click(function(){
+  $(this).parent().toggleClass('selected');
+  //var index = $(this).index();
+    $(this).parent().find('.inner').toggleClass('selected');
+});
+
+//Close
+$('.fa-chevron-circle-up').click(function(){
+  $('.product, .products, .inner').removeClass('selected');
+  $('.content').slideUp(300);
+});  
+
+$('body.page-template-success-page-php section.page-wrapper__wide:nth-of-type(2n+1)').css({
+  'background' : '#e0e0e2'
+})
+
+
+// Froogaloop
+// https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/froogaloop.js
+// https://github.com/vimeo/player-api/blob/master/javascript/froogaloop.js
+// http://a.vimeocdn.com/js/froogaloop2.min.js
+
+// var iframe = document.getElementById('video');
+
+// // $f == Froogaloop
+// var player = $f(iframe);
+
+// // bind events
+// var playButton = document.getElementById("play-button");
+// playButton.addEventListener("click", function() {
+//   player.api("play");
+//   $('#play-button').fadeOut(650);/*.addClass('hide');*/
+// });
+
+// player.api("finish").alert('Done');
+
+// var pauseButton = document.getElementById("pause-button");
+// pauseButton.addEventListener("click", function() {
+//   player.api("pause");
+// });
+
+
+//-----------
+
+var iframe = $('#video')[0],
+    player = $f(iframe),
+    status = $('.status');
+    cover = $('#play-cover');
+
+// When the player is ready, add listeners for pause, finish, and playProgress
+player.addEvent('ready', function() {
+    status.text('ready');
+    
+    player.addEvent('pause', onPause);
+    player.addEvent('finish', onFinish);
+    player.addEvent('playProgress', onPlayProgress);
+});
+
+// Call the API when a button is pressed
+$('button').bind('click', function() {
+    player.api($(this).text().toLowerCase());
+});
+
+//var cover = document.getElementById("play-cover");
+
+  cover.bind("click", function() {
+    player.api("play");
+    $('#play-cover').fadeOut(650);/*.addClass('hide');*/
+});
+
+function onPause(id) {
+    status.text('paused');
+    $('#play-cover').fadeIn(650);/*.addClass('hide');*/
+}
+
+function onFinish(id) {
+    status.text('finished');
+    $('#play-cover').fadeIn(650);/*.addClass('hide');*/
+}
+
+function onPlayProgress(data, id) {
+    status.text(data.seconds + 's played');
+}
+
+
+
+
+// $('.image-wrapper img').click(function() {
+//   $(this).addClass('selected');             
+//   },function () {      
+//    $(this).removeClass('selected');
+// });
+
+
+
+
 //download.removeClass('hidden');
 
 // //Forms - label to placeholder
@@ -320,6 +433,82 @@ close.click(function(){
 //         $(label).remove();
 //     }
 //  });
+
+
+
+
+
+// var f = $('iframe'),
+// url = f.attr('src').split('?')[0],
+// status = $('.status');
+
+// // Listen for messages from the player
+// if (window.addEventListener){
+//     window.addEventListener('message', onMessageReceived, false);
+// }
+// else {
+//     window.attachEvent('onmessage', onMessageReceived, false);
+// }
+
+// // Handle messages received from the player
+// function onMessageReceived(e) {
+//     var data = JSON.parse(e.data);
+    
+//     switch (data.event) {
+//         case 'ready':
+//             onReady();
+//             break;
+           
+//         case 'playProgress':
+//             onPlayProgress(data.data);
+//             break;
+            
+//         case 'pause':
+//             onPause();
+//             break;
+           
+//         case 'finish':
+//             onFinish();
+//             break;
+//     }
+// }
+
+// // Call the API when a button is pressed
+// $('button').on('click', function() {
+//     post($(this).text().toLowerCase());
+// });
+
+// // Helper function for sending a message to the player
+// function post(action, value) {
+//     var data = { method: action };
+    
+//     if (value) {
+//         data.value = value;
+//     }
+    
+//     f[0].contentWindow.postMessage(JSON.stringify(data), url);
+// }
+
+// function onReady() {
+    
+//     status.text('ready');
+//     post('addEventListener', 'pause');
+//     post('addEventListener', 'finish');
+//     post('addEventListener', 'playProgress');
+// }
+
+// function onPause() {
+//     status.text('paused');
+// }
+
+// function onFinish() {
+//     status.text('finished');
+// }
+
+// function onPlayProgress(data) {
+//     status.text(data.seconds + 's played');
+// }
+
 
 
 //End

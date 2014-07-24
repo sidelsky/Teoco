@@ -46,6 +46,8 @@ $mustard: #cc7c0d;
 $grey: #646569;
 $light-grey: #e0e0e2;
 
+$dark-grey: darken($grey, 5%);
+
 .hidden {
 	display: none;
 	visibility: hidden;
@@ -62,6 +64,10 @@ $light-grey: #e0e0e2;
 .cols {
 	@include column(1);
 	@extend %bdr;
+	@include clearfix;
+}
+
+.clear {
 	@include clearfix;
 }
 

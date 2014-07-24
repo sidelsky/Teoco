@@ -27,6 +27,9 @@
 			padding-right: 1.5em;
 			position: relative;
 		}
+		&.grey {
+			background: $light-grey;
+		}
 	}
 }
 
@@ -73,3 +76,35 @@
 		//margin: 0 auto!important;
 	}
 }
+
+#success {
+	.left-col {
+
+	}
+	.right-col {
+		ul {
+			li {
+				@extend %bdr;
+			}
+		}
+	}
+}
+
+
+//Vision values
+#vision-values {
+	.left-col {
+		//@extend %bdr;
+		@include column(7);
+		@media screen and (max-width: 37.5em) {
+			@include column(12);
+		}
+	}
+	.right-col {
+		//@extend %bdr;
+		@include column(5);
+			@media screen and (max-width: 37.5em) {
+				@include column(12);
+			}
+		}
+	}

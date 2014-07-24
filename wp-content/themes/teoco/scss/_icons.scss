@@ -1,4 +1,6 @@
 //Icons
+$icon-size: 35px;
+
 .jump {
 	position: fixed;
 	right: 1em;
@@ -10,20 +12,23 @@
 		visibility: hidden;
 	}
 	li {
-		@include rhythm(0, 0, 0, 0.5); //Margin top, Padding top, Padding bottom, Margin bottom
+		display: table;
+		width: $icon-size;
+		height: $icon-size;
+		@include rhythm(0.4, 0, 0, 0.4); //Margin top, Padding top, Padding bottom, Margin bottom
 		a {
-			border: solid 2px $white;
+			border: solid 1px $light-grey;
 			@include border-radius(50px);
-			width: 52px;
-			height: 52px;
-			display: block;
+			display: table-cell;
 			text-align: center;
-			position: relative;
-			background: $black;
+			background: $grey;
 			color: $white;
-			//@include adjust-font-size-to(30px, 1.7);
-			font-size: 30px;
-			line-height: 42px;
+			vertical-align: middle;
+			text-decoration: none;
+			font-size: 24px;
+			i {
+				display: block;
+			}
 			&.go-up {
 				//opacity: 0;
 			}
@@ -35,13 +40,10 @@
 				display: none;
 			}
 			&:hover {
-				background: $white;
-				color: $grey;
-				@include transition-duration(0.1s);
-				@include transition-timing-function(ease-out);
-				//@include scale(1.2);
-				font-size: 40px;
-				line-height: 42px;
+				@include transition(all 0.2s ease-in-out);
+				background: $dark-grey;
+				color: $white;
+				border: solid 2px $grey;
 			}
 		}
 	}
@@ -69,8 +71,8 @@
 				border: solid 1px $light-grey;
 				@include border-radius(50px);
 				display: block;
-				width: 35px;
-				height: 35px;
+				width: $icon-size;
+				height: $icon-size;
 				text-align: center;
 				position: relative;
 				top: 50%;

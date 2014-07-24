@@ -2,7 +2,7 @@
 
 var gf_placeholder = function() {
 
-	$('.gform_wrapper .gplaceholder')
+	$('.gform_wrapper .gf-add-placeholder')
 		.find('input, textarea').filter(function(i){
 			var $field = $(this);
 			
@@ -27,7 +27,7 @@ var gf_placeholder = function() {
 			$field[0].setAttribute('placeholder', label);
 		});
 
-	var support = (!('placeholder' in document.createElement('input'))); // borrowed from Modernizr.com
+	var support = (!('placeholder' in document.createElement('input'))); 
 	if ( support && jquery_placeholder_url )
 		$.ajax({
 			cache: true,
@@ -40,11 +40,32 @@ var gf_placeholder = function() {
 			},
 			type: 'get'
 		});
+
+    $('.gform_wrapper .gf-add-placeholder').find('select').filter(function(i){
+        var $theSelect = $(this);
+
+       $theSelect.each(function(){
+           var elementID = this.id;
+           var inIdFormat = "#" + elementID;
+           var theLabel = $('label[for=' + elementID + ']').text();
+           console.log('The id for this field is '+ elementID + ' the label for this field is ' + theLabel);
+           $(inIdFormat).prepend("<option class='placeholder' selected disabled value=" + "'" + theLabel + "'" + ">" + theLabel + "</option>" );
+            $('label[for=' + elementID + ']').hide();
+
+       })
+    });
+
+
+
+
+
+
+
 };
 
 $(document).ready(function(){
 	gf_placeholder();
-	$(document).bind('gform_page_loaded', gf_placeholder);
+	$(document).bind('gform_post_render', gf_placeholder);
 });
 
 })(jQuery);

@@ -29,6 +29,9 @@
 			&.green {
 				background: url(../img/bg-green.png) no-repeat 50% center;
 			}
+			&.blue {
+				background: url(../img/bg-blue.png) no-repeat 50% center;
+			}
 			@media screen and (min-width: 60em) {
 			&.mustard {
 					background: url(../img/bg-curve-mustard.png) no-repeat center center;
@@ -39,6 +42,9 @@
 			&.green {
 					background: url(../img/bg-green.png) no-repeat center center;
 				}
+			&.blue {
+				background: url(../img/bg-blue.png) no-repeat center center;
+			}
 			}
 			@media screen and (min-width: 60em) {
 			}
@@ -51,6 +57,9 @@
 				}
 				&.green {
 					background: url(../img/bg-green.png) no-repeat left center;
+				}
+				&.blue {
+					background: url(../img/bg-blue.png) no-repeat left center;
 				}
 			}
 			// @media screen and (min-width: 60em) {

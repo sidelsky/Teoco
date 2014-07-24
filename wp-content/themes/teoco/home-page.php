@@ -5,25 +5,6 @@
 	get_header();
 	?>
 
-	<section class="page-wrapper__wide">
-		<article class="page-wrapper__wide__inner padding-tb">
-			<h1>What we do</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
-			<div class="cols">1</div>
-			<div class="cols">2</div>
-			<div class="cols">3</div>
-			<div class="cols">4</div>
-			<div class="cols">5</div>
-			<div class="cols">6</div>
-			<div class="cols">7</div>
-			<div class="cols">8</div>
-			<div class="cols">9</div>
-			<div class="cols">10</div>
-			<div class="cols">11</div>
-			<div class="cols">12</div>
-		</article>
-	</section>
-
 	<!-- Primary slider -->
 	<section class="page-wrapper__wide rel-pos">
 		<article class="page-wrapper__wide__inner padding-tb-small">
@@ -104,6 +85,7 @@
 					<ul class="slides">
 						<?php
 						$args = array(
+							//'post__in' => array(8),
 							'posts_per_page'   => 5,
 							'offset'           => 0,
 							'category'         => '',
@@ -145,25 +127,88 @@
 </section>
 
 <!-- Our success -->
-<section class="page-wrapper__wide">
+<section class="page-wrapper__wide grey">
 		<article class="page-wrapper__wide__inner padding-tb">
-			<h1>Our success</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
+			<div class="left-col">
+				<?php
+					$args = array(
+					'post__in' => array(25),
+					'posts_per_page'   => 1,
+					'offset'           => 0,
+					'category'         => '',
+					'orderby'          => 'post_date',
+					'order'            => 'ASC',
+					'include'          => '',
+					'exclude'          => '',
+					'meta_key'         => '',
+					'meta_value'       => '',
+					'post_type'        => 'page',
+					'post_mime_type'   => '',
+					'post_parent'      => '',
+					'post_status'      => 'publish',
+					'suppress_filters' => false );
+					query_posts($args); if ( have_posts() ) while ( have_posts() ) : the_post();
+				?>
+					<h1>
+						<?php the_title(); ?>
+					</h1>
+				<?php the_content(); ?>
+			</div>
+			<?php endwhile; ?>
+			<div class="right-col success">
+			
+			<?php if( have_rows('success',25) ): ?>
+				 <ul>
+					<?php while( have_rows('success',25) ): the_row(); 
+						// vars
+							$icon = get_sub_field('icon');
+							$icon_2 = get_sub_field('icon_2');
+							$icon_3 = get_sub_field('icon_3');
+					?>
+
+						<li class="product">
+							<div class="image-wrapper">
+								<a href="/success/">
+									<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" />
+								</a>
+							</div>
+						</li>
+
+						<li class="product">
+							<div class="image-wrapper">
+								<a href="/success/">
+									<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" />
+								</a>
+							</div>
+						</li>
+
+						<li class="product">
+							<div class="image-wrapper">
+								<a href="/success/">
+									<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" />
+								</a>
+							</div>
+						</li>
+
+				<?php endwhile; wp_reset_query();?>
+		 </ul>
+		<?php endif; ?>
+		</div>
 		</article>
 	</section>
 
 <!-- Latest -->
-<section class="page-wrapper__wide rel-pos" id="latest">
+<section class="page-wrapper__wide rel-pos">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
-				<div class="zflexslider">
+				<div class="flexslider">
 					<ul class="slides">
 						<li>							
 							<h1>
 								<?php the_field('title'); ?>
 							</h1>
-							<?php the_field('latest'); ?>
+								<?php the_field('latest'); ?>
 							
 							<div class="dropdown">
 							<p>Please complete</p>
@@ -187,7 +232,7 @@
 	<div class="flexslider2">
 		<ul class="slides">
 			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
 			</li>
 		</ul>
 	</div>

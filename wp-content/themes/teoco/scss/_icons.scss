@@ -4,7 +4,7 @@ $icon-size: 48px;
 .jump {
 	position: fixed;
 	right: 1em;
-	bottom: 0.5em;
+	bottom: 10px;
 	z-index: 200;
 	//Small
 	@media screen and (max-width: 37.5em) {
@@ -16,8 +16,22 @@ $icon-size: 48px;
 		width: $icon-size;
 		height: $icon-size;
 		@include rhythm(0.4, 0, 0, 0.4); //Margin top, Padding top, Padding bottom, Margin bottom
+		&.bottom {
+			margin-bottom: 0.5em;
+		}
+		&.prev {
+				//opacity: 0;
+			}
+			&.next {
+				//opacity: 1;
+			}
+			&.hidden {
+				opacity: 0;
+				display: none;
+				visibility: hidden
+			}
 		a {
-			border: solid 2px $light-grey;
+			border: solid 1px $light-grey;
 			@include border-radius(50px);
 			display: table-cell;
 			text-align: center;
@@ -31,16 +45,6 @@ $icon-size: 48px;
 			}
 			i {
 				display: block;
-			}
-			&.go-up {
-				//opacity: 0;
-			}
-			&.show-me {
-				//opacity: 1;
-			}
-			&.inactive {
-				opacity: 0;
-				display: none;
 			}
 			&:hover {
 				border: solid 2px $light-grey;

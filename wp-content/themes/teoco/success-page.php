@@ -8,8 +8,8 @@
 
 	<!-- Our success -->
 	<?php if (get_field('success_title')) : ?>
-	<section class="page-wrapper__wide">
-		<article class="page-wrapper__wide__inner padding-tb success section">
+	<section class="page-wrapper__wide section current">
+		<article class="page-wrapper__wide__inner padding-tb">
 			
 			<div class="left-col">
 				<h1><?php the_field('success_title'); ?></h1>
@@ -59,20 +59,26 @@
 					<div class="logo-copy-wrapper">
 						<div class="content">
 							<?php echo $txt; ?>
-							<i class='fa fa-chevron-circle-up'></i>
-							<a href="<?php echo $link; ?>">Visit site ></a>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+								<a href="<?php echo $link; ?>">Visit site ></a>
+							</div>
 						</div>
 
 						<div class="content">
 							<?php echo $txt_2; ?>
-							<i class='fa fa-chevron-circle-up'></i>
-							<a href="<?php echo $link_2; ?>">Visit site ></a>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+								<a href="<?php echo $link_2; ?>">Visit site ></a>
+							</div>
 						</div>
 
 						<div class="content">
 							<?php echo $txt_3; ?>
-							<i class='fa fa-chevron-circle-up'></i>
-							<a href="<?php echo $link_3; ?>">Visit site ></a>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+								<a href="<?php echo $link_3; ?>">Visit site ></a>
+							</div>
 						</div>
 					</div>	
 				<?php endwhile; wp_reset_query();?>
@@ -110,16 +116,18 @@
 				<ul>
 					
 					<li class="products">
-						<div class="image-wrapper">
+						<div class="image-wrapper toggle">
 							<img src="<?php echo $icons; ?>" alt="<?php echo $icons['alt'] ?>" />
 						</div>
 						<div class="title-wrapper">
 							<h2><?php echo $title; ?></h2>
 							<span class='product-name'><?php echo $solution_product_name; ?></span>
 						</div>
-						<div class="inner">
+						<div class="inner toggle-inner">
 						<?php echo $text; ?>
-						<i class='fa fa-chevron-circle-up'></i>
+						<div class="icon-link">
+							<i class='fa fa-chevron-circle-up'></i>
+						</div>
 						</div>
 					</li>
 
@@ -128,8 +136,10 @@
 				<div class="logo-copy-wrapper">
 					<div class="content">
 						<?php echo $txt; ?>
-						<i class='fa fa-chevron-circle-up'></i>
-						<a href="<?php echo $link; ?>">Visit site ></a>
+						<div class="icon-link">
+							<i class='fa fa-chevron-circle-up'></i>
+							<a href="<?php echo $link; ?>">Visit site ></a>
+						</div>
 					</div>
 				</div>
 
@@ -189,17 +199,23 @@
 					<div class="logo-copy-wrapper">
 						<div class="content">
 							<?php echo $txt; ?>
-							<i class='fa fa-chevron-circle-up'></i>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+							</div>
 						</div>
 
 						<div class="content">
 							<?php echo $txt_2; ?>
-							<i class='fa fa-chevron-circle-up'></i>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+							</div>
 						</div>
 
 						<div class="content">
 							<?php echo $txt_3; ?>
-							<i class='fa fa-chevron-circle-up'></i>
+							<div class="icon-link">
+								<i class='fa fa-chevron-circle-up'></i>
+							</div>
 						</div>
 					</div>	
 				<?php endwhile; wp_reset_query();?>

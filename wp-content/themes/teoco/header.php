@@ -18,7 +18,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php // if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
-	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
 
 	
@@ -29,14 +29,13 @@
 
 </head>
 
-<body <?php body_class('loading'); ?> name="goto-up">
+<body <?php body_class(''); ?> name="goto-up">
 
 <!--[if lt IE 7]>
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Page wrapper -->
-
 <div class="page-wrapper">
 
 <header class="page-wrapper__wide header-background">
@@ -174,8 +173,6 @@
 			</ul>
 		</nav>
 
-		<a class="simple-menu" href="#sidr">
-			<i class="fa fa-bars"></i>
-		</a>
+
 	</div>
 </header>

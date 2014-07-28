@@ -6,7 +6,7 @@
 	?>
 
 <!-- Company overview -->
-<section class="page-wrapper__wide rel-pos section">
+<section class="page-wrapper__wide rel-pos section current">
 	<article class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
@@ -53,6 +53,8 @@
 				$quote = get_field('quote');
 				$video_cover = get_field('video_cover');
 				$video = get_field('video');
+				$excerpt = get_field('excerpt');
+				$transcript = get_field('transcript');
 			?>
 
 			<div class="left-col">
@@ -79,16 +81,58 @@
 		 	</div>
 			
 			<div class="video-status">
-				<p>Video: <span class="status">...</span></p>
+				<p>Video <span class="status">Loading...</span></p>
 				<!--
 					<p><button>Play</button> <button>Pause</button></p>
 				-->
 			</div>
 
+			<?php echo $excerpt; ?>
+			
+			<div class="transcript">
+				<div class="icon-link">
+					<a href="#" class="toggle">
+						<i class="fa fa-chevron-circle-right"></i> Transcript
+					</a>
+					<div class="toggle-inner">
+						<?php echo $transcript; ?>
+						<div class="icon-link">
+							<i class="fa fa-chevron-circle-up"></i>
+						</div>
+					</div>
+				</div>
+			</div>	
 			<!--End Video - vimeo api-->
-
 		</article>
 	</section>
+
+<!-- Company overview -->
+<section class="page-wrapper__wide rel-pos section current">
+	<article class="page-wrapper__wide__inner padding-tb-small">
+		<div class="article-section">
+			<div class="slider top">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>							
+							<h1><?php the_field('company_history_title'); ?></h1>
+							<?php the_field('company_history_copy'); ?>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</article>
+<div class="slider bottom">
+	<div class="curve-holder red"></div>
+	<div class="flexslider2">
+		<ul class="slides">
+			<li>
+				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
+			</li>
+		</ul>
+	</div>
+</div>					
+</section>	
 
 <?php
 get_footer( 'footer.php' );

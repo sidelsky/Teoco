@@ -47,12 +47,10 @@
 	</section>
 </footer>
 
-
 <!--End wrapper -->
 </div>
 
 <!-- Mobile menu -->
-
 <?php wp_nav_menu( array(
 	'menu'            => 'Footer menu', 
 	'container'       => 'div', 
@@ -72,55 +70,7 @@
 	//'walker'          =>  
 )); ?>
 
-<!--
-	<div id="sidr" class="sidr">
-		<ul>
-			<li>
-				<a href="#">About us</a>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Solutions</a>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Products</a>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Latest</a>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Success</a>
-			</li>
-			<li>
-				<a href="#">Contact us</a>
-			</li>
-		</ul>
-	</div>
--->
-
- 
-
 <ul class="jump">
-
 	<li class='prev'>
 		<a href="#" class="display"><span>prev</span><i class="fa fa-angle-up"></i></a>
 	</li>
@@ -129,7 +79,6 @@
 		<a href="#" class="display"><span>next</span><i class="fa fa-angle-down"></i></a>
 	</li>
 </ul>	
-
 
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.imagesloaded.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/cbpBGSlideshow.js"></script>
@@ -143,6 +92,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
+
 <!--
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 -->

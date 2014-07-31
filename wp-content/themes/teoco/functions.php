@@ -28,7 +28,7 @@ if ( ! function_exists('myTheme')) :
 	add_post_type_support( 'page', 'excerpt' );
 
 //Gravity forms - JavaScript to footer
- 
+
 
 // This theme uses post thumbnails
 // if (function_exists('add_theme_support')) {
@@ -47,6 +47,39 @@ if ( ! function_exists('myTheme')) :
 //     $attr['src'] = 'grey.gif';
 //     return $attr;
 // }
+
+
+
+
+	/*-----------------------------------------------------------------------------------*/
+/*  Custom taxonomy for Job locations
+/*-----------------------------------------------------------------------------------*/
+/*register_taxonomy('Locations',
+  array ('locations', 'job-opportunities'),
+  array(
+    'hierarchical' => false,
+    'label' => 'Locations',
+    'rewrite' => false,
+    'show_ui' => true,
+    'query_var' => true,
+    'show_admin_column' => true,
+      //'rewrite' => array('slug' => ''),
+    'singular_label' => 'locations')
+);*/
+
+register_taxonomy( "locations", 
+	array ('locations', 'job-opportunities'),
+	array(
+		"hierarchical" => true,
+		'show_admin_column' => true,
+		"labels" => array('name'=>"Locations",'add_new_item'=>"Add New Field"), 
+		"singular_label" => __( "Field" ), 
+	"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
+		'with_front' => false)
+	) 
+	);
+
+
 
 
 

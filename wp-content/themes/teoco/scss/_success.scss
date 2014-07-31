@@ -35,12 +35,14 @@
 						position: relative;
 						width: 100%;
 						height: auto;
-						display: block;
+						display: table;
 						overflow: hidden;
 						background: $white;
 						@include border-radius(25px);
 						img {
+							display: table-cell;
 							width: 100%;
+							@include border-radius(25px);
 							//filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
 					    //filter: gray; /* IE6-9 */
 					    //-webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */

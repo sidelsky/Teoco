@@ -61,3 +61,13 @@
 <?php
 get_footer( 'footer.php' );
 ?>
+
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<!-- post -->
+<? the_title(): 
+<?php endwhile; ?>
+<!-- post navigation -->
+<?php else: ?>
+<!-- no posts found -->
+<?php endif; ?>?>

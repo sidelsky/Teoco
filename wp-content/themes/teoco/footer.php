@@ -93,6 +93,14 @@
 
 <script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
 
+<?php /*
+<script src="<?php bloginfo('template_directory'); ?>/js/isotope.js"></script>
+*/?>
+
+ 
+<script src="<?php bloginfo('template_directory'); ?>/js/filterable.js"></script>
+ 
+
 <!--
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 -->

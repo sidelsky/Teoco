@@ -342,30 +342,31 @@ $('a.display').on('click', function(e) {
       //$('.block').smoove({offset:'40%'});
 
 
-      var download = $("#download"),
-      dropdown = $(".dropdown"),
-      close = $(".fa-times-circle"),
-      latest = $('#latest');
+  var download = $("#download"),
+  dropdown = $(".dropdown"),
+  close = $(".fa-times-circle"),
+  latest = $('#latest');
 
-      download.click(function(e) {
-        dropdown.addClass('open');
-        e.preventDefault();
-        $(this).addClass('hidden');
-      });
-
-
-
-      close.click(function(){
-        dropdown.removeClass("open");
-        setTimeout(function(){
-          download.removeClass('hidden');
-        },1000);
-      });
+  download.click(function(e) {
+    dropdown.addClass('open');
+    e.preventDefault();
+    $(this).addClass('hidden');
+  });
 
 
 
+  close.click(function(){
+    dropdown.removeClass("open");
+    setTimeout(function(){
+      download.removeClass('hidden');
+    },1000);
+  });
 
+
+////////////////////////////////////////////
 //Controls the show/hide functionality
+////////////////////////////////////////////
+ 
 $('.content').hide();
 //$('.products .inner').hide();
 
@@ -417,216 +418,130 @@ $('section.page-wrapper__wide:nth-of-type(2n+1)').css({
 })
 
 
-// Froogaloop
-// https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/froogaloop.js
-// https://github.com/vimeo/player-api/blob/master/javascript/froogaloop.js
-// http://a.vimeocdn.com/js/froogaloop2.min.js
-
-// var iframe = document.getElementById('video');
-
-// // $f == Froogaloop
-// var player = $f(iframe);
-
-// // bind events
-// var playButton = document.getElementById("play-button");
-// playButton.addEventListener("click", function() {
-//   player.api("play");
-//   $('#play-button').fadeOut(650);/*.addClass('hide');*/
-// });
-
-// player.api("finish").alert('Done');
-
-// var pauseButton = document.getElementById("pause-button");
-// pauseButton.addEventListener("click", function() {
-//   player.api("pause");
-// });
-
-
-//-----------
-// for ( var i = 0; i < 5; i++ ) {
-//     // Logs "try 0", "try 1", ..., "try 4".
-//     console.log( "try " + i );
-// }
-
-// var iframe = $('#video')[0],
-//     player = $f(iframe),
-//     status = $('.status');
-//     cover = $('#play-cover');
-
-// // When the player is ready, add listeners for pause, finish, and playProgress
-// player.addEvent('ready', function() {
-//     status.text('ready');
-
-//     player.addEvent('pause', onPause);
-//     player.addEvent('finish', onFinish);
-//     player.addEvent('playProgress', onPlayProgress);
-// });
-
-// // Call the API when a button is pressed
-// // $('button').bind('click', function() {
-// //     player.api($(this).text().toLowerCase());
-// // });
-
-// //var cover = document.getElementById("play-cover");
-
-//     cover.bind("click", function() {
-//     player.api("play");
-//     cover.fadeOut(650);/*.addClass('hide');*/
-// });
-
-// function onPause(id) {
-//     status.text('paused');
-//     cover.fadeIn(650);/*.addClass('hide');*/
-// }
-
-// function onFinish(id) {
-//     status.text('finished');
-//     cover.fadeIn(650);/*.addClass('hide');*/
-// }
-
-// function onPlayProgress(data, id) {
-//     status.text(data.seconds + 's played');
-// }
-
-
-
-
-// $('.image-wrapper img').click(function() {
-//   $(this).addClass('selected');             
-//   },function () {      
-//    $(this).removeClass('selected');
-// });
-
-
-
-
-//download.removeClass('hidden');
-
-// //Forms - label to placeholder
-// $("form :input").each(function(index, elem) {
-//     var eId = $(elem).attr("id");
-//     var label = null;
-//     if (eId && (label = $(elem).parents("form").find("label[for="+eId+"]")).length == 1) {
-//         $(elem).attr("placeholder", $(label).html());
-//         $(label).remove();
-//     }
-//  });
-
-
-
-
-
-// var f = $('iframe'),
-// url = f.attr('src').split('?')[0],
-// status = $('.status');
-
-// // Listen for messages from the player
-// if (window.addEventListener){
-//     window.addEventListener('message', onMessageReceived, false);
-// }
-// else {
-//     window.attachEvent('onmessage', onMessageReceived, false);
-// }
-
-// // Handle messages received from the player
-// function onMessageReceived(e) {
-//     var data = JSON.parse(e.data);
-
-//     switch (data.event) {
-//         case 'ready':
-//             onReady();
-//             break;
-
-//         case 'playProgress':
-//             onPlayProgress(data.data);
-//             break;
-
-//         case 'pause':
-//             onPause();
-//             break;
-
-//         case 'finish':
-//             onFinish();
-//             break;
-//     }
-// }
-
-// // Call the API when a button is pressed
-// $('button').on('click', function() {
-//     post($(this).text().toLowerCase());
-// });
-
-// // Helper function for sending a message to the player
-// function post(action, value) {
-//     var data = { method: action };
-
-//     if (value) {
-//         data.value = value;
-//     }
-
-//     f[0].contentWindow.postMessage(JSON.stringify(data), url);
-// }
-
-// function onReady() {
-
-//     status.text('ready');
-//     post('addEventListener', 'pause');
-//     post('addEventListener', 'finish');
-//     post('addEventListener', 'playProgress');
-// }
-
-// function onPause() {
-//     status.text('paused');
-// }
-
-// function onFinish() {
-//     status.text('finished');
-// }
-
-// function onPlayProgress(data) {
-//     status.text(data.seconds + 's played');
-// }
 
 
 ////////////////////////////////////////////
 //Careers
 ////////////////////////////////////////////
 
-$('#portfolio-list').filterable({
+/*$('#portfolio-list').filterable({
   useHash: true,
   animationSpeed: 1000,
   show: { width: 'show', opacity: 'show' },
   hide: { width: 'hide', opacity: 'hide' },
   useTags: true
-});
+});*/
 
 ////////////////////////////////////////////
 //Careers accordion
 ////////////////////////////////////////////
 
-$('ul#accord li ul').hide();
-//$('#accord li:first ul').show().addClass('active'); 
-//$('#accord li:first a').addClass('active'); 
+//$('.accordian li ul').hide();
+//$('#portfolio-list li:first ul').show().addClass('active'); 
+//$('#portfolio-list li:first a').addClass('active'); 
 
-$('#accord > li > a').click(function(){
 
-    //$(this).next().slideToggle(250);
-    //$(this).toggleClass('active');
-
-    if ($(this).attr('class') != 'active'){
-      $('ul#accord li ul').slideUp();
-      $(this).next().slideToggle();
-      $('ul#accord li a').removeClass('active');
-      $(this).addClass('active');
-      
-    }  else {
-      $(this).next().slideToggle(250);
-      $('ul#accord li a').removeClass('active');
+ 
+//accordion menu
+$('.accordian > li > ul').hide();
+$('.accordian > li > .accord-toggle').on('click', function (e) {
+    e.preventDefault();
+    if ($(this).attr('class') !== 'active') {
+        //$('.accordian li ul').slideUp();
+        $(this).next().slideToggle();
+        //$('.accordian li .accord-toggle').addClass('active');
+        $(this).addClass('active');
+    } else {
+        //$(this).next().slideToggle(250);
+        //$('.accordian li .accord-toggle').removeClass('active');
     }
+});
+ 
+ 
 
-    return false;
-  });
+// $('.accordian li > .toggle').click(function(){
+ 
+//     // $(this).next().slideToggle(250);
+//     // $(this).toggleClass('active');
 
+//     if ($(this).attr('class') != 'active'){
+//       $('.accordian li ul').slideUp();
+//       $(this).next().slideToggle();
+//       $('.accordian li > .toggle').removeClass('active');
+//       $(this).addClass('active');
+      
+//     }  else {
+//       $(this).next().slideToggle(250);
+//       $('.accordian li > .toggle').removeClass('active');
+//     }
+
+//     return false;
+//   });
+
+
+// $('.accordian > li > a').on('click', function (e) {
+//     if ($(this).attr('class') !== 'active') {
+//         $('.accordian li ul').slideUp();
+//         $(this).next().slideToggle();
+//         $('.accordian li > .toggle').removeClass('active');
+//         $(this).addClass('active');
+//     } else {
+//         $(this).next().slideToggle(250);
+//         $('.accordian li > .toggle').removeClass('active');
+//     }
+//     e.preventDefault();
+// });
+
+
+////////////////////////////////////////////
+//Poplulate hidden field for jobs on careers
+////////////////////////////////////////////
+ 
+
+//var career_number = $('.career-number').text();
+
+
+$('.career-number').hide();
+function getCareerVal(index) {
+  $('.toggle-inner').each(function(i){
+    var hidval = $(this).find('.career-number').html();
+    $(this).find('.gform_fields .gform_hidden').val(hidval);
+    //console.log(hidval);
+  })
+  // var career_number = $('.toggle-inner').find('.career-number:nth-child('+index+')').text(),
+  //     hidden = $('.gform_fields .gform_hidden');
+  //     hidden.val(career_number);
+}
+getCareerVal();
+
+
+$("input[type=file]").nicefileinput();
+
+// function getCareerVal() {
+//   $('.portfolio-item').each(function(i){
+//     var hidval = $(this).attr('id')
+//     $(this).find('.gform_hidden').val(hidval);
+//     console.log(hidval);
+//   });
+// }
+// getCareerVal();
+
+
+
+////////////////////////////////////////////
+//Mix it up
+////////////////////////////////////////////
+
+$('#Container').mixItUp({
+  layout: {
+    display: 'block'
+  },
+  animation: {
+    duration: 400,
+    effects: 'fade',
+    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+  }
+});
 
 //End
 });

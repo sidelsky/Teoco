@@ -113,6 +113,16 @@ input[type=submit] {
 	}
 }
 
+body.page-template-careers-page-php {
+	input[type=submit] {
+		background: $red;
+		color: $white;
+		&:hover {
+			background: darken($red, 10%);
+		}
+	}
+}
+
 
 // //@include column(12);
 // 	width:100%;

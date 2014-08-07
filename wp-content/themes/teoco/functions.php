@@ -51,6 +51,17 @@ if ( ! function_exists('myTheme')) :
 
 
 
+//Changes the upload path and url for the File Upload field.
+// add_filter("gform_upload_path", "change_upload_path", 10, 2);
+// function change_upload_path($path_info, $form_id){
+//    $path_info["path"] = "/home/public_html/yourdomainfolder/new/path/";
+//    $path_info["url"] = "http://yourdomainhere.com/new/path/";
+//    return $path_info;
+// }
+ 
+
+
+
 	/*-----------------------------------------------------------------------------------*/
 /*  Custom taxonomy for Job locations
 /*-----------------------------------------------------------------------------------*/

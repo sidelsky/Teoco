@@ -1,4 +1,6 @@
 # Require any additional compass plugins here.
+#https://github.com/bookcasey/fittext#fittext
+require "fittext"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
@@ -9,9 +11,6 @@ javascripts_dir = "js"
 
 #Used for image sprites
 #http_generated_images_path = "../img"
-
-#https://github.com/bookcasey/fittext#fittext
-require "fittext"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

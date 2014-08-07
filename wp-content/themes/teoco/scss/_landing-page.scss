@@ -1,0 +1,149 @@
+$container-height: 188px;
+
+body.page-template-landing-page-php {
+	.landing-page {
+		li {
+			position: relative;
+			@include border-radius(25px);
+			@include column(6);
+			background: url(../img/landing-page-bg.png) no-repeat center right;
+			//background-color: $purple;
+			height: $container-height;
+			overflow: hidden;
+			@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+			.lp-content {
+				position: relative;
+				display: table;
+				height: $container-height; //See line 1
+				width: 60%;
+				span {
+					display: table-cell;
+					vertical-align: middle;
+					padding: 0 1em 0 2em;
+					h1 {
+						@extend %open_sansregular;
+						@include adjust-font-size-to(30px, 1.5);
+						@include rhythm(0, 0, 0, 0.2); //Margin top, Padding top, Padding bottom, Margin bottom
+						width: 200px;
+						display: block;
+						//color: $purple;
+						text-decoration: none;
+					}
+					p {
+						@include adjust-font-size-to(14px, 0.9);
+					}
+				}
+			}
+			.lp-image-container {
+				position: absolute;
+				height: $container-height; //See line 1
+				width: 40%;
+				top: 0;
+				right: 0;
+				img {
+					width: 95%;
+				}
+			}
+			//Meduim screen
+			@media screen and (max-width:60em) {
+				@include column(12);
+				@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+				.lp-content {
+					width: 70%;
+					span {
+						h1 {
+							width: 100%;
+						}
+					}
+				}
+				.lp-image-container {
+					width: 30%;
+					img {
+						width: 100%;
+					}
+				}
+			}
+			//Small screen
+			@media screen and (max-width:37.5em) {
+				@include column(12);
+				@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+				background-position: 80% 0;
+				.lp-content {
+					width: 80%;
+					span {
+						padding: 0 0 0 1.5em;
+						h1 {
+							@include adjust-font-size-to(20px, 1);
+							width: 100%;
+						}
+						p {
+							@include adjust-font-size-to(12px, 0.8);
+						}
+					}
+				}
+				.lp-image-container {
+					width: 20%;
+					img {
+						margin-top: 40px;
+					}
+				}
+			}
+			//Hover state
+			&:hover {
+				h1 {
+					//color: darken($purple, 10%);
+				}
+				//background-color: darken($purple, 10%);
+				cursor: pointer;
+				//@include single-box-shadow;
+				@include box-shadow($grey 0px 0px 10px);
+			}			
+		}
+	}
+}
+
+//Colours - Solutions
+body.page-template-landing-page-php.page-id-22 {
+	.landing-page {
+		li {
+			background-color: $purple;
+			.lp-content {
+				span {
+  				h1 {
+						color: $purple;
+					}
+				}
+			}
+			//Hover state
+			&:hover {
+				h1 {
+					color: darken($purple, 10%);
+				}
+				background-color: darken($purple, 10%);
+				}			
+			}
+		}
+	}
+
+//Colours - Products
+body.page-template-landing-page-php.page-id-23 {
+	.landing-page {
+		li {
+			background-color: $blue;
+			.lp-content {
+				span {
+  				h1 {
+						color: $blue;
+					}
+				}
+			}
+			//Hover state
+			&:hover {
+				h1 {
+					color: darken($blue, 10%);
+				}
+				background-color: darken($blue, 10%);
+				}			
+			}
+		}
+	}

@@ -19,7 +19,7 @@
 		<img src="<?php echo $video_cover_r; ?>" alt="" height='100%' width='100%' id='play-cover_<?php echo $count; ?>' />
 		<?php echo "<iframe id='video_$count' src='http://player.vimeo.com/video/$video_r?api=1&player_id=video_$count' width='100%' height='400' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>" ?> 				
 	</div>
-	<?php echo $count; ?>
+	<?php/* echo $count; */?>
 
 	<div class="video-status video-status_<?php echo $count; ?>">
 		<p>Video <span class="status status_<?php echo $count; ?>">Loading...</span></p>
@@ -85,13 +85,5 @@
 		<!--End Video - vimeo api-->
 	</article>
 </section>
-
-
-
-<script>
-	for ( var counter = 1; counter <= <?php echo $count; ?>; counter++ ) {
-	  console.log( 'count ' + counter);
-	}
-</script>
 
 <?php endif; ?>

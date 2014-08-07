@@ -1,0 +1,61 @@
+.accordian {
+	.portfolio-item {
+		border-top: solid 1px $grey;
+		.accord-toggle {
+			display: block;
+			@include clearfix;
+			.icon-link {
+				float: left;
+				margin-right: 1em;
+				@include adjust-font-size-to(18px, 2.5);
+			}
+			h3 {
+				@extend %open_sansregular;
+				@include adjust-font-size-to(18px, 2.5);
+				//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+				display: block;
+				text-align: left;
+				//@extend %bdr;
+				&.position {
+					float: left;
+				}
+				&.location {
+					float: right;
+					//min-width: 200px;
+					text-transform: capitalize;
+				}
+			}
+			&.active,
+			&:hover {
+				cursor: pointer;
+				.icon-link i, h3 {
+					color: $red !important;
+				}
+			}
+		}
+		&.active {
+				.toggle {
+					.icon-link i, h3 {
+					color: $red !important;
+				}
+			}
+		}
+		.inner {
+			//@extend %bdr;
+			@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+			> li {
+				padding:0 2em;
+			}
+		}
+	}
+}
+
+
+.inner-margin {
+	margin-left: -2em;
+}
+// body.page-template-careers-page-php {
+// .icon-link {
+// 	margin-left: -2em;
+// 	}
+// }

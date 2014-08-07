@@ -17,6 +17,11 @@
 @import "footer.scss";
 @import "success.scss";
 @import "video.scss";
+@import "accordion.scss";
+@import "left-side-menu.scss";
+@import "footer-pages.scss";
+@import "landing-page.scss";
+@import "sub-pages.scss";
 
 @import "Hamburger-icon.scss";
 @import "logo.scss";
@@ -24,9 +29,7 @@
 @import "main-navigation.scss";
 @import "jquery.sidr.light.scss";
 
-#dp_swf_engine {
- //display:none;
-}
+ 
 
 //html {
 //  @include adjust-leading-to(1);
@@ -72,14 +75,15 @@ h1, h2, h3, h4 {
 h1, h2 {
 	@include adjust-font-size-to(48px, 6);
 	color: $red;
-	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 36px, $max-font-size: 48px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false)
-	//@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 36px, $max-font-size: 48px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 }
 
 p {
 	color: $grey;
 	@include adjust-font-size-to(24px, 5);
-	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false)
+	//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 }
 
 blockquote {
@@ -99,7 +103,10 @@ blockquote {
 	}
 }
 
-
+//Mix it up
+.container .mix{
+		display: none;
+	}
 
 // .section-navigation {
 // 	position: fixed;

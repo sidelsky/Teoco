@@ -1,0 +1,24 @@
+.side-menu {
+	@include adjust-font-size-to(12px, 1.2);
+	text-transform: uppercase;
+	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+	li {
+		&:hover {
+			color: $red;
+			cursor: pointer;
+		}
+		&.filter {
+			border-top: solid 1px rgba($grey, 0);
+			border-bottom: solid 1px rgba($grey, 0);
+			&.active, {
+				margin: 0;
+				border-top: solid 1px $grey;
+				border-bottom: solid 1px $grey;
+				color: $red;
+			}
+		}
+		a {
+
+		}
+	}
+}

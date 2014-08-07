@@ -12,19 +12,8 @@
 				<div class="slider top">
 					<div class="flexslider">
 						<ul class="slides">
-							<li>							
-								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-									<!-- post -->
-									<h1>
-										<?php the_field('subtitle'); ?>
-									</h1>
-									<?php the_content(); ?>
-
-								<?php endwhile; ?>
-								<!-- post navigation -->
-							<?php else: ?>
-								<!-- no posts found -->
-							<?php endif; ?>
+							<li>
+							<?php include 'generic-page-loop.inc.php'; ?>
 						</li>
 					</ul>
 				</div>
@@ -48,240 +37,96 @@
 <?php include 'vimeo-video.inc.php' ?>
 
 <!-- Job opportunities -->
-<section class="page-wrapper__wide what-we-do-bg section">
-	<article class="page-wrapper__wide__inner padding-tb">
+<section class="page-wrapper__wide job-opportunities section">
+	<div class="page-wrapper__wide__inner padding-tb">
 		<h1><?php the_field('job_opportunities_title'); ?></h1>
-		<?php the_field('job_opportunities_copy'); ?>
-		
-		<?php/*
-		<?php
-			$jobs_listings = array(
-				//'post__in' => array(8),
-				'posts_per_page'   => -1,
-				'offset'           => 0,
-				'category'         => '',
-				'orderby'          => 'post_date',
-				'order'            => 'ASC',
-				'include'          => '',
-				'exclude'          => '',
-				'meta_key'         => '',
-				'meta_value'       => '',
-				'post_type'        => 'job-opportunities',
-				'post_mime_type'   => '',
-				'post_parent'      => '',
-				'post_status'      => 'publish',
-				'suppress_filters' => false );
-				query_posts($jobs_listings); if ( have_posts() ) while ( have_posts() ) : the_post();
+	<div class="left-col">
+		<ul class="controls side-menu">
+			<?php
+			$terms = get_terms('locations');
+			$count = count($terms);
+			echo '<li data-filter="all" class="filter active">All locations</li>';
+			if ( $count > 0 ){
+				foreach ( $terms as $term ) {
+					$termname = strtolower($term->name);
+					$termname = str_replace(' ', '-', $termname);
+					echo '<li data-filter=".'.$termname.'" class="filter">'.$term->name.'</li>';
+				}
+			}
+				//echo '<li class="sort" data-sort="myorder:asc">Asc</li>';
+			 	//echo '<li class="sort" data-sort="myorder:desc">Desc</li>';
 			?>
-		 
-			<h2><?php the_title(); ?></h2>
+		</ul>
+	</div>
+	
+	<div class="right-col">
+	<article>
+		<?php the_field('job_opportunities_copy'); ?>
+	</article>
+			<ul id="Container" class="container accordian">
+				<?php
+					/* 
+					Query the post 
+					*/
+					$args = array(
+						'post_type' => 'job-opportunities',
+						'posts_per_page' => -1,
+						'orderby' => 'post_date',
+						'order' => 'ASC'
+						);
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post(); 
+					/* 
+					Pull category for each unique post using the ID 
+					*/
+					$terms = get_the_terms( $post->ID, 'locations' );	
+					if ( $terms && ! is_wp_error( $terms ) ) : 
 
-			<?php /*
-			<ul id="portfolio-terms">
-				<li>
-					<a href="#" class="all current"><?php _e('All', 'framework'); ?></a><span>/</span>
-				</li>
-				<?php 
-					wp_list_categories(array(
-						'title_li' => '', 
-						'taxonomy' => 
-						'skill-type', 
-						'walker' => new Portfolio_Walker(),
-						'show_option_none' => ''
-					)
-				); ?>
-			</ul> 
-			*/?>
+						$links = array();
 
-			<?php/*
+					foreach ( $terms as $term ) {
+						$links[] = $term->name;
+					}
 
-			<?php the_content(); ?>
-
-			<?php endwhile; wp_reset_query();?>
-
-
-*/?>
-	<div id="content">
-
-	<ul id="portfolio-filter">
-	<?php
-	$terms = get_terms('locations');
-	$count = count($terms);
-	echo '<li><a href="#all" title="" data-filter=".all" class="active">All</a></li>';
-	if ( $count > 0 ){
-		foreach ( $terms as $term ) {
-			$termname = strtolower($term->name);
-			$termname = str_replace(' ', '-', $termname);
-			echo '<li><a href="#'.$termname.'" title="" data-filter=".'.$termname.'">'.$term->name.'</a></li>';
-		}
-	}
-	?>
-</ul>
-
-
-<div id="portfolio-list">
-	<?php
-/* 
-Query the post 
-*/
-$args = array(
-	'post_type' => 'job-opportunities',
-	'posts_per_page' => -1,
-	'orderby' => 'post_date',
-	'order' => 'ASC'
-	);
-$loop = new WP_Query( $args );
-while ( $loop->have_posts() ) : $loop->the_post(); 
-
-/* 
-Pull category for each unique post using the ID 
-*/
-$terms = get_the_terms( $post->ID, 'locations' );	
-if ( $terms && ! is_wp_error( $terms ) ) : 
-
-	$links = array();
-
-foreach ( $terms as $term ) {
-	$links[] = $term->name;
-}
-
-$tax_links = join( " ", str_replace(' ', '-', $links));          
-$tax = strtolower($tax_links);
-else :	
-	$tax = '';					
-endif; 
-
-/* Insert category name into portfolio-item class */ 
-echo '<div class="portfolio-item '. $tax .'">';
-//echo '<div class="thumbnail">'. the_post_thumbnail() .'</div>';
-echo '<h2>'. the_title() .'</h2>';
-echo '<div>'. the_content() .'</div>';
-echo '</div>'; 
-endwhile; 
-?>
- 
+					$tax_links = join( " ", str_replace(' ', '-', $links));          
+					$tax = strtolower($tax_links);
+					else :	
+						$tax = '';					
+					endif; 
+					//Add <p> tags to 'get_the_content()';
+					//$career_number = get_field('career_number');
+					$post_id = get_the_ID();
+					$content = apply_filters( 'the_content', get_the_content() );
+					//$content = str_replace( ']]>', ']]&gt;', $content );
+					/* Insert category name into portfolio-item class */ 
+					echo '<li class="portfolio-item mix accord '. $tax .'" id="'.$post_id.'" style="display: block;">';
+					echo '<div class="accord-toggle"><div class="icon-link"><i class="fa fa-chevron-circle-down"></i></div><h3 class="position">'.get_the_title().'</h3><h3 class="location">'.$tax.'</h3></div>';
+					echo '<ul class="inner"><li>'.$content.'
+					<div class="transcript">
+						<div class="icon-link">
+							<a href="#" class="toggle">
+								<i class="fa fa-chevron-circle-right"></i> APPLY FOR THIS JOB
+							</a>
+							<div class="toggle-inner">';
+								echo '<div class="career-number">'.$post_id.'</div>'; 
+								echo do_shortcode('[gravityform id=2 name=Application form title=false description=false ajax=true]');
+								echo'<div class="icon-link inner-margin">
+								<i class="fa fa-chevron-circle-up"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>';
+		echo '</li>';
+		endwhile; 
+		?>
+	</ul>
 </div>
-
-
-
-------------------------------------------------------------------------------------------
-
-
-<?php /*
-<?php
-$terms = get_terms('Locations');
-$count = count($terms);
-if ( $count > 0 ){
-echo '<ul id="projects-filter">';
-echo '<li><a href="#" data-filter="*">All</a></li>';
-foreach ( $terms as $term ) {
-    $termname = strtolower($term->name);  
-    $termname = str_replace(' ', '-', $termname);  
-    echo '<li><a href="#" data-filter="' . '.' . $termname . '">' . $term->name . '</a></li>';
-}
-echo '</ul>';
-}
-?>
-
-<?php 
-    $loop = new WP_Query(array('post_type' => 'job-opportunities', 'posts_per_page' => -1));
-    $count =0;
-?>
-
-*/?>
-
-
-
-
-</article>
+</div>
 </section>
 
 
-
-
-
-
-
-
-
-
-<!-- 
-
-	<div class="boundingBox" id="content">
-
-		<ul id="portfolio-filter">
-			<li><a href="#all" title="">All</a></li>
-			<li><a href="#design" title="" rel="design">Design</a></li>
-			<li><a href="#partner" title="" rel="partner">Agency Partner</a></li>
-			<li><a href="#political" title="" rel="political">Political</a></li>
-			<li><a href="#university" title="" rel="university">University</a></li>
-			<li><a href="#nonprofit" title="" rel="nonprofit">Non-Profit</a></li>
-			<li><a href="#business" title="" rel="business">Business</a></li>
-			<li><a href="#econdev" title="" rel="econdev">Economic Development</a></li>
-			<li><a href="#jquery" title="" rel="jquery">jQuery</a></li>
-		</ul>
-		
-		<ul id="portfolio-list">
-						<li style="display: block;" class="business ecommerce partner cms programming jquery search">
-								
-				<p>
-					Saranac
-				</p>
-			</li>
-						<li style="display: block;" class="nonprofit partner cms jquery">
-								
-				<p>
-					Salvation Army of Wake County
-				</p>
-			</li>
-						<li class="business design">
-								
-				<p>
-					Tharrington Smith
-				</p>
-			</li>
-						<li class="nonprofit university design cms jquery video">
-								
-				<p>
-					The Morehead-Cain Scholars Program
-				</p>
-			</li>
-						<li class="political design cms">
-								
-				<p>
-					Josh Mandel for Treasurer
-				</p>
-			</li>
-						<li class="university partner design cms jquery">
-								
-				<p>
-					NC Marine Science
-				</p>
-			</li>
-						<li style="display: block;" class="nonprofit econdev partner cms jquery search">
-								
-				<p>
-					Raleigh Economic Development
-				</p>
-			</li>
-						<li class="political design cms video">
-								
-				<p>
-					Ravenstahl for Mayor
-				</p>
-			</li>
-						<li class="business design cms analytics">
-								
-				<p>
-					Volt Energy
-				</p>
-			</li>
-
-		</ul>
-		
-	</div>
-	
-</div> -->
 
 <?php
 get_footer( 'footer.php' );

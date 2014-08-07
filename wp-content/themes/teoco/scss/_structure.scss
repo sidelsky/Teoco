@@ -112,17 +112,40 @@
 	}
 
 
-
-.transcript {
-	i {
-		&:hover {
-
+//Job opportunities
+.job-opportunities {
+	.left-col {
+		//@extend %bdr;
+		@include column(3);
+		@include pull(1);
+		@media screen and (max-width: 37.5em) {
+			@include column(12);
 		}
 	}
-	div {
+	.right-col {
+	article {
+		>	p {
+			@include rhythm(0, 0, 0, 3); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
+	}
+		@include column(8);
+			@media screen and (max-width: 37.5em) {
+				@include column(12);
+			}
+		}
+	}
 
-	}
-	}
+
+// .transcript {
+// 	i {
+// 		&:hover {
+
+// 		}
+// 	}
+// 	div {
+
+// 	}
+// 	}
 
 
 

@@ -8,7 +8,7 @@
 
 <!-- Our success -->
 <section class="page-wrapper__wide section current">
-	<article class="page-wrapper__wide__inner padding-tb">
+	<div class="page-wrapper__wide__inner padding-tb">
 
 		<div class="left-col">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -99,13 +99,13 @@
 			<?php endif; ?>
 		</div>
 
-	</article>
+	</div>
 </section>
  
 
 <!-- Our success -->
 <section class="page-wrapper__wide section current">
-	<article class="page-wrapper__wide__inner padding-tb">
+	<div class="page-wrapper__wide__inner padding-tb">
 
 		<div class="left-col">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -196,7 +196,7 @@
 			<?php endif; ?>
 		</div>
 
-	</article>
+	</div>
 </section>
 
  

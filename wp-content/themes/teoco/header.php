@@ -38,141 +38,54 @@
 <!-- Page wrapper -->
 <div class="page-wrapper">
 
-<header class="page-wrapper__wide header-background">
-	<div class="page-wrapper__wide__inner">
-		<i>
-			<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
-		</i>
-		<form>
-			<input type="search" name="" value="">
-		</form>
-	</div>
-	<div class="page-wrapper__wide__inner logo-holder">
-		<a href="#" class="page-wrapper__wide__inner--logo">
-			<img src="<?php bloginfo('template_directory'); ?>/img/teoco.svg" onerror="this.onerror=null; this.src='<?php bloginfo('template_directory'); ?>/img/teoco.png'">
-		</a>
-		
+<header class="page-wrapper__wide menu-background">
 
+<div id="menu-wrapper">
+	<div class="menu-wrapper" id="primary">
+		<div class="page-wrapper__wide__inner">
 		<?php wp_nav_menu( array(
-		'menu'            => 'Primary navigation', 
-		'container'       => 'nav', 
-		'container_id'    => 'subMenuContainer',
-		'menu_id'         => 'subMenu',
-		'container_class' => 'main-navigation big-menu',
-		//'theme_location'  => 'Primary Menu',
-		//'menu_class'      => 'four coloumns', 
-		//'echo'            => true,
-		//'fallback_cb'     => 'wp_page_menu',
-		//'before'          => ,
-		//'after'           => ,
-		//'link_before'     => ,
-		//'link_after'      => ,
-		//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		//'depth'           => 0,
-		//'walker'          =>  
+			'menu'            => 'Primary navigation', 
+			'container'       => 'nav', 
+			'container_id'    => 'menuContainer',
+			'menu_id'         => 'menu',
+			'container_class' => 'navigation big-menu',
+			//'theme_location'  => 'Primary Menu',
+			//'menu_class'      => 'four coloumns', 
+			//'echo'            => true,
+			//'fallback_cb'     => 'wp_page_menu',
+			//'before'          => ,
+			//'after'           => ,
+			//'link_before'     => ,
+			//'link_after'      => ,
+			//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			//'depth'           => 0,
+			//'walker'          =>  
 		)); ?>
-
-	<!--
-		<nav class="main-navigation big-menu">
-			<ul>
-				<li>
-					<a href="#">About us</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Solutions</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Products</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Latest</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Success</a>
-				</li>
-				<li>
-					<a href="#">Contact us</a>
-				</li>
-			</ul>
-		</nav>
-	-->
-
-		<a class="simple-menu" href="#sidr">
-			<i class="fa fa-bars"></i>
-		</a>
+		</div>
 	</div>
-</header>
-
-<!--Detached menu -->
-<header class="page-wrapper__wide header-background detached">
-	<div class="page-wrapper__wide__inner logo-holder">
-		<a href="#" class="page-wrapper__wide__inner--logo">
-			<img src="<?php bloginfo('template_directory'); ?>/img/teoco.svg" onerror="this.onerror=null; this.src='<?php bloginfo('template_directory'); ?>/teoco.png'">
-		</a>
-
-		<nav class="main-navigation small-menu">
-			<ul>
-				<li>
-					<a href="#">About us</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Solutions</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Products</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Latest</a>
-					<ul class="sub-menu">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Success</a>
-				</li>
-				<li>
-					<a href="#">Contact us</a>
-				</li>
-			</ul>
-		</nav>
-
-
+	 
+	<div class="menu-wrapper" id="secondary">
+		<div class="page-wrapper__wide__inner">
+		<?php wp_nav_menu( array(
+			'menu'            => 'Sub navigation', 
+			'container'       => 'nav', 
+			'container_id'    => 'sub-menuContainer',
+			'menu_id'         => 'sub-menu',
+			'container_class' => 'sub-navigation big-menu',
+			//'theme_location'  => 'Primary Menu',
+			'menu_class'      => 'under-menu menu', 
+			//'echo'            => true,
+			//'fallback_cb'     => 'wp_page_menu',
+			//'before'          => ,
+			//'after'           => ,
+			//'link_before'     => ,
+			//'link_after'      => ,
+			//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			//'depth'           => 0,
+			//'walker'          =>  
+		)); ?>
+		</div>
 	</div>
+</div>
+
 </header>

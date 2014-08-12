@@ -5,6 +5,11 @@
 //update_option('siteurl','http://79.170.44.100/steventaylorassociates.com/');
 //update_option('home','http://79.170.44.100/steventaylorassociates.com/');
 
+//Plugins included into theme folder
+include_once('plugins/simple-section-navigation/simple_section_nav.php');
+include_once('plugins/simple-sitemap/simple-sitemap.php');
+//define( 'ACF_LITE', false );
+
 
 /** Tell WordPress to run starkers_setup() when the 'after_setup_theme' hook is run. */
 add_action('after_setup_theme', 'myTheme');
@@ -26,6 +31,19 @@ if ( ! function_exists('myTheme')) :
 
 	//Add excerpt to pages
 	add_post_type_support( 'page', 'excerpt' );
+
+
+
+
+//Sidebar
+// if ( function_exists('register_sidebar') )
+// register_sidebar(array('name'=>'Left side',
+// 'before_widget' => '<li id="%1$s" class="widget %2$s">',
+// 'after_widget' => '</li>',
+// 'before_title' => '<h2 class="widgettitle">',
+// 'after_title' => '</h2>',
+// ));
+
 
 //Gravity forms - JavaScript to footer
 
@@ -91,8 +109,23 @@ register_taxonomy( "locations",
 	);
 
 
+//Is tree
+function is_tree($pid)// $pid = The ID of the page we're looking for pages underneath
+{
+  global $post;// load details about this page
+  $ancestors = get_post_ancestors($post->$pid);
+  $root = count($ancestors) - 1;
+  //$parent = $ancestors[$root];
 
-
+  if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors)))
+  {
+    return true;// we're at the page or at a sub page
+  }
+  else
+  {
+    return false;// we're elsewhere
+  }
+};
 
  //Remove p from excerpt
 $myExcerpt = get_the_excerpt();

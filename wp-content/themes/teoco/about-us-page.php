@@ -7,7 +7,7 @@
 
 <!-- Company overview -->
 <section class="page-wrapper__wide rel-pos section current">
-	<article class="page-wrapper__wide__inner padding-tb-small">
+	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-</article>
+</div>
 <div class="slider bottom">
 	<div class="curve-holder blue"></div>
 	<div class="flexslider2">
@@ -86,7 +86,7 @@
 
 <!-- Company overview -->
 <section class="page-wrapper__wide rel-pos section current">
-	<article class="page-wrapper__wide__inner padding-tb-small">
+	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 	</div>
-</article>
+</div>
 <div class="slider bottom">
 	<div class="curve-holder red"></div>
 	<div class="flexslider2">

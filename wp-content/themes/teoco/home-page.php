@@ -7,7 +7,7 @@
 
 	<!-- Primary slider -->
 	<section class="page-wrapper__wide rel-pos section current">
-		<article class="page-wrapper__wide__inner padding-tb-small">
+		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
 					<div class="flexslider">
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 		</div>
-	</article>
+	</div>
 
 	<div class="slider bottom">
 		<div class="curve-holder red"></div>
@@ -52,7 +52,7 @@
 
 <!-- What we do -->
 <section class="page-wrapper__wide what-we-do-bg section">
-	<article class="page-wrapper__wide__inner padding-tb">
+	<div class="page-wrapper__wide__inner padding-tb">
 		<h1>What we do</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vitae sit consequuntur alias officiis accusantium, totam voluptatibus, commodi porro at odit aliquid deserunt fugiat molestias, voluptates quo sapiente magnam nisi.</p>
 		<ul class="blob-buttons padding-tb-small">
@@ -73,12 +73,12 @@
 				</a>
 			</li>
 		</ul>
-	</article>
+	</div>
 </section>
 
 <!-- Latest news -->
 <section class="page-wrapper__wide rel-pos section">
-	<article class="page-wrapper__wide__inner padding-tb-small">
+	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
@@ -113,7 +113,7 @@
 			</div>
 		</div>
 	</div>
-</article>
+</div>
 <div class="slider bottom">
 	<div class="curve-holder green"></div>
 	<div class="flexslider2">
@@ -128,7 +128,7 @@
 
 <!-- Our success -->
 <section class="page-wrapper__wide grey section">
-		<article class="page-wrapper__wide__inner padding-tb">
+		<div class="page-wrapper__wide__inner padding-tb">
 			<div class="left-col">
 				<?php
 					$args = array(
@@ -194,12 +194,12 @@
 		 </ul>
 		<?php endif; ?>
 		</div>
-		</article>
+		</div>
 	</section>
 
 <!-- Latest -->
 <section class="page-wrapper__wide rel-pos section">
-	<article class="page-wrapper__wide__inner padding-tb-small">
+	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
@@ -226,7 +226,7 @@
 			</div>
 		</div>
 	</div>
-</article>
+</div>
 <div class="slider bottom">
 	<div class="curve-holder mustard"></div>
 	<div class="flexslider2">

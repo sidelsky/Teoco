@@ -1,4 +1,4 @@
-<footer class="page-wrapper__wide">
+<footer class="page-wrapper__wide current">
 	<section class="page-wrapper__wide__inner padding-tb-small">
 		 
 		<?php wp_nav_menu( array(

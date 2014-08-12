@@ -5,15 +5,14 @@ Template Name: Landing page
 get_header();
 ?>
 
-<section class="page-wrapper__wide what-we-do-bg section">
-  <article class="page-wrapper__wide__inner padding-tb">
+<section class="page-wrapper__wide  section">
+  <div class="page-wrapper__wide__inner padding-tb">
     <?php
     //$image_icon = get_field('image_icon');
     $args = array(
       'post_type'      => 'page',
       'posts_per_page' => -1,
       'post_parent'    => $post->ID,
-    //'post_parent'    => 22,
       'order'          => 'ASC',
       'orderby'        => 'menu_order'
       );
@@ -39,7 +38,7 @@ get_header();
       <?php endwhile; ?>
     </ul>
   <?php endif; wp_reset_query(); ?>
-</article>
+</div>
 </section>
 
 <?php

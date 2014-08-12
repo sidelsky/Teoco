@@ -4,7 +4,7 @@
 	@include clearfix;
 	//height: 4000px;
 	.page-wrapper__wide { //Inside wide wrapper
-		//@extend %bdr;
+		@extend %bdr;
 		overflow: hidden;
 		&.what-we-do-bg {
 				background: url(../img/background-images/what-we-do.png) no-repeat bottom right;
@@ -21,7 +21,7 @@
 			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		}
 		.page-wrapper__wide__inner { //Inner most wrapper with max width
-			//@extend %bdr;
+			@extend %bdr;
 			@include clearfix;
 			@extend %max-width;
 			margin: 0 auto;
@@ -113,7 +113,8 @@
 
 
 //Job opportunities
-.job-opportunities {
+.job-opportunities,
+.sub-pages {
 	.left-col {
 		//@extend %bdr;
 		@include column(3);
@@ -123,7 +124,7 @@
 		}
 	}
 	.right-col {
-	article {
+	.job-opportunities {
 		>	p {
 			@include rhythm(0, 0, 0, 3); //Margin top, Padding top, Padding bottom, Margin bottom
 		}
@@ -134,6 +135,26 @@
 			}
 		}
 	}
+
+
+
+//Sub pages
+// .sub-pages {
+// 	.left-col {
+// 		//@extend %bdr;
+// 		@include column(4);
+// 		@include pull(1);
+// 		@media screen and (max-width: 37.5em) {
+// 			@include column(12);
+// 		}
+// 	}
+// 	.right-col {
+// 		@include column(7);
+// 			@media screen and (max-width: 37.5em) {
+// 				@include column(12);
+// 			}
+// 		}
+// 	}	
 
 
 // .transcript {

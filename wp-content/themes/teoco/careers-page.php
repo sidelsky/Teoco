@@ -7,7 +7,7 @@
 
 	<!-- Company overview -->
 	<section class="page-wrapper__wide rel-pos section current">
-		<article class="page-wrapper__wide__inner padding-tb-small">
+		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
 					<div class="flexslider">
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 		</div>
-	</article>
+	</div>
 	<div class="slider bottom">
 		<div class="curve-holder blue"></div>
 		<div class="flexslider2">
@@ -50,7 +50,7 @@
 				foreach ( $terms as $term ) {
 					$termname = strtolower($term->name);
 					$termname = str_replace(' ', '-', $termname);
-					echo '<li data-filter=".'.$termname.'" class="filter">'.$term->name.'</li>';
+					echo '<li data-filter=".'.$termname.'" class="filter"><a href="#">'.$term->name.'</a></li>';
 				}
 			}
 				//echo '<li class="sort" data-sort="myorder:asc">Asc</li>';
@@ -60,7 +60,7 @@
 	</div>
 	
 	<div class="right-col">
-	<article>
+	<article class="job-opportunities">
 		<?php the_field('job_opportunities_copy'); ?>
 	</article>
 			<ul id="Container" class="container accordian">

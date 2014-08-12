@@ -9,7 +9,7 @@
 	<!-- Our success -->
 	<?php if (get_field('success_title')) : ?>
 	<section class="page-wrapper__wide section current">
-		<article class="page-wrapper__wide__inner padding-tb">
+		<div class="page-wrapper__wide__inner padding-tb">
 			
 			<div class="left-col">
 				<h1><?php the_field('success_title'); ?></h1>
@@ -84,7 +84,7 @@
 				<?php endwhile; wp_reset_query();?>
 			<?php endif; ?>
 		</div>
-	</article>
+	</div>
 </section>
 <?php endif; ?>	
 
@@ -94,7 +94,7 @@
 <?php if (get_field('success_stories_title')) : ?>
 
 <section class="page-wrapper__wide section">
-	<article class="page-wrapper__wide__inner padding-tb success">
+	<div class="page-wrapper__wide__inner padding-tb success">
 		
 		<div class="left-col">
 			<h1><?php the_field('success_stories_title'); ?></h1>
@@ -145,7 +145,7 @@
 
 			<?php endwhile; wp_reset_query();?>
 		<?php endif; ?>
-</article>
+</div>
 </section>
 <?php endif; ?>	
 
@@ -153,7 +153,7 @@
 <!-- Awards -->
 <?php if (get_field('award_title')) : ?>	 
 	<section class="page-wrapper__wide section">
-		<article class="page-wrapper__wide__inner padding-tb success">
+		<div class="page-wrapper__wide__inner padding-tb success">
 			
 			<div class="left-col">
 				<h1><?php the_field('award_title'); ?></h1>
@@ -221,7 +221,7 @@
 				<?php endwhile; wp_reset_query();?>
 			<?php endif; ?>
 		</div>
-	</article>
+	</div>
 </section>
 <?php endif; ?>	
 

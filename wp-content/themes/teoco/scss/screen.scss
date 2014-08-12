@@ -26,15 +26,16 @@
 @import "Hamburger-icon.scss";
 @import "logo.scss";
 @import "slider.scss";
-@import "main-navigation.scss";
+//@import "main-navigation.scss";
+@import "navigation.scss";
 @import "jquery.sidr.light.scss";
 
- 
+
 
 //html {
 //  @include adjust-leading-to(1);
 //}
- 
+
 body,html {
 	position: relative;
 	height: 100%;
@@ -55,11 +56,11 @@ body {
 //Baseline
 $base-font-size: 18px;
 $base-line-height: 8px;
- 
+
 @include establish-baseline;
 
 html {
-  @include adjust-leading-to(4); 
+	@include adjust-leading-to(4); 
 }
 
 //-webkit-font-smoothing: antialiased;
@@ -67,7 +68,8 @@ html {
 h1, h2, h3, h4 {
 	margin: 0;
 	padding: 0;
-	@extend %open_sansbold;
+	//@extend %open_sansbold;
+	@extend %open_sansregular;
 	font-weight: 100; 
 	color: $black;
 }
@@ -86,11 +88,54 @@ p {
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 }
 
-blockquote {
-	p {
-		color: $red;
-		font-style: italic;
+
+article {
+	ul {
+		color: $grey;
 		@include adjust-font-size-to(24px, 5);
+			@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+			li {
+				list-style-type: none;
+				&:before {
+					/* Unicode bullet symbol */
+					content: '\2022 ';
+					/* Bullet color */
+					padding-right: 0.5em;
+				}
+			}
+		}
+	}
+
+	.solution {
+		article {
+			ul {
+				li {
+					&:before {
+						color: $purple;
+					}
+				}
+			}
+		}
+	}
+
+
+	.product {
+		article {
+			ul {
+				li {
+					&:before {
+						color: $blue;
+					}
+				}
+			}
+		}
+	}
+
+	blockquote {
+		p {
+			color: $red;
+			font-style: italic;
+			@include adjust-font-size-to(24px, 5);
 		//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false)
 	}
 }
@@ -105,8 +150,8 @@ blockquote {
 
 //Mix it up
 .container .mix{
-		display: none;
-	}
+	display: none;
+}
 
 // .section-navigation {
 // 	position: fixed;

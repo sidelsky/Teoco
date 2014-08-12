@@ -64,6 +64,76 @@
 }
 
 
+
+//Sub structure
+.sub-navigation { //Main Navigation
+	@include column(10);
+	position: relative;
+	z-index: 100;
+	@extend %bdr;
+	float: right;
+	@include clearfix;
+	//Meduim
+	@media screen and (max-width: 60em) {
+		@include column(1);
+	}
+	> ul {
+		float: right;
+		//Meduim
+		@media screen and (max-width: 60em) {
+			//display: none;
+		}
+	>	li {
+			@extend %bdr;
+			float: left;
+			position: relative;
+			@include clearfix;
+			text-align: left;
+			margin-left: 0em;
+			position: relative;
+			i {
+				position: absolute;
+				top: 16px;
+				right: -20px;
+			}
+			//Meduim
+			@media screen and (max-width: 84em) {
+				margin-left: 2em;
+			}
+			a {
+				text-decoration: none;
+				color: $grey;
+				display: block;
+				@include adjust-font-size-to(14px, 2);
+				text-transform: uppercase;
+			}
+			&:hover .sub-menu {
+				position: relative;
+				//left: 0;
+				display: block;
+			}
+			.sub-menu {
+				background: pink;
+				position: relative;
+				z-index: 100;
+
+				//left:-9999px;
+				//display: none;
+				margin: 0;
+				padding: 0;
+				li {
+					display: block;
+					margin: 0;
+					@extend %bdr;
+					a {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
 // .main-navigation {
 // 	@include column(10);
 // 	@extend %bdr;

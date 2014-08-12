@@ -261,11 +261,11 @@ $('.flexslider2').flexslider({
 
 
 /*Dropdown arrow large and small */
-$("ul.sub-menu").hide();
-$('.main-navigation >ul >li:has(.menu-wrapper)').addClass('hasSub');
-$("ul.sub-menu").parent().append("<i class='fa fa-angle-down'></i>");
+//$("ul.sub-menu").hide();
+//$('.main-navigation >ul >li:has(.menu-wrapper)').addClass('hasSub');
+//$("ul.sub-menu").parent().append("<i class='fa fa-angle-down'></i>");
 
-$('.big-menu >ul >li.hasSub').hover(function () {
+/*$('.big-menu >ul >li.hasSub').hover(function () {
         //$(this).children('ul').stop().slideDown(700, 'easeOutBack');
         $('.big-menu li.hasSub >ul').stop().slideDown(700, 'easeOutBack');
       }, function () {
@@ -280,6 +280,72 @@ $('.small-menu >ul >li.hasSub').hover(function () {
         //$(this).children('ul').stop().slideUp(900, 'easeInOutExpo');
         $('.small-menu li.hasSub >ul').stop().slideUp(900, 'easeInOutExpo');
       });
+*/
+
+
+
+// var primaryNav = $('#primary'),
+//     menu_wrapper = $('#menu-wrapper #primary div nav ul li a');
+//     subNav = $('#secondary'),
+//     menu_wrapper_hide = $('#menu-wrapper');
+
+// //subNav.hide();
+
+
+// primaryNav.hover(
+//   function() {
+//     var rel = $(this).find('a').attr('rel')
+//     $('#secondary a[rel="' + rel + '"]').addClass('active');
+//   },
+//   function() {
+//     var rel = $(this).find('a').attr('rel')
+//     $('#secondary a[rel="' + rel + '"]').removeClass('active');
+//   }
+// );
+
+ 
+
+
+
+// menu_wrapper.bind('mouseover', openSubMenu);
+// function openSubMenu() {
+//   subNav.css('display', 'block');  
+// };
+
+// subNav.bind('mouseout', closeSubMenu);
+// function closeSubMenu() {
+//   subNav.css('display', 'none');  
+// };
+
+// menu_wrapper.bind('mouseover', openSubMenu);
+// $('#menu-wrapper').bind('mouseout', closeSubMenu);
+    
+//     function openSubMenu() {
+//       subNav.css('display', 'block');  
+//     };
+    
+//     function closeSubMenu() {
+//       subNav.css('display', 'none'); 
+//     };
+           
+ 
+
+// menu_wrapper.mouseenter(function() {
+//   subNav.show();
+// });
+
+// subNav.mouseout(function() {
+//   $(this).hide();
+// });
+
+// menu_wrapper.hover(function() {
+//   /* Stuff to do when the mouse enters the element */
+//     subNav.show();
+// }, function() {
+//   /* Stuff to do when the mouse leaves the element */
+//   subNav.hide();
+// });
+
 
 
 
@@ -378,6 +444,12 @@ $('.product').click(function() {
   $('.content').slideUp(300);
   $(this).parent().next().children().eq(index).slideDown(200);  
 });
+
+$('.controls').click(function(e){
+   e.preventDefault();
+})
+
+//$('.side-menu li:first-child').html('overview');
 
 
 ////////////////////////////////////////////
@@ -496,10 +568,6 @@ $('.accordian > li > .accord-toggle').on('click', function (e) {
 ////////////////////////////////////////////
 //Poplulate hidden field for jobs on careers
 ////////////////////////////////////////////
- 
-
-//var career_number = $('.career-number').text();
-
 
 $('.career-number').hide();
 function getCareerVal(index) {
@@ -514,7 +582,6 @@ function getCareerVal(index) {
 }
 getCareerVal();
 
-
 $("input[type=file]").nicefileinput();
 
 // function getCareerVal() {
@@ -526,6 +593,11 @@ $("input[type=file]").nicefileinput();
 // }
 // getCareerVal();
 
+
+
+$('.side-menu.links li:first-child a').click(function(e){
+  e.preventDefault();
+});
 
 
 ////////////////////////////////////////////

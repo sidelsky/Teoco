@@ -1,0 +1,163 @@
+.menu-background {
+	//background: url(../img/menu-background.gif) no-repeat 0 0;
+}
+
+
+
+
+.menu-wrapper {
+	@extend %bdr;
+}
+
+
+#primary {
+	div {
+		nav {
+			ul {
+				li {
+					@include adjust-font-size-to(14px, 1.2);
+					a {
+						text-transform: uppercase;
+						
+					}
+				}
+			}
+		}
+	}
+} 
+
+
+#secondary {
+	//max-height: 0px;
+	overflow: hidden;
+	@include transition(all 1s ease-out);
+	background: $light-grey;
+	div {
+		//@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		nav {
+			ul {
+				li {
+					padding:0 92px 0 0;
+					@include rhythm(0.5, 0, 0.5, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+					@include adjust-font-size-to(14px, 0.8);
+				}
+			}
+		}
+	}
+}
+
+//Genric:
+.menu {
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	li {
+		width: 170px;
+		float: left;
+		//@extend %bdr;
+		a {
+			color: $grey;
+			text-decoration: none;
+			&:hover {
+				color: $red;
+			}
+		}
+		&.current-menu-item,
+		&.current-page-ancestor {
+			a {
+				color: $red;
+			}
+		}
+	}
+}
+
+#menu-wrapper {
+	&:hover #secondary {
+		max-height: 999px;
+		@include transition(all 0.8s ease-out);
+	}
+}
+
+
+// .menu-wrapper {
+// 	.page-wrapper__wide__inner {
+// 		nav {
+// 			.menu {
+// 				li {
+// 					a {
+
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+// .navigation {
+// 	.menu {
+// 		margin: 0px;
+// 		padding: 0px;
+// 		position: relative;
+// 		> li {
+// 			//@extend %bdr;
+// 			//width: 165px;
+// 			float: left;
+// 			.sub-menu {
+// 				//display: none;
+// 				position: relative;
+// 				//width: 230px;
+// 				li {
+// 					display: block;
+// 					float: left;
+// 					margin:0;
+// 					position: relative;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+//Hide first level list item in sub menu:
+.sub-navigation {
+	.under-menu {
+		> li {
+			>	a {
+				display: none;
+				visible: hidden;
+			}
+		}
+	}
+}
+
+
+// .sub-navigation {
+// 		ul {
+// 		margin: 0px;
+//     padding: 0px;
+// 		position: relative;
+// 		> li {
+
+// 			width: 165px;
+// 			display: inline-block;
+// 		>	a {
+// 				display: none;
+// 				visible: hidden;
+// 			}
+// 			.sub-menu {
+// 				@extend %bdr;
+// 				position: relative;
+// 				li {
+// 					@extend %bdr;
+// 					@extend clearfix;
+// 					display: block;
+// 					margin:0;
+// 					a {
+// 						display: block;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

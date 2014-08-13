@@ -1,0 +1,122 @@
+#primary {
+	//@extend %max-width;
+	position: relative;
+	background-color: peach;
+	@extend %clearfix;
+	@extend %bdr;
+	.inner {
+		@extend %max-width;
+		@extend %bdr;
+		margin: 0 auto;
+	}
+}
+
+#secondary {
+	//@extend %max-width;
+	position: relative;
+	background-color: $light-grey;
+	@extend %clearfix;
+	@extend %bdr;
+}
+
+#header {
+	//@extend bdr;
+	width: 100%;
+	background: transparent;
+	min-height: 52px;
+	//position: fixed;
+	z-index: 1000;
+	overflow: visible;
+	margin: 0 auto;
+	.primary {
+		z-index: 1000;
+		display: block;
+		@include clearfix;
+		//@extend %max-width;
+		width: 100%;
+	  //@extend %max-width;
+	  //position: absolute;
+	  //background: #FFF;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	  //height: 48px;
+	  overflow-x: hidden;
+	  //background: yellow;
+	  ul {
+	  	position: relative;
+	  	li {
+	  		float: left;
+	  		height: 100%;
+	  		text-align: left;
+	  		//width: 170px;
+	  		&#menu-item-33 { // About us
+	  			width: 140px;
+	  		}
+	  		&#menu-item-32 { // Our Solutions
+	  			width: 200px;
+	  		}
+	  		&#menu-item-31 { // Our products
+	  			width: 200px;
+	  		}
+	  		&#menu-item-30 { // Latest
+	  			width: 130px;
+	  		}
+	  		&#menu-item-29 { // Success
+	  			width: 140px;
+	  		}
+	  		&#menu-item-28 { // Contact us
+	  			width: 130px;
+	  		}
+	  		a {
+	  			display: block;
+	  			padding: 10px 0;
+	  			color: #D4D4D4;
+	  			text-decoration: none;
+	  		}
+	  	}
+	  }
+	}
+	.secondary {
+	  //position: relative;
+		//position:absolute;
+		z-index: 999;
+		//width:100%;
+		@extend %max-width;
+		//padding-top:10px;
+		//display:none;
+		ul {
+			width: 100%;
+			li {
+				list-style: none;
+				position: absolute;
+				display: block;
+				float: left;
+				width: 170px;
+				//padding: 0 1.5em;
+				//margin-right: 20px;
+				ul {
+					display:block;
+					li {
+						position: relative;
+						font-size: 11px;
+						color: #333333;
+						line-height:1.6em;
+						padding: 0;
+						//width: 100px;
+					}
+				}
+			}
+		}
+		a {
+			color: red;
+			text-decoration: none;
+			display: block;
+			&:hover {
+				color:#999;
+			}
+			&.active {
+				color:#333;
+			}
+		}
+	}
+}

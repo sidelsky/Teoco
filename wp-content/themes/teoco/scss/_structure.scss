@@ -1,10 +1,10 @@
 //Container structure
 .page-wrapper { //Outer most wrapper
-	@extend %bdr;
+	//@extend %bdr;
 	@include clearfix;
 	//height: 4000px;
 	.page-wrapper__wide { //Inside wide wrapper
-		@extend %bdr;
+		//@extend %bdr;
 		overflow: hidden;
 		&.what-we-do-bg {
 				background: url(../img/background-images/what-we-do.png) no-repeat bottom right;

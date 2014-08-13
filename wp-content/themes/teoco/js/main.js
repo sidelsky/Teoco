@@ -303,9 +303,6 @@ $('.small-menu >ul >li.hasSub').hover(function () {
 //   }
 // );
 
- 
-
-
 
 // menu_wrapper.bind('mouseover', openSubMenu);
 // function openSubMenu() {
@@ -346,7 +343,183 @@ $('.small-menu >ul >li.hasSub').hover(function () {
 //   subNav.hide();
 // });
 
+/*$('.career-number').hide();
+function getCareerVal(index) {
+  $('.toggle-inner').each(function(i){
+    var hidval = $(this).find('.career-number').html();
+    $(this).find('.gform_fields .gform_hidden').val(hidval);
+    //console.log(hidval);
+  })
+  // var career_number = $('.toggle-inner').find('.career-number:nth-child('+index+')').text(),
+  //     hidden = $('.gform_fields .gform_hidden');
+  //     hidden.val(career_number);
+}
+getCareerVal();*/
 
+//This function will get the REL attributes of each link in both primary and secondary menus
+function getRelVal() {
+  $('#header a').each(function(){
+    var relTitle = $(this).text();
+    $(this).attr('rel', relTitle );
+    relTitle.replace(/\s+/g, '-').toLowerCase();
+    console.log(relTitle);
+  });
+}
+getRelVal();
+
+
+//var str = "Sonic Free Games";
+//str.replace(/\s+/g, '-').toLowerCase();
+
+// var value = $('div').text();
+// $('div').text(value.replace(/\-/g, " "));
+
+//Main nav
+  var header = $('#header'),
+      primaryNav = $('div.primary'),
+      secondaryNav = $('div.secondary'),
+      secondaryNavHeight = 92,
+      animationDuration = 300,
+      // Update position of secondary nav to line up with primary
+      primaryNavList = $('div.primary ul'),
+      secondaryNavList = $('div.secondary ul');
+
+      for(var i=0;i<primaryNavList.children().length;i++) {
+        var primaryNavChild = $(primaryNavList.children()[i]),
+            secondaryNavChild = $(secondaryNavList.children()[i]);
+
+        primaryNavChild.hover(
+          function() {
+            //console.log('');
+            var rel = $(this).find('a').attr('rel');
+            $('div.secondary li a[rel="' + rel + '"]').addClass('active');
+            //$('#menu-item-471 a').addClass('active');
+            //console.log();
+          },
+          function() {
+            var rel = $(this).find('a').attr('rel');
+            $('div.secondary a[rel="' + rel + '"]').removeClass('active');
+          }
+          );
+
+        secondaryNavChild.find('a').each(function() {
+          var path = window.location.pathname;
+          if($(this).attr('href') == path) {
+            var rel = $(this).attr('rel');
+            $('div.primary a[rel="' + rel + '"]').addClass('active');
+          }
+        });
+
+        secondaryNavChild.css('left', primaryNavChild.position().left);
+        secondaryNavChild.hover(
+          function() {
+            var rel = $(this).find('a').attr('rel');
+            $('div.primary a[rel="' + rel + '"]').addClass('active');
+            $('div.secondary a[rel="' + rel + '"]').addClass('active');
+          },
+          function() {
+            var rel = $(this).find('a').attr('rel');
+            $('div.primary a[rel="' + rel + '"]').removeClass('active');
+            $('div.secondary a[rel="' + rel + '"]').removeClass('active');
+          }
+          );
+      }
+
+
+
+      secondaryNav.height(secondaryNavHeight);
+      secondaryNav.css('top', -(secondaryNav.outerHeight()-primaryNav.outerHeight()))
+
+      var headerShadowHeight = 4; // Account for the shadow
+      var headerCollapsedHeight = primaryNav.outerHeight() + headerShadowHeight;
+      var headerExpandedHeight = primaryNav.outerHeight()+secondaryNav.outerHeight() + headerShadowHeight;
+      header.height(headerCollapsedHeight);
+
+      
+
+      // Add hover state to the primary nav
+      if( Modernizr.touch == false) {
+
+        primaryNav.find('li').each(function() {
+          $(this).mouseenter(
+           function() {
+
+               // If secondary disabled, just return, do not show secondary menu
+               if($(this).hasClass('secondary-disabled')) {
+                 return;
+               }
+
+               //cookieBlockHeight = $('#cookie_msg').is(':visible') ? $('#cookie_msg').outerHeight() : 0;
+
+               header.height(headerExpandedHeight);
+
+               secondaryNav.show();
+               secondaryNav.stop().animate({
+                 top:primaryNav.outerHeight()
+               }, animationDuration, 'easeOutQuart');
+
+               $('#content').stop().animate({
+                 top:secondaryNav.outerHeight()
+               }, animationDuration, 'easeOutQuart');
+
+             }
+             );
+        });
+
+        $('#header').mouseleave(
+          function() {
+
+            header.height(headerCollapsedHeight);
+
+            secondaryNav.stop().animate({
+              top:-(secondaryNav.outerHeight()-primaryNav.outerHeight())
+            }, animationDuration, 'easeOutQuart');
+
+            $('#content').stop().animate({
+              top: '0px'
+            }, animationDuration, 'easeOutQuart');
+          }
+          );
+      }
+      else {
+
+        primaryNav.find('li').each(function() {
+          $(this).click(
+            function() {
+
+              // If secondary disabled, just go to link
+              if($(this).hasClass('secondary-disabled')) {
+                return true;
+              }
+
+              // Continue to link
+              if(secondaryNav.is(":visible")) {
+                return true;
+              }
+              // Show secondary nav
+              else {
+
+                header.height(headerExpandedHeight);
+
+                secondaryNav.show();
+                secondaryNav.stop().animate({
+                  top:primaryNav.outerHeight()
+                }, animationDuration, 'easeOutQuart');
+
+                $('#content').stop().animate({
+                  top:secondaryNav.outerHeight()
+                }, animationDuration, 'easeOutQuart');
+
+                return false;
+              }
+            }
+            );
+        });
+
+      }
+
+   
+  // Secondary navigation end
 
 
 //Scroll to section

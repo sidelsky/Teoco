@@ -8,7 +8,7 @@
 		'menu_id'         => 'subMenu',
 		'container_class' => 'navigation',
 		//'theme_location'  => 'Primary Menu',
-		//'menu_class'      => 'four coloumns', 
+		'menu_class'      => 'footer-menu', 
 		//'echo'            => true,
 		//'fallback_cb'     => 'wp_page_menu',
 		//'before'          => ,

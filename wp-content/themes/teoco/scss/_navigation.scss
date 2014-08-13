@@ -16,9 +16,11 @@
 			ul {
 				li {
 					@include adjust-font-size-to(14px, 1.2);
-					a {
-						text-transform: uppercase;
-						
+					text-transform: uppercase;
+					&.current-menu-item {
+						>	a {
+							color: $red;
+						}
 					}
 				}
 			}
@@ -36,10 +38,16 @@
 		//@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		nav {
 			ul {
-				li {
+				>	li {
 					padding:0 92px 0 0;
 					@include rhythm(0.5, 0, 0.5, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 					@include adjust-font-size-to(14px, 0.8);
+					&.current-menu-item,
+					&.current-page-ancestor {
+						>	a {
+							color: $red;
+						}
+					}
 				}
 			}
 		}
@@ -59,12 +67,6 @@
 			color: $grey;
 			text-decoration: none;
 			&:hover {
-				color: $red;
-			}
-		}
-		&.current-menu-item,
-		&.current-page-ancestor {
-			a {
 				color: $red;
 			}
 		}
@@ -131,6 +133,15 @@
 	}
 }
 
+
+.footer-menu {
+	li {
+		float: left;
+		a {
+			color: $white;
+		}
+	}
+}
 
 // .sub-navigation {
 // 		ul {

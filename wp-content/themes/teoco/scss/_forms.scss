@@ -208,9 +208,10 @@ form#search-form {
 		position: relative;
 		border: none;
 		input[type=text] {
-			background: $light-grey;
+			color: $grey;
 			border: none;
 			padding: 0.3em;
+			font-size: 15px;
 			z-index: 0;
 			background:$light-grey url(../img/icons/search.png) no-repeat center right;
 			background-size: 24px;

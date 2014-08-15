@@ -58,13 +58,14 @@
 						width: 220px;
 					}
 					a { 
+						@include transition(all 0.8s ease-in-out);
 						display: block;
 						height: 55px;
 						//background: url(sheep.png) center bottom no-repeat, url(betweengrassandsky.png) left top no-repeat;
 						background: url(../img/teoco.png) no-repeat 0 0;
 						background: url(../img/teoco.svg) no-repeat 0 0, none;
   					//background-image: url(../img/teoco.svg), none;
-						background-size: 60%;
+						background-size: 61%;
 						@media screen and (max-width:1024px) {
 							background-size: 75%;
 						}
@@ -177,4 +178,42 @@
 
 #menu-sub-navigation-1 > li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-498 {
 	display: none;
+}
+
+
+
+
+
+/*********************************************/
+/* Fixed header
+/*********************************************/
+//Detached menu
+
+.detached {
+	.innerbit {
+		@include transition(all 0.8s ease-in-out);
+		margin-top: -52px;
+	}
+	&.header-ani {
+		position: fixed;
+		width: 100%;
+		z-index: 100;
+		background: $white;
+		@include box-shadow($grey 1px 1px 3px);
+		@include transition(top 0.8s ease-in-out);
+		.innerbit {
+			overflow: hidden;
+			@include transition(all 0.8s ease-in-out);
+			margin-top: -52px;
+			//display: none;
+		}
+		#menu-item-499 {
+			//padding-top: 8px !important;
+			a {
+				background-size: 40% !important;
+				background-position: 0 12px !important;
+				@include transition(all 0.8s ease-in-out);
+			}
+		}
+	}
 }

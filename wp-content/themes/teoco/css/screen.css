@@ -3772,15 +3772,16 @@ form#search-form fieldset {
 }
 /* line 210, ../scss/_forms.scss */
 form#search-form fieldset input[type=text] {
-  background: #eeeeee;
+  color: #646569;
   border: none;
   padding: 0.3em;
+  font-size: 15px;
   z-index: 0;
   background: #eeeeee url(../img/icons/search.png) no-repeat center right;
   background-size: 24px;
 }
 
-/* line 223, ../scss/_forms.scss */
+/* line 224, ../scss/_forms.scss */
 .lte9 .gfield_label {
   display: block !important;
 }
@@ -5303,11 +5304,15 @@ footer.search .wp-pagenavi span.current {
 }
 /* line 60, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-499 a {
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   display: block;
   height: 55px;
   background: url(../img/teoco.png) no-repeat 0 0;
   background: url(../img/teoco.svg) no-repeat 0 0, none;
-  background-size: 60%;
+  background-size: 61%;
 }
 @media screen and (max-width: 1024px) {
   /* line 60, ../scss/_wolf-navigation.scss */
@@ -5315,42 +5320,42 @@ footer.search .wp-pagenavi span.current {
     background-size: 75%;
   }
 }
-/* line 74, ../scss/_wolf-navigation.scss */
+/* line 75, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-33 {
   width: 130px;
 }
-/* line 77, ../scss/_wolf-navigation.scss */
+/* line 78, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-32 {
   width: 140px;
 }
-/* line 80, ../scss/_wolf-navigation.scss */
+/* line 81, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-31 {
   width: 140px;
 }
-/* line 83, ../scss/_wolf-navigation.scss */
+/* line 84, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-30 {
   width: 100px;
 }
-/* line 86, ../scss/_wolf-navigation.scss */
+/* line 87, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-29 {
   width: 110px;
 }
-/* line 89, ../scss/_wolf-navigation.scss */
+/* line 90, ../scss/_wolf-navigation.scss */
 #header .primary .menu li#menu-item-28 {
   width: 100px;
 }
-/* line 92, ../scss/_wolf-navigation.scss */
+/* line 93, ../scss/_wolf-navigation.scss */
 #header .primary .menu li a {
   display: block;
   padding: 17px 0 0 0;
   color: #999;
   text-decoration: none;
 }
-/* line 97, ../scss/_wolf-navigation.scss */
+/* line 98, ../scss/_wolf-navigation.scss */
 #header .primary .menu li a:hover {
   color: #b2121a;
 }
-/* line 104, ../scss/_wolf-navigation.scss */
+/* line 105, ../scss/_wolf-navigation.scss */
 #header .secondary {
   z-index: 999;
   padding: 20px;
@@ -5359,52 +5364,52 @@ footer.search .wp-pagenavi span.current {
   font-size: 0.75em;
   line-height: 1.4em;
 }
-/* line 111, ../scss/_wolf-navigation.scss */
+/* line 112, ../scss/_wolf-navigation.scss */
 #header .secondary .menu {
   width: 100%;
 }
-/* line 113, ../scss/_wolf-navigation.scss */
+/* line 114, ../scss/_wolf-navigation.scss */
 #header .secondary .menu > li {
   list-style: none;
   position: absolute;
   float: left;
   width: 170px;
 }
-/* line 119, ../scss/_wolf-navigation.scss */
+/* line 120, ../scss/_wolf-navigation.scss */
 #header .secondary .menu > li > a {
   display: none;
 }
-/* line 122, ../scss/_wolf-navigation.scss */
+/* line 123, ../scss/_wolf-navigation.scss */
 #header .secondary .menu > li ul {
   display: block;
 }
-/* line 124, ../scss/_wolf-navigation.scss */
+/* line 125, ../scss/_wolf-navigation.scss */
 #header .secondary .menu > li ul li {
   position: relative;
   width: 100px;
   margin-bottom: 10px;
 }
-/* line 128, ../scss/_wolf-navigation.scss */
+/* line 129, ../scss/_wolf-navigation.scss */
 #header .secondary .menu > li ul li a {
   display: block;
   padding-left: 29px;
 }
-/* line 137, ../scss/_wolf-navigation.scss */
+/* line 138, ../scss/_wolf-navigation.scss */
 #header .secondary a {
   color: #999;
   text-decoration: none;
   display: block;
 }
-/* line 141, ../scss/_wolf-navigation.scss */
+/* line 142, ../scss/_wolf-navigation.scss */
 #header .secondary a:hover {
   color: #b2121a;
 }
-/* line 144, ../scss/_wolf-navigation.scss */
+/* line 145, ../scss/_wolf-navigation.scss */
 #header .secondary a.active {
   color: red;
 }
 
-/* line 155, ../scss/_wolf-navigation.scss */
+/* line 156, ../scss/_wolf-navigation.scss */
 #primary .current-menu-item > a,
 #primary .current-page-ancestor > a, #secondary .current-menu-item > a,
 #secondary .current-page-ancestor > a {
@@ -5412,7 +5417,7 @@ footer.search .wp-pagenavi span.current {
 }
 
 @media screen and (max-width: 60em) {
-  /* line 169, ../scss/_wolf-navigation.scss */
+  /* line 170, ../scss/_wolf-navigation.scss */
   #menu-item-33,
   #menu-item-32,
   #menu-item-31,
@@ -5426,9 +5431,53 @@ footer.search .wp-pagenavi span.current {
 /*********************************************/
 /* Sidr menu
 /*********************************************/
-/* line 178, ../scss/_wolf-navigation.scss */
+/* line 179, ../scss/_wolf-navigation.scss */
 #menu-sub-navigation-1 > li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-498 {
   display: none;
+}
+
+/*********************************************/
+/* Fixed header
+/*********************************************/
+/* line 193, ../scss/_wolf-navigation.scss */
+.detached .innerbit {
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  margin-top: -52px;
+}
+/* line 197, ../scss/_wolf-navigation.scss */
+.detached.header-ani {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: white;
+  -webkit-box-shadow: #646569 1px 1px 3px;
+  -moz-box-shadow: #646569 1px 1px 3px;
+  box-shadow: #646569 1px 1px 3px;
+  -webkit-transition: top 0.8s ease-in-out;
+  -moz-transition: top 0.8s ease-in-out;
+  -o-transition: top 0.8s ease-in-out;
+  transition: top 0.8s ease-in-out;
+}
+/* line 204, ../scss/_wolf-navigation.scss */
+.detached.header-ani .innerbit {
+  overflow: hidden;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  margin-top: -52px;
+}
+/* line 212, ../scss/_wolf-navigation.scss */
+.detached.header-ani #menu-item-499 a {
+  background-size: 40% !important;
+  background-position: 0 12px !important;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 /* line 1, ../scss/_footer.scss */

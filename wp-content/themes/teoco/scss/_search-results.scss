@@ -1,0 +1,92 @@
+body.search-results {
+	.post {
+		border-bottom: solid $grey 1px;
+		@include adjust-font-size-to(18px, 1.2);
+		@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		h3 {
+			a {
+				color: $red;
+				text-decoration: none;
+			}
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+
+#showing {
+	.wp-pagenavi {
+		//float: left;
+		display: inline;
+		.previouspostslink,
+		.nextpostslink,
+		.current,
+		.page {
+			display: none;
+		}
+		.pages,
+		.page {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+footer.search {
+	padding: 1.5em;
+	@include column(9);
+	@include push(3);
+	@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	.wp-pagenavi {
+		//color: $grey;
+		//float: left;
+		display: inline;
+		.previouspostslink,
+		.nextpostslink,
+		.current,
+		.pages,
+		.page {
+			display: inline;
+			border: none;
+		}
+		a {
+			color: $grey;
+			display: block;
+			padding: 0 10px;
+			margin: 0;
+			  &:hover {
+			  	color: $red;  
+			  }
+			  &.page {
+				  	border: {
+				 		//right: 1px solid $grey !important;
+				 		left: 1px solid $grey !important;
+			  	}
+			  }
+			}
+			span {
+				&.current {
+					color: $red;
+					padding: 0 10px;
+					margin: 0;
+						border: {
+				 		//right: 1px solid $grey !important;
+				 		left: 1px solid $grey !important;
+			  	}
+				}
+			}
+			@media screen and (max-width:$s) {
+				.pages {
+					display: block;
+				}
+			}
+		}
+		@media screen and (max-width:$s) {
+			@include column(12);
+			//@include push(3);
+		}
+	}
+ 

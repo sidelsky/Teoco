@@ -1,122 +1,180 @@
+
 #primary {
-	//@extend %max-width;
 	position: relative;
 	background-color: peach;
-	@extend %clearfix;
-	@extend %bdr;
+	@include clearfix;
+	//@extend %bdr;
 	.inner {
 		@extend %max-width;
-		@extend %bdr;
+		//@extend %bdr;
 		margin: 0 auto;
+		padding: 0 1.5em;
 	}
 }
 
 #secondary {
-	//@extend %max-width;
 	position: relative;
 	background-color: $light-grey;
-	@extend %clearfix;
-	@extend %bdr;
+	@include clearfix;
+	//@extend %bdr;
 }
 
 #header {
 	//@extend bdr;
 	width: 100%;
 	background: transparent;
-	min-height: 52px;
+	//min-height: 52px;
+	min-height: 0px;
 	//position: fixed;
 	z-index: 1000;
-	overflow: visible;
+	//overflow: visible;
 	margin: 0 auto;
 	.primary {
 		z-index: 1000;
 		display: block;
 		@include clearfix;
-		//@extend %max-width;
-		width: 100%;
-	  //@extend %max-width;
-	  //position: absolute;
-	  //background: #FFF;
-	  font-weight: bold;
-	  text-transform: uppercase;
-	  //height: 48px;
-	  overflow-x: hidden;
-	  //background: yellow;
-	  ul {
-	  	position: relative;
-	  	li {
-	  		float: left;
+		//width: 100%;
+		text-transform: uppercase;
+		//overflow-x: hidden;
+		@include adjust-font-size-to(14px, 0.7);
+		.menu {
+			position: relative;
+			@include clearfix;
+			li {
+				//display: block;
+				color: red;
+				float: left;
 	  		height: 100%;
 	  		text-align: left;
-	  		//width: 170px;
+	  		//@extend %bdr;
+	  		&#menu-item-499 { //Logo holder
+					width: 280px;
+					//@extend %bdr;
+					a {
+						text-indent:-9999px;
+					}
+					@media screen and (max-width:1024px) {
+						//background: #ccc;
+						width: 220px;
+					}
+					a { 
+						display: block;
+						height: 55px;
+						//background: url(sheep.png) center bottom no-repeat, url(betweengrassandsky.png) left top no-repeat;
+						background: url(../img/teoco.png) no-repeat 0 0;
+						background: url(../img/teoco.svg) no-repeat 0 0, none;
+  					//background-image: url(../img/teoco.svg), none;
+						background-size: 60%;
+						@media screen and (max-width:1024px) {
+							background-size: 75%;
+						}
+						//@extend %bdr;
+					}
+	  		}
 	  		&#menu-item-33 { // About us
-	  			width: 140px;
+	  			width: 130px;
 	  		}
 	  		&#menu-item-32 { // Our Solutions
-	  			width: 200px;
-	  		}
-	  		&#menu-item-31 { // Our products
-	  			width: 200px;
-	  		}
-	  		&#menu-item-30 { // Latest
-	  			width: 130px;
-	  		}
-	  		&#menu-item-29 { // Success
 	  			width: 140px;
 	  		}
+	  		&#menu-item-31 { // Our products
+	  			width: 140px;
+	  		}
+	  		&#menu-item-30 { // Latest
+	  			width: 100px;
+	  		}
+	  		&#menu-item-29 { // Success
+	  			width: 110px;
+	  		}
 	  		&#menu-item-28 { // Contact us
-	  			width: 130px;
+	  			width: 100px;
 	  		}
 	  		a {
 	  			display: block;
-	  			padding: 10px 0;
-	  			color: #D4D4D4;
+	  			padding: 17px 0 0 0;
+	  			color:#999;
 	  			text-decoration: none;
+	  			&:hover {
+	  				color: $red;
+	  			}
 	  		}
 	  	}
 	  }
 	}
 	.secondary {
-	  //position: relative;
-		//position:absolute;
 		z-index: 999;
-		//width:100%;
 		@extend %max-width;
-		//padding-top:10px;
-		//display:none;
-		ul {
+		padding: 20px;
+		height: auto;
+		display: none;
+		@include adjust-font-size-to(12px, 0.7);
+		.menu {
 			width: 100%;
-			li {
+			>li {
 				list-style: none;
 				position: absolute;
-				display: block;
+				//display: block;
 				float: left;
 				width: 170px;
-				//padding: 0 1.5em;
-				//margin-right: 20px;
+				>a {
+					display: none;
+				}
 				ul {
 					display:block;
 					li {
 						position: relative;
-						font-size: 11px;
-						color: #333333;
-						line-height:1.6em;
-						padding: 0;
-						//width: 100px;
+						width: 100px;
+						margin-bottom: 10px;
+						a {
+							//@extend %bdr;
+							display: block;
+							padding-left: 29px;
+						}
 					}
 				}
 			}
 		}
 		a {
-			color: red;
+			color:#999;
 			text-decoration: none;
 			display: block;
 			&:hover {
-				color:#999;
+				color: $red;
 			}
 			&.active {
-				color:#333;
+				color:red;
 			}
 		}
 	}
+}
+
+
+#primary, #secondary {
+	.current-menu-item,
+.current-page-ancestor {
+	>a {
+			color: $red !important;
+		}
+	}	
+}
+
+
+@media screen and (max-width:60em) {
+	#menu-item-33,
+	#menu-item-32,
+	#menu-item-31,
+	#menu-item-30,
+	#menu-item-29,
+	#menu-item-28,
+	#secondary {
+		display: none;
+	}
+}
+
+/*********************************************/
+/* Sidr menu
+/*********************************************/
+
+#menu-sub-navigation-1 > li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-498 {
+	display: none;
 }

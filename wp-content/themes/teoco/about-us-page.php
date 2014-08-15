@@ -78,11 +78,8 @@
 </article>
 </section>
 
-			
 <!--Video - vimeo api-->	
-<?php include 'vimeo-video.inc.php' ?>
-
-
+<?php get_template_part('/vimeo-video'); ?>
 
 <!-- Company overview -->
 <section class="page-wrapper__wide rel-pos section current">

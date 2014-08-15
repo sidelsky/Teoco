@@ -1,16 +1,16 @@
-footer {
+.page-footer {
 	background: $grey;
 	nav, div {
 		@include column(6);
 		//Small
-		@media screen and (max-width: 60em) {
+		@media screen and (max-width: $m) {
 			@include column(12);
 		}
 		ul {
 			li {
 				float: left;
 				//Meduim
-				@media screen and (max-width: 60em) {
+				@media screen and (max-width: $m) {
 					text-align: center;
 				}
 				a {
@@ -24,10 +24,9 @@ footer {
 			}
 		}
 	}
-	.navigation {
-		ul {
+	.footer-menu {
 			//Meduim
-			@media screen and (max-width: 60em) {
+			@media screen and (max-width: $m) {
 				float: none;
 				display: table;
 				margin: 0 auto;
@@ -35,23 +34,27 @@ footer {
 			li {
 				margin-right: 1em;
 				//Meduim
-				@media screen and (max-width: 60em) {
+				@media screen and (max-width: $m) {
 					display: block;
 					//float: none;
 					text-align: center;
 					margin: 0 1em;
 				}
 				//Small
-				@media screen and (max-width: 37.5em) {
+				@media screen and (max-width: $s) {
 					display: block;
 					float: none;
 					text-align: center;
 					margin: 0;
 				}
 				a {
-				
+					color: darken($light-grey, 20%);
+				}
+				&.current_page_item {
+					a {
+						color: $white;
+					}
 				}
 			}
 		}
 	}
-}

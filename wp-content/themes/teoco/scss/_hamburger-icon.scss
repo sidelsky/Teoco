@@ -1,8 +1,9 @@
 .simple-menu { //Hamburger icon
 	//height: 100%;
 	position: absolute;
-	right: 1.5em;
-	@extend %bdr;
+	right: 2em;
+	top: 2.6em;
+	//@extend %bdr;
 	overflow: hidden;
 	text-align: right;
 	text-decoration: none;

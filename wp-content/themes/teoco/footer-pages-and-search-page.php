@@ -6,8 +6,7 @@
 	?>
 
 
-
-	<!-- Corporate responsibility -->
+ 
 	<section class="page-wrapper__wide rel-pos section">
 		<article class="page-wrapper__wide__inner padding-tb-small">
 		

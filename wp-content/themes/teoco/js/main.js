@@ -152,29 +152,29 @@ $(document).ready(function () {
 
 
 
-$('.flexslider').flexslider({
-  animation: 'slide',
-  slideshow: false,
-  directionNav: false,
-  startAt: 0,
-  easing: "swing",
-  animationLoop: true,
-  reverse: false,
-  smoothHeight: false,
-  sync: ".flexslider2"
-});
+      $('.flexslider').flexslider({
+        animation: 'slide',
+        slideshow: false,
+        directionNav: false,
+        startAt: 0,
+        easing: "swing",
+        animationLoop: true,
+        reverse: false,
+        smoothHeight: false,
+        sync: ".flexslider2"
+      });
 
-$('.flexslider2').flexslider({
-  animation: 'slide',
-  slideshow: false,
-  startAt: 0,
-  easing: "swing",
-  animationLoop: true,
-  reverse: false,
-  smoothHeight: false,
-  controlNav: false,
-  directionNav: false
-});
+      $('.flexslider2').flexslider({
+        animation: 'slide',
+        slideshow: false,
+        startAt: 0,
+        easing: "swing",
+        animationLoop: true,
+        reverse: false,
+        smoothHeight: false,
+        controlNav: false,
+        directionNav: false
+      });
 
       //$(".flexslider2").height($(".page-wrapper__wide").height());
 
@@ -356,29 +356,20 @@ function getCareerVal(index) {
 }
 getCareerVal();*/
 
-//This function will get the REL attributes of each link in both primary and secondary menus
-function getRelVal() {
-  $('#header a').each(function(){
-    var relTitle = $(this).text();
-    $(this).attr('rel', relTitle );
-    relTitle.replace(/\s+/g, '-').toLowerCase();
-    console.log(relTitle);
-  });
-}
-getRelVal();
 
 
-//var str = "Sonic Free Games";
-//str.replace(/\s+/g, '-').toLowerCase();
-
-// var value = $('div').text();
-// $('div').text(value.replace(/\-/g, " "));
+// var sum = 0;    
+//   $('div.secondary ul li').each(function() {
+//      sum += $(this).height(); 
+//   });
+  
+  //alert(sum);
 
 //Main nav
-  var header = $('#header'),
+/*  var header = $('#header'),
       primaryNav = $('div.primary'),
       secondaryNav = $('div.secondary'),
-      secondaryNavHeight = 92,
+      secondaryNavHeight = getHeight,
       animationDuration = 300,
       // Update position of secondary nav to line up with primary
       primaryNavList = $('div.primary ul'),
@@ -390,15 +381,177 @@ getRelVal();
 
         primaryNavChild.hover(
           function() {
-            //console.log('');
-            var rel = $(this).find('a').attr('rel');
-            $('div.secondary li a[rel="' + rel + '"]').addClass('active');
-            //$('#menu-item-471 a').addClass('active');
-            //console.log();
+            var rel = $(this).find('a').attr('rel')
+            $('#header .secondary a[rel="' + rel + '"]').addClass('active');
+            //console.log('#header .secondary a[rel="' + rel + '"]');
           },
           function() {
-            var rel = $(this).find('a').attr('rel');
-            $('div.secondary a[rel="' + rel + '"]').removeClass('active');
+            var rel = $(this).find('a').attr('rel')
+            $('#header .secondary a[rel="' + rel + '"]').removeClass('active');
+          }
+          );
+
+        // secondaryNavChild.find('a').each(function() {
+        //   var path = window.location.pathname;
+        //   if($(this).attr('href') == path) {
+        //     var rel = $(this).attr('rel');
+        //     $('#header .primary a[rel="' + rel + '"]').addClass('active');
+        //   }
+        // });
+
+        secondaryNavChild.css('left', primaryNavChild.position().left);
+        // secondaryNavChild.hover(
+        //   function() {
+        //     var rel = $(this).find('a').attr('rel')
+        //     $('#header .primary a[rel="' + rel + '"]').addClass('active');
+        //     $('#header .secondary a[rel="' + rel + '"]').addClass('active');
+        //   },
+        //   function() {
+        //     var rel = $(this).find('a').attr('rel')
+        //     $('#header .primary a[rel="' + rel + '"]').removeClass('active');
+        //     $('#header .secondary a[rel="' + rel + '"]').removeClass('active');
+        //   }
+        //   );
+      }
+
+
+
+      secondaryNav.height(secondaryNavHeight);
+      //secondaryNav.css('top', -(secondaryNav.outerHeight()-primaryNav.outerHeight()));
+
+      var headerShadowHeight = 0, // Account for the shadow
+          headerCollapsedHeight = primaryNav.outerHeight() + headerShadowHeight,
+          headerExpandedHeight = primaryNav.outerHeight()+secondaryNav.outerHeight() + headerShadowHeight;
+          header.height(headerCollapsedHeight);
+
+      
+
+      // Add hover state to the primary nav
+      if( Modernizr.touch == false) {
+
+        primaryNav.find('li').each(function() {
+          $(this).mouseenter(            
+           function() {
+                //console.log('mouseenter');
+
+               // If secondary disabled, just return, do not show secondary menu
+               // if($(this).hasClass('secondary-disabled')) {
+               //   return;
+               // }
+
+               //cookieBlockHeight = $('#cookie_msg').is(':visible') ? $('#cookie_msg').outerHeight() : 0;
+
+              //header.height(headerExpandedHeight);
+
+              header.stop().animate({
+                height: headerExpandedHeight
+              }, animationDuration, 'easeOutQuart');
+
+
+
+               //secondaryNav.slide();
+               // secondaryNav.stop().animate({
+               //   top:primaryNav.outerHeight()
+               // }, animationDuration, 'easeOutQuart');
+
+               // $('#content').stop().animate({
+               //   top:secondaryNav.outerHeight()
+               // }, animationDuration, 'easeOutQuart');
+
+             });
+        });
+
+        $('#header').mouseleave(
+          function() {
+
+            //header.height(headerCollapsedHeight);
+
+            header.stop().animate({
+                height: headerCollapsedHeight
+              }, animationDuration, 'easeOutQuart');
+
+            // secondaryNav.stop().animate({
+            //   top:-(secondaryNav.outerHeight()-primaryNav.outerHeight())
+            // }, animationDuration, 'easeOutQuart');
+
+          });
+      }
+      else {
+
+        primaryNav.find('li').each(function() {
+          $(this).click(
+            function() {
+              alert('clicked');
+              // If secondary disabled, just go to link
+              if($(this).hasClass('secondary-disabled')) {
+                return true;
+              }
+
+              // Continue to link
+              if(secondaryNav.is(":visible")) {
+                console.log('vis');
+                return true;
+              }
+              // Show secondary nav
+              else {
+
+                header.height(headerExpandedHeight);
+
+                //secondaryNav.show();
+                secondaryNav.stop().animate({
+                  top:primaryNav.outerHeight()
+                }, animationDuration, 'easeOutQuart');
+
+                return false;
+              }
+            });
+        });
+
+      }
+
+
+*/
+ 
+//This function will get the REL attributes of each link in both primary and secondary menus
+function getRelVal() {
+  $('#header a').each(function(){
+    var relTitle = $(this).html().replace(/\s+/g, '-').toLowerCase();
+    $(this).attr('rel', relTitle );
+    //console.log(relTitle);
+  });
+}
+getRelVal();
+
+
+  // Secondary navigation end
+      var header = $('#header'),
+          primaryNav = $('#header div.primary'),
+          secondaryNav = $('#header div.secondary'),
+          secondaryNavHeight = 92,
+          animationDuration = 400,
+          primaryNavList = $('#header div.primary ul'), // Update position of secondary nav to line up with primary
+          secondaryNavList = $('#header div.secondary ul');
+          logo = $('#menu-item-499 a');
+
+          //logo.text(' ');
+
+      for(var i=0;i<primaryNavList.children().length;i++) {
+          var primaryNavChild = $(primaryNavList.children()[i]),
+              secondaryNavChild = $(secondaryNavList.children()[i]);
+
+        if(primaryNavChild.hasClass('search')) { // Reached search, stop
+          break;
+        }
+
+        primaryNavChild.hover(
+          function() {
+            var rel = $(this).find('a').attr('rel')
+            $('#header .secondary a[rel="' + rel + '"]').addClass('active');
+            console.log('#header .secondary a[rel="' + rel + '"]');
+          },
+          function() {
+            var rel = $(this).find('a').attr('rel')
+            $('#header .secondary a[rel="' + rel + '"]').removeClass('active');
           }
           );
 
@@ -406,36 +559,41 @@ getRelVal();
           var path = window.location.pathname;
           if($(this).attr('href') == path) {
             var rel = $(this).attr('rel');
-            $('div.primary a[rel="' + rel + '"]').addClass('active');
+            $('#header .primary a[rel="' + rel + '"]').addClass('active');
           }
         });
 
         secondaryNavChild.css('left', primaryNavChild.position().left);
+
         secondaryNavChild.hover(
           function() {
-            var rel = $(this).find('a').attr('rel');
-            $('div.primary a[rel="' + rel + '"]').addClass('active');
-            $('div.secondary a[rel="' + rel + '"]').addClass('active');
+            var rel = $(this).find('a').attr('rel')
+            $('#header .primary a[rel="' + rel + '"]').addClass('active');
+            $('#header .secondary a[rel="' + rel + '"]').addClass('active');
           },
           function() {
-            var rel = $(this).find('a').attr('rel');
-            $('div.primary a[rel="' + rel + '"]').removeClass('active');
-            $('div.secondary a[rel="' + rel + '"]').removeClass('active');
+            var rel = $(this).find('a').attr('rel')
+            $('#header .primary a[rel="' + rel + '"]').removeClass('active');
+            $('#header .secondary a[rel="' + rel + '"]').removeClass('active');
           }
           );
       }
 
-
-
       secondaryNav.height(secondaryNavHeight);
-      secondaryNav.css('top', -(secondaryNav.outerHeight()-primaryNav.outerHeight()))
+      secondaryNav.css('top', -(secondaryNav.outerHeight()-primaryNav.outerHeight()));
 
-      var headerShadowHeight = 4; // Account for the shadow
-      var headerCollapsedHeight = primaryNav.outerHeight() + headerShadowHeight;
-      var headerExpandedHeight = primaryNav.outerHeight()+secondaryNav.outerHeight() + headerShadowHeight;
-      header.height(headerCollapsedHeight);
-
+      var headerShadowHeight = 0, // Account for the shadow
+          headerCollapsedHeight = primaryNav.outerHeight() + headerShadowHeight;
+      //var headerExpandedHeight = primaryNav.outerHeight()+secondaryNav.outerHeight() + headerShadowHeight;
       
+      var getHeight = $('#forHeight div').outerHeight()+primaryNav.outerHeight()+secondaryNav.outerHeight();
+          //console.log(getHeight);
+
+      var headerExpandedHeight = getHeight;
+      $('#forHeight').height(headerExpandedHeight);
+      //$('#secondary').height(headerExpandedHeight);
+
+      header.height(headerCollapsedHeight);
 
       // Add hover state to the primary nav
       if( Modernizr.touch == false) {
@@ -451,35 +609,34 @@ getRelVal();
 
                //cookieBlockHeight = $('#cookie_msg').is(':visible') ? $('#cookie_msg').outerHeight() : 0;
 
-               header.height(headerExpandedHeight);
+               //header.height(headerExpandedHeight);
 
-               secondaryNav.show();
-               secondaryNav.stop().animate({
-                 top:primaryNav.outerHeight()
-               }, animationDuration, 'easeOutQuart');
+               // secondaryNav.show();
+               // secondaryNav.stop().animate({
+               //   top:primaryNav.outerHeight()/* + cookieBlockHeight*/
+               // }, animationDuration, 'easeOutQuart');
 
-               $('#content').stop().animate({
-                 top:secondaryNav.outerHeight()
-               }, animationDuration, 'easeOutQuart');
+                  //secondaryNav.show();
 
-             }
-             );
+                  header.animate({
+                    height:headerExpandedHeight
+                  }, animationDuration, 'easeOutQuart');
+                  secondaryNav.show();
+
+             });
         });
 
         $('#header').mouseleave(
           function() {
 
-            header.height(headerCollapsedHeight);
-
-            secondaryNav.stop().animate({
-              top:-(secondaryNav.outerHeight()-primaryNav.outerHeight())
+            header.animate({
+              height:headerCollapsedHeight
             }, animationDuration, 'easeOutQuart');
 
-            $('#content').stop().animate({
-              top: '0px'
-            }, animationDuration, 'easeOutQuart');
-          }
-          );
+            // secondaryNav.stop().animate({
+            //   top:-(secondaryNav.outerHeight()-primaryNav.outerHeight()) /*+ cookieBlockHeight*/
+            // }, animationDuration, 'easeOutQuart');
+          });
       }
       else {
 
@@ -518,9 +675,9 @@ getRelVal();
 
       }
 
-   
-  // Secondary navigation end
 
+   
+// Secondary navigation end
 
 //Scroll to section
 $('.section').first();
@@ -533,7 +690,7 @@ $('a.display').on('click', function(e) {
 
   if (t === 'next' && $('.current').next('.section').length > 0) {
     var $next = $('.current').next('.section');
-    var top = $next.offset().top -50;
+    var top = $next.offset().top -0;
 
     $('.current').removeClass('current');
 
@@ -544,7 +701,7 @@ $('a.display').on('click', function(e) {
    });
   } else if (t === 'prev' && $('.current').prev('.section').length > 0) {
     var $prev = $('.current').prev('.section');
-    var top = $prev.offset().top -50;
+    var top = $prev.offset().top -0;
 
     $('.current').removeClass('current');
 
@@ -582,9 +739,9 @@ $('a.display').on('click', function(e) {
 
 
   var download = $("#download"),
-  dropdown = $(".dropdown"),
-  close = $(".fa-times-circle"),
-  latest = $('#latest');
+      dropdown = $(".dropdown"),
+      close = $(".fa-times-circle"),
+      latest = $('#latest');
 
   download.click(function(e) {
     dropdown.addClass('open');
@@ -658,9 +815,17 @@ $('.fa-chevron-circle-up').click(function(){
 
 
 //body.page-template-success-page-php......
-$('section.page-wrapper__wide:nth-of-type(2n+1)').css({
+
+if ($('body').hasClass('page-template-careers-page-php')){
+  $('section.page-wrapper__wide:nth-of-type(2n)').css({
   'background' : '#e0e0e2'
-})
+});
+} else {
+  $('section.page-wrapper__wide:nth-of-type(2n+1)').css({
+    'background' : '#e0e0e2'
+  });
+}
+
 
 
 
@@ -695,8 +860,9 @@ $('.accordian > li > .accord-toggle').on('click', function (e) {
         //$('.accordian li ul').slideUp();
         $(this).next().slideToggle();
         //$('.accordian li .accord-toggle').addClass('active');
-        $(this).addClass('active');
+        $(this).toggleClass('active');
     } else {
+
         //$(this).next().slideToggle(250);
         //$('.accordian li .accord-toggle').removeClass('active');
     }
@@ -790,3 +956,6 @@ $('#Container').mixItUp({
 
 //End
 });
+
+
+

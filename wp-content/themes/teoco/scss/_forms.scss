@@ -1,49 +1,52 @@
 .gform_wrapper {
 	form {
 			@include rhythm(0, 1, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
-		.gfield {
-			margin-bottom: 15px;
-			input[type=text],
-			input[type=url],
-			input[type=email],
-			input[type=tel],
-			input[type=number],
-			input[type=password],
-			textarea {
-				@extend %open_sansregular;
-				color: $white;
-				border: none;
-				background-color: rgba(255,255,255,0.5);
-				width: 100%;
-				padding: 0.5em; 
-				@include input-placeholder {
-					color: $white;
+			.gfield {
+				margin-bottom: 15px;
+				input[type=text],
+				input[type=url],
+				input[type=email],
+				input[type=tel],
+				input[type=number],
+				input[type=password],
+				textarea {
+					@include border-radius(6px);
+					@extend %open_sansregular;
+					color: $grey;
+					border: none;
+					background: $light-grey;
+					background-color: rgba($white,0.8);
+					width: 100%;
+					padding: 0.5em; 
+					@include input-placeholder {
+						color: lighten($grey, 30%);
+					}
 				}
 			}
 		}
 	}
-}
 
- 
-.validation_error {
-	margin-bottom: 20px;
-}
+	.validation_error,
+	.validation_message {
+		color: red !important;
+		font-size: 14px;
+	}
 
-.validation_message {
-	color: red !important;
-	font-size: 14px;
-}
+	.validation_error {
+		margin-bottom: 20px;
+		@include adjust-font-size-to(18px, 1);
+	}
 
 
-.gform_confirmation_wrapper {
-	color: $green;
-	font-weight: bold;
-	padding: 10px 0;
+	.gform_confirmation_wrapper {
+		color: $green;
+		font-weight: bold;
+		padding: 10px 0;
 	//background: khaki;
 	font-size: 18px;
 }
 
- 
+
 //Job opportunities forms
 .job-opportunities {
 	.gform_wrapper {
@@ -58,14 +61,14 @@
 				textarea {
 					color: $grey;
 					@include input-placeholder {
-					color: $grey;
+						color: $grey;
 					}
 				}
 			}
 		}
 	}
 }
-  
+
 
 
 input[type=text],
@@ -84,9 +87,9 @@ select {
 }	
 
 [placeholder]:focus::-webkit-input-placeholder {
-		@include transition(text-indent 0.8s ease-in-out);
-	  text-indent: -200%;
-	}
+	@include transition(text-indent 0.8s ease-in-out);
+	text-indent: -200%;
+}
 
 //Attachment
 .dropdown {
@@ -120,7 +123,7 @@ select {
 	// -moz-box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1);
 	// box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1); 
 	width: 100%;
-	 
+
 }
 .NFI-button {
 	// the button div element
@@ -147,13 +150,13 @@ select {
 	// 	color-stop(0, #1774A3),
 	// 	color-stop(0.56, #0194DD)
 	// );
-	text-shadow: 0px -1px 0px #0172bd;
+text-shadow: 0px -1px 0px #0172bd;
 	// border: solid #0172bd 1px;
 	// border-bottom: solid #00428d 1px;
 	
-	-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
-	-moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
-	box-shadow: inset 0px 1px 0px rgba(255,255,255,.2); 	
+	// -webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
+	// -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
+	// box-shadow: inset 0px 1px 0px rgba(255,255,255,.2); 	
 	
 	color: #fff;
 	width: 100px;
@@ -170,15 +173,15 @@ select {
 	border-bottom-right-radius: 3px;
 
 	width: 200px;
-	border: solid #777 1px;
+	//border: solid #777 1px;
 	border-left: none;
-	height: 32px;
-	line-height: 32px;
+	height: 33px;
+	line-height: 33px;
 	
 	background: #fff;
-	-webkit-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
-	-moz-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
-	box-shadow: inset 0px 2px 0px rgba(0,0,0,.05); 
+	// -webkit-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
+	// -moz-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
+	// box-shadow: inset 0px 2px 0px rgba(0,0,0,.05); 
 
 	color: #777 !important;
 	text-shadow: 0px 1px 0px #fff;
@@ -187,4 +190,36 @@ select {
 }
 
 
- 
+//Search form
+#language {
+	@include column(1);
+	@include push(8);
+	padding-top: 18px;
+	img {
+		float: right;
+	}
+}
+
+form#search-form {
+	@include column(3);
+	//@include push(9);
+	fieldset {
+		padding: 10px 0;
+		position: relative;
+		border: none;
+		input[type=text] {
+			background: $light-grey;
+			border: none;
+			padding: 0.3em;
+			z-index: 0;
+			background:$light-grey url(../img/icons/search.png) no-repeat center right;
+			background-size: 24px;
+		}
+	}
+}
+
+
+//Show label for IE 8 or below:
+.lte9 .gfield_label {
+	display: block !important;
+}

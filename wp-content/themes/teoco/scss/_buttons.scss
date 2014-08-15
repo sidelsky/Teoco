@@ -93,6 +93,7 @@ input[type=submit] {
 	width:96px;
 	height:96px;
 	text-decoration: none;
+	outline: none;
 	@include transition-duration(0.8s);
 	@include transition-timing-function(ease-out);
 	&:hover {
@@ -109,6 +110,9 @@ input[type=submit] {
 		display:block;
 		&.orange {
 			color: $mustard;
+		}
+		&.blue {
+			color: $blue;
 		}
 	}
 }

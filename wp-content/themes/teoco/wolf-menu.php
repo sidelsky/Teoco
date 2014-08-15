@@ -1,6 +1,7 @@
 <!-- Start header -->
-<header id="header">	 
+<header id="header">
 	<div id="primary">
+
 		<div class="inner">
 		<?php wp_nav_menu( array(
 		'menu'            => 'Primary navigation', 
@@ -23,12 +24,12 @@
 	</div>
 </div>
 
-	<div id="secondary">
-	<div class="page-wrapper__wide__inner">
+<div id="secondary">
+	<div class="page-wrapper__wide__inner" id="forHeight">
 		<?php wp_nav_menu( array(
 		'menu'            => 'Sub navigation', 
 		'container'       => 'div',
-		'container_class' => 'secondary', 
+		'container_class' => 'menu secondary', 
 		//'container_id'    => 'sub-menuContainer',
 		//'menu_id'         => 'sub-menu',
 		//'menu_class'      => 'secondary', 
@@ -44,5 +45,6 @@
 		)); ?>
 	</div>
 </div>
+
 </header>
 <!-- End header -->

@@ -32,9 +32,8 @@
 	</div>					
 </section>
 
-
 <!--Video - vimeo api-->	
-<?php include 'vimeo-video.inc.php' ?>
+<?php get_template_part('/vimeo-video'); ?>
 
 <!-- Job opportunities -->
 <section class="page-wrapper__wide job-opportunities section">

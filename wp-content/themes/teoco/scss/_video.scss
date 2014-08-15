@@ -12,13 +12,50 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  img {
+  .play {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%; 
+      margin-left: -45px;
+      margin-top: -45px;
+      cursor: pointer;
+      @media screen and (max-width:$s) {
+        width: 70px;
+        height: 70px;
+        margin-left: -35px;
+        margin-top: -35px;
+      }
+    }
+  .title-wrapper {
+    position: absolute;
+    right: 70px;
+    top: 100px;
+    z-index: 3;
+    h2, p {
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      @include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 21px, $max-font-size: 48px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+    }
+    p {
+      @include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 14px, $max-font-size: 28px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+    }
+    @media screen and (max-width:$s) {
+      right: 20px;
+      top: 20px;
+    }
+  }
+  .image {
   	z-index: 2;
   	position: absolute;
   	top: 0px;
   	left: 0px;
   	border: solid 1px $light-grey;
-  	cursor: pointer;
+  	//cursor: pointer;
   	&.hide {
   		display: none;
   	}

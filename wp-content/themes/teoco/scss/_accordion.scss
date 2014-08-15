@@ -15,6 +15,7 @@
 				//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 				display: block;
 				text-align: left;
+				color: $grey;
 				//@extend %bdr;
 				&.position {
 					float: left;

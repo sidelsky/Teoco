@@ -8,7 +8,7 @@
 
 <!-- Corporate responsibility -->
 <section class="page-wrapper__wide rel-pos section">
-	<article class="page-wrapper__wide__inner padding-tb-small">
+	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider">
@@ -34,7 +34,7 @@
 							</div>
 
 							<a class="losange" id="download" data-scroll data-options="easing: easeOutQuad" href="#latest">
-								<span class="orange">Download</span>
+								<span class="blue">Download</span>
 							</a>
 
 						</li>
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 	</div>
-</article>
+</div>
 <div class="slider bottom">
 	<div class="curve-holder blue"></div>
 	<div class="flexslider2">
@@ -55,19 +55,6 @@
 </div>					
 </section>
  
-
- 
-
 <?php
 get_footer( 'footer.php' );
 ?>
-
-
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<!-- post -->
-<? the_title(); ?>
-<?php endwhile; ?>
-<!-- post navigation -->
-<?php else: ?>
-<!-- no posts found -->
-<?php endif; ?>?>

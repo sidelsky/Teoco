@@ -9,6 +9,8 @@
 	<!-- Mobile Specific Metas -->
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
 	<title>
 		<?php wp_title(); ?>
 	</title>
@@ -18,14 +20,10 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php // if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
 
-	
-	<?php
-		wp_head();
-	?>
-
+	<?php wp_head(); ?>
 
 </head>
 
@@ -35,33 +33,19 @@
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-
-
-<!-- Page wrapper -->
+	<!-- Page wrapper -->
 <div class="page-wrapper">
+	<div class="page-wrapper__wide" >
+		<div class="page-wrapper__wide__inner">
+			<i id="language">
+				<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
+			</i>
+			<?php get_template_part( '/search-form' ); ?>
+		</div>
+		<?php get_template_part( '/wolf-menu' ); ?>
 
-<div class="page-wrapper__wide" >
-
-<?php get_template_part( '/wolf-menu' ); ?>
-
-
-<!-- <div id="menu-wrapper"> -->
-<!-- 	<div class="menu-wrapper" id="primary">
-		<div class="page-wrapper__wide__inner"> -->
- 
-
- 
-
-<!-- 		</div>
-	</div> -->
-<!-- 	 
-	<div class="menu-wrapper" id="secondary">
-		<div class="page-wrapper__wide__inner"> -->
-
-
-
-<!-- 		</div>
-	</div> -->
-<!-- </div> -->
-
-</div>
+		<a class="simple-menu" href="#sidr">
+			<i class="fa fa-bars"></i>
+		</a>
+		
+	</div>

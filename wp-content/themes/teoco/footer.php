@@ -1,4 +1,4 @@
-<footer class="page-wrapper__wide current">
+<footer class="page-wrapper__wide current page-footer">
 	<section class="page-wrapper__wide__inner padding-tb-small">
 		 
 		<?php wp_nav_menu( array(
@@ -52,23 +52,22 @@
 
 <!-- Mobile menu -->
 <?php wp_nav_menu( array(
-	'menu'            => 'Footer menu', 
-	'container'       => 'div', 
-	'container_id'    => 'sidr',
-	'menu_id'         => 'subMenu',
-	'container_class' => 'sidr',
-	//'theme_location'  => 'Primary Menu',
-	//'menu_class'      => 'four coloumns', 
-	//'echo'            => true,
-	//'fallback_cb'     => 'wp_page_menu',
-	//'before'          => ,
-	//'after'           => ,
-	//'link_before'     => ,
-	//'link_after'      => ,
-	//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-	//'depth'           => 0,
-	//'walker'          =>  
-)); ?>
+		'menu'            => 'Sub navigation', 
+		'container'       => 'div',
+		//'container_class' => 'menu secondary', 
+		'container_id'    => 'sidr',
+		//'menu_id'         => 'sub-menu',
+		//'menu_class'      => 'secondary', 
+		//'echo'            => true,
+		//'fallback_cb'     => 'wp_page_menu',
+		//'before'          => ,
+		//'after'           => ,
+		//'link_before'     => ,
+		//'link_after'      => ,
+		//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		//'depth'           => 0,
+		//'walker'          =>  
+		)); ?>
 
 <ul class="jump">
 	<li class='prev'>

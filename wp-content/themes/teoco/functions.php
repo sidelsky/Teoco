@@ -33,7 +33,8 @@ if ( ! function_exists('myTheme')) :
 	add_post_type_support( 'page', 'excerpt' );
 
 
-
+	//Default HTML5 Form
+	//add_theme_support( 'html5', array( 'search-form' ) );
 
 //Sidebar
 // if ( function_exists('register_sidebar') )
@@ -162,10 +163,17 @@ add_filter('get_the_excerpt', 'improved_trim_excerpt');
 // This function allows short excerpts Manually conrolled
 function excerptMyLength($num) {
 	$limit = $num+1;
-	$excerptMyLength = explode(' ', get_the_excerpt(), $limit);
+	$excerptMyLength = explode(' ', get_the_content(), $limit);
 	array_pop($excerptMyLength);
-	$excerptMyLength = implode(" ",$excerptMyLength).'...<br><br><a href="'. get_permalink($post->ID) . '" class="btn readMore">' . 'Read more' . '</a>';
-	echo $excerptMyLength;
+	//$excerptMyLength = implode(" ",$excerptMyLength).'...<br><br><a href="'. get_permalink($post->ID) . '" class="btn readMore">' . 'Read more' . '</a>';
+	$excerptMyLength = implode(" ",$excerptMyLength);
+	$readMore = '...<br><br><a href="'. get_permalink($post->ID) . '" class="btn readMore">' . 'Read more' . '</a>';
+	echo '<p>'. $excerptMyLength . '</p>';
+	if(is_search()){
+
+	} else {
+		echo $readMore;
+	}
 }
 
 /* excerptMyLength('22'); */

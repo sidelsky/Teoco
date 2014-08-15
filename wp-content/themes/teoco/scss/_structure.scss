@@ -21,7 +21,7 @@
 			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		}
 		.page-wrapper__wide__inner { //Inner most wrapper with max width
-			@extend %bdr;
+			//@extend %bdr;
 			@include clearfix;
 			@extend %max-width;
 			margin: 0 auto;
@@ -34,7 +34,6 @@
 		}
 	}
 }
-
 
 .article-section {
 	//@extend %bdr;

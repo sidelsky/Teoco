@@ -3756,21 +3756,29 @@ select {
 #language img {
   float: right;
 }
+@media screen and (max-width: 37.5em) {
+  /* line 194, ../scss/_forms.scss */
+  #language {
+    margin-left: 0.66138%;
+    text-align: left;
+    margin-left: 0;
+  }
+}
 
-/* line 203, ../scss/_forms.scss */
+/* line 209, ../scss/_forms.scss */
 form#search-form {
   display: inline;
   float: left;
   width: 23.67725%;
   margin: 0 0.66138%;
 }
-/* line 206, ../scss/_forms.scss */
+/* line 212, ../scss/_forms.scss */
 form#search-form fieldset {
   padding: 10px 0;
   position: relative;
   border: none;
 }
-/* line 210, ../scss/_forms.scss */
+/* line 216, ../scss/_forms.scss */
 form#search-form fieldset input[type=text] {
   color: #646569;
   border: none;
@@ -3780,8 +3788,14 @@ form#search-form fieldset input[type=text] {
   background: #eeeeee url(../img/icons/search.png) no-repeat center right;
   background-size: 24px;
 }
+@media screen and (max-width: 37.5em) {
+  /* line 209, ../scss/_forms.scss */
+  form#search-form {
+    width: 90%;
+  }
+}
 
-/* line 224, ../scss/_forms.scss */
+/* line 234, ../scss/_forms.scss */
 .lte9 .gfield_label {
   display: block !important;
 }
@@ -5445,9 +5459,22 @@ footer.search .wp-pagenavi span.current {
   -moz-transition: all 0.8s ease-in-out;
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
-  margin-top: -52px;
+  height: 52px;
+  right: 0px;
+  *zoom: 1;
+  position: relative;
+  overflow: hidden;
 }
-/* line 197, ../scss/_wolf-navigation.scss */
+/* line 27, ../scss/_grid.scss */
+.detached .innerbit:before, .detached .innerbit:after {
+  content: "";
+  display: table;
+}
+/* line 31, ../scss/_grid.scss */
+.detached .innerbit:after {
+  clear: both;
+}
+/* line 204, ../scss/_wolf-navigation.scss */
 .detached.header-ani {
   position: fixed;
   width: 100%;
@@ -5461,16 +5488,16 @@ footer.search .wp-pagenavi span.current {
   -o-transition: top 0.8s ease-in-out;
   transition: top 0.8s ease-in-out;
 }
-/* line 204, ../scss/_wolf-navigation.scss */
+/* line 211, ../scss/_wolf-navigation.scss */
 .detached.header-ani .innerbit {
   overflow: hidden;
   -webkit-transition: all 0.8s ease-in-out;
   -moz-transition: all 0.8s ease-in-out;
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
-  margin-top: -52px;
+  height: 0px;
 }
-/* line 212, ../scss/_wolf-navigation.scss */
+/* line 221, ../scss/_wolf-navigation.scss */
 .detached.header-ani #menu-item-499 a {
   background-size: 40% !important;
   background-position: 0 12px !important;
@@ -5478,6 +5505,12 @@ footer.search .wp-pagenavi span.current {
   -moz-transition: all 0.8s ease-in-out;
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+}
+@media screen and (max-width: 37.5em) {
+  /* line 221, ../scss/_wolf-navigation.scss */
+  .detached.header-ani #menu-item-499 a {
+    background-position: 0 17px !important;
+  }
 }
 
 /* line 1, ../scss/_footer.scss */

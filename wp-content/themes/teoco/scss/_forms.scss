@@ -198,6 +198,12 @@ text-shadow: 0px -1px 0px #0172bd;
 	img {
 		float: right;
 	}
+	@media screen and (max-width: $s) {
+		@include push(0);
+		//width: 10%;
+		text-align: left;
+		margin-left: 0;
+	}
 }
 
 form#search-form {
@@ -216,6 +222,10 @@ form#search-form {
 			background:$light-grey url(../img/icons/search.png) no-repeat center right;
 			background-size: 24px;
 		}
+	}
+	@media screen and (max-width: $s) {
+		//@include column(1);
+		width: 90%;
 	}
 }
 

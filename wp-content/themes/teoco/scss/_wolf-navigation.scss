@@ -192,7 +192,14 @@
 .detached {
 	.innerbit {
 		@include transition(all 0.8s ease-in-out);
-		margin-top: -52px;
+		//margin-top: 0px;
+		//width: 100%;
+		height: 52px;
+		right: 0px;
+		//@extend %bdr;
+		@include clearfix;
+		position: relative;
+		overflow: hidden;
 	}
 	&.header-ani {
 		position: fixed;
@@ -204,7 +211,9 @@
 		.innerbit {
 			overflow: hidden;
 			@include transition(all 0.8s ease-in-out);
-			margin-top: -52px;
+			//margin-top: -52px;
+			//width: 0px;
+			height: 0px;
 			//display: none;
 		}
 		#menu-item-499 {
@@ -213,6 +222,9 @@
 				background-size: 40% !important;
 				background-position: 0 12px !important;
 				@include transition(all 0.8s ease-in-out);
+				@media screen and (max-width: $s) {
+					background-position: 0 17px !important;
+				}
 			}
 		}
 	}

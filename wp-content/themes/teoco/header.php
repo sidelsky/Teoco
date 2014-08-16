@@ -55,11 +55,13 @@
 
 
 <div class="page-wrapper__wide detached">
-		<div class="page-wrapper__wide__inner innerbit">
+		<div class="page-wrapper__wide__inner">
+			<div class="innerbit">
 			<i id="language">
 				<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
 			</i>
 			<?php get_template_part( '/search-form' ); ?>
+			</div>
 		</div>
 
 		<?php get_template_part( '/wolf-menu' ); ?>

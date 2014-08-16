@@ -6,13 +6,13 @@
 	float: right;
 	@include clearfix;
 	//Meduim
-	@media screen and (max-width: 60em) {
+	@media screen and (max-width: $m) {
 		@include column(1);
 	}
 	> ul {
 		float: right;
 		//Meduim
-		@media screen and (max-width: 60em) {
+		@media screen and (max-width: $m) {
 			display: none;
 		}
 	>	li {

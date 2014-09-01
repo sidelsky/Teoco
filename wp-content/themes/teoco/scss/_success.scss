@@ -1,5 +1,5 @@
 //Success page
-//.success {
+.success {
 	.left-col {
 		@include column(5);
 		@include pull(1);
@@ -10,7 +10,7 @@
 			//@include column(12);
 		}
 	}
-//}
+}
 
 
 .right-col.success {

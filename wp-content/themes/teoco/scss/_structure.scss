@@ -116,7 +116,7 @@
 .sub-pages {
 	.left-col {
 		//@extend %bdr;
-		@include column(3);
+		@include column(2);
 		@include pull(1);
 		@media screen and (max-width: 37.5em) {
 			@include column(12);
@@ -128,7 +128,7 @@
 			@include rhythm(0, 0, 0, 3); //Margin top, Padding top, Padding bottom, Margin bottom
 		}
 	}
-		@include column(8);
+		@include column(9);
 			@media screen and (max-width: 37.5em) {
 				@include column(12);
 			}

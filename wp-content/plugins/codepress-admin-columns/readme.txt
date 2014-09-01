@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: plugins, wordpress, admin, column, columns, custom columns, custom fields, image, dashboard, sortable, filters, posts, media, users, pages, posttypes, manage columns, wp-admin
 Requires at least: 3.5
 Tested up to: 3.9.2
-Stable tag: 2.2.6
+Stable tag: 2.2.6.4
 
 Customise columns on the administration screens for post(types), pages, media, comments, links and users with an easy to use drag-and-drop interface.
 
@@ -247,6 +247,19 @@ You can find a list of the available actions and filters (and examples on how to
 8. Posts Screen with custom fields.
 
 == Changelog ==
+
+= 2.2.6.4 =
+* [Updated] Portuguese (Brazil) language - thanks to André Mácola Machado
+
+= 2.2.6.3 =
+* [Updated] Enable 3rd party plugins to set storage_models outside the post listings screens
+* [Updated] Spanish language updated - thanks to Andrew Kurtis
+
+= 2.2.6.2 =
+* [Fixed] Fixed “Illegal offset” warning for unset option on edit screen
+
+= 2.2.6.1 =
+* [Fixed] Fixed dependency on PHP 5.3+ in actions column
 
 = 2.2.6 =
 * [Changed] Display "edit columns" button by default

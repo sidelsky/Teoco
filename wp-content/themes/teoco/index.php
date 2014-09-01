@@ -2,56 +2,59 @@
 get_header();
 ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php if ( is_front_page() ) { ?>
-		<?php the_title('<h2>','</h2>', true ); ?>
-		<?php } else { ?>	
-		<?php the_title( '<h1>', '<h1>', true ); ?>
-		<?php } ?>
-		
-		<?php/* the_content(); */?>
+<section class="page-wrapper__wide sub-pages section">
+	<div class="page-wrapper__wide__inner padding-tb">
+		<h1>News</h1>
+		<div class="left-col">
+			<ul class="side-menu">
+				<li class="all">
+					<a href="/news/">All</a>
+				</li>
+				<?php $args = array(
+				'type'            => 'yearly',
+				'limit'           => '',
+				'format'          => 'html', 
+				'before'          => '',
+				'after'           => '',
+				'show_post_count' => false,
+				'echo'            => 1,
+				'order'           => 'DESC'
+			); wp_get_archives( $args ); ?>
+			</ul>
+		</div>
 
-		<?php the_content("Continue reading " . the_title('', '', false)); ?>
+		<div class="right-col">
+			<ul class="post-list">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				
+				<li>
+					<span class="the-time">
+						<?php the_time('jS F Y') ?>
+					</span>
+					<h2>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+					</h2>
+				</li>
+			
+				<?php endwhile; ?>
+				<!-- post navigation -->
 
-		<?php/* excerptMyLength('10'); */?>
+				<footer class="pagenavi">
+					<?php wp_pagenavi(); ?>
+				</footer>
 
-
-		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'myTheme' ), 'after' => '' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'myTheme' ), '', '' ); ?>
-
-
-		<?php 
-			$x=5; 
-			while($x<=5)
-  			{
-  				echo "The number is: $x <br>";
-  				$x++;
-  			} 
-		?>
-
-
-		<?php
-			$cars=array("Volvo","BMW","Toyota");
-			sort($cars);
-
-			$clength=count($cars);
-
-			for($x=0; $x<$clength; $x++)
-			   {
-			   echo $cars[$x];
-			   echo "<br>";
-			   }
-		?>
-
-
-
-
-	</article><!-- #post-## -->
-	<?php comments_template( '', true ); ?>
-<?php endwhile; ?>
+				<?php else: ?>
+				<!-- no posts found -->
+				<?php endif; ?>
+			</ul>
+		</div>
+	</div>
+</section>
 
 <?php //Get the footer
 get_footer();
 ?>
+
+

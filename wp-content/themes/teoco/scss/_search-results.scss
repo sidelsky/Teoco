@@ -35,11 +35,13 @@ body.search-results {
 	}
 }
 
-footer.search {
+footer.pagenavi {
 	padding: 1.5em;
 	@include column(9);
-	@include push(3);
 	@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	&.search {
+		@include push(3);
+	}
 	.wp-pagenavi {
 		//color: $grey;
 		//float: left;

@@ -1,0 +1,14 @@
+/* Admin menu styles */
+.wp-menu-image img {
+	opacity: 0.6 !important;
+	filter: alpha(opacity=60) !important;
+}
+
+
+#menu-pages a,
+#menu-posts a,
+#menu-posts-job-opportunities a,
+#menu-posts-events a,
+#menu-posts-in_the_media a {
+		color: #33ccff;
+}

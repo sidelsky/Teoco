@@ -77,54 +77,7 @@
 </section>
 
 <!-- Latest news -->
-<section class="page-wrapper__wide rel-pos section">
-	<div class="page-wrapper__wide__inner padding-tb-small">
-		<div class="article-section">
-			<div class="slider top">
-				<div class="flexslider">
-					<ul class="slides">
-						<?php
-						$args = array(
-							//'post__in' => array(8),
-							'posts_per_page'   => 5,
-							'offset'           => 0,
-							'category'         => '',
-							'orderby'          => 'post_date',
-							'order'            => 'ASC',
-							'include'          => '',
-							'exclude'          => '',
-							'meta_key'         => '',
-							'meta_value'       => '',
-							'post_type'        => 'post',
-							'post_mime_type'   => '',
-							'post_parent'      => '',
-							'post_status'      => 'publish',
-							'suppress_filters' => false );
-						query_posts($args); if ( have_posts() ) while ( have_posts() ) : the_post();
-						?>
-						<li>							
-							<h1>
-								<?php the_title(); ?>
-							</h1>
-							<?php the_content(); ?>
-						</li>
-					<?php endwhile; wp_reset_query();?>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slider bottom">
-	<div class="curve-holder green"></div>
-	<div class="flexslider2">
-		<ul class="slides">
-			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
-			</li>
-		</ul>
-	</div>
-</div>					
-</section>
+<?php get_template_part( '/latest-news-slider' ); ?>
 
 <!-- Our success -->
 <section class="page-wrapper__wide grey section">
@@ -198,47 +151,7 @@
 	</section>
 
 <!-- Latest -->
-<section class="page-wrapper__wide rel-pos section">
-	<div class="page-wrapper__wide__inner padding-tb-small">
-		<div class="article-section">
-			<div class="slider top">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>							
-							<h1>
-								<?php the_field('title'); ?>
-							</h1>
-								<?php the_field('latest'); ?>
-							
-							<div class="dropdown">
-							<p>Please complete</p>
-							<i class="fa fa-times-circle"></i>
-								<?php echo do_shortcode("[gravityform id=1 title=false description=false ajax=true]"); ?>
-								<!-- Download losange -->
-							</div>
-
-							<a class="losange" id="download" data-scroll data-options="easing: easeOutQuad" href="#latest">
-								<span class="orange">Download</span>
-							</a>
-
-						</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slider bottom">
-	<div class="curve-holder mustard"></div>
-	<div class="flexslider2">
-		<ul class="slides">
-			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
-			</li>
-		</ul>
-	</div>
-</div>					
-</section>
- 
+<?php get_template_part( '/latest-content' ); ?>
 
 <?php
 get_footer( 'footer.php' );

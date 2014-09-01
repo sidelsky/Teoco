@@ -42,7 +42,7 @@
 			@include clearfix;
 			li {
 				//display: block;
-				color: red;
+				//color: red;
 				float: left;
 	  		height: 100%;
 	  		text-align: left;
@@ -65,7 +65,7 @@
 						background: url(../img/teoco.png) no-repeat 0 0;
 						background: url(../img/teoco.svg) no-repeat 0 0, none;
   					//background-image: url(../img/teoco.svg), none;
-						background-size: 61%;
+						background-size: 62%;
 						@media screen and (max-width:1024px) {
 							background-size: 75%;
 						}

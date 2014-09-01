@@ -1,53 +1,60 @@
-<?php get_header(); ?>
+<?php //Get the header
+get_header();
+?>
 
-<?php is_tag(); ?>
-	<?php if (have_posts()) : ?>
+<section class="page-wrapper__wide sub-pages section">
+	<div class="page-wrapper__wide__inner padding-tb">
+		<h1>News</h1>
+		<div class="left-col">
+			<ul class="side-menu">
+				<li>
+					<a href="/news/">All</a>
+				</li>
+				<?php $args = array(
+				'type'            => 'yearly',
+				'limit'           => '',
+				'format'          => 'html', 
+				'before'          => '',
+				'after'           => '',
+				'show_post_count' => false,
+				'echo'            => 1,
+				'order'           => 'DESC'
+			); wp_get_archives( $args ); ?>
+			</ul>
+		</div>
 
-		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
- 		<?php /* If this is a category archive */ if (is_category()) { ?>
-	<h2>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h2>
-		<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-	<h2>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
-		<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-	<h2>Archive for <?php the_time('F jS, Y'); ?></h2>
- 		<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-	<h2>Archive for <?php the_time('F, Y'); ?></h2>
- 		<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-	<h2>Archive for <?php the_time('Y'); ?></h2>
-		<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-	<h2>Author Archive</h2>
-		<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-	<h2>Blog Archives</h2>
-		<?php } ?>
+		<div class="right-col">
+			<ul class="post-list">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				
+				<li>
+					<span class="the-time">
+						<?php the_time('jS F Y') ?>
+					</span>
+					<h2>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+					</h2>
+				</li>
+			
+				<?php endwhile; ?>
+				<!-- post navigation -->
 
+				<footer class="pagenavi">
+					<?php wp_pagenavi(); ?>
+				</footer>
 
-	<div class="navigation">
-		<div><?php next_posts_link('&laquo; Older Entries') ?></div>
-		<div><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+				<?php else: ?>
+				<!-- no posts found -->
+				<?php endif; ?>
+			</ul>
+		</div>
 	</div>
+</section>
 
-	<?php while (have_posts()) : the_post(); ?>
-	<div class="post">
-		<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-		<p><?php the_time('l, F jS, Y') ?></p>
-		<?php the_content() ?>
-		<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-	</div>
+<?php //Get the footer
+get_footer();
+?>
 
-	<?php endwhile; ?>
 
-	<div class="navigation">
-		<div><?php next_posts_link('&laquo; Older Entries') ?></div>
-		<div><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-	</div>
-
-<?php else : ?>
-
-	<h2>Not Found</h2>
-	<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-
-<?php endif; ?>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>

@@ -14,6 +14,11 @@
 					<h1>
 						<?php include 'title-switch.inc.php'; ?>
 					</h1>
+
+				<div class="left-col">
+					&nbsp;
+				</div>
+					
 				<div class="article-section">
 					<?php echo do_shortcode("[simple-sitemap]"); ?>
 				</div>
@@ -25,6 +30,19 @@
 					<h1>
 						<?php include 'title-switch.inc.php'; ?>
 					</h1>
+
+				<div class="left-col">
+					<?php if (is_page('support')) : ?>
+						<p>For further information</p>
+
+						<a class="losange red" href="/contact-us/">
+							<span class="white">Contact us</span>
+						</a>
+
+					<?php endif; ?>
+					&nbsp;	
+				</div>
+
 				<div class="article-section">	
 					<?php the_content(); ?>
 				<?php endwhile; ?>

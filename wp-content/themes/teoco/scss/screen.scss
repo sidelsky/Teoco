@@ -22,6 +22,7 @@
 @import "landing-page.scss";
 @import "sub-pages.scss";
 @import "search-results.scss";
+@import "news-posts.scss";
 
 @import "Hamburger-icon.scss";
 @import "logo.scss";
@@ -46,6 +47,7 @@ body,html {
 body {
 	//color: $black;
 	@extend %open_sansregular;
+	color: $grey;
 	//background: lighten($black, 70%);
 	//background: #fff url('http://www.baselineme.com/6') center top repeat;
 }
@@ -70,30 +72,30 @@ html {
 h1, h2, h3, h4 {
 	margin: 0;
 	padding: 0;
-	//@extend %open_sansbold;
-	@extend %open_sansregular;
+	@extend %open_sansbold;
+	//@extend %open_sansregular;
 	font-weight: 100; 
 	color: $black;
 }
 
 h1, h2 {
-	@include adjust-font-size-to(48px, 6);
-	color: $red;
-	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 36px, $max-font-size: 48px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+	@include adjust-font-size-to(48px, 7);
+	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 2.25em, $max-font-size: 3em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+	color: $red;
 }
 
 p {
-	color: $grey;
+	//color: $grey;
 	@include adjust-font-size-to(24px, 5);
-	//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 1.5em, $max-font-size: 1.5em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 }
 
 
 article {
 	ul {
-		color: $grey;
+		//color: $grey;
 		@include adjust-font-size-to(24px, 5);
 			@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 			li {

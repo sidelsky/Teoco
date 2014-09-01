@@ -33,6 +33,20 @@ if ( ! function_exists('myTheme')) :
 	add_post_type_support( 'page', 'excerpt' );
 
 
+//Add active current class on wp_get_archives used on archive and index pages side menu
+function theme_get_archives_link ( $link_html ) {
+    global $wp;
+    static $current_url;
+    if ( empty( $current_url ) ) {
+        $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+    }
+    if ( stristr( $link_html, $current_url ) !== false ) {
+        $link_html = preg_replace( '/(<[^\s>]+)/', '\1 class="current"', $link_html, 1 );
+    }
+    return $link_html;
+}
+add_filter('get_archives_link', 'theme_get_archives_link');
+
 	//Default HTML5 Form
 	//add_theme_support( 'html5', array( 'search-form' ) );
 
@@ -169,7 +183,7 @@ function excerptMyLength($num) {
 	$excerptMyLength = implode(" ",$excerptMyLength);
 	$readMore = '...<br><br><a href="'. get_permalink($post->ID) . '" class="btn readMore">' . 'Read more' . '</a>';
 	echo '<p>'. $excerptMyLength . '</p>';
-	if(is_search()){
+	if(is_search()||is_home()){
 
 	} else {
 		echo $readMore;
@@ -181,8 +195,49 @@ function excerptMyLength($num) {
 endif; /* Custom code goes above this line. */
 
 
+/*-----------------------------------------------------------------------------------*/
+/*	Custom Login Logo Support 
+/*-----------------------------------------------------------------------------------*/
+function tz_custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image:url('.get_template_directory_uri().'/img/zteoco.png) !important; background-size: 20px 110px !important;
+	padding-bottom:15px !important; background-size:320px 110px !important; background-position:5px 0px !important; }
+	body.login { background-color:#202020 !important; }
+	.login form { background-color:transparent !important; border: 0px solid #fff !important; 
+		-webkit-box-shadow: none; !important
+		box-shadow: none; !important}
+		.login label { color:#fff !important; }
+		.login #nav a, .login #backtoblog a {text-shadow: none !important; color:#fff !important;}
+		h1:after {
+			content: "Teoco - Login";
+			color: white;
+			text-transform: uppercase;
+			font-size: 24px;
+		}
+		.login #login_error  {
+			margin-top: 20px;
+			text-align: center;
+		}
+		</style>';
+	}
+	add_action('login_head', 'tz_custom_login_logo');
 
 
+/*-----------------------------------------------------------------------------------*/
+/*	Obscure login screen error messages
+/*-----------------------------------------------------------------------------------*/
+function wpfme_login_obscure(){
+	return '<strong>Sorry</strong>: You\'ve gone wrong somwhere!';
+}
+add_filter( 'login_errors', 'wpfme_login_obscure' );
 
 
+//Admin menu css changes
+function registerCustomAdminCss(){
+	$src = "/wp-content/themes/teoco/css/admin-styles.css";
+	$handle = "customAdminCss";
+	wp_register_script($handle, $src);
+	wp_enqueue_style($handle, $src, array(), false, false);
+    }
+    add_action('admin_head', 'registerCustomAdminCss');
 ?>

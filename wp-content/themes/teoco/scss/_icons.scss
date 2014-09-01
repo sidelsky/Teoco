@@ -30,27 +30,27 @@ $icon-size: 48px;
 				display: none;
 				visibility: hidden
 			}
-		a {
-			border: solid 1px $light-grey;
-			@include border-radius(50px);
-			display: table-cell;
-			text-align: center;
-			background: $grey;
-			color: $white;
-			vertical-align: middle;
-			text-decoration: none;
-			font-size: 24px;
-			span {
-				display: none;
-			}
-			i {
-				display: block;
-			}
-			&:hover {
-				border: solid 2px $light-grey;
-				@include transition(all 0.2s ease-in-out);
-				background: $dark-grey;
+			a {
+				border: solid 1px $light-grey;
+				@include border-radius(50px);
+				display: table-cell;
+				text-align: center;
+				background: $grey;
 				color: $white;
+				vertical-align: middle;
+				text-decoration: none;
+				font-size: 24px;
+				span {
+					display: none;
+				}
+				i {
+					display: block;
+				}
+				&:hover {
+					border: solid 2px $light-grey;
+					@include transition(all 0.2s ease-in-out);
+					background: $dark-grey;
+					color: $white;
 				//border: solid 2px $grey;
 			}
 		}
@@ -68,9 +68,9 @@ $icon-size: 48px;
 				margin: 0 auto;
 				@include rhythm(0, 2, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			}
-		li {
-			margin-left: 1em;
-			display: table-cell;
+			li {
+				margin-left: 1em;
+				display: table-cell;
 			//Meduim
 			@media screen and (max-width: 60em) {
 				margin: 0 0.5em;
@@ -112,3 +112,49 @@ $icon-size: 48px;
 		color: rgba(255,255,255,0.7);
 	}
 }
+
+
+//Single page footer share icons
+$footer-icon-size: 34px;
+.social {
+	span {
+		display: inline;
+		float: left;
+	}
+	.addtoany_shortcode {
+		.addtoany_list {
+			float: right;
+				a {
+				border: solid 1px $light-grey;
+				@include border-radius(50px);
+				margin-left: 0.8em;
+				display: inline-block;
+				line-height: 28px;
+				padding: 0px;
+				width: $footer-icon-size;
+				height: $footer-icon-size;
+				text-align: center;
+				@include transition-duration(0.5s);
+				@include transition-timing-function(ease-out);
+				@media screen and (max-width: 37.5em) {
+					margin-left: 0.1em;
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+				&:hover {
+					background: $white;
+					color: $grey;
+					@include transition-duration(0.2s);
+					@include transition-timing-function(ease-out);
+					@include scale(1.2);
+				}
+			img {
+				vertical-align: middle;
+				width: 28px !important;
+			}
+		}
+	}
+}
+}
+

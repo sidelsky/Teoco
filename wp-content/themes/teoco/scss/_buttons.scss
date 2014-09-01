@@ -42,7 +42,7 @@
 						color: rgba($white, 0.4);
 					}
 				}
-			}//Text is within this span
+			} //Text is within this span
 			span { 
 				display: table-cell;
 				vertical-align: middle;
@@ -79,12 +79,45 @@
 	}
 }
 
-
+.link-arrows {
+	text-decoration: none;
+	display: block;
+	width: 96px;
+	height: 96px;
+	@include border-radius(50%);
+	background: $grey;
+	text-align: center;
+	position: relative;
+	display: table;
+	@include transition(all 0.2s ease-in-out);
+	@include rhythm(1, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+	&.white {
+		background-color: $white;
+		&:hover {
+			@include transition(all 0.2s ease-in-out);
+			background-color: rgba($white, 0.5);
+		}
+	}
+	i {
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 72px;
+		&.green {
+			color: $green;
+		}
+		&.mustard {
+			color: $mustard;
+		}
+		&.red {
+			color: $red;
+		}
+	}
+}
 
 .losange,
 input[type=submit] {
-	color: $green;
 	@include border-radius(50%);
+	color: $green;
 	border: none;
 	background: $white;
 	text-align: center;
@@ -94,18 +127,17 @@ input[type=submit] {
 	height:96px;
 	text-decoration: none;
 	outline: none;
-	@include transition-duration(0.8s);
-	@include transition-timing-function(ease-out);
+	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		background: rgba(255,255,255,0.7);
-		@include transition-duration(0.2s);
-		@include transition-timing-function(ease-out);
+		@include transition(all 0.2s ease-in-out);
 	}
 	span {
-		@include adjust-font-size-to(14px);
+		@include adjust-font-size-to(13px);
 		line-height: 96px;
 		text-decoration: none;
 		text-align: center;
+		text-transform: uppercase;
 		width: 100%;
 		display:block;
 		&.orange {
@@ -117,7 +149,15 @@ input[type=submit] {
 	}
 }
 
-body.page-template-careers-page-php {
+.losange.red {
+		background: $red;
+		color: $white;
+		&:hover {
+			background: darken($red, 10%);
+		}
+	}
+
+body.page-template-careers-page-php, {
 	input[type=submit] {
 		background: $red;
 		color: $white;

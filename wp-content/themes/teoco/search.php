@@ -15,6 +15,11 @@
 
 <h1>Search results</h1>
 
+<div class="left-col">
+	&nbsp;
+</div>
+
+
 <div class="article-section">
 <div id="showing">Showing <strong><?php wp_pagenavi(); ?></strong> of <strong><?php echo $NumResults; ?></strong> results for <strong>'<?php the_search_query(); ?>'</strong></div>
 
@@ -32,7 +37,7 @@
 <?php endwhile; ?>
 </div>
 
-<footer class="search">
+<footer class="pagenavi search">
 	<?php wp_pagenavi(); ?>
 </footer>
 

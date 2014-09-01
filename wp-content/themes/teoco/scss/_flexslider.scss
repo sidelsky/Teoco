@@ -36,17 +36,23 @@
 /* FlexSlider Necessary Styles
 *********************************/
 .flexslider,
-.flexslider2 {
+.flexslider2,
+.flexslider3,
+.flexslider4 {
   margin: 0;
   padding: 0;
 }
 .flexslider .slides > li,
-.flexslider2 .slides > li {
+.flexslider2 .slides > li,
+.flexslider3 .slides > li,
+.flexslider4 .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
 } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img,
-.flexslider2 .slides img {
+.flexslider2 .slides img,
+.flexslider3 .slides img,
+.flexslider4 .slides img {
   width: 100%;
   display: block;
 }
@@ -77,7 +83,9 @@ html[xmlns] .slides {
 /* FlexSlider Default Theme
 *********************************/
 .flexslider,
-.flexslider2 {
+.flexslider2,
+.flexslider3,
+.flexslider4 {
   //margin: 0 0 60px;
   //background: #fff;
 	position: relative;

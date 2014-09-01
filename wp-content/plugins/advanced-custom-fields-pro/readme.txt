@@ -107,6 +107,26 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.0.6 =
+* Relationship field: Fixed bug preventing values from being removed
+* Taxonomy field: Fixed various JS bugs
+* Core: Added logic to reset inputs after adding a new taxonomy term
+* Core: Added prompt when navigating away from changed data
+* Core: Fixed minor validation bug when tab is hidden by conditional logic
+* Core: Fixed error when showing revision of sub field data
+* Core: Minor bug fixes and improvements
+
+= 5.0.5 =
+* Url field: Added new URL field type with basic 'http' validation
+* WYSIWYG field: Added new setting for customizing tabs (Visual / Text)
+* Relationship field: Added scrolling pagination to choices
+* Post object field: Added scrolling pagination to choices
+* Page link field: Added scrolling pagination to choices
+* Radio field: Fixed bug causing default value to be lost when added as sub field
+* Core: Minor JS improvements
+* Core: Added logic to detect if field groups are translatable (WPML setting) before modifying json path
+* Language: Updated French translation - thanks to Maxime Bernard-Jacquet
+
 = 5.0.4 =
 * WYSIWYG field: Major improvement adding visual and text tabs
 * Image field: Fixed uploadedTo bug on non post edit page

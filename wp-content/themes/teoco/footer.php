@@ -39,11 +39,12 @@
 				</li>
 				<li>
 					<a href="#">
-						<i class="fa fa-youtube"></i>
+						<i class="fa fa-youtube-play"></i>
 					</a>
 				</li>
 			</ul>
 		</div>
+		
 	</section>
 </footer>
 

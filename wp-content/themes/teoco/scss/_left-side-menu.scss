@@ -65,6 +65,23 @@
 	}
 }
 
+
+//Left side menu on index and archive pages
+.side-menu {
+	li {
+		a {
+			cursor: pointer;
+		}
+		&.all, &.current {
+			a {
+				border-top: solid 1px $grey;
+				border-bottom: solid 1px $grey;
+				color: $red;
+			}
+		}
+	}
+}
+
 // .side-menu {
 // 	li {
 // 		.widgettitle {

@@ -1,6 +1,6 @@
 $lp-container-height: 188px;
 
-body.page-template-landing-page-php {
+body.page-template-landing-page-php, {
 	.landing-page {
 		li {
 			position: relative;
@@ -109,13 +109,19 @@ body.page-template-landing-page-php.page-id-22 {
   				h1 {
 						color: $purple;
 					}
+					p {
+						color: $grey;
+					}
 				}
 			}
 			//Hover state
 			&:hover {
 				h1 {
 					color: darken($purple, 10%);
-				}
+					}
+					p {
+						color: $grey;
+					}
 				background-color: darken($purple, 10%);
 				}			
 			}
@@ -132,6 +138,9 @@ body.page-template-landing-page-php.page-id-23 {
   				h1 {
 						color: $blue;
 					}
+					p {
+						color: $grey;
+					}
 				}
 			}
 			//Hover state
@@ -139,6 +148,9 @@ body.page-template-landing-page-php.page-id-23 {
 				h1 {
 					color: darken($blue, 10%);
 				}
+				p {
+						color: $grey;
+					}
 				background-color: darken($blue, 10%);
 				}			
 			}

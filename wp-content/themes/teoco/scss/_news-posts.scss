@@ -1,0 +1,45 @@
+body.blog,
+body.archive {
+	.post-list {
+		li {
+			h2 {
+				@include adjust-font-size-to(24px, 1.3);
+				@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 1em, $max-font-size: 1.5em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+				width: 75%;
+				@media screen and (max-width: 37.5em) {
+					width: 100%;
+				}
+				a {
+					color: $grey;
+					text-decoration: none;
+				}
+			}
+			position: relative;
+			@include border-radius(25px);
+			background: $green url(../img/blog-page-bg.png) no-repeat center right;
+			overflow: hidden;
+			@include rhythm(0, 1, 1, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+			padding-left: 1em;
+			@media screen and (max-width: 37.5em) {
+				background: $white;
+			}
+		}
+	}
+}
+
+
+.the-time {
+	color: $red;
+	text-transform: uppercase;
+	@include adjust-font-size-to(15px, 1);
+}
+
+body.single {
+	h2 {
+		color: $grey;
+		@include rhythm(0, 0.8, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
+	p:first-child {
+		@extend %open_sansbold;
+	}
+}

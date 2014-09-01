@@ -14,7 +14,6 @@
 					text-align: center;
 				}
 				a {
-					@include adjust-font-size-to(14px, 1);
 					color: $white;
 					text-decoration: none;
 					&:hover {
@@ -33,6 +32,9 @@
 			}
 			li {
 				margin-right: 1em;
+				a {
+					@include adjust-font-size-to(14px, 1);
+				}
 				//Meduim
 				@media screen and (max-width: $m) {
 					display: block;

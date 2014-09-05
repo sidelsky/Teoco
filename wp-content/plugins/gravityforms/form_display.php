@@ -2580,6 +2580,9 @@ class GFFormDisplay{
                 if(empty($target_input_id))
                     $target_input_id = $field_id . "_1";
 
+            case 'list':
+                $target_input_id = sprintf( 'input_%s_%s_shim', $form_id, $field['id'] );
+
             default :
                 if(empty($target_input_id))
                     $target_input_id = $field_id;

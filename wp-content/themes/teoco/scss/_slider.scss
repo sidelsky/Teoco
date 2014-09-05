@@ -20,6 +20,7 @@
 			top: 0;
 			right: 0;
 			z-index: 1;
+			//-webkit-background-size: 2000px 1400px;
 			//-webkit-background-size: 1000px 1000px;
 			&.mustard {
 				background: url(../img/bg-curve-mustard.png) no-repeat 50% center;
@@ -36,6 +37,8 @@
 			@media screen and (min-width: 60em) {
 			&.mustard {
 					background: url(../img/bg-curve-mustard.png) no-repeat center center;
+					//background-size: cover;
+					//-webkit-background-size: 2000px 1400px;
 				}
 			&.red {
 					background: url(../img/bg-red.png) no-repeat center center;
@@ -45,9 +48,7 @@
 				}
 			&.blue {
 				background: url(../img/bg-blue.png) no-repeat center center;
-			}
-			}
-			@media screen and (min-width: 60em) {
+				}
 			}
 			@media screen and (max-width: 37.5em) {
 				&.mustard {

@@ -722,7 +722,7 @@ class GFCommon{
 									$value = esc_html( $value );
 								}
 							}
-							$value = $format == 'html' ? join( "</br>", $files ) : join( ", ", $files );
+							$value = $format == 'html' ? join( "<br />", $files ) : join( ", ", $files );
 
 						} else {
 							$value = str_replace( ' ', '%20', $value );
@@ -3921,21 +3921,21 @@ class GFCommon{
 
                 $has_columns = is_array(rgar($field, "choices"));
                 $columns = $has_columns ? rgar($field, "choices") : array(array());
+                $label_target_shim = sprintf( '<input type=\'text\' id=\'input_%1$s_%2$s_shim\' style=\'position:absolute;left:-999em;\' onfocus=\'jQuery( "#field_%1$s_%2$s table tr td:first-child input" ).focus();\' />', $form_id, $field['id'] );
 
                 $list = "<div class='ginput_container ginput_list'>" .
+                        $label_target_shim .
                         "<table class='gfield_list'>";
 
                 $class_attr = "";
                 if($has_columns){
 
-                    $list .= "<colgroup>";
-                    $colnum = 1;
-                    foreach($columns as $column){
-                        $odd_even = ($colnum % 2) == 0 ? "even" : "odd";
-                        $list .= "<col id='gfield_list_{$field["id"]}_col{$colnum}' class='gfield_list_col_{$odd_even}' />";
-                        $colnum++;
+                    $list .= '<colgroup>';
+                    for( $colnum = 1; $colnum <= count( $columns ) + 1; $colnum++ ) {
+                        $odd_even = ( $colnum % 2 ) == 0 ? 'even' : 'odd';
+                        $list .= sprintf( "<col id='gfield_list_%d_col_%d' class='gfield_list_col_%s' />", $field['id'], $colnum, $odd_even );
                     }
-                    $list .= "</colgroup>";
+                    $list .= '</colgroup>';
 
                     $list .= "<thead><tr>";
                     foreach($columns as $column){
@@ -3944,7 +3944,11 @@ class GFCommon{
                     $list .= "<th>&nbsp;</th></tr></thead>";
                 }
                 else{
-                    $list .= "<colgroup><col id='gfield_list_{$field["id"]}_col1' class='gfield_list_col_odd' /></colgroup>";
+                    $list .=
+                        '<colgroup>' .
+                            "<col id='gfield_list_{$field['id']}_col1' class='gfield_list_col_odd' />" .
+                            "<col id='gfield_list_{$field['id']}_col2' class='gfield_list_col_even' />" .
+                        '</colgroup>';
                 }
 
                 $delete_display = count($value) == 1 ? "visibility:hidden;" : "";
@@ -5328,6 +5332,7 @@ class GFCommon{
         }
 
         $result = preg_match( '/^[0-9 -\/*\(\)]+$/', $formula ) ? eval( "return {$formula};" ) : false;
+        $result = apply_filters( 'gform_calculation_result', $result, $formula, $field, $form, $lead );
 
         return $result;
     }

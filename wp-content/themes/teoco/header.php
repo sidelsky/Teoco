@@ -21,7 +21,9 @@
 	<?php // if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
 	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
+	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>
+
+	<script type="text/javascript" src="http://www.youtube.com/player_api"></script>	
 
 	<?php wp_head(); ?>
 

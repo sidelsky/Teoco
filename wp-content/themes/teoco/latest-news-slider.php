@@ -7,7 +7,7 @@
 						<?php
 						$args = array(
 							//'post__in' => array(8),
-							'posts_per_page'   => 5,
+							'posts_per_page'   => 3,
 							'offset'           => 0,
 							'category'         => '',
 							'orderby'          => 'post_date',

@@ -8,7 +8,7 @@ get_header();
 		<div class="left-col">
 			<ul class="side-menu">
 				<li>
-					<a href="/news/">All</a>
+					<a href="/latest/news/">All</a>
 				</li>
 				<?php $args = array(
 					'type'            => 'yearly',

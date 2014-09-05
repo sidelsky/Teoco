@@ -37,15 +37,45 @@ if ( ! function_exists('myTheme')) :
 function theme_get_archives_link ( $link_html ) {
     global $wp;
     static $current_url;
+
     if ( empty( $current_url ) ) {
         $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
     }
-    if ( stristr( $link_html, $current_url ) !== false ) {
-        $link_html = preg_replace( '/(<[^\s>]+)/', '\1 class="current"', $link_html, 1 );
+
+    if ( stristr( $current_url, 'page' ) !== false ) {
+		$current_url = substr($current_url, 0, strrpos($current_url, 'page'));
     }
+
+    //if ( stristr( $link_html, $current_url ) !== false ) {
+    $yearRefX = '/(19|20)\d{2}/';
+
+    $currentYear = preg_match($yearRefX, $current_url,$currentMatch);
+    $linkYear = preg_match($yearRefX, $link_html, $linkMatch);
+
+/*print_r('oi');
+   	print_r($linkYear);
+   	print_r($linkMatch);
+   	print_r($currentYear);
+   	print_r($currentMatch);*/
+
+    if($currentYear == 1 && $linkYear == 1){
+    	// we have amatch in both strings
+    	if($currentMatch[0] == $linkMatch[0]){
+    		// the years match.. hopefully!
+				$link_html = preg_replace( '/(<[^\s>]+)/', '\1 class="current"', $link_html, 1 );
+    	}
+    }
+
+
     return $link_html;
+
 }
 add_filter('get_archives_link', 'theme_get_archives_link');
+
+// print_r($_SERVER['QUERY_STRING']);
+// print_r($link_html);
+// print_r($current_url);
+ 
 
 	//Default HTML5 Form
 	//add_theme_support( 'html5', array( 'search-form' ) );
@@ -111,6 +141,8 @@ add_filter('get_archives_link', 'theme_get_archives_link');
     'singular_label' => 'locations')
 );*/
 
+
+// Careers job opportunities
 register_taxonomy( "locations", 
 	array ('locations', 'job-opportunities'),
 	array(
@@ -118,10 +150,20 @@ register_taxonomy( "locations",
 		'show_admin_column' => true,
 		"labels" => array('name'=>"Locations",'add_new_item'=>"Add New Field"), 
 		"singular_label" => __( "Field" ), 
-	"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
+		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
 		'with_front' => false)
-	) 
-	);
+	));
+
+register_taxonomy( "event-year", 
+	array ('event-year', 'events'),
+	array(
+		"hierarchical" => true,
+		'show_admin_column' => true,
+		"labels" => array('name'=>"Event year",'add_new_item'=>"Add New Field"), 
+		"singular_label" => __( "Field" ), 
+		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
+		'with_front' => false)
+	));
 
 
 //Is tree

@@ -77,7 +77,7 @@ $icon-size: 48px;
 				text-align: center;
 			}
 			a {
-				border: solid 1px $light-grey;
+				border: solid 1px #cdcdcd;
 				@include border-radius(50px);
 				display: table-cell;
 				width: $icon-size;
@@ -85,14 +85,20 @@ $icon-size: 48px;
 				text-align: center;
 				vertical-align: middle;
 				@include adjust-font-size-to(17px, 1.2);
-				@include transition-duration(0.5s);
-				@include transition-timing-function(ease-out);
+				@include transition(all 0.5s ease-in-out);
+				i {
+					color: #cdcdcd;
+				}
 				&:hover {
-					background: $white;
-					color: $grey;
-					@include transition-duration(0.2s);
-					@include transition-timing-function(ease-out);
-					@include scale(1.2);
+					//background: $white;
+					color: #7a7a7a;
+					border: solid 1px #7a7a7a;
+					@include transition(all 0.2s ease-in-out);
+					//@include scale(1.2);
+				}
+				&:hover i {
+					color: #8b8b8b;
+					@include transition(all 0.2s ease-in-out);
 				}
 			}
 		}
@@ -134,8 +140,7 @@ $footer-icon-size: 34px;
 				width: $footer-icon-size;
 				height: $footer-icon-size;
 				text-align: center;
-				@include transition-duration(0.5s);
-				@include transition-timing-function(ease-out);
+				@include transition(all 0.5s ease-in-out);
 				@media screen and (max-width: 37.5em) {
 					margin-left: 0.1em;
 					&:first-child {
@@ -145,8 +150,7 @@ $footer-icon-size: 34px;
 				&:hover {
 					background: $white;
 					color: $grey;
-					@include transition-duration(0.2s);
-					@include transition-timing-function(ease-out);
+					@include transition(all 0.2s ease-in-out);
 					@include scale(1.2);
 				}
 			img {

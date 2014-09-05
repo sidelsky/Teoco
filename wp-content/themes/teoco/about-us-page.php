@@ -10,21 +10,10 @@
 		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
-					<div class="flexslider">
+					<div class="zflexslider">
 						<ul class="slides">
 							<li>							
-								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-									<!-- post -->
-									<h1>
-										<?php the_field('subtitle'); ?>
-									</h1>
-									<?php the_content(); ?>
-
-								<?php endwhile; ?>
-								<!-- post navigation -->
-							<?php else: ?>
-								<!-- no posts found -->
-							<?php endif; ?>
+								<?php include 'generic-page-loop.inc.php'; ?>
 						</li>
 					</ul>
 				</div>
@@ -49,7 +38,10 @@
 <?php get_template_part( '/copy-with-blockquote' ); ?>
 
 <!--Video - vimeo api-->	
-<?php get_template_part('/vimeo-video'); ?>
+<?php/* get_template_part('/vimeo-video'); */?>
+
+<!-- Youtube video -->
+<?php get_template_part('/youtube-video'); ?>
 
 <!-- Company overview -->
 <section class="page-wrapper__wide rel-pos section current">

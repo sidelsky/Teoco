@@ -12,19 +12,23 @@
 				textarea {
 					@include border-radius(6px);
 					@extend %open_sansregular;
-					color: $grey;
+					color: $white;
 					border: none;
-					background: $light-grey;
-					background-color: rgba($white,0.8);
+					background-color: #dba355;
 					width: 100%;
 					padding: 0.5em; 
 					@include input-placeholder {
-						color: lighten($grey, 30%);
+						color: #f5e5ce;
 					}
 				}
 			}
 		}
 	}
+
+
+.gform_fields {
+	margin-bottom: 30px;
+}
 
 	.validation_error,
 	.validation_message {
@@ -98,12 +102,22 @@ select {
 	position: relative;
 	max-height: 0;
 	overflow: hidden;
-	@include transition-duration(0.8s);
-	@include transition-timing-function(ease-out);
+	@include transition(all 0.8s ease-in-out);
+	.contain {
+		p {
+			margin: 0;
+		}
+		i {
+			font-size: 30px;
+			top: 32px;
+		}
+	}
 	&.open {
 		max-height: 550px;
-		@include transition-duration(0.5s);
-		@include transition-timing-function(ease-out);
+		@include transition(all 0.5s ease-in-out);
+		border-top: solid 1px $white;
+		border-bottom: solid 1px $white;
+		@include rhythm(2, 1, 1.5, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 	}
 }
 
@@ -198,6 +212,7 @@ text-shadow: 0px -1px 0px #0172bd;
 	padding-top: 18px;
 	img {
 		float: right;
+		display: none;
 	}
 	@media screen and (max-width: $s) {
 		@include push(0);

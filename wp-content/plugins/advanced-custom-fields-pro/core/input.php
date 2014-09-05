@@ -109,20 +109,16 @@ class acf_input {
 			'admin_url'		=> admin_url(),
 			'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
 			'ajax'			=> $args['ajax'],
+			'validation'	=> $args['validation'],
 			'wp_version'	=> $wp_version,
 		);
 		
 		
 		// l10n
 		$l10n = apply_filters( 'acf/input/admin_l10n', array(
-			'core' => array(
-				'expand_details' 	=> __('Expand Details','acf'),
-				'collapse_details' 	=> __('Collapse Details','acf'),
-				'save_alert'		=> __('The changes you made will be lost if you navigate away from this page.','acf'),
-			),
-			'validation' => array(
-				'error' => __("Validation Failed. One or more fields below are required.",'acf')
-			)
+			'unload'			=> __('The changes you made will be lost if you navigate away from this page','acf'),
+			'expand_details' 	=> __('Expand Details','acf'),
+			'collapse_details' 	=> __('Collapse Details','acf'),
 		));
 		
 		

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Field - version 5 Pro\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/advanced-custom-fields\n"
 "POT-Creation-Date: 2014-07-18 15:17+1000\n"
-"PO-Revision-Date: 2014-08-15 10:29+0100\n"
-"Last-Translator: Maxime BERNARD-JACQUET <maxime@smoothie-creative.com>\n"
+"PO-Revision-Date: 2014-08-28 17:32+0100\n"
+"Last-Translator: Mickael Adamadorassy <m.adama@magnetic.coop>\n"
 "Language-Team: Dysign <maxime@dysign.fr>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 # @ acf
@@ -114,7 +114,7 @@ msgstr "Rechercher des champs"
 # @ default
 #: acf.php:276
 msgid "No Fields found"
-msgstr "Aucun champ trouv\""
+msgstr "Aucun champ trouvé"
 
 # @ default
 #: acf.php:277
@@ -618,7 +618,7 @@ msgstr "Fermer le champ"
 # @ acf
 #: admin/views/field-group-fields.php:29
 msgid "Order"
-msgstr "Commander"
+msgstr "Ordre"
 
 # @ acf
 #: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:524

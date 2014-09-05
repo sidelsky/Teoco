@@ -192,14 +192,12 @@
 	position: fixed;
 	width: 100%;
 	top: -200px;
-	@include transition-duration(0.5s);
-	@include transition-timing-function(ease-out);
+	@include transition(all 0.5s ease-in-out);
 	background: $white;
 	padding: 0 !important;
 	&.header-ani {
 		top: 0px;
-		@include transition-duration(0.5s);
-		@include transition-timing-function(ease-out);
+		@include transition(all 0.5s ease-in-out);
 		@include rhythm(0, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		@include box-shadow($black 1px 1px 2px);
 		z-index: 100;

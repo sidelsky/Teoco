@@ -19,10 +19,15 @@
 		// functions
 		init : function(){
 			
+			// read validation setting
+			this.active = acf.get('validation');
+			
+			
 			// bail early if disabled
-			if( this.active == 0 )
-			{
+			if( !this.active ) {
+			
 				return;
+				
 			}
 			
 			
@@ -148,18 +153,6 @@
 					
 				// bypass JS and submit form
 				this.ignore = 1;
-				
-				
-				// attempt to find $trigger
-				/*
-if( ! this.$trigger )
-				{
-					if( $form.find('.submit input[type="submit"]').exists() )
-					{
-						this.$trigger = $form.find('.submit input[type="submit"]');
-					}
-				}
-*/
 				
 				
 				// action for 3rd party customization
@@ -335,7 +328,7 @@ if( ! this.$trigger )
 		
 		acf.validation.init();
 		
-	});
+	}, 20);
 	
 
 })(jQuery);

@@ -10,60 +10,63 @@
 		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
-					<div class="flexslider">
+					<div class="zflexslider">
 						<ul class="slides">
 							<li>
-							<?php include 'generic-page-loop.inc.php'; ?>
-						</li>
-					</ul>
+								<?php include 'generic-page-loop.inc.php'; ?>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="slider bottom">
-		<div class="curve-holder blue"></div>
-		<div class="flexslider2">
-			<ul class="slides">
-				<li>
-					<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
-				</li>
-			</ul>
-		</div>
-	</div>					
-</section>
+		<div class="slider bottom">
+			<div class="curve-holder blue"></div>
+			<div class="flexslider2">
+				<ul class="slides">
+					<li>
+						<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
+					</li>
+				</ul>
+			</div>
+		</div>					
+	</section>
 
-<!--Video - vimeo api-->	
-<?php get_template_part('/vimeo-video'); ?>
+	<!--Video - vimeo api-->	
+	<?php get_template_part('/vimeo-video'); ?>
 
-<!-- Job opportunities -->
-<section class="page-wrapper__wide job-opportunities section">
-	<div class="page-wrapper__wide__inner padding-tb">
-		<h1><?php the_field('job_opportunities_title'); ?></h1>
-	<div class="left-col">
-		<ul class="controls side-menu">
-			<?php
-			$terms = get_terms('locations');
-			$count = count($terms);
-			echo '<li data-filter="all" class="filter active">All locations</li>';
-			if ( $count > 0 ){
-				foreach ( $terms as $term ) {
-					$termname = strtolower($term->name);
-					$termname = str_replace(' ', '-', $termname);
-					echo '<li data-filter=".'.$termname.'" class="filter"><a href="#">'.$term->name.'</a></li>';
-				}
-			}
+	<!-- Youtube video -->
+	<?php/* get_template_part('/youtube-video'); */?>
+
+	<!-- Job opportunities -->
+	<section class="page-wrapper__wide job-opportunities section">
+		<div class="page-wrapper__wide__inner padding-tb">
+			<h1><?php the_field('job_opportunities_title'); ?></h1>
+			<div class="left-col">
+				<ul class="controls side-menu">
+					<?php
+					$terms = get_terms('locations');
+					$count = count($terms);
+					echo '<li data-filter="all" class="filter active">All locations</li>';
+					if ( $count > 0 ){
+						foreach ( $terms as $term ) {
+							$termname = strtolower($term->name);
+							$termname = str_replace(' ', '-', $termname);
+							echo '<li data-filter=".'.$termname.'" class="filter"><a href="#">'.$term->name.'</a></li>';
+						}
+					}
 				//echo '<li class="sort" data-sort="myorder:asc">Asc</li>';
 			 	//echo '<li class="sort" data-sort="myorder:desc">Desc</li>';
-			?>
-		</ul>
-	</div>
-	
-	<div class="right-col">
-	<article class="job-opportunities">
-		<?php the_field('job_opportunities_copy'); ?>
-	</article>
-			<ul id="Container" class="container accordian">
-				<?php
+					?>
+				</ul>
+			</div>
+			
+			<div class="right-col">
+				<article class="job-opportunities">
+					<?php the_field('job_opportunities_copy'); ?>
+				</article>
+				<ul id="Container" class="container accordian">
+					<?php
 					/* 
 					Query the post 
 					*/

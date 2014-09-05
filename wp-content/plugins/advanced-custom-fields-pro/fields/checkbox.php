@@ -217,6 +217,7 @@ class acf_field_checkbox extends acf_field {
 		
 		// decode choices (convert to array)
 		$field['choices'] = acf_decode_choices($field['choices']);
+		$field['default_value'] = acf_decode_choices($field['default_value']);
 		
 		
 		// return

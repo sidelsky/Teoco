@@ -573,8 +573,10 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
             $options = array();
             if(is_array(rgar($product, "options"))){
                 foreach($product["options"] as $option){
-                    $options[] = $option["option_name"];
-                    $product_price += $option["price"];
+					if ( isset( $option['option_name'] ) ){
+                    	$options[] = $option["option_name"];
+                    	$product_price += $option["price"];
+					}
                 }
             }
 
@@ -657,7 +659,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
         if(is_wp_error( $callback_action )) {
             $this->display_callback_error($callback_action);
         }
-        else if($callback_action && is_array( $callback_action ) && rgar( $callback_action, 'type' ) ) {
+        else if($callback_action && is_array( $callback_action ) && rgar( $callback_action, 'type' ) && ! rgar($callback_action, 'abort_callback') ) {
 
             $result = $this->process_callback_action( $callback_action );
 

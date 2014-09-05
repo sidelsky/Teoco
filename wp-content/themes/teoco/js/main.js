@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+// lazyload
+//$('#you-want-lazyload').lazyload(options);
+
+
 //Side menu
 $('.simple-menu').sidr({
   side: 'right'
@@ -9,11 +13,11 @@ $('.simple-menu').sidr({
 $(window).touchwipe({
   wipeLeft: function () {
     // Close
-    $.sidr('close', 'sidr');
+    $.sidr('open', 'sidr');
   },
   wipeRight: function () {
     // Open
-    $.sidr('open', 'sidr');
+    $.sidr('close', 'sidr');
   },
   preventDefaultEvents: false
 });  
@@ -713,7 +717,7 @@ $('.fa-chevron-circle-up').click(function(){
 
 //body.page-template-success-page-php......
 
-if ($('body').hasClass('page-template-careers-page-php')){
+/*if ($('body').hasClass('page-template-careers-page-php')){
   $('section.page-wrapper__wide:nth-of-type(2n)').css({
     'background' : '#e0e0e2'
   });
@@ -721,7 +725,7 @@ if ($('body').hasClass('page-template-careers-page-php')){
   $('section.page-wrapper__wide:nth-of-type(2n+1)').css({
     'background' : '#e0e0e2'
   });
-}
+}*/
 
 
 
@@ -800,6 +804,9 @@ $('.accordian > li > .accord-toggle').on('click', function (e) {
 //     e.preventDefault();
 // });
 
+//Remove class from sidemenu on blog list page
+// var side_menu_remove_class = $('body.blog ul.side-menu li');
+//     side_menu_remove_class.removeClass('current');
 
 ////////////////////////////////////////////
 //Poplulate hidden field for jobs on careers
@@ -829,8 +836,6 @@ $("input[type=file]").nicefileinput();
 // }
 // getCareerVal();
 
-
-
 $('.side-menu.links li:first-child a').click(function(e){
   e.preventDefault();
 });
@@ -839,7 +844,6 @@ $('.side-menu.links li:first-child a').click(function(e){
 ////////////////////////////////////////////
 //Mix it up
 ////////////////////////////////////////////
-
 $('#Container').mixItUp({
   layout: {
     display: 'block'
@@ -851,6 +855,15 @@ $('#Container').mixItUp({
   }
 });
 
+
+////////////////////////////////////////////
+//lazyload
+////////////////////////////////////////////
+/*$("li.lazy").lazy({
+  attribute: "title",
+  removeAttribute: false;
+  //$(this).hide(233);
+});*/
 //End
 });
 

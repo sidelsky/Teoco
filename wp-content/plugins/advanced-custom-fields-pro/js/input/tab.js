@@ -48,6 +48,8 @@
 			// show first tab, hide others
 			if( $group.find('li').length == 1 ) {
 				
+				$group.find('li').addClass('active');
+				
 				this.show_tab_fields( this.$field );
 				
 			} else {

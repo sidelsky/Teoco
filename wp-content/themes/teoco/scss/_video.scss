@@ -16,7 +16,7 @@
       width: 90px;
       height: 90px;
       position: absolute;
-      z-index: 4;
+      z-index: 900;
       left: 50%;
       top: 50%; 
       margin-left: -45px;
@@ -49,7 +49,7 @@
       top: 20px;
     }
   }
-  .image {
+  .cover-image {
   	z-index: 2;
   	position: absolute;
   	top: 0px;
@@ -70,10 +70,19 @@
   padding-top: 0;
 }
 
-.js-video embed, .js-video iframe, .js-video object, .js-video video {
+.js-video embed, .js-video iframe, .js-video object, .js-video video, .youtube-video {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 0;
+}
+
+
+
+@media screen and (max-width:$m) {
+  .title-wrapper, .play, .cover-image {
+    //display: none;
+  }
 }

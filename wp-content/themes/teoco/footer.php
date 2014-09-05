@@ -20,6 +20,7 @@
 		//'walker'          =>  
 	)); ?>
 	
+	
 		<div class="social">
 			<ul>
 				<li>
@@ -85,11 +86,11 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.flexslider.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.touchwipe.1.1.1.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.sidr.min.js"></script>
-
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.smoove.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/waypoints.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/froogaloop.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.lazy.min.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
 

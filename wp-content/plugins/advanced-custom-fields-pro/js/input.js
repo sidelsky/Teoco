@@ -337,7 +337,13 @@ var acf = {
 		
 		get : function( k ){
 			
-			return this.o[ k ] || null;
+			if( typeof this.o[ k ] !== 'undefined' ) {
+				
+				return this.o[ k ];
+				
+			}
+			
+			return null;
 			
 		},
 		
@@ -1592,8 +1598,8 @@ frame.on('all', function( e ) {
 					// create button
 					var button = $([
 						'<a href="#" class="acf-expand-details">',
-							'<span class="is-closed"><span class="acf-icon small"><i class="acf-sprite-left"></i></span>' + acf.l10n.core.expand_details +  '</span>',
-							'<span class="is-open"><span class="acf-icon small"><i class="acf-sprite-right"></i></span>' + acf.l10n.core.collapse_details +  '</span>',
+							'<span class="is-closed"><span class="acf-icon small"><i class="acf-sprite-left"></i></span>' + acf._e('expand_details') +  '</span>',
+							'<span class="is-open"><span class="acf-icon small"><i class="acf-sprite-right"></i></span>' + acf._e('collapse_details') +  '</span>',
 						'</a>'
 					].join('')); 
 					
@@ -2236,31 +2242,57 @@ frame.on('all', function( e ) {
 	*  description
 	*
 	*  @type	function
-	*  @date	25/08/2014
+	*  @date	1/09/2014
 	*  @since	5.0.0
 	*
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
 	
-	var onBeforeUnload = function(){
-		
+	var unload = function(){
+			
 		if( acf.get('changed') ) {
 			
-			return acf._e('core', 'save_alert');
+			return acf._e('unload');
 			
 		}
 		
-	};
+	};	
 	
-	$(window).on('beforeunload', onBeforeUnload);
 	
-	acf.add_action('submit', function(){
+	// add unload if validation fails
+	acf.add_filter('validation_complete', function( json, $form ){
 		
-		$(window).off('beforeunload', onBeforeUnload);
+		if( json.errors ) {
+			
+			$(window).on('beforeunload', unload);
+			
+		}
+		
+		
+		// return
+		return json;
 		
 	});
 	
+	
+	// remove unload when submitting form
+	$(document).on('submit', 'form', function( e ){
+		
+		$(window).off('beforeunload', unload);
+						
+	});
+	
+	acf.add_action('submit', function( $form ){
+		
+		$(window).off('beforeunload', unload);
+						
+	});
+	
+	
+	// add unload event
+	$(window).on('beforeunload', unload);
+			
 	
 	/*
 	*  Sortable
@@ -2598,7 +2630,7 @@ frame.on('all', function( e ) {
 			
 			
 			// vars
-			this.update('post_id', acf.o.post_id);
+			this.update('post_id', acf.get('post_id'));
 			
 			
 			// MPML
@@ -5224,6 +5256,8 @@ var scroll_timer = null;
 			// show first tab, hide others
 			if( $group.find('li').length == 1 ) {
 				
+				$group.find('li').addClass('active');
+				
 				this.show_tab_fields( this.$field );
 				
 			} else {
@@ -5575,10 +5609,15 @@ var scroll_timer = null;
 		// functions
 		init : function(){
 			
+			// read validation setting
+			this.active = acf.get('validation');
+			
+			
 			// bail early if disabled
-			if( this.active == 0 )
-			{
+			if( !this.active ) {
+			
 				return;
+				
 			}
 			
 			
@@ -5704,18 +5743,6 @@ var scroll_timer = null;
 					
 				// bypass JS and submit form
 				this.ignore = 1;
-				
-				
-				// attempt to find $trigger
-				/*
-if( ! this.$trigger )
-				{
-					if( $form.find('.submit input[type="submit"]').exists() )
-					{
-						this.$trigger = $form.find('.submit input[type="submit"]');
-					}
-				}
-*/
 				
 				
 				// action for 3rd party customization
@@ -5891,7 +5918,7 @@ if( ! this.$trigger )
 		
 		acf.validation.init();
 		
-	});
+	}, 20);
 	
 
 })(jQuery);

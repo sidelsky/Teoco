@@ -1,6 +1,6 @@
 <!-- Vision & values -->
 <section class="page-wrapper__wide section" id="vision-values">
-	<article class="page-wrapper__wide__inner padding-tb">
+	<article class="page-wrapper__wide__inner padding-tb-small">
 		
 		<?php
 			$title = get_field('title');

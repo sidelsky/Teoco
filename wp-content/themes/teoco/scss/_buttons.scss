@@ -25,29 +25,43 @@
 			}
 			&.purple {
 				background-color: $purple;
+				i {
+					color: $purple;
+				}
 				//margin-right: 30px;
 				&:hover {
 					background-color: darken($purple, 10%);
 					span {
-						color: rgba($white, 0.4);
+						i {
+							background-color: rgba($white, 0.2);
+							color: darken($purple, 10%);
+						}
+						//color: rgba($white, 0.4);
 					}
 				}
 			}
 			&.blue {
 				background-color: $blue;
-				//margin-left: 30px;
+				i {
+					color: $blue;
+				}
 				&:hover {
 					background-color: darken($blue, 10%);
 					span {
-						color: rgba($white, 0.4);
+						//color: rgba($white, 0.4);
+						i {
+							background-color: rgba($white, 0.2);
+							color: darken($blue, 10%);
+						}
 					}
 				}
 			} //Text is within this span
 			span { 
 				display: table-cell;
 				vertical-align: middle;
+				padding-top: 40px;
 				color: $white;
-				@include adjust-font-size-to(54px, 2);
+				@include adjust-font-size-to(50px);
 				@extend %open_sansbold;
 				//Meduim
 				@media screen and (max-width: 60em) {
@@ -117,7 +131,8 @@
 .losange,
 input[type=submit] {
 	@include border-radius(50%);
-	color: $green;
+	text-transform: uppercase;
+	color: $mustard;
 	border: none;
 	background: $white;
 	text-align: center;
@@ -127,13 +142,14 @@ input[type=submit] {
 	height:96px;
 	text-decoration: none;
 	outline: none;
+	font-size: 14px;
 	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		background: rgba(255,255,255,0.7);
 		@include transition(all 0.2s ease-in-out);
 	}
 	span {
-		@include adjust-font-size-to(13px);
+		font-size: 13px;
 		line-height: 96px;
 		text-decoration: none;
 		text-align: center;
@@ -166,6 +182,8 @@ body.page-template-careers-page-php, {
 		}
 	}
 }
+
+
 
 
 // //@include column(12);

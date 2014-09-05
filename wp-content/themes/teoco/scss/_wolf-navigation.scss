@@ -22,8 +22,11 @@
 #header {
 	//@extend bdr;
 	width: 100%;
-	background: transparent;
+	//background: transparent;
 	//min-height: 52px;
+	//background: red;
+	//background: rgba(red, 90%);
+	//background: rgba(255,255,255,0.7);
 	min-height: 0px;
 	//position: fixed;
 	z-index: 1000;
@@ -33,9 +36,7 @@
 		z-index: 1000;
 		display: block;
 		@include clearfix;
-		//width: 100%;
 		text-transform: uppercase;
-		//overflow-x: hidden;
 		@include adjust-font-size-to(14px, 0.7);
 		.menu {
 			position: relative;

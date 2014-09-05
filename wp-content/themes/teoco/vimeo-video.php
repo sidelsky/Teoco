@@ -30,11 +30,13 @@
 			<p><?php echo $video_title; ?></p>
 		</div>
 
-		<img src="<?php echo $video_cover_r; ?>" class="image" alt="" height='100%' width='100%' id='play-cover_<?php echo $count; ?>' />
+		<!-- Cover image -->
+		<img src="<?php echo $video_cover_r; ?>" class="cover-image" alt="" height='100%' width='100%' id='play-cover_<?php echo $count; ?>' />
+		
 		<?php echo "<iframe id='video_$count' src='http://player.vimeo.com/video/$video_r?api=1&player_id=video_$count' width='100%' height='400' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>" ?> 				
 	</div>
-	<?php/* echo $count; */?>
 
+	<?php/* echo $count; */?>
 	<div class="video-status video-status_<?php echo $count; ?>">
 		<p>Video <span class="status status_<?php echo $count; ?>">Loading...</span></p>
 				<!--
@@ -64,7 +66,7 @@
 		    player = $f(iframe),
 		    status = $('.status_<?php echo $count; ?>'),
 		    title_wrapper = $('#title-wrapper_<?php echo $count; ?>'),
-		    cover = $('#play-cover_<?php echo $count; ?>');
+		    cover = $('#play-cover_<?php echo $count; ?>'),
 		    play_icon = $('#play-icon_<?php echo $count; ?>');
 
 				// When the player is ready, add listeners for pause, finish, and playProgress
@@ -75,7 +77,7 @@
 			    player.addEvent('playProgress', onPlayProgress);
 				});
 
-			    play_icon.bind("click", function() {
+			    	play_icon.bind("click", function() {
 			    	player.api("play");
 			    	cover.fadeOut(650);
 			    	title_wrapper.fadeOut(950);

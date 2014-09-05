@@ -121,25 +121,25 @@
 
 						<li class="product">
 							<div class="image-wrapper">
-								<a href="/success/">
+								<!-- <a href="/success/"> -->
 									<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" />
-								</a>
+								<!-- </a> -->
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<a href="/success/">
+								<!-- <a href="/success/"> -->
 									<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" />
-								</a>
+								<!-- </a> -->
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<a href="/success/">
+								<!-- <a href="/success/"> -->
 									<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" />
-								</a>
+								<!-- </a> -->
 							</div>
 						</li>
 

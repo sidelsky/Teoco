@@ -36,7 +36,7 @@
 			
 			
 			// vars
-			this.update('post_id', acf.o.post_id);
+			this.update('post_id', acf.get('post_id'));
 			
 			
 			// MPML

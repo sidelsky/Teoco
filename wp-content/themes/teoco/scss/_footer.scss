@@ -1,5 +1,5 @@
 .page-footer {
-	background: $grey;
+	background: #595959;
 	nav, div {
 		@include column(6);
 		//Small
@@ -38,7 +38,6 @@
 				//Meduim
 				@media screen and (max-width: $m) {
 					display: block;
-					//float: none;
 					text-align: center;
 					margin: 0 1em;
 				}
@@ -50,11 +49,14 @@
 					margin: 0;
 				}
 				a {
-					color: darken($light-grey, 20%);
+					color: #cdcdcd;
+					&:hover {
+						color: #8b8b8b;
+					}
 				}
 				&.current_page_item {
 					a {
-						color: $white;
+						color: #8b8b8b;
 					}
 				}
 			}

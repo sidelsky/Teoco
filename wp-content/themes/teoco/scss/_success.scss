@@ -1,7 +1,7 @@
 //Success page
 .success {
 	.left-col {
-		@include column(5);
+		@include column(12);
 		@include pull(1);
 		@media screen and (max-width: 60em) {
 			@include column(12);
@@ -14,7 +14,8 @@
 
 
 .right-col.success {
-		@include column(6);
+		//@include column(12);
+		//@include push(1);
 		@media screen and (max-width: 60em) {
 			@include column(12);
 		}
@@ -26,9 +27,9 @@
 				@include clearfix;
 				@include rhythm(0, 0, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
 			li {
-					//@include column(4);
+						//@include column(12);
 						padding: 5px;
-						width: 33.333%;
+						width: 20%;
 						float: left;
 						overflow: hidden;
 					.image-wrapper {
@@ -38,11 +39,14 @@
 						display: table;
 						overflow: hidden;
 						background: $white;
-						@include border-radius(25px);
+						@include border-radius(15px);
+						@media screen and (max-width: 37.5em) {
+							@include border-radius(7px);
+						}
 						img {
 							display: table-cell;
 							width: 100%;
-							@include border-radius(25px);
+							@include border-radius(15px);
 							//filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
 					    //filter: gray; /* IE6-9 */
 					    //-webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
@@ -67,7 +71,7 @@
 	@include clearfix;
 	.content {
 		@include rhythm(0, 1, 1, 1); //Margin top, Padding top, Padding bottom, Margin bottom
-		padding:0 10px;
+		padding: 1em;
 		p {
 			@include adjust-font-size-to(18px, 1.2);
 		}
@@ -86,43 +90,55 @@
 
 
 //Success stories
+$p-colour: $dark-grey;
 .right-col.success-stories {
-	@include column(6);
+	@include column(12);
 	h2 {
 		@include rhythm(0, 1, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
-		@extend %open_sansregular;
-		@include adjust-font-size-to(18px, 1.2);
-		color: $grey;
-		font-weight: 600;
+		@extend %open_sansbold;
+		@include adjust-font-size-to(16px, 1);
+		color: $p-colour;
 		@media screen and (max-width: 37.5em) {
-			@include adjust-font-size-to(16px, 1);
+			@include adjust-font-size-to(13px, 0.9);
+			padding-top: 10px;
 		}
 	}
 	.product-name {
-		color: $black;
-	}
-	@media screen and (max-width: 60em) {
-		@include column(12);
-	}
-	@media screen and (max-width: 37.5em) {
-		//@include column(12);
+		color: $p-colour;
+		@include adjust-font-size-to(16px, 1);
+		@media screen and (max-width: 37.5em) {
+			@include adjust-font-size-to(14px, 1);
+		}
 	}
 	ul {
 			//@extend %bdr;
+			@include column(6);
 			@include clearfix;
 			@include rhythm(0, 0, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
-			li.products {
+			@media screen and (max-width: 60em) {
+				@include column(12);
+			}
+			@media screen and (max-width: 37.5em) {
+				//@include column(12);
+			}
+			.products {
 				@include clearfix;
-				@include border-radius(25px);
-				border: solid 1px $grey;
+				@include border-radius(15px);
+				
+				background: $light-grey;
 				@include rhythm(0, 0, 0, 0.5); //Margin top, Padding top, Padding bottom, Margin bottom
+				@media screen and (max-width: 37.5em) {
+					@include border-radius(7px);
+				}	
 				.title-wrapper {
 					display: block;
+					padding-right: 0.5em;
 					@media screen and (max-width: 37.5em) {
-					padding:0 1em;
+						//padding: 0;
 					}
 				}
 				&.selected {
+					background: $white;
 					h2, .product-name {
 						color: $purple !important;
 					}
@@ -138,25 +154,28 @@
 					background: $grey;
 					float: left;
 					margin: 0 1em 0 0;	
-					@include border-radius(24px);
+					@include border-radius(15px);
 					@media screen and (max-width: 37.5em) {
-						width: 110px;
-						height: 110px;
-						margin-right: 100%;
+						width: 30%;
+						height: 30%;
+						@include border-radius(7px);
 						margin-bottom: 10px;
+					}
+					img {
+						width: 100%;
 					}
 					&:hover {
 						background: $purple;
 						cursor: pointer;
-					}
-					img {
-						width: 100%;
 					}
 				}
 				.inner {
 					padding:0 1em;
 					@include transition(all 0.2s ease-in-out);
 					@include rhythm(0, 1, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+					.icon-link {
+						padding-bottom: 10px;
+					}
 					@media screen and (max-width: 60em) {
 						 @include rhythm(0, 1, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 					}
@@ -164,7 +183,11 @@
 						 @include rhythm(0, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 					}
 					p {
-						@include adjust-font-size-to(18px, 1.2);
+						@include adjust-font-size-to(16px, 1);
+						strong {
+							@extend %open_sansbold;
+							@include adjust-font-size-to(14px, 1);
+						}
 					}
 				}
 			}

@@ -2800,7 +2800,7 @@ class GFFormsModel {
         }
     }
 
-    private static function set_permissions($path){
+    public static function set_permissions($path){
 
         $permission = apply_filters("gform_file_permission", 0644, $path);
         if($permission){

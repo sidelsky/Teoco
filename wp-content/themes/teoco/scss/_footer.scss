@@ -1,5 +1,9 @@
 .page-footer {
 	background: #595959;
+	color: #cdcdcd;
+	.copyright-details {
+		@include adjust-font-size-to(14px, 1);
+	}
 	nav, div {
 		@include column(6);
 		//Small

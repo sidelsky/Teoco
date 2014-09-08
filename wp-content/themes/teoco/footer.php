@@ -1,4 +1,4 @@
-<footer class="page-wrapper__wide current page-footer">
+<footer class="page-wrapper__wide  page-footer">
 	<section class="page-wrapper__wide__inner padding-tb-small">
 		 
 		<?php wp_nav_menu( array(
@@ -45,6 +45,8 @@
 				</li>
 			</ul>
 		</div>
+
+		<div class="copyright-details">Copyright &copy; 1995 - <?php echo get_the_date(Y); ?> TEOCO Corporation. All rights reserved.</div>	
 		
 	</section>
 </footer>
@@ -69,7 +71,7 @@
 		//'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		//'depth'           => 0,
 		//'walker'          =>  
-		)); ?>
+		)); ?>	
 
 <ul class="jump">
 	<li class='prev'>
@@ -90,9 +92,12 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/waypoints.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/froogaloop.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/jquery.lazy.min.js"></script>
+
 
 <script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
+
+
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.lazy.js"></script>
 
 <?php /*
 <script src="<?php bloginfo('template_directory'); ?>/js/isotope.js"></script> 

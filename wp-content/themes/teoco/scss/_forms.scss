@@ -36,6 +36,12 @@
 		font-size: 14px;
 	}
 
+body.home .validation_error,
+body.home .validation_message {
+		color: lighten($mustard, 40%) !important;
+		font-size: 14px;
+	}
+
 	.validation_error {
 		margin-bottom: 20px;
 		@include adjust-font-size-to(18px, 1);
@@ -66,7 +72,7 @@
 					color: $grey;
 					background-color: $light-grey;
 					@include input-placeholder {
-						color: $grey;
+						color: #9b9b9b;
 					}
 				}
 			}
@@ -139,6 +145,8 @@ select {
 	// box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1); 
 	width: 100%;
 
+	
+
 }
 .NFI-button {
 	// the button div element
@@ -151,7 +159,7 @@ select {
 	// border-bottom-left-radius: 3px;
 	margin-top: 2px;
 
-	background-color: $grey;
+	background-color: #9b9b9b;
 
 	// background-image: linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
 	// background-image: -o-linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
@@ -177,6 +185,9 @@ text-shadow: 0px -1px 0px #0172bd;
 	width: 100px;
 	height: 30px;
 	line-height: 30px;
+	&:hover {
+		background-color: $grey;
+	}
 }
 .NFI-filename {
 	// the text input element which collects and shows the value

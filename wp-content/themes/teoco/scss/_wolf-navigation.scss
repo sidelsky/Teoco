@@ -1,7 +1,7 @@
 
 #primary {
 	position: relative;
-	background-color: peach;
+	//background-color: peach;
 	@include clearfix;
 	//@extend %bdr;
 	.inner {
@@ -12,9 +12,11 @@
 	}
 }
 
+$secondary-nav-bg: #f7f7f7;
 #secondary {
 	position: relative;
-	background-color: $light-grey;
+	background-color: $secondary-nav-bg;
+	background-color: rgba($secondary-nav-bg, 1);
 	@include clearfix;
 	//@extend %bdr;
 }
@@ -153,7 +155,8 @@
 
 #primary, #secondary {
 	.current-menu-item,
-.current-page-ancestor {
+.current-page-ancestor,
+.current_page_parent {
 	>a {
 			color: $red !important;
 		}
@@ -207,6 +210,7 @@
 		width: 100%;
 		z-index: 100;
 		background: $white;
+		background: rgba($white, 0.95);
 		@include box-shadow($grey 1px 1px 3px);
 		@include transition(top 0.8s ease-in-out);
 		.innerbit {

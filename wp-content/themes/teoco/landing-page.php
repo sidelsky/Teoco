@@ -5,8 +5,8 @@ Template Name: Landing page
 get_header();
 ?>
 
-<section class="page-wrapper__wide  section">
-  <div class="page-wrapper__wide__inner padding-tb">
+<section class="page-wrapper__wide  section grey">
+  <div class="page-wrapper__wide__inner padding-tb ">
     <?php
     //$image_icon = get_field('image_icon');
     $args = array(

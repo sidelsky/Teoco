@@ -33,10 +33,10 @@
 	</section>
 
 	<!--Video - vimeo api-->	
-	<?php get_template_part('/vimeo-video'); ?>
+	<?php/* get_template_part('/vimeo-video'); */?>
 
 	<!-- Youtube video -->
-	<?php/* get_template_part('/youtube-video'); */?>
+	<?php get_template_part('/youtube-video'); ?>
 
 	<!-- Job opportunities -->
 	<section class="page-wrapper__wide job-opportunities section">
@@ -106,8 +106,9 @@
 					echo '<ul class="inner"><li>'.$content.'
 					<div class="transcript">
 						<div class="icon-link">
+						<i class="fa fa-chevron-circle-up up"></i>
 							<a href="#" class="toggle">
-								<i class="fa fa-chevron-circle-right"></i> APPLY FOR THIS JOB
+								<i class="fa fa-chevron-circle-down"></i>&nbsp;&nbsp;APPLY FOR THIS JOB
 							</a>
 							<div class="toggle-inner">';
 								echo '<div class="career-number">'.$post_id.'</div>'; 

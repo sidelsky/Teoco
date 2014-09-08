@@ -1,17 +1,17 @@
 <?php 
 	/*
-	Template Name: Events page
+	Template Name: In the media page
 	*/
 	get_header();
 	?>
 
-	<section class="page-wrapper__wide sub-pages section current grey">
+<section class="page-wrapper__wide sub-pages section grey">
 		<div class="page-wrapper__wide__inner padding-tb">
 			<h1><?php the_title(); ?></h1>
 			<div class="left-col">
 				<ul class="controls side-menu">
 					<?php
-					$terms = get_terms('event-year');
+					$terms = get_terms('in-the-media-year');
 					$count = count($terms);
 					echo '<li data-filter="all" class="filter active">All</li>';
 					if ( $count > 0 ){
@@ -34,7 +34,7 @@
 					Query the post 
 					*/
 					$args = array(
-						'post_type' => 'events',
+						'post_type' => 'in_the_media',
 						'posts_per_page' => -1,
 						'orderby' => 'post_date',
 						'order' => 'ASC'
@@ -44,7 +44,7 @@
 					/* 
 					Pull category for each unique post using the ID 
 					*/
-					$terms = get_the_terms( $post->ID, 'event-year' );	
+					$terms = get_the_terms( $post->ID, 'in-the-media-year' );	
 					if ( $terms && ! is_wp_error( $terms ) ) : 
 
 						$links = array();
@@ -61,47 +61,31 @@
 					//Add <p> tags to 'get_the_content()';
 					//$career_number = get_field('career_number');
 					$post_id = get_the_ID();
-					$content = apply_filters( 'the_content', get_the_content() );
+					//$content = apply_filters( 'the_content', get_the_content() );
 
-					$event_date = get_field('event_date');
-					$event_location = get_field('event_location');
-					$event_link = get_field('event_link');
-					$event_icon = get_field('event_icon');
-					$space = '&nbsp';
+					$link = get_field('link');
 
-					echo '<div class="section"></div>';	
+					echo '<a href="'. $link .'" target="_blank">';
 
-					echo '<a href="'.$event_link.'" target="_blank">';
-					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">';
-					echo'<div class="container">'; ?>
+					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">'; ?>
 
-					<?php if( $event_date ) : ?>
-					<span class="the-time">
-					<?php echo $event_date . $space . $space . $event_location; ?>
+ 					<span class="the-time">
+						<?php the_time('jS F Y') ?>
 					</span>
-					<?php endif; ?>
 
-					<h2><?php the_title(); ?></h2>
-					<?php if($event_link) : ?>
+					<?php the_title('<h2>','</h2>'); ?>
+
+					<?php if($link) : ?>
 					<span class="visit">Visit site ></span>
 					<?php endif; ?>
 
-					<?php echo '</div>'; ?>
-
-					<?php if($event_icon) : ?>
-						<div class="img-container">
-							<img src="<?php echo $event_icon ?>" alt="<?php echo $event_icon['alt']; ?>" class="thmb">
-						</div>
-						<?php endif; ?>
-
 					<?php	echo '</li>';?>
-					<?php	echo '</a>';?>
+					<?php	echo '</li>';?>
 					<?php endwhile; ?>	
 	 <ul>
 
 		 
-				 
-			 
+				
 			</div>
 		</div>
 	</section>

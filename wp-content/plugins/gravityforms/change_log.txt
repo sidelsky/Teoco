@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------------------------------------------
+Version 1.8.13
+	- Added additional check plus user feedback for failed multi-file uploads.
+	- Fixed a potential security vulnerability for some server configurations which could allow code to be executed via the file upload field.
+	- Fixed issue with form export/import setting inactive notifications to active.
+	- Fixed issue with resend notification not accepting a list of emails.
+	- Fixed another issue with field label for Name and Address fields.
+	- Fixed issue with field label for Name and Address fields.
+	- Fixed issue causing checkboxes checked by default to be rendered unchecked in certain situations.
+
+	- AF: Fixed another issue with simple_condition() function/feature creating javascript errors.
+	- AF: Fixed get_field_map_fields function to no longer include the text "field_map" in the mapped fields prefix.
+	- AF: Fixed issue with payments less than $1.00 not being processed.
+
+-------------------------------------------------------------------------------------------------------------------
 Version 1.8.12
     - Added PHP version of the "gform_calculation_result" filter.
         add_filter( 'gform_calculation_result', 'my_calc_result', 10, 5 );

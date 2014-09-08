@@ -1084,21 +1084,24 @@ abstract class GFAddOn {
         if( ! $settings )
             $settings = $this->get_current_settings();
 
-        if (false === $settings)
+        if (false === $settings) {
             return $default_value;
+		}
 
         if (strpos($setting_name, "[") !== false) {
             $path_parts = explode("[", $setting_name);
             foreach ($path_parts as $part) {
                 $part = trim($part, "]");
-                if (false === isset($settings[$part]))
+                if (false === isset($settings[$part])) {
                     return $default_value;
+				}
                 $settings = rgar($settings, $part);
             }
             $setting = $settings;
         } else {
-            if (false === isset($settings[$setting_name]))
+            if (false === isset($settings[$setting_name])) {
                 return $default_value;
+			}
             $setting = $settings[$setting_name];
         }
 
@@ -1571,8 +1574,9 @@ abstract class GFAddOn {
         $html = '';
         $field_map = rgar( $field, 'field_map' );
 
-        if( empty( $field_map ) )
+        if( empty( $field_map ) ) {
             return $html;
+		}
 
         $form_id = rgget( 'id' );
 
@@ -1679,7 +1683,7 @@ abstract class GFAddOn {
     public static function get_field_map_fields( $feed, $field_name ) {
 
         $fields = array();
-        $prefix = "field_map_{$field_name}_";
+        $prefix = "{$field_name}_";
 
         foreach( $feed['meta'] as $name => $value ) {
             if( strpos( $name, $prefix ) === 0 ) {
@@ -1918,24 +1922,25 @@ abstract class GFAddOn {
 
         $field_id = $this->get_setting("{$setting_name_root}_field_id");
 
-        if(!empty($field_id)){
-            $value = $this->get_setting("{$setting_name_root}_value");
-			$operator = $this->get_setting("{$setting_name_root}_operator");
+        $value = $this->get_setting("{$setting_name_root}_value");
+		$operator = $this->get_setting("{$setting_name_root}_operator");
 
-            $str .= "<script type='text/javascript'>
-				var " . esc_attr($setting_name_root) . "_object = {'conditionalLogic':{'rules':[{'fieldId':'{$field_id}','operator':'{$operator}','value':'" . esc_attr($value) . "'}]}};
+        $str .= "<script type='text/javascript'>
+			var " . esc_attr($setting_name_root) . "_object = {'conditionalLogic':{'rules':[{'fieldId':'{$field_id}','operator':'{$operator}','value':'" . esc_attr($value) . "'}]}};
 
-            	jQuery(document).ready(
-            		function(){
-            			gform.addFilter( 'gform_conditional_object', 'SimpleConditionObject' );
+            jQuery(document).ready(
+            	function(){
+            		gform.addFilter( 'gform_conditional_object', 'SimpleConditionObject' );";
+            		
+            		if( ! empty( $field_id ) ){
+            			$str .= "jQuery('#" . esc_attr($setting_name_root) . "_container').html(
+            				GetRuleValues('simple_condition_{$setting_name_root}', 0, {$field_id}, '" . esc_attr($value) . "', '_gaddon_setting_" . esc_attr($setting_name_root) . "_value'));";
+					}
+            		$str .= "}
+            		
+            );
 
-            			jQuery('#" . esc_attr($setting_name_root) . "_container').html(
-            				GetRuleValues('simple_condition_{$setting_name_root}', 0, {$field_id}, '" . esc_attr($value) . "', '_gaddon_setting_" . esc_attr($setting_name_root) . "_value'));
-            			}
-            	);
-
-            	</script>";
-        }
+            </script>";
         return $str;
     }
 

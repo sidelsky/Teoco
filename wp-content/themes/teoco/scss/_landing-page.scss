@@ -6,9 +6,10 @@ body.page-template-landing-page-php, {
 			position: relative;
 			@include border-radius(25px);
 			@include column(6);
-			background: url(../img/landing-page-bg.png) no-repeat center right;
+			background:#fff url(../img/landing-page-bg.png) no-repeat center right;
 			height: $lp-container-height;
 			overflow: hidden;
+			@include box-shadow(#999 0px 2px 2px);
 			@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
 			.lp-content {
 				position: relative;
@@ -93,7 +94,6 @@ body.page-template-landing-page-php, {
 				//background-color: darken($purple, 10%);
 				cursor: pointer;
 				//@include single-box-shadow;
-				@include box-shadow($grey 0px 0px 10px);
 			}			
 		}
 	}
@@ -116,12 +116,14 @@ body.page-template-landing-page-php.page-id-22 {
 			}
 			//Hover state
 			&:hover {
-				h1 {
+				span {
+					h1 {
 					color: darken($purple, 10%);
 					}
 					p {
 						color: $grey;
 					}
+				}
 				background-color: darken($purple, 10%);
 				}			
 			}
@@ -145,12 +147,14 @@ body.page-template-landing-page-php.page-id-23 {
 			}
 			//Hover state
 			&:hover {
-				h1 {
+				span {
+					h1 {
 					color: darken($blue, 10%);
 				}
 				p {
 						color: $grey;
 					}
+				}
 				background-color: darken($blue, 10%);
 				}			
 			}

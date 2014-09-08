@@ -196,7 +196,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 		$submission_data = $this->get_submission_data( $feed, $form, $entry );
 
 		//Do not process payment if payment amount is 0 or less
-		if ( intval( $submission_data['payment_amount'] ) <= 0 ) {
+		if ( floatval( $submission_data['payment_amount'] ) <= 0 ) {
 
 			$this->log_debug( 'Payment amount is $0.00 or less. Not sending to payment gateway.' );
 

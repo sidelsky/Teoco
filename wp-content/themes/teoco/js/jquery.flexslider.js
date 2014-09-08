@@ -589,7 +589,8 @@
 
         switch (action) {
           case "animate": $obj.flexAnimate(target, slider.vars.pauseOnAction, false, true); break;
-          case "play": if (!$obj.playing && !$obj.asNav) { $obj.play(); } break;
+          //This is been commented out because if activated when two sliders are synced the second one breaks when slideshow : true is on
+          //case "play": if (!$obj.playing && !$obj.asNav) { $obj.play(); } break;
           case "pause": $obj.pause(); break;
         }
       },

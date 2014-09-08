@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section class="page-wrapper__wide sub-pages section">
+<section class="page-wrapper__wide sub-pages section grey">
 	<div class="page-wrapper__wide__inner padding-tb">
 		<h1>News</h1>
 		<div class="left-col">

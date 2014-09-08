@@ -7,7 +7,7 @@
 
 
  
-	<section class="page-wrapper__wide rel-pos section">
+	<section class="page-wrapper__wide rel-pos section grey">
 		<article class="page-wrapper__wide__inner padding-tb-small">
 		
 				<?php if (is_page('site-map')) : ?>

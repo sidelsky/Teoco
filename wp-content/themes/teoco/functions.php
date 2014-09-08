@@ -37,18 +37,14 @@ if ( ! function_exists('myTheme')) :
 function theme_get_archives_link ( $link_html ) {
     global $wp;
     static $current_url;
-
     if ( empty( $current_url ) ) {
         $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
     }
-
     if ( stristr( $current_url, 'page' ) !== false ) {
-		$current_url = substr($current_url, 0, strrpos($current_url, 'page'));
+			$current_url = substr($current_url, 0, strrpos($current_url, 'page'));
     }
-
     //if ( stristr( $link_html, $current_url ) !== false ) {
     $yearRefX = '/(19|20)\d{2}/';
-
     $currentYear = preg_match($yearRefX, $current_url,$currentMatch);
     $linkYear = preg_match($yearRefX, $link_html, $linkMatch);
 
@@ -65,10 +61,7 @@ function theme_get_archives_link ( $link_html ) {
 				$link_html = preg_replace( '/(<[^\s>]+)/', '\1 class="current"', $link_html, 1 );
     	}
     }
-
-
     return $link_html;
-
 }
 add_filter('get_archives_link', 'theme_get_archives_link');
 
@@ -164,6 +157,18 @@ register_taxonomy( "event-year",
 		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
 		'with_front' => false)
 	));
+
+register_taxonomy( "in-the-media-year", 
+	array ('in-the-media-year', 'in_the_media'),
+	array(
+		"hierarchical" => true,
+		'show_admin_column' => true,
+		"labels" => array('name'=>"In the media year",'add_new_item'=>"Add New Field"), 
+		"singular_label" => __( "Field" ), 
+		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
+		'with_front' => false)
+	));
+
 
 
 //Is tree

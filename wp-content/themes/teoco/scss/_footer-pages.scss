@@ -2,7 +2,8 @@ body.page-template-footer-pages-and-search-page-php,
 body.search-results,
 body.single {
 	.left-col {
-		@include column(3);
+		@include column(2);
+		@include pull(1);
 		p {
 			@include adjust-font-size-to(15px, 1.3);
 			border-top: solid 1px $grey;

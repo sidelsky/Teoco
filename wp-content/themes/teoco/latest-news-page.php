@@ -1,17 +1,18 @@
 <?php 
 	/*
-	Template Name: Events page
+	Template Name: Latest news page
 	*/
 	get_header();
 	?>
 
-	<section class="page-wrapper__wide sub-pages section current grey">
+
+<section class="page-wrapper__wide sub-pages section grey">
 		<div class="page-wrapper__wide__inner padding-tb">
-			<h1><?php the_title(); ?></h1>
+			<h1>Latest news</h1>
 			<div class="left-col">
 				<ul class="controls side-menu">
 					<?php
-					$terms = get_terms('event-year');
+					$terms = get_terms('news-year');
 					$count = count($terms);
 					echo '<li data-filter="all" class="filter active">All</li>';
 					if ( $count > 0 ){
@@ -27,14 +28,35 @@
 				</ul>
 			</div>
 
-			<div class="right-col">
+			<div id="Container" class="right-col container">
+
+			<ul class="post-list">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<li>
+					<span class="the-time">
+						<?php the_time('jS F Y') ?>
+					</span>
+					<h2>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+					</h2>
+				</li>
+				<?php endwhile; ?>
+				<!-- post navigation -->
+				<?php else: ?>
+				<!-- no posts found -->
+				<?php endif; ?>
+			</ul>
+
+
 			 <ul id="Container" class="post-list container">
 					<?php
 					/* 
 					Query the post 
 					*/
 					$args = array(
-						'post_type' => 'events',
+						'post_type' => 'latest_news',
 						'posts_per_page' => -1,
 						'orderby' => 'post_date',
 						'order' => 'ASC'
@@ -44,10 +66,10 @@
 					/* 
 					Pull category for each unique post using the ID 
 					*/
-					$terms = get_the_terms( $post->ID, 'event-year' );	
+					$terms = get_the_terms( $post->ID, 'news-year' );	
 					if ( $terms && ! is_wp_error( $terms ) ) : 
 
-						$links = array();
+					$links = array();
 
 					foreach ( $terms as $term ) {
 						$links[] = $term->name;
@@ -63,39 +85,23 @@
 					$post_id = get_the_ID();
 					$content = apply_filters( 'the_content', get_the_content() );
 
-					$event_date = get_field('event_date');
-					$event_location = get_field('event_location');
-					$event_link = get_field('event_link');
-					$event_icon = get_field('event_icon');
-					$space = '&nbsp';
+					//$event_date = get_field('event_date');
+					//$event_location = get_field('event_location');
+					//$event_link = get_field('event_link');
+					//$event_icon = get_field('event_icon');
+					//$space = '&nbsp';
 
-					echo '<div class="section"></div>';	
-
-					echo '<a href="'.$event_link.'" target="_blank">';
 					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">';
 					echo'<div class="container">'; ?>
 
-					<?php if( $event_date ) : ?>
-					<span class="the-time">
-					<?php echo $event_date . $space . $space . $event_location; ?>
-					</span>
-					<?php endif; ?>
+ 
 
 					<h2><?php the_title(); ?></h2>
-					<?php if($event_link) : ?>
-					<span class="visit">Visit site ></span>
-					<?php endif; ?>
+ 
 
 					<?php echo '</div>'; ?>
 
-					<?php if($event_icon) : ?>
-						<div class="img-container">
-							<img src="<?php echo $event_icon ?>" alt="<?php echo $event_icon['alt']; ?>" class="thmb">
-						</div>
-						<?php endif; ?>
-
 					<?php	echo '</li>';?>
-					<?php	echo '</a>';?>
 					<?php endwhile; ?>	
 	 <ul>
 
@@ -106,10 +112,8 @@
 		</div>
 	</section>
 
-	<?php
-	get_footer( 'footer.php' );
-	?>
-
-
+<?php //Get the footer
+get_footer();
+?>
 
 

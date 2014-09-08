@@ -1,13 +1,13 @@
 .accordian {
 	.portfolio-item {
-		border-top: solid 1px $grey;
+		border-top: solid 1px $light-grey;
 		.accord-toggle {
 			display: block;
 			@include clearfix;
 			.icon-link {
 				float: left;
-				margin-right: 1em;
-				@include adjust-font-size-to(18px, 2.5);
+				margin-right: 1.5em;
+				@include adjust-font-size-to(16px, 2.3);
 			}
 			h3 {
 				@extend %open_sansregular;
@@ -45,7 +45,10 @@
 			//@extend %bdr;
 			@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			> li {
-				padding:0 2em;
+				padding:0 2.8em;
+				p {
+					@include adjust-font-size-to(16px, 1);
+				}
 			}
 		}
 	}
@@ -54,9 +57,19 @@
 
 .inner-margin {
 	margin-left: -2em;
+	margin-top: -64px;
 }
 // body.page-template-careers-page-php {
 // .icon-link {
 // 	margin-left: -2em;
 // 	}
 // }
+
+
+.transcript {
+	.icon-link {
+		.fa-chevron-circle-up {
+			margin: 2px 15px 0 -52px;
+		}
+	}
+}

@@ -1,6 +1,7 @@
 body.blog,
 body.archive,
-body.page-template-events-page-php {
+body.page-template-events-page-php,
+body.page-template-in-the-media-page-php {
 	.post-list {
 		li {
 			h2 {
@@ -23,8 +24,33 @@ body.page-template-events-page-php {
 			}
 		}
 		a {
-			color: $grey;
 			text-decoration: none;
+			&:hover li {
+				background-color: #476323;
+				h2, .visit {
+					color: #476323;
+				}
+			}
+			//color: $grey;
+			//text-decoration: none;
+		}
+	}
+}
+
+//In the media 
+body.page-template-in-the-media-page-php {
+	.post-list {
+		a {
+			color: $grey;
+			li {
+				background: $red url(../img/blog-page-bg.png) no-repeat center right;
+			}
+			&:hover li {
+				background-color: #96090E;
+				h2, .visit {
+					color: #96090E;
+				}
+			}
 		}
 	}
 }
@@ -49,8 +75,15 @@ body.page-template-events-page-php {
 			}
 		}
 		a {
+			color: $grey;
 			font-size: 15px;
 			text-transform: uppercase;
+				&:hover li {
+				background-color: $white;
+				h2, .visit {
+					color: #96090E;
+				}
+			}
 		}
 	}
 }

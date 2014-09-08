@@ -164,6 +164,7 @@ class GFFormDisplay{
             GFCommon::log_debug("upload_files() - temp file info: " . print_r($file_info, true));
 
             if($file_info && move_uploaded_file($_FILES[$input_name]['tmp_name'], $target_path . $file_info["temp_filename"])){
+				GFFormsModel::set_permissions( $target_path . $file_info['temp_filename'] );
                 $files[$input_name] = $file_info["uploaded_filename"];
                 GFCommon::log_debug("upload_files() - file uploaded successfully:  {$file_info["uploaded_filename"]}");
             }
@@ -1904,6 +1905,10 @@ class GFFormDisplay{
 
                 foreach($field["choices"] as $choice){
 
+					if( $input_type == "checkbox" && ($choice_index % 10) == 0){
+						$choice_index++;
+					}
+
                     if(rgar($choice,"isSelected") && $input_type == "select"){
                         $val = $is_pricing_field ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
                         $default_values[$field["id"]] = $val;
@@ -2576,12 +2581,14 @@ class GFFormDisplay{
                         $target_input_id = $field_id . "_3";
                 }
 
-            case "address" :
-                if(empty($target_input_id))
+			case "address" :
+                if(empty($target_input_id)){
                     $target_input_id = $field_id . "_1";
+				}
 
             case 'list':
-                $target_input_id = sprintf( 'input_%s_%s_shim', $form_id, $field['id'] );
+				if(empty($target_input_id))
+                	$target_input_id = sprintf( 'input_%s_%s_shim', $form_id, $field['id'] );
 
             default :
                 if(empty($target_input_id))

@@ -37,7 +37,7 @@
 								excerptMyLength(1);
 								}
 							?>
-							<a href="<?php echo get_permalink(); ?>" class="link-arrows white">
+							<a href="/latest/news/" class="link-arrows white">
 								<i class="fa fa-angle-right green"></i>
 							</a>
 						</li>

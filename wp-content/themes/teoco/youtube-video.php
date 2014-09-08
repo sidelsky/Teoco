@@ -4,7 +4,7 @@
 <section class="page-wrapper__wide section" id="vision-values">
     <article class="page-wrapper__wide__inner padding-tb">
         <?php if(is_page('careers')) : ?>
-        <h1>Working at Teoco</h1>
+        <h1>Working at TEOCO</h1>
         <?php endif; ?>
         <?php $count = 0; ?>
         <?php if( have_rows('video_repeater') ): ?>

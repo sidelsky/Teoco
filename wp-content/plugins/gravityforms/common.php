@@ -4145,7 +4145,7 @@ class GFCommon{
     }
 
     public static function get_disallowed_file_extensions(){
-        return array("php", "asp", "exe", "com", "htaccess");
+        return array("php", "asp", "exe", "com", "htaccess", "phtml", "php3", "php4", "php5", "php6");
     }
 
     public static function to_money($number, $currency_code=""){

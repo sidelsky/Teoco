@@ -13,13 +13,16 @@
 			cursor: pointer;
 		}
 		&.filter {
-			border-top: solid 1px rgba($light-grey, 0);
-			border-bottom: solid 1px rgba($light-grey, 0);
-			&.active, {
+			border-top: solid 1px $light-grey;
+			border-bottom: solid 1px $light-grey;
+			&.active {
 				margin: 0;
-				border-top: solid 1px $light-grey;
-				border-bottom: solid 1px $light-grey;
+				border-top: solid 1px $border;
+				border-bottom: solid 1px $border;
 				color: $red;
+				a {
+				color: $red;
+				}
 			}
 		}
 		a {
@@ -27,8 +30,8 @@
 			@include rhythm(0, 0.2, 0.2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			text-decoration: none;
 			display: block;
-			border-top: solid 1px rgba($light-grey, 0);
-			border-bottom: solid 1px rgba($light-grey, 0);
+			border-top: solid 1px rgba($menu-grey, 0);
+			border-bottom: solid 1px rgba($menu-grey, 0);
 			line-height: 21px;
 			&:hover {
 				color: $red;
@@ -36,8 +39,8 @@
 		}
 		&.current_page_item > a {
 			color: $red;
-			border-top: solid 1px $light-grey;
-			border-bottom: solid 1px $light-grey;
+			border-top: solid 1px $menu-grey;
+			border-bottom: solid 1px $menu-grey;
 		}
 	}
 }
@@ -74,8 +77,8 @@
 		}
 		&.all, &.current {
 			a {
-				border-top: solid 1px $grey;
-				border-bottom: solid 1px $grey;
+				border-top: solid 1px $border;
+				border-bottom: solid 1px $border;
 				color: $red;
 			}
 		}
@@ -99,8 +102,8 @@
 		&:first-child{
 			a {
 				color: $red;
-				border-top: solid 1px $light-grey;
-				border-bottom: solid 1px $light-grey;
+				//border-top: solid 1px $light-grey;
+				border-bottom: solid 1px $border;
 				cursor: default;
 			}
 		}

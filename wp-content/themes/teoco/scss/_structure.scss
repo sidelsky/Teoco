@@ -204,7 +204,7 @@
 .icon-link {
 	.fa-chevron-circle-up,
 	.fa-chevron-circle-down {
-		color: $grey;
+		color: $other-grey;
 		cursor: pointer;
 		vertical-align: middle;
 		&:hover {
@@ -223,4 +223,10 @@
 }
 
 
- 
+.transcript {
+	.icon-link {
+		.fa-chevron-circle-down {
+			color: $red;
+		}
+	}
+ }

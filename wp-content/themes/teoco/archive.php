@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section class="page-wrapper__wide sub-pages section">
+<section class="page-wrapper__wide sub-pages section grey">
 	<div class="page-wrapper__wide__inner padding-tb">
 		<h1>News</h1>
 		<div class="left-col">
@@ -27,16 +27,14 @@ get_header();
 			<ul class="post-list">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
-				<li>
-					<span class="the-time">
-						<?php the_time('jS F Y') ?>
-					</span>
-					<h2>
-						<a href="<?php the_permalink(); ?>">
-							<?php the_title(); ?>
-						</a>
-					</h2>
-				</li>
+				<a href="<?php the_permalink(); ?>">
+					<li>
+						<span class="the-time">
+							<?php the_time('jS F Y') ?>
+						</span>
+							<?php the_title('<h2>','</h2>'); ?>
+					</li>
+				</a>
 			
 				<?php endwhile; ?>
 				<!-- post navigation -->

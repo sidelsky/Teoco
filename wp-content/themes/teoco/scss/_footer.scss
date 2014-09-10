@@ -3,6 +3,9 @@
 	color: #cdcdcd;
 	.copyright-details {
 		@include adjust-font-size-to(14px, 1);
+		@media screen and (max-width: $m) {
+			text-align: center;
+		}
 	}
 	nav, div {
 		@include column(6);

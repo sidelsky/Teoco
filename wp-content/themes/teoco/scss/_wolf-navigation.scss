@@ -234,3 +234,9 @@ $secondary-nav-bg: #f7f7f7;
 		}
 	}
 }
+
+
+body.single #menu-item-30 > a,
+body.archive #menu-item-30 > a {
+	color: $red !important;
+}

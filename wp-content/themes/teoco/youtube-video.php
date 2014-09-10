@@ -1,15 +1,15 @@
 
 <?php if ( have_rows('video_repeater') ) : ?>
 
-<section class="page-wrapper__wide section" id="vision-values">
-    <article class="page-wrapper__wide__inner padding-tb">
-        <?php if(is_page('careers')) : ?>
-        <h1>Working at TEOCO</h1>
-        <?php endif; ?>
-        <?php $count = 0; ?>
-        <?php if( have_rows('video_repeater') ): ?>
-        <?php while( have_rows('video_repeater') ): the_row(); ?>
-        <?php
+	<section class="page-wrapper__wide section" id="vision-values">
+		<article class="page-wrapper__wide__inner padding-tb">
+			<?php if(is_page('careers')) : ?>
+				<h1>Working at TEOCO</h1>
+			<?php endif; ?>
+			<?php $count = 0; ?>
+			<?php if( have_rows('video_repeater') ): ?>
+				<?php while( have_rows('video_repeater') ): the_row(); ?>
+					<?php
 					$video_name = get_sub_field('video_name');
 					$video_title = get_sub_field('video_title');
 					$video_cover_r = get_sub_field('video_cover_r');
@@ -24,9 +24,8 @@
 					$transcript_r = get_sub_field('transcript_r');
 					$count++;
 					?>
-        <div class='js-video'>
+					<div class='js-video'>
 
-						 
 						<img src="<?php bloginfo('template_directory'); ?>/img/icons/large-play-icon.png" alt="Play" id="play-icon_<?php echo $count; ?>" class="play">
 						
 						<div id="title-wrapper_<?php echo $count; ?>" class="title-wrapper">
@@ -36,20 +35,24 @@
 
 						<!-- Cover image -->
 						<img src="<?php echo $video_cover_r; ?>" class="cover-image" id="cover-image_<?php echo $count; ?>" alt="" height='100%' width='100%' />
-						 
-            
-            <!-- YouTube video -->
-            <?php/*
-            	<div id="video_<?php echo $count; ?>"></div>
-            */?>
+						
+						
+						<!-- YouTube video -->
+						
+						<div id="video_<?php echo $count; ?>"></div>
+						
 
-            <?php echo "<iframe class='youtube-video' id='video_$count' type='text/html' width='100%' height='400'
-						src='http://www.youtube.com/embed/$video_youtube?enablejsapi=1&rel=0&wmode=opaque&theme=light&showinfo=0&autohide=1&autoplay=0&modestbranding=0'
-						frameborder='0' allowfullscreen></iframe>"?>
+            <?php/* echo "<iframe class='youtube-video' id='video_$count' type='text/html' width='100%' height='400'
+						src='https://www.youtube.com/embed/$video_youtube?enablejsapi=1&rel=0&wmode=opaque&theme=light&showinfo=0&autohide=1&autoplay=1&modestbranding=0'
+						frameborder='0' allowfullscreen></iframe>" */?>
 
-            <script>
-					//var player;
-					function createYouTubeVid_<?php echo $count; ?>() {
+						<script>
+						//var player;
+						function createYouTubeVid_<?php echo $count; ?>() {
+
+							var play_icon = $('#play-icon_<?php echo $count; ?>'),
+							title_wrapper = $('#title-wrapper_<?php echo $count; ?>'),
+							cover = $('#cover-image_<?php echo $count; ?>');	
 
 						//var player_count = _<?php echo $count; ?>;
 						//console.log(player_count);
@@ -65,14 +68,10 @@
 							},
 							events: {
 								'onReady': onPlayerReady,
-					      'onStateChange': check_state,
-					    }
-					  });
+								'onStateChange': check_state,
+							}
+						});
 
-
-						var play_icon = $('#play-icon_<?php echo $count; ?>'),
-								title_wrapper = $('#title-wrapper_<?php echo $count; ?>'),
-								cover = $('#cover-image_<?php echo $count; ?>');
 
 						play_icon.on('click', function() {
 							//console.log('Video is playing');
@@ -81,19 +80,19 @@
 							title_wrapper.fadeOut(600);
 							cover.fadeOut(900);
 							//player_<?php echo $count; ?>.playVideo();
-							});
-							
+						});
+						
 
-function onPlayerReady(event){
-	event.target.stopVideo();
-	}
+						function onPlayerReady(event){
+							event.target.stopVideo();
+						}
 
-function check_state(event) {
-	var state_<?php echo $count; ?> = player_<?php echo $count; ?>.getPlayerState();
+						function check_state(event) {
+							var state_<?php echo $count; ?> = player_<?php echo $count; ?>.getPlayerState();
 
-	if (state_<?php echo $count; ?> == "2")
-	{
-		console.log('Video is paused');
+							if (state_<?php echo $count; ?> == "2")
+							{
+		//console.log('Video is paused');
 		play_icon.fadeIn(900);
 		title_wrapper.fadeIn(600);
 		cover.fadeIn(300);
@@ -106,20 +105,23 @@ function check_state(event) {
 
 
 </script> 
-        </div>
+</div>
 
-        <?php/* echo $count; */?>
-        <?php echo $excerpt_r; ?>
-        <div class="transcript" style="display: none;">
-            <div class="icon-link"> <a href="#" class="toggle"> <i class="fa fa-chevron-circle-down"></i> Transcript </a>
-                <div class="toggle-inner"> <?php echo $transcript_r; ?>
-                    <div class="icon-link"> <i class="fa fa-chevron-circle-up"></i> </div>
-                </div>
-            </div>
-        </div>
-        <?php endwhile; ?>
-        <?php endif; ?>
-        <script>
+<?php/* echo $count; */?>
+<p class="large">
+	<?php echo $excerpt_r; ?>
+</p>
+
+<div class="transcript" style="display: none;">
+	<div class="icon-link"> <a href="#" class="toggle"> <i class="fa fa-chevron-circle-down"></i> Transcript </a>
+		<div class="toggle-inner"> <?php echo $transcript_r; ?>
+			<div class="icon-link"> <i class="fa fa-chevron-circle-up"></i> </div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+<script>
 
 	function onYouTubeIframeAPIReady(){
 		<?php for ( $i = 1; $i <= $count; $i++ ) {
@@ -158,8 +160,8 @@ function stopVideo2() {
 }*/
 
 </script> 
-        
-        <!--End Video - vimeo api--> 
-    </article>
+
+<!--End Video - vimeo api--> 
+</article>
 </section>
 <?php endif; ?>

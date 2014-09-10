@@ -66,14 +66,14 @@ $icon-size: 48px;
 				float: none;
 				display: table;
 				margin: 0 auto;
-				@include rhythm(0, 2, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+				@include rhythm(0, 2, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			}
 			li {
 				margin-left: 1em;
 				display: table-cell;
 			//Meduim
 			@media screen and (max-width: 60em) {
-				margin: 0 0.5em;
+				margin: 0 0.3em;
 				text-align: center;
 			}
 			a {

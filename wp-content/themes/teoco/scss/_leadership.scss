@@ -1,0 +1,55 @@
+body.page-template-leadership-page-php {
+	h1 {
+		color: $red;
+		display: block;
+	}
+	.left-col {
+		@include column(3);
+		@include pull(1);
+		@media screen and (max-width: $s) {
+			@include column(12);
+		}
+	}
+
+	.right-col {
+		@include column(8);
+		ul {
+			.product {
+				 	padding: 0.5em;
+				  width: 33%;
+				  float: left;
+				  overflow: hidden;
+				.image-wrapper {
+			//Margin top, Padding top, Padding bottom, Margin bottom
+			//@include rhythm(0, 0, 0, 0.5);
+		}
+		h3 {
+			@include adjust-font-size-to(15px);
+			@include rhythm(0, 0, 0, -0.20);
+			color: $grey;
+		}
+		.job-title {
+			@include adjust-font-size-to(13px);
+			}
+			&.selected {
+				h3, .job-title {
+					color: $red;
+				}
+			}
+		}
+	}
+	.logo-copy-wrapper {
+		.content {
+			padding: 0 0.2em;
+			@include rhythm(0, 1, 1, 0);
+			p {
+				@include adjust-font-size-to(16px, 1.2);
+			}
+		}
+	}
+	@media screen and (max-width: $s) {
+		@include column(12);
+	}
+}
+	//end
+} 

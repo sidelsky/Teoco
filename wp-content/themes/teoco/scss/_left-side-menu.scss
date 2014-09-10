@@ -39,8 +39,8 @@
 		}
 		&.current_page_item > a {
 			color: $red;
-			border-top: solid 1px $menu-grey;
-			border-bottom: solid 1px $menu-grey;
+			border-top: solid 1px $border;
+			border-bottom: solid 1px $border;
 		}
 	}
 }
@@ -84,6 +84,35 @@
 		}
 	}
 }
+
+
+
+//Left side menu contact and location pages
+.page-template-office-locations-php {
+	.side-menu {
+		li {
+			.widgettitle {
+				display:none;
+				//display: block;
+			}
+			ul {
+				li {
+					//display: none;
+					display: block;
+					&.page_item_has_children {
+						display: block;
+						ul.children {
+							li {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 
 // .side-menu {
 // 	li {

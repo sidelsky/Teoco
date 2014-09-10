@@ -1,7 +1,7 @@
 body.search-results {
 	.post {
-		border-bottom: solid $grey 1px;
-		@include adjust-font-size-to(18px, 1.2);
+		border-bottom: solid $border 1px;
+		@include adjust-font-size-to(16px, 1.2);
 		@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		h3 {
 			a {
@@ -65,7 +65,7 @@ footer.pagenavi {
 			  &.page {
 				  	border: {
 				 		//right: 1px solid $grey !important;
-				 		left: 1px solid $grey !important;
+				 		left: 1px solid $border !important;
 			  	}
 			  }
 			}
@@ -76,7 +76,7 @@ footer.pagenavi {
 					margin: 0;
 						border: {
 				 		//right: 1px solid $grey !important;
-				 		left: 1px solid $grey !important;
+				 		left: 1px solid $border !important;
 			  	}
 				}
 			}

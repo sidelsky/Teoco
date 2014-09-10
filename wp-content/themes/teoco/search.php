@@ -3,7 +3,7 @@
 
 
 
-<section class="page-wrapper__wide what-we-do-bg section">
+<section class="page-wrapper__wide what-we-do-bg section grey">
 	<div class="page-wrapper__wide__inner padding-tb">
  
 <?php if (have_posts()) : ?>

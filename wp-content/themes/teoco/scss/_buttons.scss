@@ -61,7 +61,7 @@
 				vertical-align: middle;
 				padding-top: 40px;
 				color: $white;
-				@include adjust-font-size-to(50px);
+				@include adjust-font-size-to(45px);
 				@extend %open_sansbold;
 				//Meduim
 				@media screen and (max-width: 60em) {
@@ -76,14 +76,17 @@
 					@include border-radius(50%);
 					@include adjust-font-size-to(24px, 0.85);
 					background-color: rgba($white, 0.4);
-					width: 80px;
-					height: 80px;
+					width: 84px;
+					height: 84px;
+					@include adjust-font-size-to(31px, 1.1);
 					//Meduim
 					@media screen and (max-width: 60em) {
+						@include adjust-font-size-to(23px, 0.9);
 						width: 45px;
 						height: 45px;
 					}//Small
 					@media screen and (max-width: 37.5em) {
+						@include adjust-font-size-to(23px, 1);
 						width: 30px;
 						height: 30px;
 					} 
@@ -96,8 +99,8 @@
 .link-arrows {
 	text-decoration: none;
 	display: block;
-	width: 96px;
-	height: 96px;
+	width: 84px;
+	height: 84px;
 	@include border-radius(50%);
 	background: $grey;
 	text-align: center;
@@ -112,18 +115,32 @@
 			background-color: rgba($white, 0.5);
 		}
 	}
+	&.red {
+		background-color: $red;
+		&:hover {
+			@include transition(all 0.2s ease-in-out);
+			background-color: #96090E;
+		}
+	}
 	i {
 		display: table-cell;
 		vertical-align: middle;
-		font-size: 96px;
+		font-size: 84px;
+		line-height: 75px;
 		&.green {
 			color: $green;
+		}
+		&.blue {
+			color: $blue;
 		}
 		&.mustard {
 			color: $mustard;
 		}
 		&.red {
 			color: $red;
+		}
+		&.white {
+			color: $white;
 		}
 	}
 }
@@ -138,11 +155,11 @@ input[type=submit] {
 	text-align: center;
 	display: table;
 	position: relative;
-	width:96px;
-	height:96px;
+	width:84px;
+	height:84px;
 	text-decoration: none;
 	outline: none;
-	font-size: 14px;
+	font-size: 13px;
 	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		background: rgba(255,255,255,0.7);
@@ -150,7 +167,7 @@ input[type=submit] {
 	}
 	span {
 		font-size: 13px;
-		line-height: 96px;
+		line-height: 84px;
 		text-decoration: none;
 		text-align: center;
 		text-transform: uppercase;

@@ -35,7 +35,7 @@
 					<?php if (is_page('support')) : ?>
 						<p>For further information</p>
 
-						<a class="losange red" href="/contact-us/">
+						<a class="losange red" href="/contact-us/contact-us-form/">
 							<span class="white">Contact us</span>
 						</a>
 

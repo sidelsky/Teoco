@@ -1,0 +1,59 @@
+body.page-template-office-locations-php {
+	.left-col {
+		.side-menu {
+			.page-item-601,
+			.page-item-489 {
+				display: none;
+			}
+		}
+		@include column(2);
+		@include pull(1);
+		p {
+			@include adjust-font-size-to(12px, 1.3);
+			border-top: solid 1px $border;
+			color: darken($light-grey, 30%);
+			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
+	}
+	.article-section {
+		@include border-radius(25px);
+		background: $white;
+		padding: 2em;
+		@include column(12);
+		h2 {
+			@include adjust-font-size-to(24px, 1.3);
+		}
+		h3 {
+			@include adjust-font-size-to(18px, 1.3);
+			color: $grey;
+			@extend %open_sansregular;
+		}
+		h4 {
+			@include adjust-font-size-to(15px, 1);
+			@extend %open_sansregular;
+			color: $red;
+		}
+		.is-main-office {
+			border-top: solid 1px $border;
+			border-bottom: solid 1px $border;
+			@include rhythm(0.5, 0.5, 0.5, 0.5); //Margin top, Padding top, Padding bottom, Margin bottom
+			p {
+				@include rhythm(0, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+			}
+		}
+		p {
+			@include adjust-font-size-to(13px, 1);
+			a {
+				color: $red;
+				text-decoration: none;
+				&:hover {
+					color: #96090E;
+				}
+			}
+		}
+		@media screen and (max-width:$s) {
+			@include column(12);
+			//@include push(3);
+		}
+	}
+}

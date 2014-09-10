@@ -25,13 +25,13 @@ get_header();
           <div class="lp-content">
             <span>
               <h1>
-                <?php include 'title-switch.inc.php'; ?>
+                <?php get_template_part( 'title-switch' ); ?>
               </h1>
               <?php the_excerpt(); ?>
             </span>
           </div>
            <div class="lp-image-container">         
-            <img src="<?php the_field('icon_image'); ?>">
+            <img src="<?php the_field('white_image'); ?>">
           </div>
           </a>
         </li>

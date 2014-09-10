@@ -13,7 +13,7 @@
 					<div class="zflexslider">
 						<ul class="slides">
 							<li>							
-								<?php include 'generic-page-loop.inc.php'; ?>
+								<?php get_template_part( '/generic-page-loop' ); ?>
 						</li>
 					</ul>
 				</div>

@@ -17,7 +17,7 @@
 	<section class="page-wrapper__wide section grey">
 		<div class="page-wrapper__wide__inner padding-tb-small">
 			<h1><?php the_sub_field('title'); ?></h1>
-			<?php the_sub_field('content'); ?>
+			<p class="large"><?php the_sub_field('content'); ?></p>
  
 			<div class="right-col success">	
 			<?php 

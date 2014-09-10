@@ -1,6 +1,6 @@
 @import "normalize.scss";
 @import "fittext";
-@import "compass/utilities";
+@import "compass/utilities"; 
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/css3/transform";
@@ -23,7 +23,9 @@
 @import "sub-pages.scss";
 @import "search-results.scss";
 @import "news-posts.scss";
-
+@import "leadership.scss";
+@import "office-loctions.scss";
+ 
 @import "Hamburger-icon.scss";
 @import "logo.scss";
 @import "slider.scss";
@@ -81,16 +83,27 @@ h1, h2, h3, h4 {
 
 h1, h2 {
 	@include adjust-font-size-to(48px, 7);
-	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 2.25em, $max-font-size: 3em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+	@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 30px, $max-font-size: 48px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 	color: $red;
 }
 
 p {
 	//color: $grey;
-	@include adjust-font-size-to(24px, 5);
+	@include adjust-font-size-to(18px, 3.3);
+	font-size: 1.125em;
 	//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 1.5em, $max-font-size: 1.5em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
+	&.large {
+		//@include adjust-font-size-to(24px, 5);
+		font-size: 1.5em;
+	}
+}
+
+.larger-text-wrapper {
+	p {
+		font-size: 1.5em;
+	}
 }
 
 

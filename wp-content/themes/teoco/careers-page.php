@@ -13,7 +13,7 @@
 					<div class="zflexslider">
 						<ul class="slides">
 							<li>
-								<?php include 'generic-page-loop.inc.php'; ?>
+								<?php get_template_part( '/generic-page-loop' ); ?>
 							</li>
 						</ul>
 					</div>
@@ -40,7 +40,7 @@
 
 	<!-- Job opportunities -->
 	<section class="page-wrapper__wide job-opportunities section">
-		<div class="page-wrapper__wide__inner padding-tb">
+		<div class="page-wrapper__wide__inner padding-small-tb">
 			<h1><?php the_field('job_opportunities_title'); ?></h1>
 			<div class="left-col">
 				<ul class="controls side-menu">
@@ -127,6 +127,7 @@
 	</ul>
 </div>
 </div>
+<br>
 </section>
 
 

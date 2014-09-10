@@ -4,11 +4,11 @@
 	filter: alpha(opacity=60) !important;
 }
 
-
 #menu-pages a,
 #menu-posts a,
 #menu-posts-job-opportunities a,
 #menu-posts-events a,
-#menu-posts-in_the_media a {
+#menu-posts-in_the_media a,
+#menu-posts-office-locations a {
 		color: #33ccff;
 }

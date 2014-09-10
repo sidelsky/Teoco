@@ -67,7 +67,7 @@ body.page-template-events-page-php {
 				@include column(3);
 				img.thmb {
 					float: right;
-					padding: 5px;
+					//padding: 5px;
 					@include border-radius(20px);
 					border: solid 1px lighten($grey, 40%);
 					width: 145px;

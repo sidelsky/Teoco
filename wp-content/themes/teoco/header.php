@@ -33,44 +33,24 @@
 
 <!--[if lt IE 7]>
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+	<![endif]-->
 
-	<!-- Page wrapper -->
+<!-- Page wrapper -->
 <div class="page-wrapper">
 
-<?php/*
-	<div class="page-wrapper__wide" >
-		<div class="page-wrapper__wide__inner">
-			<i id="language">
-				<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
-			</i>
-			<?php get_template_part( '/search-form' ); ?>
-		</div>
-
-		<?php get_template_part( '/wolf-menu' ); ?>
-
-		<a class="simple-menu" href="#sidr">
-			<i class="fa fa-bars"></i>
-		</a>
-	</div>
-*/?>
-
-
 <div class="page-wrapper__wide detached">
-		<div class="page-wrapper__wide__inner">
-			<div class="innerbit">
+	<div class="page-wrapper__wide__inner">
+		<div class="innerbit">
 			<i id="language">
 				<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
 			</i>
 			<?php get_template_part( '/search-form' ); ?>
-			</div>
 		</div>
-
-		<?php get_template_part( '/wolf-menu' ); ?>
-
-		<a class="simple-menu" href="#sidr">
-			<i class="fa fa-bars"></i>
-		</a>
 	</div>
 
- 
+	<?php get_template_part( '/wolf-menu' ); ?>
+
+	<a class="simple-menu" href="#sidr">
+		<i class="fa fa-bars"></i>
+	</a>
+</div>

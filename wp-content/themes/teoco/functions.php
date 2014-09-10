@@ -33,6 +33,16 @@ if ( ! function_exists('myTheme')) :
 	add_post_type_support( 'page', 'excerpt' );
 
 
+//Button shortcode
+function sButton($atts, $content = null) {
+		extract(shortcode_atts(array('link'=>'#', 'class'=>'', 'arrow_colour'=>''),$atts));
+		return '<a class="button link-arrows '.$class.'" href="'.$link.'"><i class="fa fa-angle-right '.$arrow_colour.'">'.do_shortcode( $content ).'</i></a>';
+	}
+	add_shortcode('button', 'sButton');
+
+ 
+
+
 //Add active current class on wp_get_archives used on archive and index pages side menu
 function theme_get_archives_link ( $link_html ) {
     global $wp;
@@ -168,6 +178,17 @@ register_taxonomy( "in-the-media-year",
 		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
 		'with_front' => false)
 	));
+
+/*register_taxonomy( "office-locations", 
+	array ('office-locations', 'office-locations'),
+	array(
+		"hierarchical" => true,
+		'show_admin_column' => true,
+		"labels" => array('name'=>"Office locations",'add_new_item'=>"Add New Field"), 
+		"singular_label" => __( "Field" ), 
+		"rewrite" => array( 'slug' => 'fields', // This controls the base slug that will display before each term 
+		'with_front' => false)
+	));*/
 
 
 

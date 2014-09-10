@@ -52,7 +52,7 @@
 	<div class="flexslider4">
 		<ul class="slides">
 			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/image-2.jpg" alt="image01" class='bg-full-image' />
+				<img src="<?php echo get_field('news_slider_background_image'); ?>" alt="Latest news" class="bg-full-image" />
 			</li>
 		</ul>
 	</div>

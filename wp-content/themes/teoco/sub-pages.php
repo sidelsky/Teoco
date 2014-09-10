@@ -18,13 +18,37 @@ get_header();
           <div class="sub-title-container">
             <span>
               <h1>
-                <?php include 'title-switch.inc.php'; ?>
+                <?php get_template_part( 'title-switch' ); ?>
               </h1>
             </span>
           </div>
           <div class="sub-image-container">
             <span>
-              <img src="<?php the_field('icon_image'); ?>">
+
+            <?php //gets the image customfield from parent page
+            global $post;
+            $parent_id = $post->post_parent;
+            $image_from_parent = get_field('icon_image', $parent_id);
+
+            $icon_image = get_field('icon_image');
+
+            if ( $icon_image ) {
+             //echo 'there is a custom field value';
+             echo '<img src="'.$icon_image.'">';
+            }
+            else {
+              //echo 'no custom field value';
+              echo '<img src="'.$image_from_parent.'">';
+            }
+            ?>
+
+            <?php/*
+              <?php if (is_tree(22)) : ?>
+                <img src="<?php the_field('icon_image'); ?>">
+              <?php elseif(is_tree(23)) : ?>
+                <img src="<?php the_field('icon_image'); ?>">
+              <?php endif; ?>
+            */?>
             </span>
           </div>
         </div>

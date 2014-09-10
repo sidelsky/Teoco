@@ -3,7 +3,6 @@ $(document).ready(function () {
 // lazyload
 //$('#you-want-lazyload').lazyload(options);
 
-
 //Side menu
 $('.simple-menu').sidr({
   side: 'right'

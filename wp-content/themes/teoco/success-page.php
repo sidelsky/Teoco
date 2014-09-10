@@ -9,12 +9,10 @@
 	<?php if (get_field('success_title')) : ?>
 	<section class="page-wrapper__wide section current grey">
 		<div class="page-wrapper__wide__inner padding-tb">
-			
-			<div class="left-col">
-				<h1><?php the_field('success_title'); ?></h1>
-				<?php the_field('success_content'); ?>
-			</div>
-
+		 
+			<h1><?php the_field('success_title'); ?></h1>
+			<p class="large"><?php the_field('success_content'); ?></p>
+	 
 			<div class="right-col success">
 
 				<!-- Images -->
@@ -44,31 +42,31 @@
 						
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" />
+								<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" />
+								<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" />
+								<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" />
+								<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 						
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" />
+								<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 					</ul>
@@ -130,10 +128,8 @@
 <section class="page-wrapper__wide section">
 	<div class="page-wrapper__wide__inner padding-tb success">
 		
-		<div class="left-col">
-			<h1><?php the_field('success_stories_title'); ?></h1>
-			<?php the_field('success_stories_content'); ?>
-		</div>
+		<h1><?php the_field('success_stories_title'); ?></h1>
+		<p class="large"><?php the_field('success_stories_content'); ?></p>
 
 		<div class="right-col success-stories">
 
@@ -146,10 +142,11 @@
 				$title = get_sub_field('title');
 				$solution_product_name = get_sub_field('solution_product_name');
 				$text = get_sub_field('text');
+				$solutions_or_products_select = get_sub_field('solutions_or_products');
 				?>
 				<ul>
-					<li class="products">
-						<div class="image-wrapper toggle">
+					<li class="products <?php echo $solutions_or_products_select; ?>">
+						<div class="image-wrapper toggle <?php echo $solutions_or_products_select; ?>">
 							<img src="<?php echo $icons; ?>" alt="<?php echo $icons['alt'] ?>" />
 						</div>
 						<div class="title-wrapper">
@@ -188,11 +185,9 @@
 <?php if (get_field('award_title')) : ?>	 
 	<section class="page-wrapper__wide section grey">
 		<div class="page-wrapper__wide__inner padding-tb success">
-			
-			<div class="left-col">
-				<h1><?php the_field('award_title'); ?></h1>
-				<?php the_field('award_content'); ?>
-			</div>
+ 
+			<h1><?php the_field('award_title'); ?></h1>
+			<p class="large"><?php the_field('award_content'); ?></p>
 
 			<div class="right-col success">
 
@@ -217,31 +212,31 @@
 						
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" />
+								<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" />
+								<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" />
+								<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" />
+								<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 
 						<li class="product">
 							<div class="image-wrapper">
-								<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" />
+								<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" class="logo-img" />
 							</div>
 						</li>
 					</ul>

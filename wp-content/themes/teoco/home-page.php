@@ -19,10 +19,17 @@
 								// vars
 								$title = get_sub_field('title');
 								$text = get_sub_field('text');
+								$link_c = get_sub_field('link_c');
 								?>
 								<li>
 									<h1><?php echo $title; ?></h1>
-									<?php echo $text; ?> </li>
+									<?php echo $text; ?>
+									<?php if($link_c) : ?>
+										<a href="<?php echo $link_c ?>" class="link-arrows white">
+											<i class="fa fa-angle-right red"></i>
+										</a>
+									<?php endif ?>
+							 </li>
 								<?php endwhile; ?>
 							</ul>
 						<?php endif; ?>

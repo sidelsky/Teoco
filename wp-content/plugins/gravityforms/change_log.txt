@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------------------------------------------
+Version 1.8.14
+	- Fixed a potential security vulnerability for some servers which could allow code to be parsed via the file upload field.
+	- Fixed a security issue to prevent code injection
+	- Fixed an issue with the file upload field that allows malicious form submissions to bypass the validation for the maximum file size setting.
+
+	- AF: Fixed issue with simple conditional logic
+	- AF: Fixed issue with checkbox fields not supporting custom 'onclick' attributes to be added.
+
+-------------------------------------------------------------------------------------------------------------------
 Version 1.8.13
 	- Added additional check plus user feedback for failed multi-file uploads.
 	- Fixed a potential security vulnerability for some server configurations which could allow code to be executed via the file upload field.

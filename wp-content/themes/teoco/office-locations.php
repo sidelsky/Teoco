@@ -7,23 +7,40 @@
 
 	<section class="page-wrapper__wide sub-pages section current grey">
 		<div class="page-wrapper__wide__inner padding-tb">
-			<h1>Office locations</h1>
+			<?php if(is_page('contact-us-form')) : ?>
+				<?php the_title('<h1>','</h1>'); ?>
+			<?php else : ?>
+				<h1>Office locations</h1>
+			<?php endif; ?>
+
+				
 			<div class="left-col">
-				<ul class="side-menu">
+				<?php if(is_page('contact-us-form')) : ?>
+	 			 
+				<p>See our office locations</p>
+				<a class="losange red" href="/contact-us/">
+					<span class="white">Locations</span>
+				</a>
+				<?php else : ?>
+ 				<ul class="side-menu">
 					<?php simple_section_nav('before_widget=<li>&after_widget=</li>'); ?>
 				</ul>
-
 				<p>For further information</p>
-
 				<a class="losange red" href="/contact-us/contact-us-form/">
 					<span class="white">Contact us</span>
 				</a>
-
+				<?php endif; ?>
 			</div>
 
 			<div class="right-col">
 				<div class="article-section">	
-					<?php the_title('<h2>','</h2>'); ?>
+					<?php if(is_page('contact-us-form')) : ?>
+						<h2>&nbsp;</h2>
+					<?php else : ?>
+						<?php the_title('<h2>','</h2>'); ?>
+					<?php endif; ?>
+
+
 					<?php if( have_rows('office_locations') ): ?>
 						<?php while( have_rows('office_locations') ): the_row(); 
 						// vars
@@ -49,6 +66,13 @@
 
 					<?php endwhile; wp_reset_query();?>
 				<?php endif; ?>
+				
+				<?php if(is_page('contact-us-form')) : ?>
+					<div class="office-locations">
+						<?php echo do_shortcode("[gravityform id=3 title=false description=false ajax=true]"); ?>
+					</div>
+				<?php endif; ?>
+
 			</div>
 		</div>
 	</div>

@@ -58,7 +58,8 @@ body.home .validation_message {
 
 
 //Job opportunities forms
-.job-opportunities {
+.job-opportunities,
+.office-locations {
 	.gform_wrapper {
 		form {
 			.gfield {
@@ -261,3 +262,53 @@ form#search-form {
 .lte9 .gfield_label {
 	display: block !important;
 }
+
+
+//Select menu dropdown style
+.ginput_container select#input_3_5 {
+	background: transparent;
+	border: 0 !important;  
+	-webkit-appearance: none;  
+	-moz-appearance: none;
+	outline: none;
+	color: lighten($grey, 15%);
+	width: 100%;
+	@extend %open_sansregular;
+}
+
+// li#field_3_5 {
+// 	label {
+// 		//color: red;
+// 			&:after {
+//        font-family: FontAwesome;
+//        content: " ";
+//     	}  
+// 	}	
+// }
+
+
+/* .ginput_container select.balck {
+	//background-color: #000;
+}
+.ginput_container select.option3 {
+	//border-radius: 10px 0;
+} */
+
+#field_3_5 {
+	background: url(../img/icons/down-arrow.png) no-repeat right center; 
+	border-top: solid 1px $border !important;
+	border-bottom: solid 1px $border !important;
+	@include rhythm(0.5, 0.3, 0.3, 0.5); //Margin top, Padding top, Padding bottom, Margin bottom
+	&:hover {
+		color: red;
+	}
+}
+
+    // .gsection{
+	
+// 	@include rhythm(1, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+// 	h2 {
+// 		@include rhythm(0, 0, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+// 		display: none;
+// 	}
+// }

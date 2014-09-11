@@ -15,6 +15,7 @@
 							$title = get_field('title_2');
 							$copy = get_field('latest_2');
 							$link = get_field('link_2');
+							$image = get_field('image_bg');
 						} ?>
 
 					<ul class="slides">
@@ -61,9 +62,7 @@
 <?php endif; ?>	
 	<div class="flexslider2">
 		<ul class="slides">
-			<li>
-				<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
-			</li>
+			<li><img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" class="bg-full-image" /> </li>
 		</ul>
 	</div>
 </div>					

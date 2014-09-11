@@ -19,8 +19,11 @@
 					&nbsp;
 				</div>
 					
-				<div class="article-section">
-					<?php echo do_shortcode("[simple-sitemap]"); ?>
+				<div class="article-section" id="sitemap">
+					<?php/* echo do_shortcode("[simple-sitemap]"); */?>
+					<ul>
+						<?php wp_list_pages('title_li='); ?>
+					</ul>
 				</div>
 
 				<?php else : ?>	

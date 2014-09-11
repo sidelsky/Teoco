@@ -4148,6 +4148,24 @@ class GFCommon{
         return array("php", "asp", "exe", "com", "htaccess", "phtml", "php3", "php4", "php5", "php6");
     }
 
+	public static function match_file_extension( $file_name, $extensions ) {
+		if ( empty ( $extensions ) || ! is_array( $extensions ) ) {
+			return false;
+		}
+
+		$ext = pathinfo( $file_name, PATHINFO_EXTENSION );
+		if ( in_array( $ext, $extensions ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public static function file_name_has_disallowed_extension( $file_name ) {
+
+		return self::match_file_extension( $file_name, self::get_disallowed_file_extensions() ) || strpos( $file_name, '.php.' ) !== false;
+	}
+
     public static function to_money($number, $currency_code=""){
         if(!class_exists("RGCurrency"))
             require_once("currency.php");

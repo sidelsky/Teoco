@@ -26,14 +26,16 @@
 							<!-- no posts found -->
 							<?php endif; ?>
 							
+							<?php/*
 							<div class="dropdown">
 							<p>Please complete</p>
 							<i class="fa fa-times-circle"></i>
 								<?php echo do_shortcode("[gravityform id=1 title=false description=false ajax=true]"); ?>
 								<!-- Download losange -->
 							</div>
+							*/?>
 
-							<a class="losange" id="download" data-scroll data-options="easing: easeOutQuad" href="#latest">
+							<a class="losange" href="#latest">
 								<span class="blue">Download</span>
 							</a>
 

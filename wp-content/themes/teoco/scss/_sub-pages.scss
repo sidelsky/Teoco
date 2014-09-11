@@ -20,7 +20,7 @@ $sub-container-small-height: 124px;
 						display: table-cell;
 						vertical-align: middle;
 						color: $white;
-						width: 500px;	
+						//width: 500px;	
 					}
 				}
 			}
@@ -212,3 +212,12 @@ body.single {
 		}
 	}
 }
+
+
+//Site map 
+#sitemap {
+	.page_item_list {
+		@include adjust-font-size-to(10px, 2);
+	}
+}
+ 

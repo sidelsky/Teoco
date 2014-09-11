@@ -450,7 +450,7 @@ getRelVal();
           function() {
             var rel = $(this).find('a').attr('rel')
             $('#header .secondary a[rel="' + rel + '"]').addClass('active');
-            console.log('#header .secondary a[rel="' + rel + '"]');
+            //console.log('#header .secondary a[rel="' + rel + '"]');
           },
           function() {
             var rel = $(this).find('a').attr('rel')
@@ -670,12 +670,16 @@ $('.content').hide();
 //$('.products .inner').hide();
 
 $('.product').click(function() {
+
   $('.product').removeClass('selected');
   $(this).addClass('selected');
 
   var index = $(this).index();
+
   $('.content').slideUp(300);
-  $(this).parent().next().children().eq(index).slideDown(200);  
+  $(this).parent().next().children().eq(index).slideDown(200); 
+  //console.log($(this).parent().next().children().eq(index));
+
 });
 
 $('.controls').click(function(e){

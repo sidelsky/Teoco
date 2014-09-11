@@ -197,7 +197,7 @@
 						
 						if( $(this).text() == label ) {
 							
-							$list.append( $(this).siblings('ul').html() );
+							$list.append( $(this).siblings('ul').children() );
 							
 							$(this).parent().remove();
 							

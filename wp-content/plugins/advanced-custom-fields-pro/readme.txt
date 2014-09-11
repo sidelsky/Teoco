@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: custom, field, custom field, advanced, simple fields, magic fields, more fields, repeater, matrix, post, type, text, textarea, file, image, edit, admin
 Requires at least: 3.5.0
-Tested up to: 3.9.2
+Tested up to: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,17 @@ http://support.advancedcustomfields.com/
 
 
 == Changelog ==
+
+= 5.0.8 =
+* Checkbox field: Fixed PHP error when editing field default value
+* Image field: Added logic to update thumbnail after image has been edited
+* Gallery field: Added logic to update thumbnail after image has been edited
+* Core: Added compatibility for WP4 media grid
+* Core: Fixed Select2 bug where results could not be selected
+* Core: Fixed conditional logic bug showing empty cells in the repeater field
+* Core: Fixed bug where tabify would show blank field groups
+* Core: Minor bug fixes and improvements
+* Language: Added Slovakian translation - thanks to wp.sk
 
 = 5.0.7 =
 * Core: Fixed navigation prompt when saving a field group

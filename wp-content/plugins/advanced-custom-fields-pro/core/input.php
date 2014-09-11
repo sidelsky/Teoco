@@ -91,13 +91,6 @@ class acf_input {
 		$args = acf_get_setting('form_data');
 		
 		
-		// validate
-		if( empty($args) )
-		{
-			return;
-		}
-		
-		
 		// global
 		global $wp_version;
 		

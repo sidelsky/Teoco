@@ -192,9 +192,9 @@
 			<div class="right-col success">
 
 				<!-- Images -->
-				<?php if( have_rows('awards',25) ): ?>
+				<?php if( have_rows('awards') ): ?>
 
-					<?php while( have_rows('awards',25) ): the_row(); 
+					<?php while( have_rows('awards') ): the_row(); 
 							// vars
 					$icon = get_sub_field('icon');
 					$icon_2 = get_sub_field('icon_2');

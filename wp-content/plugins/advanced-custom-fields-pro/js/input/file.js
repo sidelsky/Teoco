@@ -19,7 +19,7 @@
 			
 		},
 		
-		add : function( $a ) {
+		add : function() {
 			
 			// reference
 			var self = this;
@@ -86,7 +86,15 @@
 						// add extra row if next is not found
 						if( !$next ) {
 							
-							$tr = acf.fields.repeater.set( $repeater ).add();
+							$tr = acf.fields.repeater.doFocus( $repeater ).add();
+							
+							
+							// bail early if no $tr (maximum rows hit)
+							if( !$tr ) {
+								
+								return false;
+								
+							}
 							
 							
 							// get next $field
@@ -118,7 +126,6 @@
 				}
 			});
 			
-			
 		},
 		
 		render : function( file ){
@@ -136,7 +143,7 @@
 	
 		},
 		
-		edit : function( $a ) {
+		edit : function() {
 			
 			// reference
 			var self = this;
@@ -173,11 +180,9 @@
 				}
 			});
 			
-			
 		},
 		
-		
-		remove : function( $a ) {
+		remove : function() {
 			
 			// vars
 	    	var file = {
@@ -197,8 +202,7 @@
 			// remove class
 			this.$el.removeClass('has-value');
 			
-		},
-		
+		}
 		
 	});
 	

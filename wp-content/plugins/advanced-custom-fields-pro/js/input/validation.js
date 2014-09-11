@@ -1,6 +1,11 @@
 (function($){
     
-	acf.validation = {
+	acf.validation = acf.model.extend({
+		
+		actions: {
+			'ready 20': 'onReady'
+		},
+		
 		
 		// vars
 		active	: 1,
@@ -17,7 +22,7 @@
 		
 		
 		// functions
-		init : function(){
+		onReady : function(){
 			
 			// read validation setting
 			this.active = acf.get('validation');
@@ -322,13 +327,7 @@
 			
 		}
 		
-	};
-	
-	acf.add_action('ready', function(){
-		
-		acf.validation.init();
-		
-	}, 20);
+	});
 	
 
 })(jQuery);

@@ -37,14 +37,14 @@
 
 .article-section {
 	//@extend %bdr;
-	@include column(6.5);
+	@include column(6);
 	position: relative;
 	z-index: 1;
 	@include clearfix;
-	@media screen and (max-width: 60em) {
-		@include column(6.5);
+	@media screen and (max-width: $m) {
+		@include column(6);
 	}
-	@media screen and (max-width: 37.5em) {
+	@media screen and (max-width: $s) {
 		@include column(12);
 	}
 }

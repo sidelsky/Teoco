@@ -106,7 +106,7 @@ $sub-container-small-height: 124px;
 //Colours
 .sub-header.solution {
 	//height: $sub-container-height;
-	background: url(../img/solutions-sub-page-bg-bar.png) no-repeat -2000px 0px !important;
+	background: url(../img/solutions-sub-page-bg-bar.png) no-repeat -1800px 0px !important;
 	background-color: darken($purple, 10%) !important;
 	.page-wrapper__wide__inner {
 		.sub-wrapper {
@@ -115,14 +115,14 @@ $sub-container-small-height: 124px;
 			}
 		}
 	}
-	// @media screen and (max-width: $s) {
-	// 	background-position: -2000px 0px; 
-	// }
+	@media screen and (max-width: $s) {
+		background-position: -2000px 0px !important; 
+	}
 }
 
 .sub-header.product {
 	//height: $sub-container-height;
-	background: url(../img/products-sub-page-bg-bar.png) no-repeat -2000px 0px !important;
+	background: url(../img/products-sub-page-bg-bar.png) no-repeat -1800px 0px !important;
 	background-color: darken($blue, 10%) !important;
 	.page-wrapper__wide__inner {
 		.sub-wrapper {
@@ -131,13 +131,45 @@ $sub-container-small-height: 124px;
 			}
 		}
 	}
-}
-
-body.page-template-sub-pages-php {
-	div.page-wrapper > section.page-wrapper__wide.sub-pages.section > div > div.right-col > article > p:nth-child(1) {
-		@include adjust-font-size-to(36px, 2);
+	@media screen and (max-width: $s) {
+		background-position: -2000px 0px !important; 
 	}
 }
+
+//First para large copy
+body.page-template-sub-pages-overview-php {
+	div.page-wrapper > section.page-wrapper__wide.sub-pages.section > div > div.right-col > article > p:nth-child(1) {
+		@include adjust-font-size-to(30px, 1.6);
+		@media screen and (max-width: $m) {
+			@include adjust-font-size-to(21px, 1.3);
+		}
+	}
+}
+
+//Heading colours
+body.page-template-sub-pages-php {
+	article > h2 {
+		@include adjust-font-size-to(30px, 1.6);
+		&.solutions {
+			color: $purple;
+		}
+		&.products {
+			color: $blue;
+		}
+	}
+}
+
+//First para large copy
+body.page-template-default {
+	div.article-section > p:nth-child(1) {
+		@include adjust-font-size-to(30px, 1.6);
+		@media screen and (max-width: $m) {
+			@include adjust-font-size-to(21px, 1.3);
+		}
+	}
+}
+
+
 
 //Single page footer links and social links
 footer.single {

@@ -12,7 +12,7 @@
 		
 				<?php if (is_page('site-map')) : ?>
 					<h1>
-						<?php include 'title-switch.inc.php'; ?>
+						<?php get_template_part( 'title-switch' ); ?>
 					</h1>
 
 				<div class="left-col">
@@ -31,7 +31,7 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<!-- post -->
 					<h1>
-						<?php include 'title-switch.inc.php'; ?>
+						<?php get_template_part( 'title-switch' ); ?>
 					</h1>
 
 				<div class="left-col">

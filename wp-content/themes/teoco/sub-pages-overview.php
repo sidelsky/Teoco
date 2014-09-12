@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Sub page
+Template Name: Sub page - overview
 */
 get_header();
 ?>
@@ -93,21 +93,14 @@ get_header();
       <?php endif; ?>
         <article>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <!-- post -->
             
-            <!-- post title -->
-            <?php if (is_tree(22)) : //Solutions ?>
-              <h2 class="solutions">
+            <?php/*
+              <h1>
                 <?php get_template_part( 'title-switch' ); ?>
-              </h2>
-            <?php elseif(is_tree(23)) : // products ?>
-               <h2 class="products">
-                <?php get_template_part( 'title-switch' ); ?>
-              </h2>
-            <?php else : ?>
-             
-            <?php endif; ?>
-
-
+              </h1>
+            */?>
+            
             <?php the_content(); ?>
 
           <?php endwhile; ?>

@@ -58,6 +58,7 @@ body.home .validation_message {
 
 
 //Job opportunities forms
+.latest-download,
 .job-opportunities,
 .office-locations {
 	.gform_wrapper {
@@ -125,6 +126,15 @@ select {
 		border-top: solid 1px $white;
 		border-bottom: solid 1px $white;
 		@include rhythm(2, 1, 1.5, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
+	&.latest {
+			&.open {
+			max-height: 550px;
+			@include transition(all 0.5s ease-in-out);
+			border-top: solid 1px $border;
+			border-bottom: solid 1px $border;
+			@include rhythm(2, 1, 1.5, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		}
 	}
 }
 

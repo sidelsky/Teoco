@@ -182,12 +182,31 @@ input[type=submit] {
 	}
 }
 
+.latest-download {
+	.open {
+		.gform_wrapper {
+			form {
+				.gform_footer {
+					input[type=submit] {
+							color: $white;
+							background: $red;
+					}
+				}
+			}
+		}
+	}	
+}
+ 
+
 
 .office-locations input[type=submit] {
 	background: $red;
 	color: $white;
 	&:hover {
 		background: #96090E;
+		&:hover {
+			background: darken($red, 10%);
+		}
 	}
 }
 

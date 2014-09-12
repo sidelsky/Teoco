@@ -154,7 +154,7 @@ article {
 			display: none;
 		}
 		p {
-			@include rhythm(0, 6, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+			@include rhythm(0, 7, 0, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			color: $red;
 			font-style: italic;
 			@include adjust-font-size-to(24px, 5);

@@ -25,7 +25,8 @@
 			<div class="flexslider2">
 				<ul class="slides">
 					<li>
-						<img src="<?php bloginfo('template_directory'); ?>/img/Image-2.jpg" alt="image01" class='bg-full-image' />
+						<?php $image = get_field('image_wc'); ?>
+					<img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" class="bg-full-image" />
 					</li>
 				</ul>
 			</div>

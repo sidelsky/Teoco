@@ -1,6 +1,7 @@
 body.page-template-footer-pages-and-search-page-php,
 body.search-results,
-body.single {
+body.single,
+body.page-template-default{
 	.left-col {
 		@include column(2);
 		@include pull(1);

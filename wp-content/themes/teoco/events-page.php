@@ -74,6 +74,7 @@
 					$event_link = get_field('event_link');
 					$event_icon = get_field('event_icon');
 					$space = '&nbsp';
+					//$event_date = the_field('event_date');
 
 					echo '<div class="section"></div>';	
 
@@ -83,6 +84,7 @@
 
 					<?php if( $event_date ) : ?>
 					<span class="the-time">
+					<?php the_field('date_picker'); ?>
 					<?php echo $event_date . $space . $space . $event_location; ?>
 					</span>
 					<?php endif; ?>

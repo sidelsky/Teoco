@@ -25,6 +25,15 @@
 		}
 	}
 
+.gform_body {
+	ul {
+
+		li {
+				list-style-type: none !important;
+		}
+	}
+}	
+
 
 .gform_fields {
 	margin-bottom: 30px;
@@ -49,11 +58,19 @@ body.home .validation_message {
 
 
 	.gform_confirmation_wrapper {
-		color: $green;
+		color: $grey;
 		font-weight: bold;
 		padding: 10px 0;
 	//background: khaki;
 	font-size: 18px;
+	a {
+		color: $red;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			color: darken($red, 20%);
+		}
+	}
 }
 
 
@@ -245,25 +262,24 @@ text-shadow: 0px -1px 0px #0172bd;
 }
 
 form#search-form {
-	@include column(3);
-	//@include push(9);
-	fieldset {
-		padding: 10px 0;
-		position: relative;
+			width: 200px;
+		float: right;
+	padding: 10px 0;
+	position: relative;
+	border: none;
+	input[type=text] {
+		margin-bottom: 15px;
+		color: $grey;
 		border: none;
-		input[type=text] {
-			color: $grey;
-			border: none;
-			padding: 0.3em;
-			font-size: 15px;
-			z-index: 0;
-			background:$light-grey url(../img/icons/search.png) no-repeat center right;
-			background-size: 24px;
-		}
+		padding: 0.3em;
+		font-size: 15px;
+		z-index: 0;
+		background:$light-grey url(../img/icons/search.png) no-repeat center right;
+		background-size: 24px;
 	}
-	@media screen and (max-width: $s) {
-		//@include column(1);
-		width: 90%;
+	@media (max-width: $s) {
+
+	width: 100%;
 	}
 }
 

@@ -33,20 +33,20 @@
 		</div>					
 	</section>
 
-	<!--Video - vimeo api-->	
-	<?php/* get_template_part('/vimeo-video'); */?>
-
-	<!-- Youtube video -->
-	<?php get_template_part('/youtube-video'); ?>
+	<!-- vimeo video -->
+	<?php get_template_part('/vimeo-video'); ?>
 
 	<!-- Job opportunities -->
 	<section class="page-wrapper__wide job-opportunities section">
-		<div class="page-wrapper__wide__inner padding-small-tb">
+		<div class="page-wrapper__wide__inner padding-tb">
 			<h1><?php the_field('job_opportunities_title'); ?></h1>
 			<div class="left-col">
 				<ul class="controls side-menu">
 					<?php
-					$terms = get_terms('locations');
+					$terms = get_terms('locations', array(
+						'parent' => 0
+						//'depth' => -1
+						));
 					$count = count($terms);
 					echo '<li data-filter="all" class="filter active">All locations</li>';
 					if ( $count > 0 ){
@@ -91,7 +91,7 @@
 						$links[] = $term->name;
 					}
 
-					$tax_links = join( " ", str_replace(' ', '-', $links));          
+					$tax_links = join( ", ", str_replace(' ', ' ', $links));          
 					$tax = strtolower($tax_links);
 					else :	
 						$tax = '';					

@@ -1,10 +1,10 @@
 <?php if ( have_rows('video_repeater') ) : ?>
 
-<section class="page-wrapper__wide section" id="vision-values">
+<section class="page-wrapper__wide section grey" >
 		<article class="page-wrapper__wide__inner padding-tb">
 
 <?php if(is_page('careers')) : ?>
-	<h1>Working at Teoco</h1>
+	<h1>Working at TEOCO</h1>
 	<?php endif; ?>
 
 <?php $count = 0; ?>
@@ -18,14 +18,15 @@
 			$video_r = get_sub_field('video_r');
 			$excerpt_r = get_sub_field('excerpt_r');
 			$transcript_r = get_sub_field('transcript_r');
+			$title_on_the_left = get_sub_field('title_on_the_left');
 			$count++;
 		?>
 
 	<div class='js-video'>
 	 
-		<img src="<?php bloginfo('template_directory'); ?>/img/icons/large-play-icon.png" alt="Play" id="play-icon_<?php echo $count; ?>" class="play">
+		<i id="play-icon_<?php echo $count; ?>" class="play"></i>
 		
-		<div id="title-wrapper_<?php echo $count; ?>" class="title-wrapper">
+		<div id="title-wrapper_<?php echo $count; ?>" class="title-wrapper <?php echo $title_on_the_left; ?>">
 			<h2><?php echo $video_name; ?></h2>
 			<p><?php echo $video_title; ?></p>
 		</div>
@@ -44,8 +45,9 @@
 				-->
 			</div>
 
-			<?php echo $excerpt_r; ?>
+			<p><?php echo $excerpt_r; ?></p>
 			
+			<?php/*
 			<div class="transcript">
 				<div class="icon-link">
 					<a href="#" class="toggle">
@@ -59,6 +61,7 @@
 					</div>
 				</div>
 			</div>
+			*/?>
 
 			<script>
 			$(document).ready(function($) {
@@ -80,6 +83,7 @@
 			    	play_icon.bind("click", function() {
 			    	player.api("play");
 			    	cover.fadeOut(650);
+			    	play_icon.fadeOut(650);
 			    	title_wrapper.fadeOut(950);
 				});
 
@@ -87,12 +91,14 @@
 			    status.text('paused');
 			    cover.fadeIn(650);
 			    title_wrapper.fadeIn(950);
+			    play_icon.fadeIn(650);
 				}
 
 				function onFinish(id) {
 			    status.text('finished');
 			    cover.fadeIn(650);
 			    title_wrapper.fadeIn(950);
+			    play_icon.fadeIn(650);
 				}
 
 				function onPlayProgress(data, id) {

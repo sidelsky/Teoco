@@ -2,28 +2,38 @@
 	.portfolio-item {
 		border-top: solid 1px $light-grey;
 		.accord-toggle {
-			display: block;
+			display: table;
+			//height: 50px;
+			padding: 1em 0;
 			@include clearfix;
 			.icon-link {
-				float: left;
-				margin-right: 1.5em;
-				@include adjust-font-size-to(16px, 2.3);
+				//float: left;
+				display: table-cell;
+				//margin-right: 1.5em;
+				//@include adjust-font-size-to(16px, 2.3);
 			}
 			h3 {
+				display: table-cell;
+				//@extend %bdr;
+				padding-left: 1em;
 				@extend %open_sansregular;
-				@include adjust-font-size-to(18px, 2.5);
-				//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
-				display: block;
+				@include adjust-font-size-to(20px, 1.2);
+				@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 14px, $max-font-size: 20px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+				//display: block;
 				text-align: left;
 				color: $grey;
+
 				//@extend %bdr;
 				&.position {
-					float: left;
+					//float: left;
+					margin-right: 2em;
+					width: 70%;
 				}
 				&.location {
-					float: right;
-					//min-width: 200px;
-					text-transform: capitalize;
+					//float: right;
+					width: 30%;
+					text-align: right;
+					text-transform: uppercase;
 				}
 			}
 			&.active,
@@ -38,6 +48,7 @@
 				.toggle {
 					.icon-link i, h3 {
 					color: $red !important;
+
 				}
 			}
 		}
@@ -45,9 +56,20 @@
 			//@extend %bdr;
 			@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 			> li {
-				padding:0 2.8em;
+				padding:0 1.8em;
 				p {
 					@include adjust-font-size-to(16px, 1);
+					strong {
+						@extend %open_sansbold;
+					}
+				}
+				ul {
+					@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+				>	li {
+						list-style-type: disc;
+						margin-left: 24px;
+						@include adjust-font-size-to(16px, 1);
+					}
 				}
 			}
 		}

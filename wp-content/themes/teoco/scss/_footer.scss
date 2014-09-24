@@ -69,4 +69,32 @@
 				}
 			}
 		}
+		section {
+			@extend %max-width;
+			margin: 0 auto;
+		}
 	}
+
+
+
+.page-wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
+	@media screen and (max-width: $m) { 
+		margin: 0 auto -300px;
+	}
+	@media screen and (max-width: $s) { 
+		height: -400px;
+	}
+}
+.page-footer, .push {
+	height: 200px; /* .push must be the same height as .footer */
+	@media screen and (max-width: $m) { 
+		height: 300px;
+	}
+	@media screen and (max-width: $s) { 
+		height: 400px;
+	}
+}

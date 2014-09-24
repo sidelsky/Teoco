@@ -6,7 +6,6 @@
 	?>
 
 	<!-- Primary slider -->
-
 	<section class="page-wrapper__wide rel-pos section current">
 		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
@@ -56,9 +55,12 @@
 
 <!-- What we do -->
 <section class="page-wrapper__wide what-we-do-bg section">
-	<div class="page-wrapper__wide__inner padding-tb"> <span class="larger-text-wrapper">
+	<div class="page-wrapper__wide__inner padding-tb">
+	
+	<span class="larger-text-wrapper">
 		<?php get_template_part( '/generic-page-loop' ); ?>
 	</span>
+ 
 	<ul class="blob-buttons padding-tb-small">
 		<li> <a href="<?php echo get_permalink(22); ?>" class="purple"> <span> <?php echo get_the_title(22); //Calls Solutions heading ?> <i class="fa fa-angle-right"></i> </span> </a> </li>
 		<li> <a href="<?php echo get_permalink(23); ?>" class="blue"> <span> <?php echo get_the_title(23); //Calls Products heading ?> <i class="fa fa-angle-right"></i> </span> </a> </li>
@@ -96,7 +98,7 @@
 				<?php the_title(); ?>
 			</h1>
 			<?php the_content(); ?>
-			<div class="left-col"> <a class="button link-arrows red" href="/success/"> <i class="fa fa-angle-right white"></i> </a> </div>
+			<div class="left-col"> <a class="button link-arrows red" href="/teoco.com/success/"> <i class="fa fa-angle-right white"></i> </a> </div>
 		<?php endwhile; ?>
 		<div class="right-col success">
 
@@ -122,37 +124,37 @@
 					?>
 					<li class="product">
 						<div class="image-wrapper"> 
-							<!-- <a href="/success/"> --> 
-							<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" /> 
-							<!-- </a> --> 
+							<a href="/teoco.com/success/"> 
+								<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" /> 
+							</a> 
 						</div>
 					</li>
 					<li class="product">
 						<div class="image-wrapper"> 
-							<!-- <a href="/success/"> --> 
-							<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" /> 
-							<!-- </a> --> 
+							<a href="/teoco.com/success/"> 
+								<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" /> 
+							</a> 
 						</div>
 					</li>
 					<li class="product">
 						<div class="image-wrapper"> 
-							<!-- <a href="/success/"> --> 
-							<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" /> 
-							<!-- </a> --> 
+							<a href="/teoco.com/success/"> 
+								<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" /> 
+							</a> 
 						</div>
 					</li>
 					<li class="product">
 						<div class="image-wrapper"> 
-							<!-- <a href="/success/"> --> 
-							<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" /> 
-							<!-- </a> --> 
+							<a href="/teoco.com/success/"> 
+								<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" /> 
+							</a> 
 						</div>
 					</li>
 					<li class="product">
 						<div class="image-wrapper"> 
-							<!-- <a href="/success/"> --> 
-							<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" /> 
-							<!-- </a> --> 
+							<a href="/teoco.com/success/"> 
+								<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" /> 
+							</a> 
 						</div>
 					</li>
 				<?php endwhile; wp_reset_query();?>

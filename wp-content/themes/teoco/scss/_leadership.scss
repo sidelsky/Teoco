@@ -25,11 +25,12 @@ body.page-template-leadership-page-php {
 		}
 		h3 {
 			@include adjust-font-size-to(15px);
-			@include rhythm(0, 0, 0, -0.20);
+			@include rhythm(0, 0, 0.5, -0.20);
 			color: $grey;
 		}
 		.job-title {
-			@include adjust-font-size-to(13px);
+			@include adjust-font-size-to(13px, 0.8);
+			display: block;
 			}
 			&:hover,
 			&.selected {

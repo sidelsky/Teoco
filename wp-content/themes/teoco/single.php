@@ -8,7 +8,7 @@ get_header();
 		<div class="left-col">
 			<ul class="side-menu">
 				<li>
-					<a href="/latest/news/">All</a>
+					<a href="/teoco.com/latest/news/">All</a>
 				</li>
 				<?php $args = array(
 					'type'            => 'yearly',
@@ -85,7 +85,7 @@ get_header();
 			</article>
 
 			<footer class="pagenavi">
-					| <a href="/latest/news/">Back to news</a> |
+					| <a href="http://79.170.44.125/teoco.com/latest/news/">Back to news</a> |
 			</footer>
 
 		</div>

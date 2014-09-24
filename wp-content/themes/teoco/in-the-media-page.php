@@ -64,22 +64,36 @@
 					//$content = apply_filters( 'the_content', get_the_content() );
 
 					$link = get_field('link');
+					$date = get_field('date');
+					$link_to_document = get_field('link_to_document');
+					$description = get_field('description');
 
-					echo '<a href="'. $link .'" target="_blank">';
-
-					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">'; ?>
+					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">';?>
 
  					<span class="the-time">
-						<?php the_time('jS F Y') ?>
+ 						<?php if($date) {
+ 							echo $date;
+ 							} else {
+ 								the_time('j M Y');
+ 								}?>
 					</span>
 
 					<?php the_title('<h2>','</h2>'); ?>
 
-					<?php if($link) : ?>
-					<span class="visit">Visit site ></span>
+					<?php if($link_to_document) : ?>
+						<span class="visit">
+							<a href="<?php echo $link_to_document ?>"><?php echo $description ?></a>
+						</span>
 					<?php endif; ?>
 
-					<?php	echo '</li>';?>
+					<br>
+
+					<?php if($link) : ?>
+						<span class="visit">
+							<a href="<?php echo $link; ?>">Visit site ></a>
+						</span>
+					<?php endif; ?>
+
 					<?php	echo '</li>';?>
 					<?php endwhile; ?>	
 	 <ul>

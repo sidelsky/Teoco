@@ -25,7 +25,7 @@
 @import "news-posts.scss";
 @import "leadership.scss";
 @import "office-loctions.scss";
- 
+
 @import "Hamburger-icon.scss";
 @import "logo.scss";
 @import "slider.scss";
@@ -36,7 +36,7 @@
 @import "jquery.sidr.light.scss";
 
 
- 
+
 
 //html {
 //  @include adjust-leading-to(1);
@@ -88,10 +88,19 @@ h1, h2 {
 	color: $red;
 }
 
+.flexslider3 {
+	.flex-viewport {
+		h2 {
+			@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 31px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);		
+			@include adjust-leading-to(3);
+		}
+	}
+}
+
 p {
 	//color: $grey;
-	@include adjust-font-size-to(18px, 3.3);
-	font-size: 1.125em;
+	@include adjust-font-size-to(18px, 3.5);
+	//font-size: 1.125em;
 	//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 1.5em, $max-font-size: 1.5em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 	&.large {
@@ -106,23 +115,34 @@ p {
 	}
 }
 
+body.home {
+	.larger-text-wrapper {
+		p {
+			@include adjust-font-size-to(18px, 3.5);
+		}
+	}
+}	
 
 article {
 	ul {
 		//color: $grey;
-		@include adjust-font-size-to(24px, 5);
+		@include adjust-font-size-to(18px, 3.5);
 			@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 			li {
-				list-style-type: none;
-				&:before {
-					/* Unicode bullet symbol */
-					content: '\2022 ';
-					/* Bullet color */
-					padding-right: 0.5em;
-				}
+				list-style-type: disc;
+				margin-left: 24px;
+				//list-style-type: none;
+				// &:before {
+				// 	/* Unicode bullet symbol */
+				// 	content: '\2022 ';
+				// 	/* Bullet color */
+				// 	padding-right: 0.5em;
+				// }
 			}
 		}
 	}
+
+
 
 	.solution {
 		article {

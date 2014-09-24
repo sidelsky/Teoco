@@ -2037,11 +2037,14 @@ abstract class GFAddOn {
 			}
         }
 
-		//Prepending default attributes to the current list of attributes
-		foreach( $choice_attributes as $name => &$attribute ){
+		//Adding default attributes. Either creating a new attribute or pre-pending to an existing one.
+		foreach ( $default_choice_attributes as $default_attr_name => $default_attr_value ){
 
-			if ( isset( $default_choice_attributes[ $name ] ) ){
-				$attribute = $this->prepend_attribute($name, $default_choice_attributes[ $name ], $attribute );
+			if ( isset( $choice_attributes[ $default_attr_name ] ) ){
+				$choice_attributes[ $default_attr_name ] = $this->prepend_attribute( $default_attr_name, $default_attr_value, $choice_attributes[ $default_attr_name ] );
+			}
+			else {
+				$choice_attributes[ $default_attr_name ] = "{$default_attr_name}='" . esc_attr( $default_attr_value ) . "'";
 			}
 		}
 

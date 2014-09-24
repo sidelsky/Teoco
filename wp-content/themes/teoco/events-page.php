@@ -11,7 +11,10 @@
 			<div class="left-col">
 				<ul class="controls side-menu">
 					<?php
-					$terms = get_terms('event-year');
+					$terms = get_terms('event-year', array(
+						//'orderby'    => 'name',
+						'order'             => 'DESC',
+					 ));
 					$count = count($terms);
 					echo '<li data-filter="all" class="filter active">All</li>';
 					if ( $count > 0 ){
@@ -42,8 +45,8 @@
 					$args = array(
 						'post_type' => 'events',
 						'posts_per_page' => -1,
-						'orderby' => 'post_date',
-						'order' => 'ASC'
+						'orderby' => 'name',
+						'order' => 'DESC'
 						);
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post(); 
@@ -70,29 +73,35 @@
 					$content = apply_filters( 'the_content', get_the_content() );
 
 					$event_date = get_field('event_date');
+					$event_date_to = get_field('event_date_to');
 					$event_location = get_field('event_location');
 					$event_link = get_field('event_link');
 					$event_icon = get_field('event_icon');
+					$the_permalink = get_the_permalink();
 					$space = '&nbsp';
 					//$event_date = the_field('event_date');
 
 					echo '<div class="section"></div>';	
 
-					echo '<a href="'.$event_link.'" target="_blank">';
-					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">';
+					echo '<li class="mix'. $tax .'" id="'.$post_id.'" style="display: block;">';
+					echo '<a href="'. $the_permalink .'" target="_self">';
 					echo'<div class="container">'; ?>
 
 					<?php if( $event_date ) : ?>
-					<span class="the-time">
-					<?php the_field('date_picker'); ?>
-					<?php echo $event_date . $space . $space . $event_location; ?>
-					</span>
+					<div class="the-time">
+						<?php echo $event_date . $space. '-'. $space . $event_date_to;?>
+					</div>
+					<div class="the-location">
+						<?php echo $event_location; ?>
+					</div>
 					<?php endif; ?>
-
+					
 					<h2><?php the_title(); ?></h2>
+					<?php/*
 					<?php if($event_link) : ?>
 					<span class="visit">Visit site ></span>
 					<?php endif; ?>
+					*/?>
 
 					<?php echo '</div>'; ?>
 
@@ -101,9 +110,10 @@
 							<img src="<?php echo $event_icon ?>" alt="<?php echo $event_icon['alt']; ?>" class="thmb">
 						</div>
 						<?php endif; ?>
-
-					<?php	echo '</li>';?>
+					
 					<?php	echo '</a>';?>
+					<?php	echo '</li>';?>
+					
 					<?php endwhile; ?>	
 	 <ul>
 

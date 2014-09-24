@@ -5,9 +5,11 @@ body.page-template-in-the-media-page-php {
 	.post-list {
 		li {
 			h2 {
+				@extend %open_sansregular;
 				@include adjust-font-size-to(24px, 1.3);
-				@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 1em, $max-font-size: 1.5em, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
-				width: 75%;
+				@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 16px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+				width: 85%;
+				padding-top: 10px;
 				color: $grey;
 				@media screen and (max-width: 37.5em) {
 					width: 100%;
@@ -27,18 +29,18 @@ body.page-template-in-the-media-page-php {
 			text-decoration: none;
 			&:hover li {
 				background-color: #476323;
+				text-decoration: none;
 				h2, .visit {
 					color: #476323;
+					text-decoration: none;
 				}
 			}
-			//color: $grey;
-			//text-decoration: none;
 		}
 	}
 }
 
 //In the media 
-body.page-template-in-the-media-page-php {
+/* body.page-template-in-the-media-page-php {
 	.post-list {
 		a {
 			color: $grey;
@@ -46,6 +48,31 @@ body.page-template-in-the-media-page-php {
 				background: $red url(../img/blog-page-bg.png) no-repeat center right;
 			}
 			&:hover li {
+				background-color: #96090E;
+				h2, .visit {
+					color: #96090E;
+				}
+			}
+		}
+	}
+} */
+
+
+
+body.page-template-in-the-media-page-php {
+	.post-list {
+		li {
+			background: $red url(../img/blog-page-bg.png) no-repeat center right;
+			a {
+				color: $grey;
+				text-transform: uppercase;
+				font-size: 15px;
+				&:hover {
+				text-decoration: none;
+				color: #96090E;
+				}
+			}
+			&:hover {
 				background-color: #96090E;
 				h2, .visit {
 					color: #96090E;
@@ -67,17 +94,36 @@ body.page-template-events-page-php {
 				@include column(3);
 				img.thmb {
 					float: right;
-					//padding: 5px;
 					@include border-radius(20px);
 					border: solid 1px lighten($grey, 40%);
 					width: 145px;
+					//filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+			    //filter: gray; /* IE6-9 */
+			    //-webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+			    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+			    filter: gray; /* IE6-9 */
+			    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+			    /* &.logo-img { */
+					@media (max-width: $s) {
+						width: 70px;
+						@include border-radius(10px);
+					}
 				}
 			}
+			&:hover h2 {
+				color: #96090E;
+			}
+			&:hover img.thmb {
+  		filter: none;
+  		-webkit-filter: none;
+  		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  		-webkit-filter: grayscale(0%);
+  		cursor: pointer;
+	   }
 		}
 		a {
 			color: $grey;
-			font-size: 15px;
-			text-transform: uppercase;
+			//font-size: 15px;
 				&:hover li {
 				background-color: $white;
 				h2, .visit {
@@ -89,16 +135,37 @@ body.page-template-events-page-php {
 }
 
 
+.visit {
+	a {
+		color: $red;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			color: darken($red, 20%);
+		}
+	}
+}
+
 .the-time {
 	color: $red;
 	text-transform: uppercase;
+	//@include adjust-font-size-to(12px, 1);
 	@include adjust-font-size-to(15px, 1);
+}
+
+.the-location {
+	color: $red;
+	text-transform: capitalize;
+	@include adjust-font-size-to(12px, 1);
 }
 
 body.single {
 	h2 {
 		color: $grey;
-		@include rhythm(0, 0.8, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		@extend %open_sansregular;
+		@include rhythm(0, 0.8, 0.8, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+		@include adjust-font-size-to(38px, 2.2);
+		@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 24px, $max-font-size: 38px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	}
 	p:first-child {
 		@extend %open_sansbold;

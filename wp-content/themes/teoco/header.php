@@ -20,7 +20,12 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php // if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
-	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+	<?php/*
+		<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+	*/?>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>
 
 	<script type="text/javascript" src="http://www.youtube.com/player_api"></script>	
@@ -41,9 +46,6 @@
 <div class="page-wrapper__wide detached">
 	<div class="page-wrapper__wide__inner">
 		<div class="innerbit">
-			<i id="language">
-				<img src="<?php bloginfo('template_directory'); ?>/img/language-globe.png" alt="Language select" width="16" height="16">
-			</i>
 			<?php get_template_part( '/search-form' ); ?>
 		</div>
 	</div>

@@ -5,35 +5,46 @@
 }
 //Responsive video and cover images
 .js-video {
-  height: 0;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
+  height: 80%;
+  width: 100%;
+  padding-bottom: 56.5%;
   margin-bottom: 10px;
-  position: relative;
   overflow: hidden;
   position: relative;
   .play {
       width: 90px;
       height: 90px;
       position: absolute;
-      z-index: 900;
+      z-index: 10;
       left: 50%;
       top: 50%; 
       margin-left: -45px;
       margin-top: -45px;
       cursor: pointer;
+      background: url(../img/icons/large-play-icon.png) no-repeat center center;
+      background-size: cover;
       @media screen and (max-width:$s) {
         width: 70px;
         height: 70px;
         margin-left: -35px;
         margin-top: -35px;
+        @include transition(all 0.2s ease-in-out);
+      }
+      &:hover {
+        background: url(../img/icons/large-play-icon-hover.png) no-repeat center center;
+        background-size: cover;
+        @include transition(all 0.2s ease-in-out);
       }
     }
   .title-wrapper {
+    //@extend %bdr;
     position: absolute;
     right: 70px;
     top: 100px;
     z-index: 3;
+    &.left {
+      left: 70px;
+    }
     h2, p {
       margin: 0;
       padding: 0;

@@ -1,13 +1,18 @@
 .simple-menu { //Hamburger icon
 	//height: 100%;
-	position: absolute;
-	right: 2em;
-	top: 2.6em;
+	//position: absolute;
+	// right: 2em;
+	// top: 2.6em;
 	//@extend %bdr;
 	overflow: hidden;
+	margin-top: -60px;
+	margin-right: 32px;
 	text-align: right;
 	text-decoration: none;
 	display: none;
+	@media (max-width: $s) {
+		margin-top: -58px;
+	}
 	&:before {
 		/* this is the important part */
 		content: '';

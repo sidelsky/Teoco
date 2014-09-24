@@ -3,6 +3,7 @@
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider3">
+				<h1>Latest news</h1>
 					<ul class="slides">
 						<?php
 						$args = array(
@@ -11,7 +12,7 @@
 							'offset'           => 0,
 							'category'         => '',
 							'orderby'          => 'post_date',
-							'order'            => 'ASC',
+							'order'            => 'DESC',
 							'include'          => '',
 							'exclude'          => '',
 							'meta_key'         => '',
@@ -23,23 +24,25 @@
 							'suppress_filters' => false );
 						query_posts($args); if ( have_posts() ) while ( have_posts() ) : the_post();
 						?>
-						<li>							
-							<h1>
-								<?php the_title(); ?>
-							</h1>
-							<?php //Controls the excerpt length via the 'excerpt_length' cutom field within posts. 
-								$excerpt_length = get_field('excerpt_length');
-								if (get_the_excerpt()) {
-									echo the_excerpt();
-								} elseif (get_field('excerpt_length') == 22) {
-								excerptMyLength($excerpt_length);
-								} else {
-								excerptMyLength(1);
-								}
-							?>
-							<a href="/latest/news/" class="link-arrows white">
-								<i class="fa fa-angle-right green"></i>
-							</a>
+						<li>
+						<div class="inner">
+								<h2>
+									<?php the_title(); ?>
+								</h2>
+								<?php //Controls the excerpt length via the 'excerpt_length' cutom field within posts. 
+									$excerpt_length = get_field('excerpt_length');
+									if (get_the_excerpt()) {
+										echo the_excerpt();
+									} elseif (get_field('excerpt_length') == 22) {
+									excerptMyLength($excerpt_length);
+									} else {
+									excerptMyLength(1);
+									}
+								?>
+								<a href="/teoco.com/latest/news/" class="link-arrows white">
+									<i class="fa fa-angle-right green"></i>
+								</a>
+							</div>							
 						</li>
 					<?php endwhile; wp_reset_query();?>
 				</ul>

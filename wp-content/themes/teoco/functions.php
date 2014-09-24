@@ -2,8 +2,8 @@
 /* Custom code goes below this line. */
 
 
-//update_option('siteurl','http://79.170.44.100/steventaylorassociates.com/');
-//update_option('home','http://79.170.44.100/steventaylorassociates.com/');
+// update_option('siteurl','http://teoco.com/');
+// update_option('home','http://teoco.com/');
 
 //Plugins included into theme folder
 include_once('plugins/simple-section-navigation/simple_section_nav.php');
@@ -230,7 +230,7 @@ function improved_trim_excerpt($text) {
 		$words = explode(' ', $text, $excerpt_length + 1);
 		if (count($words)> $excerpt_length) {
 			array_pop($words);
-			array_push($words,'... <p class="readMore"><a href="'. get_permalink($post->ID) . '">' . 'Read more' . '</a></p>');	
+			//array_push($words,'... <p class="readMore"><a href="'. get_permalink($post->ID) . '">' . 'Read more' . '</a></p>');	
 			$text = implode(' ', $words);
 		}
 	}

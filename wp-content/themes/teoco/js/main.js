@@ -12,11 +12,11 @@ $('.simple-menu').sidr({
 $(window).touchwipe({
   wipeLeft: function () {
     // Close
-    $.sidr('open', 'sidr');
+    //$.sidr('open', 'sidr');
   },
   wipeRight: function () {
     // Open
-    $.sidr('close', 'sidr');
+    //$.sidr('close', 'sidr');
   },
   preventDefaultEvents: false
 });  
@@ -183,7 +183,7 @@ $('.flexslider').flexslider({
   smoothHeight: false,
   slideshowSpeed: 6000,
   animationSpeed: 1000,
-  slideshow: true,
+  slideshow: false,
   sync: ".flexslider2"
 });
 
@@ -224,6 +224,17 @@ $('.flexslider4').flexslider({
   controlNav: false,
   directionNav: false
 });
+
+
+
+// var windowWidth = $(document).width(),
+//     windowHeight = $(document).height(),
+      
+    // flexsliderHeight = $('flexsliderHeight').height(),
+    // $(".flexslider2").css("height", flexsliderHeight);
+
+
+
 
 //$(".flexslider2").height($(".page-wrapper__wide").height());
 
@@ -583,7 +594,7 @@ getRelVal();
 // Secondary navigation end
 
 //Scroll to section
-$('.section').first();
+/*$('.section').first();
 
 $('a.display').on('click', function(e) {
   e.preventDefault();
@@ -615,6 +626,7 @@ $('a.display').on('click', function(e) {
    });
   } 
 });
+*/
 
 
 // //if at the bottom of the page:
@@ -694,11 +706,36 @@ $('.controls').click(function(e){
 ////////////////////////////////////////////
 
 $('.toggle').click(function(e){
-  $(this).parent().toggleClass('selected');
-  //var index = $(this).index();
-  $(this).parent().find('.toggle-inner').toggleClass('selected');
+
+  if ( $('.products').hasClass('selected') && $('.toggle-inner').hasClass('selected')) {
+
+    console.log('yes');
+    
+    $('.products').removeClass('selected');
+    $('.toggle-inner').removeClass('selected');
+
+    // $(this).parent().addClass('selected');
+    // $(this).parent().find('.toggle-inner').addClass('selected');
+
+} else {
+    $('.products').removeClass('selected');
+    $('.toggle-inner').removeClass('selected');
+    
+    $(this).parent().addClass('selected');
+    $(this).parent().find('.toggle-inner').addClass('selected');
+     console.log('no');
+}
+
+  // $('.products').not(this).removeClass('selected');
+  // $(this).parent().toggleClass('selected');
+
+
+  // $('.toggle-inner').not(this).removeClass('selected');
+  // $(this).parent().find('.toggle-inner').toggleClass('selected');
+
   e.preventDefault();
 });
+
 
 //Close
 $('.fa-chevron-circle-up').click(function(){
@@ -942,4 +979,21 @@ demo1: {
 });
 
 
+$(document).smartscroll(
+    {
+      section: '.section', 
+      anchor: '.scroll', 
+      fullscreen: false, 
+      activelink: '.active', 
+      nav: false, 
+      controls: true, 
+      totop: false, 
+      speed: 1000, 
+      totopspeed: 1000
+    }
+);
 
+
+$(window).resize(function(){
+  location.reload();
+});

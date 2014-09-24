@@ -11,6 +11,13 @@ body.page-template-default{
 			color: darken($light-grey, 30%);
 			@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		}
+		.img-container {
+			img {
+				@include border-radius(20px);
+					//border: solid 1px lighten($grey, 40%);
+					width: 145px;
+			}
+		}
 	}
 	.article-section {
 		@include border-radius(25px);
@@ -19,7 +26,7 @@ body.page-template-default{
 		@include column(9);
 		//@include push(3);
 		p {
-			@include adjust-font-size-to(16px, 1.2);
+			@include adjust-font-size-to(16px, 1.1);
 			//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 			//@include rhythm(0, 0, 0, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 			a {
@@ -34,5 +41,18 @@ body.page-template-default{
 			@include column(12);
 			//@include push(3);
 		}
+		ul {
+			
+			@include rhythm(0, 0, 0, 0.8); //Margin top, Padding top, Padding bottom, Margin bottom
+			li {
+			list-style: disc;
+			@include adjust-font-size-to(16px, 1.1);
+			}
+		}
 	}
+}
+
+
+body.single-events p:first-child {
+	@extend %open_sansregular;
 }

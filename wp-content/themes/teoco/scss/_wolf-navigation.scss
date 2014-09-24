@@ -43,6 +43,7 @@ $secondary-nav-bg: #f7f7f7;
 		.menu {
 			position: relative;
 			@include clearfix;
+			width: 1024px;
 			li {
 				//display: block;
 				//color: red;
@@ -155,14 +156,40 @@ $secondary-nav-bg: #f7f7f7;
 
 #primary, #secondary {
 	.current-menu-item,
-.current-page-ancestor,
+//.current-page-ancestor,
 .current_page_parent {
 	>a {
 			color: $red !important;
+			&:hover {
+				color: darken($red, 10%)!important;
+			}
 		}
 	}	
 }
 
+
+//About -> Company overview
+#menu-item-2173.current-menu-item {
+	a {
+		color:#999 !important;
+		&:hover {
+			color: $red !important;
+		}
+	}
+}
+
+
+#menu-item-2173.current-page-ancestor,
+#menu-item-33.current-page-ancestor {
+	a {
+		color: $red !important;
+		&:hover {
+			color: darken($red, 10%)!important;
+		}
+	}
+}
+
+ 
 
 @media screen and (max-width:60em) {
 	#menu-item-33,

@@ -223,7 +223,8 @@ footer.single {
 			color: $grey;
 			text-decoration: none;
 			&:hover {
-				text-decoration: underline;
+				text-decoration: none;
+				color: $red;
 			}
 		}
 	}
@@ -239,7 +240,8 @@ body.single {
 			color: $grey;
 			text-decoration: none;
 			&:hover {
-				text-decoration: underline;
+				text-decoration: none;
+				color: $red;
 			}
 		}
 	}

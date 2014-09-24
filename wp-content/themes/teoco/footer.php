@@ -1,3 +1,9 @@
+
+<div class="push"></div>
+<!--End wrapper -->
+</div>
+
+
 <footer class="page-wrapper__wide  page-footer section">
 	<section class="page-wrapper__wide__inner padding-tb-small">
 		 
@@ -24,22 +30,22 @@
 		<div class="social">
 			<ul>
 				<li>
-					<a href="#">
+					<a href="https://twitter.com/TEOCO_Corp" target="_blank">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="https://www.facebook.com/teococorporation" target="_blank">
 						<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="https://www.linkedin.com/company/teoco" target="_blank">
 						<i class="fa fa-linkedin"></i>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="https://www.youtube.com/aircomint" target="_blank">
 						<i class="fa fa-youtube-play"></i>
 					</a>
 				</li>
@@ -51,8 +57,7 @@
 	</section>
 </footer>
 
-<!--End wrapper -->
-</div>
+
 
 <!-- Mobile menu -->
 <?php wp_nav_menu( array(
@@ -73,7 +78,7 @@
 		//'walker'          =>  
 		)); ?>	
 
-<ul class="jump">
+<!-- <ul class="jump">
 	<li class='prev'>
 		<a href="#" class="display"><span>prev</span><i class="fa fa-angle-up"></i></a>
 	</li>
@@ -81,7 +86,12 @@
 	<li class="next">
 		<a href="#" class="display"><span>next</span><i class="fa fa-angle-down"></i></a>
 	</li>
-</ul>	
+</ul>	 -->
+
+<nav class="smartscroll-controls">
+  <a href="#" class="prev scroll"></a>
+  <a href="#" class="next scroll"></a>
+</nav>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.imagesloaded.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/cbpBGSlideshow.js"></script>
@@ -94,12 +104,9 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
 
 
+<?php /*
 <script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
 
-
-<script src="<?php bloginfo('template_directory'); ?>/js/jquery.lazy.js"></script>
-
-<?php /*
 <script src="<?php bloginfo('template_directory'); ?>/js/isotope.js"></script> 
 <script src="<?php bloginfo('template_directory'); ?>/js/filterable.js"></script>
  */?>
@@ -107,6 +114,8 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.mixitup.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.nicefileinput.js"></script>
+
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.smartscroll.min.js"></script>
 
 <!--
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -128,6 +137,49 @@ wp_footer();
 	ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 -->
+
+<style>
+	/* NAVIGATION CONTROLS */
+nav.smartscroll-controls {
+	position: fixed;
+	top: 50%;
+	left: 0;
+}
+
+
+nav.smartscroll-controls > a {
+	display: block;
+	margin: 15px;
+}
+
+nav.smartscroll-controls > a.prev {
+	border-color: #333333;
+    border-style: solid none none solid;
+    border-width: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+nav.smartscroll-controls > a.next {
+    border-color: #333333;
+    border-style: none solid solid none;
+    border-width: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+</style>
+
+
 
 </body>
 </html>

@@ -38,11 +38,9 @@
 <!-- Vision & values -->
 <?php get_template_part( '/copy-with-blockquote' ); ?>
 
-<!--Video - vimeo api-->	
-<?php/* get_template_part('/vimeo-video'); */?>
 
-<!-- Youtube video -->
-<?php get_template_part('/youtube-video'); ?>
+<!-- Vimeo video -->
+<?php get_template_part('/vimeo-video'); ?>
 
 <!-- Company overview -->
 <section class="page-wrapper__wide rel-pos section current">

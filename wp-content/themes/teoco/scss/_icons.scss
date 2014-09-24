@@ -36,6 +36,7 @@ $icon-size: 48px;
 				display: table-cell;
 				text-align: center;
 				background: $grey;
+				background: rgba($grey, 0.6);
 				color: $white;
 				vertical-align: middle;
 				text-decoration: none;
@@ -49,7 +50,8 @@ $icon-size: 48px;
 				&:hover {
 					border: solid 2px $light-grey;
 					@include transition(all 0.2s ease-in-out);
-					background: $dark-grey;
+					background: $grey;
+					background: rgba($grey, 0.9);
 					color: $white;
 				//border: solid 2px $grey;
 			}

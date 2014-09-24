@@ -1265,9 +1265,9 @@ var gform = {
                     (err.file ? ", File: " + err.file.name : "") +
                     "</li>";
 
-                $("#" + up.settings.gf_vars.message_id).prepend(m);
+				addMessage(up.settings.gf_vars.message_id, m);
             }
-            up.removeFile(err.file);
+			$('#' + err.file.id ).html('');
 
             up.refresh(); // Reposition Flash
         });

@@ -46,37 +46,47 @@
 			?>
 
 			<ul>
-
+			
+			<?php if($icon) : ?>
 				<li class="product">
 					<div class="image-wrapper">
 						<img src="<?php echo $icon; ?>" alt="<?php echo $icon['alt'] ?>" />
 					</div>
 				</li>
-
+			<?php endif; ?>	
+			
+			<?php if($icon_2) : ?>	
 				<li class="product">
 					<div class="image-wrapper">
 						<img src="<?php echo $icon_2; ?>" alt="<?php echo $icon_2['alt'] ?>" />
 					</div>
 				</li>
+			<?php endif; ?>	
 
+			<?php if($icon_3) : ?>
 				<li class="product">
 					<div class="image-wrapper">
 						<img src="<?php echo $icon_3; ?>" alt="<?php echo $icon_3['alt'] ?>" />
 					</div>
 				</li>
+			<?php endif; ?>	
 
+			<?php if($icon_4) : ?>
 				<li class="product">
 					<div class="image-wrapper">
 						<img src="<?php echo $icon_4; ?>" alt="<?php echo $icon_4['alt'] ?>" />
 					</div>
 				</li>
+			<?php endif; ?>	
 
+			<?php if($icon_5) : ?>
 				<li class="product">
 					<div class="image-wrapper">
 						<img src="<?php echo $icon_5; ?>" alt="<?php echo $icon_5['alt'] ?>" />
 					</div>
 				</li>
-
+			<?php endif; ?>	
+			
 			</ul>
 
 

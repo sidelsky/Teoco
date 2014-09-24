@@ -62,6 +62,7 @@
 <?php endif; ?>	
 	<div class="flexslider2">
 		<ul class="slides">
+		<li>
 			<?php $image = get_field('image_h'); ?>
 					<img src="<?php echo $image; ?>" alt="<?php echo $image['alt'] ?>" class="bg-full-image" />
 				</li>

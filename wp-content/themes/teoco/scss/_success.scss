@@ -22,11 +22,11 @@
 		@media screen and (max-width: 37.5em) {
 			//@include column(12);
 		}
-		ul {
+	>	ul {
 				//@extend %bdr;
 				@include clearfix;
 				@include rhythm(0, 0, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
-				li {
+			>	li {
 						//@include column(12);
 						padding: 5px;
 						width: 20%;
@@ -62,21 +62,30 @@
 					    		-webkit-filter: grayscale(0%);
 					    		cursor: pointer;
 					    	}
-					    /* } */
+					    	/* } */
+					    }
 					  }
 					}
 				}
 			}
-		}
 
-		.logo-copy-wrapper {
-			display: block;
-			@include clearfix;
-			.content {
+.logo-copy-wrapper {
+	display: block;
+	@include clearfix;
+	.content {
 		@include rhythm(0, 1, 1, 1); //Margin top, Padding top, Padding bottom, Margin bottom
 		padding: 1em;
 		p {
 			@include adjust-font-size-to(18px, 1.2);
+		}
+		ul {
+			@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+			li {
+				list-style-type: disc;
+				margin-left: 24px;
+				float: none;
+				@include adjust-font-size-to(18px, 1.2);
+			}
 		}
 	}
 }
@@ -231,14 +240,24 @@ $p-colour: $dark-grey;
 								@include adjust-font-size-to(14px, 1);
 							}
 						}
+						ul {
+							//@extend %bdr;
+							display: block;
+							width: 100%;
+							margin-left: 24px;
+							@include rhythm(0, 0, 0, 0.8); //Margin top, Padding top, Padding bottom, Margin bottom
+							li {
+							list-style: disc;
+							@include adjust-font-size-to(16px, 1);
+							}
+						}
 					}
 				}
 			}
 		}
 
 
-
-
+ 
 //Success home
 .success-section-home-page {
 	p {

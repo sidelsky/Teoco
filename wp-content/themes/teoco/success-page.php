@@ -11,9 +11,9 @@
 			<div class="page-wrapper__wide__inner padding-tb">
 
 				<h1><?php the_field('success_title'); ?></h1>
-				<p class="large"><?php the_field('success_content'); ?></p>
+				<?php the_field('success_content'); ?>
 
-				<div class="right-col success">
+				<div class="right-col success padding-tb-small">
 
 					<!-- Images -->
 					<?php if( have_rows('success',25) ): ?>
@@ -149,9 +149,9 @@
 		<div class="page-wrapper__wide__inner padding-tb success">
 
 			<h1><?php the_field('success_stories_title'); ?></h1>
-			<p class="large"><?php the_field('success_stories_content'); ?></p>
+			<?php the_field('success_stories_content'); ?>
 
-			<div class="right-col success-stories" id="content">
+			<div class="right-col success-stories padding-tb-small" id="content">
 
 				<!-- Images -->
 				<?php if( have_rows('success_stories_icons',25) ): ?>
@@ -164,22 +164,26 @@
 					$text = get_sub_field('text');
 					$solutions_or_products_select = get_sub_field('solutions_or_products');
 					?>
-					<ul class="item">
-						<li class="products <?php echo $solutions_or_products_select; ?>">
+					<div class="item">
+						<div class="products <?php echo $solutions_or_products_select; ?>">
+
 							<div class="image-wrapper toggle <?php echo $solutions_or_products_select; ?>">
 								<img src="<?php echo $icons; ?>" alt="<?php echo $icons['alt'] ?>" />
 							</div>
+
 							<div class="title-wrapper">
 								<h2><?php echo $title; ?></h2>
 								<span class='product-name'><?php echo $solution_product_name; ?></span>
 							</div>
+
 							<div class="inner toggle-inner">
 								<?php echo $text; ?>
 								<div class="icon-link">
 									<i class='fa fa-chevron-circle-up'></i>
 								</div>
 							</div>
-						</li>
+
+						</div>
 
 						<div class="logo-copy-wrapper">
 							<div class="content">
@@ -191,7 +195,7 @@
 							</div>
 						</div>
 
-					</ul>
+					</div>
 
 
 				<?php endwhile; wp_reset_query();?>
@@ -207,9 +211,9 @@
 		<div class="page-wrapper__wide__inner padding-tb success">
 
 			<h1><?php the_field('award_title'); ?></h1>
-			<p class="large"><?php the_field('award_content'); ?></p>
+			<?php the_field('award_content'); ?>
 
-			<div class="right-col success">
+			<div class="right-col success padding-tb-small">
 
 				<!-- Images -->
 				<?php if( have_rows('awards') ): ?>

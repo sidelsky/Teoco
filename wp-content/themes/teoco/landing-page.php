@@ -5,8 +5,15 @@ Template Name: Landing page
 get_header();
 ?>
 
+
+<section class="page-wrapper__wide section grey">
+  <div class="page-wrapper__wide__inner padding-tb-small">
+    <?php get_template_part( '/generic-page-loop' ); ?>
+  </div>
+</section>
+
 <section class="page-wrapper__wide  section grey">
-  <div class="page-wrapper__wide__inner padding-tb ">
+  <div class="page-wrapper__wide__inner  ">
     <?php
     //$image_icon = get_field('image_icon');
     $args = array(

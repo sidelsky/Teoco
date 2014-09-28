@@ -6,7 +6,7 @@
 	?>
 
 	<!-- Primary slider -->
-	<section class="page-wrapper__wide rel-pos section current">
+	<section class="page-wrapper__wide rel-pos section">
 		<div class="page-wrapper__wide__inner padding-tb-small">
 			<div class="article-section">
 				<div class="slider top">
@@ -56,11 +56,7 @@
 <!-- What we do -->
 <section class="page-wrapper__wide what-we-do-bg section">
 	<div class="page-wrapper__wide__inner padding-tb">
-	
-	<span class="larger-text-wrapper">
 		<?php get_template_part( '/generic-page-loop' ); ?>
-	</span>
- 
 	<ul class="blob-buttons padding-tb-small">
 		<li> <a href="<?php echo get_permalink(22); ?>" class="purple"> <span> <?php echo get_the_title(22); //Calls Solutions heading ?> <i class="fa fa-angle-right"></i> </span> </a> </li>
 		<li> <a href="<?php echo get_permalink(23); ?>" class="blue"> <span> <?php echo get_the_title(23); //Calls Products heading ?> <i class="fa fa-angle-right"></i> </span> </a> </li>

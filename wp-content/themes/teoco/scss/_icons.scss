@@ -122,6 +122,23 @@ $icon-size: 48px;
 }
 
 
+//Close
+body.page-template-latest-page-php {
+	.fa-times-circle {
+		margin-bottom: 2em;
+		color: $red;
+		position: absolute;
+		top: 0;
+		right: 0;
+	&:hover {
+		cursor: pointer;
+		color: darken($red, 20%);
+		}
+	}
+}
+
+
+
 //Single page footer share icons
 $footer-icon-size: 34px;
 .social {

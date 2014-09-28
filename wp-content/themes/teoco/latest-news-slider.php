@@ -3,7 +3,7 @@
 		<div class="article-section">
 			<div class="slider top">
 				<div class="flexslider3">
-				<h1>Latest news</h1>
+				<h1>Latest News</h1>
 					<ul class="slides">
 						<?php
 						$args = array(

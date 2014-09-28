@@ -24,11 +24,8 @@
 		<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
 	*/?>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	
-	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>
-
-	<script type="text/javascript" src="http://www.youtube.com/player_api"></script>	
+	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
 
 	<?php wp_head(); ?>
 
@@ -43,7 +40,7 @@
 <!-- Page wrapper -->
 <div class="page-wrapper">
 
-<div class="page-wrapper__wide detached">
+<section class="page-wrapper__wide detached section current">
 	<div class="page-wrapper__wide__inner">
 		<div class="innerbit">
 			<?php get_template_part( '/search-form' ); ?>
@@ -55,4 +52,4 @@
 	<a class="simple-menu" href="#sidr">
 		<i class="fa fa-bars"></i>
 	</a>
-</div>
+</section>

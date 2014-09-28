@@ -14,13 +14,10 @@
 
 
 .right-col.success {
-		//@include column(12);
-		//@include push(1);
 		@media screen and (max-width: 60em) {
 			@include column(12);
 		}
 		@media screen and (max-width: 37.5em) {
-			//@include column(12);
 		}
 	>	ul {
 				//@extend %bdr;
@@ -107,8 +104,8 @@ $p-colour: $dark-grey;
 	@include column(12);
 	h2 {
 		@include rhythm(0, 1, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
-		@extend %open_sansbold;
-		@include adjust-font-size-to(16px, 1);
+		@extend %open_sansregular;
+		@include adjust-font-size-to(21px, 1.2);
 		color: $p-colour;
 		@media screen and (max-width: 37.5em) {
 			@include adjust-font-size-to(12px, 0.7);
@@ -122,9 +119,9 @@ $p-colour: $dark-grey;
 			@include adjust-font-size-to(11px, 0.5);
 		}
 	}
-	ul {
+	.item {
 			//@extend %bdr;
-			@include column(6);
+			@include column(12);
 			@include clearfix;
 			@include rhythm(0, 0, 0, 0.1); //Margin top, Padding top, Padding bottom, Margin bottom
 			@media screen and (max-width: 60em) {
@@ -267,8 +264,20 @@ $p-colour: $dark-grey;
 		@include column(2);
 		//Margin top, Padding top, Padding bottom, Margin bottom
 		@include rhythm(0, 3.8, 0, 0);
+		@media(max-width:$m) {
+			@include column(12);
+			display: none;
+		}
 	}
 	.right-col {
 		@include column(10);
+		@media(max-width:$m) {
+			@include column(12);
+		}
 	}
 }
+
+
+/* .current {
+	border: solid 3px red;
+} */

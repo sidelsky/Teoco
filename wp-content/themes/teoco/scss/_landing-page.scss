@@ -2,6 +2,9 @@ $lp-container-height: 188px;
 
 body.page-template-landing-page-php, {
 	.landing-page {
+		a {
+			text-decoration: none;
+		}
 		li {
 			position: relative;
 			@include border-radius(25px);
@@ -12,7 +15,6 @@ body.page-template-landing-page-php, {
 			@include box-shadow(#999 0px 2px 2px);
 			@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
 			.lp-content {
-				//@extend %bdr;
 				position: relative;
 				display: table;
 				height: $lp-container-height; //See line 1
@@ -74,7 +76,7 @@ body.page-template-landing-page-php, {
 			@media screen and (max-width: $s) {
 				@include column(12);
 				@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
-				background-position: 85% 0;
+				background-position: 82% 0;
 				.lp-content {
 					width: 70%;
 					span {

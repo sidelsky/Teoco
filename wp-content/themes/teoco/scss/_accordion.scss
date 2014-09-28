@@ -7,10 +7,7 @@
 			padding: 1em 0;
 			@include clearfix;
 			.icon-link {
-				//float: left;
 				display: table-cell;
-				//margin-right: 1.5em;
-				//@include adjust-font-size-to(16px, 2.3);
 			}
 			h3 {
 				display: table-cell;
@@ -22,15 +19,13 @@
 				//display: block;
 				text-align: left;
 				color: $grey;
-
-				//@extend %bdr;
 				&.position {
-					//float: left;
 					margin-right: 2em;
 					width: 70%;
 				}
 				&.location {
-					//float: right;
+					font-size: 15px;
+					@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 12px, $max-font-size: 15px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 					width: 30%;
 					text-align: right;
 					text-transform: uppercase;
@@ -45,27 +40,19 @@
 			}
 		}
 		&.active {
-				.toggle {
-					.icon-link i, h3 {
+			.toggle {
+				.icon-link i, h3 {
 					color: $red !important;
-
 				}
 			}
 		}
 		.inner {
 			//@extend %bdr;
 			@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
-			> li {
-				padding:0 1.8em;
-				p {
-					@include adjust-font-size-to(16px, 1);
-					strong {
-						@extend %open_sansbold;
-					}
-				}
-				ul {
+			padding:0 1.8em;
+			ul {
 					@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
-				>	li {
+					>	li {
 						list-style-type: disc;
 						margin-left: 24px;
 						@include adjust-font-size-to(16px, 1);
@@ -74,13 +61,12 @@
 			}
 		}
 	}
-}
 
 
-.inner-margin {
-	margin-left: -2em;
-	margin-top: -64px;
-}
+	.inner-margin {
+		margin-left: -2em;
+		margin-top: -64px;
+	}
 // body.page-template-careers-page-php {
 // .icon-link {
 // 	margin-left: -2em;

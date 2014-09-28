@@ -104,7 +104,7 @@
 					/* Insert category name into portfolio-item class */ 
 					echo '<li class="portfolio-item mix accord '. $tax .'" id="'.$post_id.'" style="display: block;">';
 					echo '<div class="accord-toggle"><div class="icon-link"><i class="fa fa-chevron-circle-down"></i></div><h3 class="position">'.get_the_title().'</h3><h3 class="location">'.$tax.'</h3></div>';
-					echo '<ul class="inner"><li>'.$content.'
+					echo '<div class="inner">'.$content.'
 					<div class="transcript">
 						<div class="icon-link">
 						<i class="fa fa-chevron-circle-up up"></i>
@@ -120,8 +120,7 @@
 						</div>
 					</div>
 				</div>
-			</li>
-		</ul>';
+		</div>';
 		echo '</li>';
 		endwhile; 
 		?>

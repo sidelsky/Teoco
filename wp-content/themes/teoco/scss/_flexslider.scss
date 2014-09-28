@@ -46,6 +46,11 @@
   padding: 0;
   //@extend %bdr;
 }
+
+body.page-id-221 .zflexslider  {
+  min-height: 600px;
+  //background: #202020;
+}
  
 .flexslider .slides > li,
 .flexslider2 .slides > li,
@@ -221,6 +226,7 @@ html[xmlns] .slides {
   position: absolute;
   bottom: -40px;
   text-align: left;
+  z-index: 10;
 }
 .flex-control-nav li {
   margin: 0 6px;

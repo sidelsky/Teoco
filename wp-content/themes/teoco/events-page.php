@@ -14,7 +14,7 @@
 					$terms = get_terms('event-year', array(
 						//'orderby'    => 'name',
 						'order'             => 'DESC',
-					 ));
+						));
 					$count = count($terms);
 					echo '<li data-filter="all" class="filter active">All</li>';
 					if ( $count > 0 ){
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="right-col">
-			 <ul id="Container" class="post-list container">
+				<ul id="Container" class="post-list container news-media-events">
 					<?php
 					/* 
 					Query the post 
@@ -78,22 +78,21 @@
 					$event_link = get_field('event_link');
 					$event_icon = get_field('event_icon');
 					$the_permalink = get_the_permalink();
-					$space = '&nbsp';
 					//$event_date = the_field('event_date');
 
 					echo '<div class="section"></div>';	
 
-					echo '<li class="mix'. $tax .'" id="'.$post_id.'" style="display: block;">';
+					echo '<li class="mix events '. $tax .'" id="'.$post_id.'" style="display: block;">';
 					echo '<a href="'. $the_permalink .'" target="_self">';
 					echo'<div class="container">'; ?>
 
 					<?php if( $event_date ) : ?>
-					<div class="the-time">
-						<?php echo $event_date . $space. '-'. $space . $event_date_to;?>
-					</div>
-					<div class="the-location">
-						<?php echo $event_location; ?>
-					</div>
+						<div class="the-time">
+							<?php echo $event_date . " " . '-'. " " . $event_date_to;?>
+						</div>
+						<div class="the-location">
+							<?php echo $event_location; ?>
+						</div>
 					<?php endif; ?>
 					
 					<h2><?php the_title(); ?></h2>
@@ -103,30 +102,30 @@
 					<?php endif; ?>
 					*/?>
 
+					<span class="visit">
+						Visit site >
+					</span>
+
 					<?php echo '</div>'; ?>
 
 					<?php if($event_icon) : ?>
 						<div class="img-container">
 							<img src="<?php echo $event_icon ?>" alt="<?php echo $event_icon['alt']; ?>" class="thmb">
 						</div>
-						<?php endif; ?>
-					
+					<?php endif; ?>
+
 					<?php	echo '</a>';?>
 					<?php	echo '</li>';?>
 					
-					<?php endwhile; ?>	
-	 <ul>
-
-		 
-				 
-			 
+				<?php endwhile; ?>	
+				<ul>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<?php
-	get_footer( 'footer.php' );
-	?>
+		<?php
+		get_footer( 'footer.php' );
+		?>
 
 
 

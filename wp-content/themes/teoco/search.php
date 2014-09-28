@@ -49,10 +49,15 @@
 */?>
 
 <?php else : ?>
+<div class="left-col">
+	&nbsp;
+</div>
 
-	<h2>Sorry <span style="color:grey; font-style: italic;">'<?php the_search_query(); ?>'</span> not found</h2>
-	<p>Please search again or use our <a href="/site-map/">site map</a> to find what your're looking for.</p>
-
+<div class="article-section">
+	<h2>We are very sorry</h2>
+	<h3><strong>The term<span style="color:grey; font-style: italic;">'<?php the_search_query(); ?>'</span> was not found</strong></h3>
+	<p>Please try a new search term or use the main navigation to find what your're looking for.</p>
+</div>
 
 <?php endif; ?>
 </div>

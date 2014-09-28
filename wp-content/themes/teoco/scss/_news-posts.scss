@@ -1,156 +1,110 @@
-body.blog,
-body.archive,
-body.page-template-events-page-php,
-body.page-template-in-the-media-page-php {
-	.post-list {
-		li {
-			h2 {
-				@extend %open_sansregular;
-				@include adjust-font-size-to(24px, 1.3);
-				@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 16px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
-				width: 85%;
-				padding-top: 10px;
-				color: $grey;
-				@media screen and (max-width: 37.5em) {
-					width: 100%;
-				}
-			}
-			position: relative;
-			@include border-radius(25px);
-			background: $green url(../img/blog-page-bg.png) no-repeat center right;
-			overflow: hidden;
-			padding:0 1em 0 1em;
-			@include rhythm(0, 1, 1, 1); //Margin top, Padding top, Padding bottom, Margin bottom
-			@media screen and (max-width: 37.5em) {
-				background: $white;
-			}
+.news-media-events {
+	li {
+		@include border-radius(25px);
+		background-color: white;
+		padding:0 1em 0 1em;
+		@include rhythm(0, 1, 1, 1); //Margin top, Padding top, Padding bottom, Margin bottom
+		background: url(../img/blog-page-bg.png) no-repeat center right;
+		@media (max-width: $s) {
+			@include border-radius(15px);
 		}
 		a {
 			text-decoration: none;
-			&:hover li {
-				background-color: #476323;
-				text-decoration: none;
-				h2, .visit {
-					color: #476323;
-					text-decoration: none;
-				}
-			}
+			display: block;
+			//@extend %bdr;
+			@include clearfix;
 		}
-	}
-}
-
-//In the media 
-/* body.page-template-in-the-media-page-php {
-	.post-list {
-		a {
+		h2 {
+			@extend %open_sansregular;
+			@include adjust-font-size-to(20px, 1.3);
+			@include fittext($min-media: 310px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
+			width: 80%;
+			padding-top: 10px;
 			color: $grey;
-			li {
-				background: $red url(../img/blog-page-bg.png) no-repeat center right;
-			}
-			&:hover li {
-				background-color: #96090E;
-				h2, .visit {
-					color: #96090E;
-				}
+			@media (max-width: $s) {
+				width: 100%;
 			}
 		}
-	}
-} */
 
-
-
-body.page-template-in-the-media-page-php {
-	.post-list {
-		li {
-			background: $red url(../img/blog-page-bg.png) no-repeat center right;
-			a {
-				color: $grey;
-				text-transform: uppercase;
-				font-size: 15px;
-				&:hover {
-				text-decoration: none;
-				color: #96090E;
-				}
-			}
-			&:hover {
-				background-color: #96090E;
-				h2, .visit {
-					color: #96090E;
-				}
-			}
-		}
-	}
-}
-
-//Events
-body.page-template-events-page-php {
-	.post-list {
-		li {
-			background: $white;
+		&.events {
+			background-color: $white;
+			@include clearfix;
 			.container {
 				@include column(9);
 			}
 			.img-container {
 				@include column(3);
-				img.thmb {
+				img {
 					float: right;
 					@include border-radius(20px);
 					border: solid 1px lighten($grey, 40%);
 					width: 145px;
-					//filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
-			    //filter: gray; /* IE6-9 */
-			    //-webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
-			    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+				  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
 			    filter: gray; /* IE6-9 */
 			    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-			    /* &.logo-img { */
-					@media (max-width: $s) {
-						width: 70px;
-						@include border-radius(10px);
+			    	@media (max-width: $s) { 
+			    		width: 45px;
+			    		@include border-radius(5px);
+			    	}
+					}
+				}
+				a {
+					&:hover img {
+	    		filter: none;
+	    		-webkit-filter: none;
+	    		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+	    		-webkit-filter: grayscale(0%);
+	    		cursor: pointer;    
+					}
+				}
+				&:hover {
+					a {
+						color: darken($red, 10%);
 					}
 				}
 			}
-			&:hover h2 {
-				color: #96090E;
+
+			&.news {
+				background-color: $green;
+				&:hover {
+					background-color: darken($green, 10%);
+					a {
+						color: darken($red, 10%);
+					}
+				}
+				@media (max-width: $s) {
+					background: $white;
+					&:hover {
+						background: $white;
+					}
+				}
 			}
-			&:hover img.thmb {
-  		filter: none;
-  		-webkit-filter: none;
-  		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-  		-webkit-filter: grayscale(0%);
-  		cursor: pointer;
-	   }
-		}
-		a {
-			color: $grey;
-			//font-size: 15px;
-				&:hover li {
-				background-color: $white;
-				h2, .visit {
-					color: #96090E;
+
+			&.media {
+				background-color: $red;
+				&:hover {
+					background-color: darken($red, 10%);
+				}
+				a {
+					&:hover {
+						color: darken($red, 10%);
+						}	
+					}
+				@media (max-width: $s) {
+					background: $white;
+					&:hover {
+						background: $white;
+					}
 				}
 			}
 		}
 	}
-}
 
-
-.visit {
-	a {
-		color: $red;
-		text-decoration: none;
-		&:hover {
-			text-decoration: none;
-			color: darken($red, 20%);
-		}
-	}
-}
 
 .the-time {
 	color: $red;
 	text-transform: uppercase;
-	//@include adjust-font-size-to(12px, 1);
-	@include adjust-font-size-to(15px, 1);
+	@include adjust-font-size-to(14px, 1);
 }
 
 .the-location {
@@ -159,6 +113,7 @@ body.page-template-events-page-php {
 	@include adjust-font-size-to(12px, 1);
 }
 
+
 body.single {
 	h2 {
 		color: $grey;
@@ -166,8 +121,5 @@ body.single {
 		@include rhythm(0, 0.8, 0.8, 0); //Margin top, Padding top, Padding bottom, Margin bottom
 		@include adjust-font-size-to(38px, 2.2);
 		@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 24px, $max-font-size: 38px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
-	}
-	p:first-child {
-		@extend %open_sansbold;
 	}
 }

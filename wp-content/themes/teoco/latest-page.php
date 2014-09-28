@@ -31,13 +31,7 @@
 				</h1>
 				<?php echo $copy; ?>
 
-				<?php if ($download) : ?>
-
-				<a href="<?php echo $download ?>" class="link-arrows red" target="_blank">
-					<i class="fa fa-angle-right white"></i>
-				</a>
-
-				<?php else : ?>	
+	
 
 				<section class="latest-download">
 					<div class="dropdown latest">
@@ -54,7 +48,7 @@
 					</a>
 				</section>	
 				 
-				<?php endif; ?>
+	
 
 			</div>
 

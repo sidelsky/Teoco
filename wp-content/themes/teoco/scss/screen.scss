@@ -107,6 +107,9 @@ p {
 		//@include adjust-font-size-to(24px, 5);
 		font-size: 1.5em;
 	}
+	strong {
+		@extend %open_sansbold;
+	}
 }
 
 .larger-text-wrapper {
@@ -194,6 +197,37 @@ article {
 .container .mix{
 	display: none;
 }
+
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+
+a {
+	color: $dark-grey;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 
 // .section-navigation {
 // 	position: fixed;

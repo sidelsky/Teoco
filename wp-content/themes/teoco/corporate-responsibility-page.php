@@ -11,7 +11,7 @@
 	<div class="page-wrapper__wide__inner padding-tb-small">
 		<div class="article-section">
 			<div class="slider top">
-				<div class="flexslider">
+				<div class="zflexslider">
 					<ul class="slides">
 						<li>							
 							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -43,7 +43,7 @@
 </div>
 <div class="slider bottom">
 	<div class="curve-holder blue"></div>
-	<div class="flexslider2">
+	<div class="flexslider">
 		<ul class="slides">
 			<li>
 				<?php $image = get_field('image_cr'); ?>

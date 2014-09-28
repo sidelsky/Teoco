@@ -115,8 +115,8 @@ $sub-container-small-height: 124px;
 			}
 		}
 	}
-	@media screen and (max-width: $s) {
-		background-position: -2000px 0px !important; 
+	@media (max-width: $s) {
+		background-position: -2093px 0px !important; 
 	}
 }
 
@@ -131,8 +131,8 @@ $sub-container-small-height: 124px;
 			}
 		}
 	}
-	@media screen and (max-width: $s) {
-		background-position: -2000px 0px !important; 
+	@media (max-width: $s) {
+		background-position: -2093px 0px !important; 
 	}
 }
 

@@ -28,7 +28,7 @@
 			</div>
 
 			<div class="right-col">
-			 <ul id="Container" class="post-list container">
+			 <ul id="Container" class="post-list container news-media-events">
 					<?php
 					/* 
 					Query the post 
@@ -66,9 +66,9 @@
 					$link = get_field('link');
 					$date = get_field('date');
 					$link_to_document = get_field('link_to_document');
-					$description = get_field('description');
+					$description = "DOWNLOAD THE PDF >";
 
-					echo '<li class="mix lazy '. $tax .'" id="'.$post_id.'" style="display: block;">';?>
+					echo '<li class="mix media '. $tax .'" id="'.$post_id.'" style="display: block;">';?>
 
  					<span class="the-time">
  						<?php if($date) {
@@ -86,11 +86,9 @@
 						</span>
 					<?php endif; ?>
 
-					<br>
-
 					<?php if($link) : ?>
 						<span class="visit">
-							<a href="<?php echo $link; ?>">Visit site ></a>
+							<a href="<?php echo $link; ?>">VISIT SITE ></a>
 						</span>
 					<?php endif; ?>
 

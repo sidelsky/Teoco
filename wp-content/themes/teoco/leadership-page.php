@@ -3,15 +3,16 @@
 	Template Name: Leadership page
 	*/
 	get_header();
-
-	$title = get_field('title_m');
-	$decription = get_field('description_m');
 	?>
+
 
 <!-- Management -->
 <section class="page-wrapper__wide section current grey">
 	<div class="page-wrapper__wide__inner padding-tb">
-	<span>
+		<?php
+			$title = get_field('title_m');
+			$decription = get_field('description_m');
+		?>
 	<h1>
 		<?php echo $title; ?>
 	</h1>
@@ -104,14 +105,14 @@
 </section>
 
 
-<?php
-	$title = get_field('title_b');
-	$decription = get_field('description_b');
-?>
-
 <!-- Board -->
 <section class="page-wrapper__wide section">
 	<div class="page-wrapper__wide__inner padding-tb">
+	<?php
+		$title = get_field('title_b');
+		$decription = get_field('description_b');
+	?>
+
 	<h1>
 		<?php echo $title; ?>
 	</h1>
@@ -205,15 +206,13 @@
 </section>
 
 
-
-<?php
-	$title = get_field('title_bz');
-	$decription = get_field('description_bza');
-?>
-
 <!-- Board -->
 <section class="page-wrapper__wide section grey">
 	<div class="page-wrapper__wide__inner padding-tb">
+	<?php
+		$title = get_field('title_bz');
+		$decription = get_field('description_bza');
+	?>
 	<h1>
 		<?php echo $title; ?>
 	</h1>

@@ -5,12 +5,12 @@
 	get_header();
 	?>
 
-	<section class="page-wrapper__wide sub-pages section current grey">
+	<section class="page-wrapper__wide sub-pages section grey">
 		<div class="page-wrapper__wide__inner padding-tb">
 			<?php if(is_page('contact-us-form')) : ?>
 				<?php the_title('<h1>','</h1>'); ?>
 			<?php else : ?>
-				<h1>Office locations</h1>
+				<h1>Office Locations</h1>
 			<?php endif; ?>
 
 				
@@ -26,7 +26,7 @@
 					<?php simple_section_nav('before_widget=<li>&after_widget=</li>'); ?>
 				</ul>
 				<p>For further information</p>
-				<a class="losange red" href="/contact-us/contact-us-form/">
+				<a class="losange red" href="/teoco.com/contact-us/contact-us-form/">
 					<span class="white">Contact us</span>
 				</a>
 				<?php endif; ?>

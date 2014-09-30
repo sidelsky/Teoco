@@ -48,19 +48,24 @@
 		}
 		.inner {
 			//@extend %bdr;
-			@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+			@include rhythm(0, 0, 2, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 			padding:0 1.8em;
 			ul {
 					@include rhythm(0, 0, 0, 1); //Margin top, Padding top, Padding bottom, Margin bottom
-					>	li {
+						li {
 						list-style-type: disc;
 						margin-left: 24px;
 						@include adjust-font-size-to(16px, 1);
+						.gform_wrapper .gform_body .gform_fields li {
+							margin-left: -24px;
+						}
 					}
 				}
 			}
 		}
 	}
+
+
 
 
 	.inner-margin {

@@ -7,12 +7,12 @@ get_header();
 
 
 <section class="page-wrapper__wide section grey">
-  <div class="page-wrapper__wide__inner padding-tb-small">
+  <div class="page-wrapper__wide__inner padding-tb-med">
     <?php get_template_part( '/generic-page-loop' ); ?>
   </div>
 </section>
 
-<section class="page-wrapper__wide  section grey">
+<section class="page-wrapper__wide  section grey padding-b">
   <div class="page-wrapper__wide__inner  ">
     <?php
     //$image_icon = get_field('image_icon');

@@ -3,7 +3,7 @@
 	color: #cdcdcd;
 	height: auto;
 	.copyright-details {
-		@include adjust-font-size-to(14px, 1);
+		@include adjust-font-size-to(12px, 1);
 		color: #8b8b8b;
 		@media screen and (max-width: $m) {
 			text-align: center;

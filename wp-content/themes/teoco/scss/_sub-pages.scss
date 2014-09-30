@@ -116,7 +116,7 @@ $sub-container-small-height: 124px;
 		}
 	}
 	@media (max-width: $s) {
-		background-position: -2093px 0px !important; 
+		background-position: -2092px -57px !important; 
 	}
 }
 
@@ -132,7 +132,7 @@ $sub-container-small-height: 124px;
 		}
 	}
 	@media (max-width: $s) {
-		background-position: -2093px 0px !important; 
+		background-position: -2092px -57px !important; 
 	}
 }
 
@@ -254,4 +254,3 @@ body.single {
 		@include adjust-font-size-to(10px, 2);
 	}
 }
- 

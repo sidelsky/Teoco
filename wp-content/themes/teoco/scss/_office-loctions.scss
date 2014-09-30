@@ -9,6 +9,9 @@ body.page-template-office-locations-php {
 		}
 		@include column(2);
 		@include pull(1);
+		@media (max-width:$s) {
+       @include column(12);
+     }
 		p {
 			@include adjust-font-size-to(12px, 1.3);
 			border-top: solid 1px $border;
@@ -57,4 +60,9 @@ body.page-template-office-locations-php {
 			//@include push(3);
 		}
 	}
+}
+
+
+.left-col {
+	@include rhythm(0, 0, 1, 2); //Margin top, Padding top, Padding bottom, Margin bottom
 }

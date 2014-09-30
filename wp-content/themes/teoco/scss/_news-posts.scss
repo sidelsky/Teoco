@@ -11,7 +11,7 @@
 		a {
 			text-decoration: none;
 			display: block;
-			//@extend %bdr;
+			line-height: 22px;
 			@include clearfix;
 		}
 		h2 {
@@ -122,4 +122,10 @@ body.single {
 		@include adjust-font-size-to(38px, 2.2);
 		@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 24px, $max-font-size: 38px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);
 	}
+}
+
+.visit a,
+a .visit {
+	font-size: 14px;
+	text-transform: uppercase;
 }

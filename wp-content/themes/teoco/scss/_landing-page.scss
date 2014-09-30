@@ -1,4 +1,4 @@
-$lp-container-height: 188px;
+$lp-container-height: 210px;
 
 body.page-template-landing-page-php, {
 	.landing-page {
@@ -25,7 +25,7 @@ body.page-template-landing-page-php, {
 					padding: 0 1em 0 2em;
 					h1 {
 						@include adjust-font-size-to(30px, 1.5);
-						@include rhythm(0, 0, 0, 0.2); //Margin top, Padding top, Padding bottom, Margin bottom
+						@include rhythm(0.2, 0, 0, 0.2); //Margin top, Padding top, Padding bottom, Margin bottom
 						width: 200px;
 						display: block;
 						text-decoration: none;

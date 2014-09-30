@@ -291,6 +291,9 @@ form#search-form {
 
 
 //Select menu dropdown style
+.ginput_container {
+	overflow: hidden;
+}
 .ginput_container select#input_3_5 {
 	background: transparent;
 	border: 0 !important;  
@@ -298,7 +301,7 @@ form#search-form {
 	-moz-appearance: none;
 	outline: none;
 	color: lighten($grey, 15%);
-	width: 100%;
+	width: 105%;
 	@extend %open_sansregular;
 }
 

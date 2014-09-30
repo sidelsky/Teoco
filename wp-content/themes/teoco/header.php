@@ -24,7 +24,7 @@
 		<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
 	*/?>
 
-	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.6.2.min.js"></script>	
 
 	<?php wp_head(); ?>

@@ -5,7 +5,6 @@
 	get_header();
 	?>
 
-<div class="current"></div>
 	<?php 
 
 				// check for rows (parent repeater)
@@ -15,11 +14,11 @@
 			// loop through rows (parent repeater)
 			while( have_rows('group') ): the_row(); ?>
 	<section class="page-wrapper__wide section grey">
-		<div class="page-wrapper__wide__inner padding-tb-small">
+		<div class="page-wrapper__wide__inner padding-tb-med no-padding-bottom">
 			<h1><?php the_sub_field('title'); ?></h1>
-			<p class="large"><?php the_sub_field('content'); ?></p>
+			<?php the_sub_field('content'); ?>
  
-			<div class="right-col success">	
+			<div class="right-col success padding-tb-small no-padding-bottom">	
 			<?php 
 			// check for rows (sub repeater)
 			if( have_rows('icons') ): ?>

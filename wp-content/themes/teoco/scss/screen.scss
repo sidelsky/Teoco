@@ -91,8 +91,9 @@ h1, h2 {
 .flexslider3 {
 	.flex-viewport {
 		h2 {
-			@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 31px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);		
+			@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 21px, $max-font-size: 25px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false);		
 			@include adjust-leading-to(3);
+			@extend %open_sansregular;
 		}
 	}
 }
@@ -173,7 +174,7 @@ article {
 	}
 
 	blockquote {
-		@media screen and (max-width: 37.5em) {
+		@media (max-width: $s) {
 			display: none;
 		}
 		p {
@@ -181,7 +182,7 @@ article {
 			color: $red;
 			font-style: italic;
 			@include adjust-font-size-to(24px, 5);
-		//@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 18px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false)
+			@include fittext($min-media: 320px, $max-media: 1900px, $min-font-size: 10px, $max-font-size: 24px, $media-increment: 100, $font-increment: 2.5, $ratio: 1, $round: false)
 	}
 }
 

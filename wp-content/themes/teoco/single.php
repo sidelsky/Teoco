@@ -46,38 +46,13 @@ get_header();
 
 			<footer class="single">
 				<nav class="navigation text">
-					<div class="link"><?php previous_post_link('< %link', 'Previous') ?></div> &nbsp; | &nbsp; 
-					<div class="link"><?php next_post_link('%link >', 'Next') ?>
+					<div class="link"><?php previous_post_link('%link', '< Previous') ?></div> &nbsp; | &nbsp; 
+					<div class="link"><?php next_post_link('%link', 'Next >') ?>
 					</nav>
 
 					<div class="social">
 					<span class="text">share</span>
 					<?php echo do_shortcode("[addtoany]"); ?>
-						<!--
-							<ul>
-								<li>
-									<a href="#" class="sc">
-										<i class="fa fa-google-plus"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="sc">
-										<i class="fa fa-linkedin"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="sc">
-										<i class="fa fa-facebook"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="sc">
-										<i class="fa fa-twitter"></i>
-									</a>
-								</li>
-								<li class="text">Share</li>
-							</ul>
-						-->
 					</div>
 
 				</footer>
@@ -85,7 +60,7 @@ get_header();
 			</article>
 
 			<footer class="pagenavi">
-					| <a href="http://79.170.44.125/teoco.com/latest/news/">Back to news</a> |
+					| <a href="/latest/news/">Back to news</a> |
 			</footer>
 
 		</div>

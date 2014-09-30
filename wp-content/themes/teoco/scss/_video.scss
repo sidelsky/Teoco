@@ -44,6 +44,9 @@
     z-index: 3;
     &.left {
       left: 70px;
+      @media (max-width:$s) {
+        left: 20px;
+      }
     }
     h2, p {
       margin: 0;

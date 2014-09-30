@@ -169,17 +169,17 @@ $secondary-nav-bg: #f7f7f7;
 
 
 //About -> Company overview
-#menu-item-2173.current-menu-item {
-	a {
-		color:#999 !important;
-		&:hover {
-			color: $red !important;
-		}
-	}
-}
+// #menu-item-2173.current-menu-item {
+// 	a {
+// 		color:#999 !important;
+// 		&:hover {
+// 			color: $red !important;
+// 		}
+// 	}
+// }
 
 
-#menu-item-2173.current-page-ancestor,
+//#menu-item-2173.current-page-ancestor,
 #menu-item-33.current-page-ancestor {
 	a {
 		color: $red !important;

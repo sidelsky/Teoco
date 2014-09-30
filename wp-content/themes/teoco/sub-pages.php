@@ -64,7 +64,7 @@ get_header();
 
     <section class="page-wrapper__wide sub-pages section">
       <div class="page-wrapper__wide__inner padding-tb">
-        <h1><?php the_field('job_opportunities_title'); ?></h1>
+        <?php/*<h1><?php the_field('job_opportunities_title'); ?></h1>*/?>
         <div class="left-col">
           <ul class="side-menu">  
             <?php simple_section_nav('before_widget=<li>&after_widget=</li>'); ?>

@@ -26,7 +26,7 @@
 					<?php simple_section_nav('before_widget=<li>&after_widget=</li>'); ?>
 				</ul>
 				<p>For further information</p>
-				<a class="losange red" href="/teoco.com/contact-us/contact-us-form/">
+				<a class="losange red" href="/contact-us/contact-us-form/">
 					<span class="white">Contact us</span>
 				</a>
 				<?php endif; ?>

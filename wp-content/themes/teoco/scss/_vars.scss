@@ -72,10 +72,36 @@ $L: 57em; 	// roughly speaking, around 912px wide with 16px body font
 
 .padding-tb {
 	@include rhythm(0, 3, 3, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	@media (max-width: $s) {
+		@include rhythm(0, 2, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
 }
 
+
+.padding-b {
+	@include rhythm(0, 0, 3, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	@media (max-width: $s) {
+		@include rhythm(0, 0, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
+}
+
+.padding-tb-med {
+	@include rhythm(0, 3, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	@media (max-width: $s) {
+		@include rhythm(0, 2, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	}
+}
+
+
+
 .padding-tb-small {
-	@include rhythm(0, 2, 2, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+	@include rhythm(0, 1, 1, 0); //Margin top, Padding top, Padding bottom, Margin bottom
+}
+
+
+.no-padding-bottom {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 .cols {

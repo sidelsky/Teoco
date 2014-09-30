@@ -2,12 +2,12 @@
 /* Custom code goes below this line. */
 
 
-// update_option('siteurl','http://teoco.com/');
-// update_option('home','http://teoco.com/');
+// update_option('siteurl','http://www.teoco.com/');
+// update_option('home','http://www.teoco.com/');
 
 //Plugins included into theme folder
 include_once('plugins/simple-section-navigation/simple_section_nav.php');
-include_once('plugins/simple-sitemap/simple-sitemap.php');
+//include_once('plugins/simple-sitemap/simple-sitemap.php');
 //define( 'ACF_LITE', false );
 
 

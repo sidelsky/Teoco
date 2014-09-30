@@ -699,7 +699,7 @@ $('.accordian .inner').hide();
 
 $('.accord-toggle').on('click', function (e) {
   $(this).next().slideToggle(600);
-  $(".inner").not($(this).next()).slideUp('fast');
+  $(".portfolio-item .inner").not($(this).next()).slideUp('fast');
   $(this).toggleClass('active');
   $('.accord-toggle').not($(this)).removeClass('active');
   e.preventDefault();

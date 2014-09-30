@@ -97,21 +97,8 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/waypoints.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/froogaloop.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvid.js"></script>
-
-
-<?php /*
-<script src="<?php bloginfo('template_directory'); ?>/js/smooth-scroll.js"></script>
-
-<script src="<?php bloginfo('template_directory'); ?>/js/isotope.js"></script> 
-<script src="<?php bloginfo('template_directory'); ?>/js/filterable.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/jquery.smartscroll.min.js"></script>
- */?>
-
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.mixitup.js"></script>
-
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.nicefileinput.js"></script>
-
-
 
 <!--
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -123,7 +110,8 @@ wp_footer();
 ?>
 
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
 <script>
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -132,7 +120,7 @@ wp_footer();
 	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 	ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
--->
+
 
 
 

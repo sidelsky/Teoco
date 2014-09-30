@@ -65,19 +65,6 @@
 // }
 
 
-.slides {
-	position: relative;
-	.bg-full-image{
-		min-height: 100%;
-		min-width: 100%;
-		///position: absolute;
-		// right: 0px;
-		// top: 0px;
-		//max-width: 10000%!important; //over ride any existing responsive image styling
-		//margin: 0 auto!important;
-	}
-}
-
 #success {
 	.left-col {
 
@@ -97,14 +84,14 @@
 	.left-col {
 		//@extend %bdr;
 		@include column(7);
-		@media screen and (max-width: 37.5em) {
+		@media (max-width: $s) {
 			@include column(12);
 		}
 	}
 	.right-col {
 		//@extend %bdr;
 		@include column(5);
-			@media screen and (max-width: 37.5em) {
+			@media (max-width: $s) {
 				@include column(12);
 			}
 		}

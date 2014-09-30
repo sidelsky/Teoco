@@ -12,10 +12,11 @@
 		</div>
 
 		<div class="article-section">	
-			<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'teoco' ); ?></p>
+			<p><?php _e( 'It looks like nothing was found at this location.<br>Maybe try navigating via the main menu or a search?', 'teoco' ); ?></p>
 		</div>
 
 	</article>				
 </section>
 
 <?php get_footer( 'footer.php' ); ?>
+
